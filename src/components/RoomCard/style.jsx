@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
-const SroomCard = styled.main``;
+const SRoomCard = styled.main``;
 
-export default SroomCard;
+export default SRoomCard;

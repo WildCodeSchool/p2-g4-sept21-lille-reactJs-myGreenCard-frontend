@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
-const SfeatureCard = styled.main``;
+const SFeatureCard = styled.main``;
 
-export default SfeatureCard;
+export default SFeatureCard;

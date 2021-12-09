@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
-const SdishCard = styled.main``;
+const SDishCard = styled.main``;
 
-export default SdishCard;
+export default SDishCard;

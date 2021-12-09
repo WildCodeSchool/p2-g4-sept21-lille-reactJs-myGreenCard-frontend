@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
-const Soffice = styled.main``;
+const SOffice = styled.main``;
 
-export default Soffice;
+export default SOffice;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
-const SloggingPage = styled.main``;
+const SLoggingPage = styled.main``;
 
-export default SloggingPage;
+export default SLoggingPage;

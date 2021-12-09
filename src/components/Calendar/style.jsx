@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
-const Scalendar = styled.main``;
+const SCalendar = styled.main``;
 
-export default Scalendar;
+export default SCalendar;

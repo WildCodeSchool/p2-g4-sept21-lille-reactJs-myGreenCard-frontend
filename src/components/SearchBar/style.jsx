@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
-const SsearchBar = styled.main``;
+const SSearchBar = styled.main``;
 
-export default SsearchBar;
+export default SSearchBar;

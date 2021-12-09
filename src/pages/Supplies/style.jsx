@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
-const Ssupplies = styled.main``;
+const SSupplies = styled.main``;
 
-export default Ssupplies;
+export default SSupplies;

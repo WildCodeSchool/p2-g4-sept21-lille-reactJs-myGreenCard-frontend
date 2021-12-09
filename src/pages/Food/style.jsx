@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
-const Sfood = styled.main``;
+const SFood = styled.main``;
 
-export default Sfood;
+export default SFood;

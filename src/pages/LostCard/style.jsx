@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
-const SlostCard = styled.main``;
+const SLostCard = styled.main``;
 
-export default SlostCard;
+export default SLostCard;

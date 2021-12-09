@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
-const SuserProfil = styled.main``;
+const SUserProfil = styled.main``;
 
-export default SuserProfil;
+export default SUserProfil;

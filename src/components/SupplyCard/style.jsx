@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
-const SsupplyCard = styled.main``;
+const SSupplyCard = styled.main``;
 
-export default SsupplyCard;
+export default SSupplyCard;
