@@ -8,23 +8,23 @@ import Office from './pages/Office';
 import Meeting from './pages/Meeting';
 import Supplies from './pages/Supplies';
 import LostCard from './pages/LostCard';
+import Room from './pages/Meeting/Room';
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      <main>
-        <Routes>
-          <Route path="/" element={<LoginPage />} />
-          <Route path="home" element={<Home />} />
-          <Route path="EazyCard" element={<EazyCard />} />
-          <Route path="Food" element={<Food />} />
-          <Route path="Office" element={<Office />} />
-          <Route path="Meeting" element={<Meeting />} />
-          <Route path="Supplies" element={<Supplies />} />
-          <Route path="LostCard" element={<LostCard />} />
-        </Routes>
-      </main>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="home" element={<Home />} />
+        <Route path="eazyCard" element={<EazyCard />} />
+        <Route path="food" element={<Food />} />
+        <Route path="office" element={<Office />} />
+        <Route path="meetingRooms" element={<Meeting />} />
+        <Route path="meetingRooms/:id" element={<Room />} />
+        <Route path="Supplies" element={<Supplies />} />
+        <Route path="LostCard" element={<LostCard />} />
+      </Routes>
     </>
   );
 }
