@@ -1,4 +1,3 @@
-// import { useState } from 'react';
 import MainButton from 'components/MainButton';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import FoodSlider from './FoodSlider/index';
@@ -6,8 +5,6 @@ import SFood from './style';
 import 'react-tabs/style/react-tabs.css';
 
 export default function Food() {
-  // const [ModalFood, setModalFood] = useState(false);
-
   const plats = [
     {
       name: 'Tartiflette',
