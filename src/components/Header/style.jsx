@@ -4,7 +4,7 @@ const SHeader = styled.header`
   height: 75px;
   width: 100vw;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   position: relative;
   &::after {
@@ -15,6 +15,8 @@ const SHeader = styled.header`
     bottom: -10px;
     position: absolute;
     border-radius: 15px;
+    right: 15%;
+    left: 15%;
   }
   img {
     height: 60px;
