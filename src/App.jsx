@@ -8,6 +8,7 @@ import Office from './pages/Office';
 import Meeting from './pages/Meeting';
 import Supplies from './pages/Supplies';
 import LostCard from './pages/LostCard';
+import ProfilPage from './pages/Profile';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="Meeting" element={<Meeting />} />
           <Route path="Supplies" element={<Supplies />} />
           <Route path="LostCard" element={<LostCard />} />
+          <Route path="ProfilPage" element={<ProfilPage />} />
         </Routes>
       </main>
     </>
