@@ -8,10 +8,10 @@ export default function Header({ logo }) {
   return (
     <SHeader>
       <Link to="/home">
-        <img src={home} alt="ico" />
+        <img src={home} alt="homeIcon" />
       </Link>
       <img className="logo" src={logo} alt="logo" />
-      <Link to="/profilpage">
+      <Link to="/profilPage">
         <UserProfile />
       </Link>
     </SHeader>

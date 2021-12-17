@@ -8,7 +8,6 @@ export default function EazyCard() {
   return (
     <>
       <Header logo={logo} />
-
       <SEazyCard>
         <img src={card} alt="Eazycard" />
         <div className="anime">

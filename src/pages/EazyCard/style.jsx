@@ -17,7 +17,6 @@ const SEazyCard = styled.section`
     border: 2px solid black;
     border-radius: 50%;
     overflow: hidden;
-    
   }
   .nfc {
     bottom: -12px;
@@ -26,49 +25,32 @@ const SEazyCard = styled.section`
     height: 70px;
     animation: phoneNfc 5s infinite;
     perspective: 1000px;
-    
   }
   p {
     margin-top: 20px;
   }
   @keyframes phoneNfc {
-    0% {
-      
+    0% {      
       transform: rotateX(0deg)rotateY(0deg);
       -webkit-transform: rotateX(0deg)rotateY(0deg);
      -moz-transform: rotateX(0deg)rotateY(0deg);
      -ms-transform: rotateX(0deg)rotateY(0deg);
      -o-transform: rotate(0deg)rotateY(0deg);
-
-     
-      
-    }
-
+       }
     40% {
-      
       transform: rotateX(40deg)rotateY(0deg);
-      -webkit-transform: rotateX(40deg)rotateY(0deg);
+     -webkit-transform: rotateX(40deg)rotateY(0deg);
      -moz-transform: rotateX(40deg)rotateY(0deg);
      -ms-transform: rotateX(40deg)rotateY(0deg);
-     -o-transform: rotate(40deg)rotateY(0deg);
-
-     
-      
+     -o-transform: rotate(40deg)rotateY(0deg);      
     }
     100% {
-      
       transform: rotateX(0deg)rotateY(0deg);
-      -webkit-transform: rotateX(0deg)rotateY(0deg);
+     -webkit-transform: rotateX(0deg)rotateY(0deg);
      -moz-transform: rotateX(0deg)rotateY(0deg);
      -ms-transform: rotateX(0deg)rotateY(0deg);
-     -o-transform: rotate(0deg)rotateY(0deg);
-
-     
-      
-    }
-    
-  
-    
+     -o-transform: rotate(0deg)rotateY(0deg);  
+    }     
 `;
 
 export default SEazyCard;
