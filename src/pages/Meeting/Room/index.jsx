@@ -29,7 +29,15 @@ export default function Room() {
                 <h3>{day.name}</h3>
                 <div className="slots">
                   {day.slots.map((slot) => {
-                    return <span>{slot.description}</span>;
+                    return (
+                      <span
+                        className={
+                          slot.occupation === 'yes' ? 'reserved' : null
+                        }
+                      >
+                        {slot.description}
+                      </span>
+                    );
                   })}
                 </div>
               </SwiperSlide>

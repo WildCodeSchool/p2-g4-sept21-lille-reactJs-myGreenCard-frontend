@@ -50,6 +50,9 @@ const SRoom = styled.main`
           border-radius: 5px;
           -webkit-box-shadow: 0px 7px 12px -3px #afafaf;
           box-shadow: 0px 7px 12px -3px #afafaf;
+          &.reserved {
+            background: grey;
+          }
         }
       }
     }
