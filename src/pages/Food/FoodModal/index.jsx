@@ -5,7 +5,7 @@ import SFoodModal from './style';
 function FoodModal() {
   const [renderModal, setRenderModal] = useState(true);
 
-  const makeTheModalDisappear = () => {
+  const hideTheModal = () => {
     setRenderModal(!renderModal);
   };
 
@@ -15,7 +15,7 @@ function FoodModal() {
         <SFoodModal>
           <MainButton
             clickCallback={() => {
-              makeTheModalDisappear();
+              hideTheModal();
             }}
             content="X"
           />
