@@ -14,7 +14,7 @@ export default function RoomCard({
       <p>{localisation}</p>
       <p>Capacité : {capacity} </p>
       <p>{equipment}</p>
-      <img src={picture} alt="" />
+      <img src={picture} alt="Salle de réunion" />
     </SRoomCard>
   );
 }

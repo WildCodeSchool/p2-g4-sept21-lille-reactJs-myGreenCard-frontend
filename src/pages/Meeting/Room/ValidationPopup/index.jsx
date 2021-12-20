@@ -1,12 +1,15 @@
 import propTypes from 'prop-types';
-import SValidationModal from './style';
+import SValidationPopup from './style';
 
-export default function ValidationModal({ renderModal, setRenderModal }) {
+export default function ValidationPopup({
+  validationPopup,
+  setValidationPopup,
+}) {
   const makeTheModalAppear = () => {
-    setRenderModal(!renderModal);
+    setValidationPopup(!validationPopup);
   };
   return (
-    <SValidationModal>
+    <SValidationPopup>
       <div className="modalContent">
         <h2>Confirmation</h2>
         <p>Confirmez-vous la réservation de la salle de réunion n° ?</p>
@@ -17,16 +20,16 @@ export default function ValidationModal({ renderModal, setRenderModal }) {
           </button>
         </div>
       </div>
-    </SValidationModal>
+    </SValidationPopup>
   );
 }
 
-ValidationModal.propTypes = {
-  renderModal: propTypes.bool,
-  setRenderModal: propTypes.func,
+ValidationPopup.propTypes = {
+  validationPopup: propTypes.bool,
+  setValidationPopup: propTypes.func,
 };
 
-ValidationModal.defaultProps = {
-  renderModal: false,
-  setRenderModal: () => {},
+ValidationPopup.defaultProps = {
+  validationPopup: false,
+  setValidationPopup: () => {},
 };

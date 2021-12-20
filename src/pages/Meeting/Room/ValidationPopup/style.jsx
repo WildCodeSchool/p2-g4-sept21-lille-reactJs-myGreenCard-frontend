@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const SValidationModal = styled.section`
+const SValidationPopup = styled.section`
   display: flex;
   background-color: rgba(0, 0, 0, 0.8);
   width: 100%;
@@ -36,4 +36,4 @@ const SValidationModal = styled.section`
   }
 `;
 
-export default SValidationModal;
+export default SValidationPopup;

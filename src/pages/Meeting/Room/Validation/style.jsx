@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const SRoom = styled.main`
+const SValidation = styled.main`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,6 +9,7 @@ const SRoom = styled.main`
     margin: 15px;
     font-size: 1.2rem;
     font-weight: bold;
+    justify-self: left;
   }
   img {
     margin: 25px 0;
@@ -72,4 +73,4 @@ const SRoom = styled.main`
   }
 `;
 
-export default SRoom;
+export default SValidation;
