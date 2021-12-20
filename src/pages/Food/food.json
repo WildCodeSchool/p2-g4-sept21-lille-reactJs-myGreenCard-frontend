@@ -1,0 +1,242 @@
+{
+  "lunch": [
+    {
+      "id": 1,
+      "name": "Hamburger et frites",
+      "price": "5€",
+      "calories": "690kcal",
+      "picture": "/assets/pictures",
+      "content": ["pain", "viande", "pommes de terre", "oeufs"],
+      "allergies": ["gluten", "amidon"]
+    },
+    {
+      "id": 2,
+      "name": "Brochette de boeuf",
+      "price": "4,50€",
+      "calories": "530kcal",
+      "picture": "/assets/pictures",
+      "content": ["viande", "cacahuète"],
+      "allergies": ["arachide"]
+    },
+    {
+      "id": 3,
+      "name": "Omelette bel été",
+      "price": "4,10€",
+      "calories": "420kcal",
+      "picture": "/assets/pictures",
+      "content": ["oeufs", "légumes"],
+      "allergies": [""]
+    },
+    {
+      "id": 4,
+      "name": "Semoule aux légumes",
+      "price": "4,70€",
+      "calories": "510kcal",
+      "picture": "/assets/pictures",
+      "content": ["blé", "légumes"],
+      "allergies": ["gluten"]
+    },
+    {
+      "id": 5,
+      "name": "Canard à l'orange",
+      "price": "5€",
+      "calories": "623kcal",
+      "picture": "/assets/pictures",
+      "content": ["pommes de terres", "légumes", "fruits", "viande"],
+      "allergies": ["amidon"]
+    },
+    {
+      "id": 6,
+      "name": "Hachis parmentier",
+      "price": "4,30€",
+      "calories": "560kcal",
+      "picture": "/assets/pictures",
+      "content": ["pommes de terres", "viande", "lait"],
+      "allergies": ["lait"]
+    },
+    {
+      "id": 7,
+      "name": "Salade de haricots verts à la feta",
+      "price": "4€",
+      "calories": "320kcal",
+      "picture": "/assets/pictures",
+      "content": ["légumes", "feta", "soja"],
+      "allergies": [""]
+    },
+    {
+      "id": 8,
+      "name": "Pizza Vegan",
+      "price": "4€",
+      "calories": "680kcal",
+      "picture": "/assets/pictures",
+      "content": ["légumes", "mozarrella", "pates"],
+      "allergies": ["gluten"]
+    },
+    {
+      "id": 9,
+      "name": "Rôti de porc, pommes de terre",
+      "price": "4,60€",
+      "calories": "619kcal",
+      "picture": "/assets/pictures",
+      "content": ["viande", "pommes de terre"],
+      "allergies": ["amidon"]
+    },
+    {
+      "id": 10,
+      "name": "Saumon avec ses légumes",
+      "price": "5€",
+      "calories": "450kcal",
+      "picture": "/assets/pictures",
+      "content": ["poisson", "légumes"],
+      "allergies": [""]
+    },
+    {
+      "id": 11,
+      "name": "Salade végétarienne",
+      "price": "4€",
+      "calories": "360kcal",
+      "picture": "/assets/pictures",
+      "content": ["légumes"],
+      "allergies": [""]
+    }
+  ],
+  "drinks": [
+    {
+      "id": 1,
+      "name": "Coca Cola",
+      "price": "1,20€",
+      "calories": "140kcal",
+      "picture": "/assets/pictures",
+      "content": ["sucre"],
+      "allergies": [""]
+    },
+    {
+      "id": 2,
+      "name": "Oasis",
+      "price": "1,20€",
+      "calories": "127kcal",
+      "picture": "/assets/pictures",
+      "content": ["sucre", "aromes"],
+      "allergies": [""]
+    },
+    {
+      "id": 3,
+      "name": "Ice tea",
+      "price": "1,20€",
+      "calories": "246kcal",
+      "picture": "/assets/pictures",
+      "content": ["sucre", "thé", "aromes"],
+      "allergies": [""]
+    },
+    {
+      "id": 4,
+      "name": "San Pellegrino",
+      "price": "1€",
+      "calories": "0kcal",
+      "picture": "/assets/pictures",
+      "content": [""],
+      "allergies": [""]
+    },
+    {
+      "id": 5,
+      "name": "Eau",
+      "price": "0,50€",
+      "calories": "0kcal",
+      "picture": "/assets/pictures",
+      "content": [""],
+      "allergies": [""]
+    },
+    {
+      "id": 6,
+      "name": "Demi-bouteille Vin rouge",
+      "price": "5,75€",
+      "calories": "340kcal",
+      "picture": "/assets/pictures",
+      "content": ["aclool", "raisin"],
+      "allergies": [""]
+    },
+    {
+      "id": 7,
+      "name": "Bière",
+      "price": "2,25€",
+      "calories": "200kcal",
+      "picture": "/assets/pictures",
+      "content": ["alcool"],
+      "allergies": [""]
+    }
+  ],
+  "desserts": [
+    {
+      "id": 1,
+      "name": "Crème aux oeufs",
+      "price": "1,10€",
+      "calories": "200kcal",
+      "picture": "/assets/pictures",
+      "content": ["oeufs", "lait"],
+      "allergies": ["lait"]
+    },
+    {
+      "id": 2,
+      "name": "Brownies au beurre d'arachide",
+      "price": "1,20€",
+      "calories": "140kcal",
+      "picture": "/assets/pictures",
+      "content": ["oeufs", "lait", "chocolat", "cacahuète"],
+      "allergies": ["arachide"]
+    },
+    {
+      "id": 3,
+      "name": "Panna Cotta fruis rouge",
+      "price": "1,20€",
+      "calories": "190kcal",
+      "picture": "/assets/pictures",
+      "content": ["lait", "fruits"],
+      "allergies": ["lait"]
+    },
+    {
+      "id": 4,
+      "name": "Flan",
+      "price": "1,10€",
+      "calories": "130kcal",
+      "picture": "/assets/pictures",
+      "content": ["lait", "vanille", "oeuf", "pâtes"],
+      "allergies": ["lait"]
+    },
+    {
+      "id": 5,
+      "name": "Banane",
+      "price": "0,50€",
+      "calories": "90kcal",
+      "picture": "/assets/pictures",
+      "content": ["fruits"],
+      "allergies": [""]
+    },
+    {
+      "id": 6,
+      "name": "Muffin au pépites de chocolat",
+      "price": "1€",
+      "calories": "225kcal",
+      "picture": "/assets/pictures",
+      "content": ["chocolat", "oeufs", "lait", "levrure chimique", "farine"],
+      "allergies": ["lait"]
+    },
+    {
+      "id": 7,
+      "name": "Cookie au pépites de chocolat",
+      "price": "1€",
+      "calories": "195kcal",
+      "picture": "/assets/pictures",
+      "content": ["chocolat", "oeufs", "lait", "levrure chimique", "farine"],
+      "allergies": ["lait"]
+    },
+    {
+      "id": 8,
+      "name": "Mousse au chocolat au lait",
+      "price": "1,20€",
+      "calories": "165kcal",
+      "picture": "/assets/pictures",
+      "content": ["chocolat", "oeufs", "lait", "vanille"],
+      "allergies": ["lait"]
+    }
+  ]
+}
