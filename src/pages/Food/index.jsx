@@ -110,15 +110,12 @@ export default function Food() {
           </TabList>
 
           <TabPanel>
-            {' '}
             <FoodSlider typeOfFood={plats} />
           </TabPanel>
           <TabPanel>
-            {' '}
             <FoodSlider typeOfFood={desserts} />
           </TabPanel>
           <TabPanel>
-            {' '}
             <FoodSlider typeOfFood={drinks} />
           </TabPanel>
         </Tabs>
