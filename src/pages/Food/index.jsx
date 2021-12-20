@@ -97,11 +97,13 @@ export default function Food() {
     },
   ];
 
+  console.log(renderModal);
+
   return (
     <SFood>
       <h1 className="menuOfDay"> Le menu du jour</h1>
       <section className="choiceMenu">
-        {renderModal ? <FoodModal /> : null}
+        {renderModal ? <FoodModal /> : ''}
         <Tabs>
           <TabList>
             <Tab>Plats</Tab>
@@ -127,9 +129,6 @@ export default function Food() {
           makeTheModalAppear();
         }}
       />
-      <button type="button" onClick={makeTheModalAppear}>
-        TOTO
-      </button>
     </SFood>
   );
 }
