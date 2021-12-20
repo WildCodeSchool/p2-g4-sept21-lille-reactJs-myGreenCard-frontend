@@ -1,4 +1,5 @@
 import { useParams } from 'react-router';
+import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.min.css';
 import 'swiper/swiper.min.css';
@@ -7,15 +8,21 @@ import SwiperCore, { Navigation } from 'swiper';
 import Header from '../../../components/Header';
 import SRoom from './style';
 import logo from '../../../assets/reservationReunion.png';
+import ValidationModal from '../ValidationModal';
 
 SwiperCore.use([Navigation]);
 const data = require('../meeting.json');
 
 const dataRooms = data.rooms;
-console.log(dataRooms);
+
 export default function Room() {
   const { id } = useParams();
-  console.log(id);
+  const [renderModal, setRenderModal] = useState(false);
+
+  const makeTheModalAppear = () => {
+    setRenderModal(!renderModal);
+  };
+
   return (
     <>
       <Header logo={logo} />
@@ -30,13 +37,15 @@ export default function Room() {
                 <div className="slots">
                   {day.slots.map((slot) => {
                     return (
-                      <span
+                      <button
+                        type="button"
                         className={
                           slot.occupation === 'yes' ? 'reserved' : null
                         }
+                        onClick={makeTheModalAppear}
                       >
                         {slot.description}
-                      </span>
+                      </button>
                     );
                   })}
                 </div>
@@ -44,6 +53,12 @@ export default function Room() {
             );
           })}
         </Swiper>
+        {renderModal ? (
+          <ValidationModal
+            renderModal={renderModal}
+            setRenderModal={setRenderModal}
+          />
+        ) : null}
       </SRoom>
     </>
   );

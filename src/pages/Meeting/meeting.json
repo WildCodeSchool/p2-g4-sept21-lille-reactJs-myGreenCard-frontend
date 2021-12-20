@@ -1,3 +1,4 @@
+
 {
   "rooms":[
     {
@@ -8,82 +9,73 @@
       "picture" : "https://images.pexels.com/photos/260928/pexels-photo-260928.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
       "disponibility":[
         {
-          "type":"day",
           "name": "Monday",
           "slots": [
             {
-              "type":"slot",
               "id":1,
               "description":"8h-9h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":2,
               "description":"9h-10h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":3,
               "description":"10h-11h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":4,
               "description":"14h-15h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":5,
               "description":"15h-16h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":6,
               "description":"16h-17h",
-              "occupation": "yno"
+              "occupation": "no"
             }
           ]
         },
         {
-          "type":"day",
           "name": "Tuesday",
           "slots": [
             {
-              "type":"slot",
+
               "id":1,
               "description":"8h-9h",
               "occupation": "no"
             },
             {
-              "type":"slot",
+
               "id":2,
               "description":"9h-10h",
               "occupation": "no"
             },
             {
-              "type":"slot",
+
               "id":3,
               "description":"10h-11h",
               "occupation": "no"
             },{
-              "type":"slot",
+
               "id":4,
               "description":"14h-15h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
+
               "id":5,
               "description":"15h-16h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":6,
               "description":"16h-17h",
               "occupation": "yes"
@@ -91,40 +83,37 @@
           ]
         },
         {
-          "type":"day",
           "name": "Wednesday",
           "slots": [
             {
-              "type":"slot",
+
               "id":1,
               "description":"8h-9h",
               "occupation": "no"
             },
             {
-              "type":"slot",
+
               "id":2,
               "description":"9h-10h",
               "occupation": "no"
             },
             {
-              "type":"slot",
+
               "id":3,
               "description":"10h-11h",
               "occupation": "no"
             },{
-              "type":"slot",
+
               "id":4,
               "description":"14h-15h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":5,
               "description":"15h-16h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":6,
               "description":"16h-17h",
               "occupation": "yes"
@@ -132,40 +121,34 @@
           ]
         },
         {
-          "type":"day",
           "name": "Thursday",
           "slots": [
             {
-              "type":"slot",
               "id":1,
               "description":"8h-9h",
               "occupation": "no"
             },
             {
-              "type":"slot",
+
               "id":2,
               "description":"9h-10h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":3,
               "description":"10h-11h",
               "occupation": "no"
             },{
-              "type":"slot",
               "id":4,
               "description":"14h-15h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":5,
               "description":"15h-16h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":6,
               "description":"16h-17h",
               "occupation": "yes"
@@ -173,40 +156,33 @@
           ]
         },
         {
-          "type":"day",
           "name": "Friday",
           "slots": [
             {
-              "type":"slot",
               "id":1,
               "description":"8h-9h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":2,
               "description":"9h-10h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":3,
               "description":"10h-11h",
               "occupation": "no"
             },{
-              "type":"slot",
               "id":4,
               "description":"14h-15h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":5,
               "description":"15h-16h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":6,
               "description":"16h-17h",
               "occupation": "yes"
@@ -214,40 +190,33 @@
           ]
         },
         {
-          "type":"day",
           "name": "Saturday",
           "slots": [
             {
-              "type":"slot",
               "id":1,
               "description":"8h-9h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":2,
               "description":"9h-10h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":3,
               "description":"10h-11h",
               "occupation": "no"
             },{
-              "type":"slot",
               "id":4,
               "description":"14h-15h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":5,
               "description":"15h-16h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":6,
               "description":"16h-17h",
               "occupation": "yes"
@@ -255,40 +224,33 @@
           ]
         },
         {
-          "type":"day",
           "name": "Sunday",
           "slots": [
             {
-              "type":"slot",
               "id":1,
               "description":"8h-9h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":2,
               "description":"9h-10h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":3,
               "description":"10h-11h",
               "occupation": "no"
             },{
-              "type":"slot",
               "id":4,
               "description":"14h-15h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":5,
               "description":"15h-16h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":6,
               "description":"16h-17h",
               "occupation": "yes"
@@ -305,41 +267,34 @@
       "picture" : "https://images.pexels.com/photos/1181304/pexels-photo-1181304.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
       "disponibility":[
         {
-          "type":"day",
           "name": "Monday",
           "slots": [
             {
-              "type":"slot",
               "id":1,
               "description":"8h-9h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":2,
               "description":"9h-10h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":3,
               "description":"10h-11h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":4,
               "description":"14h-15h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":5,
               "description":"15h-16h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":6,
               "description":"16h-17h",
               "occupation": "yes"
@@ -347,40 +302,33 @@
           ]
         },
         {
-          "type":"day",
           "name": "Tuesday",
           "slots": [
             {
-              "type":"slot",
               "id":1,
               "description":"8h-9h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":2,
               "description":"9h-10h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":3,
               "description":"10h-11h",
               "occupation": "no"
             },{
-              "type":"slot",
               "id":4,
               "description":"14h-15h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":5,
               "description":"15h-16h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":6,
               "description":"16h-17h",
               "occupation": "yes"
@@ -388,40 +336,33 @@
           ]
         },
         {
-          "type":"day",
           "name": "Wednesday",
           "slots": [
             {
-              "type":"slot",
               "id":1,
               "description":"8h-9h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":2,
               "description":"9h-10h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":3,
               "description":"10h-11h",
               "occupation": "no"
             },{
-              "type":"slot",
               "id":4,
               "description":"14h-15h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":5,
               "description":"15h-16h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":6,
               "description":"16h-17h",
               "occupation": "yes"
@@ -429,40 +370,33 @@
           ]
         },
         {
-          "type":"day",
           "name": "Thursday",
           "slots": [
             {
-              "type":"slot",
               "id":1,
               "description":"8h-9h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":2,
               "description":"9h-10h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":3,
               "description":"10h-11h",
               "occupation": "no"
             },{
-              "type":"slot",
               "id":4,
               "description":"14h-15h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":5,
               "description":"15h-16h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":6,
               "description":"16h-17h",
               "occupation": "yes"
@@ -470,40 +404,33 @@
           ]
         },
         {
-          "type":"day",
           "name": "Friday",
           "slots": [
             {
-              "type":"slot",
               "id":1,
               "description":"8h-9h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":2,
               "description":"9h-10h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":3,
               "description":"10h-11h",
               "occupation": "no"
             },{
-              "type":"slot",
               "id":4,
               "description":"14h-15h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":5,
               "description":"15h-16h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":6,
               "description":"16h-17h",
               "occupation": "yes"
@@ -511,40 +438,33 @@
           ]
         },
         {
-          "type":"day",
           "name": "Saturday",
           "slots": [
             {
-              "type":"slot",
               "id":1,
               "description":"8h-9h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":2,
               "description":"9h-10h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":3,
               "description":"10h-11h",
               "occupation": "no"
             },{
-              "type":"slot",
               "id":4,
               "description":"14h-15h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":5,
               "description":"15h-16h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":6,
               "description":"16h-17h",
               "occupation": "yes"
@@ -552,40 +472,33 @@
           ]
         },
         {
-          "type":"day",
           "name": "Sunday",
           "slots": [
             {
-              "type":"slot",
               "id":1,
               "description":"8h-9h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":2,
               "description":"9h-10h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":3,
               "description":"10h-11h",
               "occupation": "no"
             },{
-              "type":"slot",
               "id":4,
               "description":"14h-15h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":5,
               "description":"15h-16h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":6,
               "description":"16h-17h",
               "occupation": "yes"
@@ -602,41 +515,34 @@
       "picture" : "https://images.pexels.com/photos/416320/pexels-photo-416320.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
       "disponibility":[
         {
-          "type":"day",
           "name": "Monday",
           "slots": [
             {
-              "type":"slot",
               "id":1,
               "description":"8h-9h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":2,
               "description":"9h-10h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":3,
               "description":"10h-11h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":4,
               "description":"14h-15h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":5,
               "description":"15h-16h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":6,
               "description":"16h-17h",
               "occupation": "yes"
@@ -644,40 +550,33 @@
           ]
         },
         {
-          "type":"day",
           "name": "Tuesday",
           "slots": [
             {
-              "type":"slot",
               "id":1,
               "description":"8h-9h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":2,
               "description":"9h-10h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":3,
               "description":"10h-11h",
               "occupation": "no"
             },{
-              "type":"slot",
               "id":4,
               "description":"14h-15h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":5,
               "description":"15h-16h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":6,
               "description":"16h-17h",
               "occupation": "yes"
@@ -685,40 +584,33 @@
           ]
         },
         {
-          "type":"day",
           "name": "Wednesday",
           "slots": [
             {
-              "type":"slot",
               "id":1,
               "description":"8h-9h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":2,
               "description":"9h-10h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":3,
               "description":"10h-11h",
               "occupation": "no"
             },{
-              "type":"slot",
               "id":4,
               "description":"14h-15h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":5,
               "description":"15h-16h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":6,
               "description":"16h-17h",
               "occupation": "yes"
@@ -726,40 +618,33 @@
           ]
         },
         {
-          "type":"day",
           "name": "Thursday",
           "slots": [
             {
-              "type":"slot",
               "id":1,
               "description":"8h-9h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":2,
               "description":"9h-10h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":3,
               "description":"10h-11h",
               "occupation": "no"
             },{
-              "type":"slot",
               "id":4,
               "description":"14h-15h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":5,
               "description":"15h-16h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":6,
               "description":"16h-17h",
               "occupation": "yes"
@@ -767,40 +652,33 @@
           ]
         },
         {
-          "type":"day",
           "name": "Friday",
           "slots": [
             {
-              "type":"slot",
               "id":1,
               "description":"8h-9h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":2,
               "description":"9h-10h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":3,
               "description":"10h-11h",
               "occupation": "no"
             },{
-              "type":"slot",
               "id":4,
               "description":"14h-15h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":5,
               "description":"15h-16h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":6,
               "description":"16h-17h",
               "occupation": "yes"
@@ -808,40 +686,33 @@
           ]
         },
         {
-          "type":"day",
           "name": "Saturday",
           "slots": [
             {
-              "type":"slot",
               "id":1,
               "description":"8h-9h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":2,
               "description":"9h-10h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":3,
               "description":"10h-11h",
               "occupation": "no"
             },{
-              "type":"slot",
               "id":4,
               "description":"14h-15h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":5,
               "description":"15h-16h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":6,
               "description":"16h-17h",
               "occupation": "yes"
@@ -849,40 +720,33 @@
           ]
         },
         {
-          "type":"day",
           "name": "Sunday",
           "slots": [
             {
-              "type":"slot",
               "id":1,
               "description":"8h-9h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":2,
               "description":"9h-10h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":3,
               "description":"10h-11h",
               "occupation": "no"
             },{
-              "type":"slot",
               "id":4,
               "description":"14h-15h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":5,
               "description":"15h-16h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":6,
               "description":"16h-17h",
               "occupation": "yes"
@@ -899,41 +763,34 @@
       "picture" : "https://images.pexels.com/photos/2976970/pexels-photo-2976970.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
       "disponibility":[
         {
-          "type":"day",
           "name": "Monday",
           "slots": [
             {
-              "type":"slot",
               "id":1,
               "description":"8h-9h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":2,
               "description":"9h-10h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":3,
               "description":"10h-11h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":4,
               "description":"14h-15h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":5,
               "description":"15h-16h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":6,
               "description":"16h-17h",
               "occupation": "yes"
@@ -941,40 +798,33 @@
           ]
         },
         {
-          "type":"day",
           "name": "Tuesday",
           "slots": [
             {
-              "type":"slot",
               "id":1,
               "description":"8h-9h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":2,
               "description":"9h-10h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":3,
               "description":"10h-11h",
               "occupation": "no"
             },{
-              "type":"slot",
               "id":4,
               "description":"14h-15h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":5,
               "description":"15h-16h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":6,
               "description":"16h-17h",
               "occupation": "yes"
@@ -982,40 +832,33 @@
           ]
         },
         {
-          "type":"day",
           "name": "Wednesday",
           "slots": [
             {
-              "type":"slot",
               "id":1,
               "description":"8h-9h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":2,
               "description":"9h-10h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":3,
               "description":"10h-11h",
               "occupation": "no"
             },{
-              "type":"slot",
               "id":4,
               "description":"14h-15h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":5,
               "description":"15h-16h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":6,
               "description":"16h-17h",
               "occupation": "yes"
@@ -1023,40 +866,33 @@
           ]
         },
         {
-          "type":"day",
           "name": "Thursday",
           "slots": [
             {
-              "type":"slot",
               "id":1,
               "description":"8h-9h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":2,
               "description":"9h-10h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":3,
               "description":"10h-11h",
               "occupation": "no"
             },{
-              "type":"slot",
               "id":4,
               "description":"14h-15h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":5,
               "description":"15h-16h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":6,
               "description":"16h-17h",
               "occupation": "yes"
@@ -1064,40 +900,33 @@
           ]
         },
         {
-          "type":"day",
           "name": "Friday",
           "slots": [
             {
-              "type":"slot",
               "id":1,
               "description":"8h-9h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":2,
               "description":"9h-10h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":3,
               "description":"10h-11h",
               "occupation": "no"
             },{
-              "type":"slot",
               "id":4,
               "description":"14h-15h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":5,
               "description":"15h-16h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":6,
               "description":"16h-17h",
               "occupation": "yes"
@@ -1105,40 +934,33 @@
           ]
         },
         {
-          "type":"day",
           "name": "Saturday",
           "slots": [
             {
-              "type":"slot",
               "id":1,
               "description":"8h-9h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":2,
               "description":"9h-10h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":3,
               "description":"10h-11h",
               "occupation": "no"
             },{
-              "type":"slot",
               "id":4,
               "description":"14h-15h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":5,
               "description":"15h-16h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":6,
               "description":"16h-17h",
               "occupation": "yes"
@@ -1146,40 +968,33 @@
           ]
         },
         {
-          "type":"day",
           "name": "Sunday",
           "slots": [
             {
-              "type":"slot",
               "id":1,
               "description":"8h-9h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":2,
               "description":"9h-10h",
               "occupation": "no"
             },
             {
-              "type":"slot",
               "id":3,
               "description":"10h-11h",
               "occupation": "no"
             },{
-              "type":"slot",
               "id":4,
               "description":"14h-15h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":5,
               "description":"15h-16h",
               "occupation": "yes"
             },
             {
-              "type":"slot",
               "id":6,
               "description":"16h-17h",
               "occupation": "yes"

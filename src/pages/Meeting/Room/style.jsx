@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 const SRoom = styled.main`
-  margin: 50px 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,8 +40,8 @@ const SRoom = styled.main`
         align-items: center;
         flex-direction: column;
         flex-wrap: wrap;
-        span {
-          font-size: 1.2rem;
+        button {
+          font-size: 1rem;
           width: 80px;
           background: #ececec;
           margin: 15px;

@@ -8,6 +8,16 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     color:black;
   }
+  button{
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    outline: inherit;
+  }
 `;
 
 export default GlobalStyle;
