@@ -13,17 +13,16 @@ function FoodModal() {
     <>
       {renderModal ? (
         <SFoodModal>
-          <MainButton
-            clickCallback={() => {
-              hideTheModal();
-            }}
-            content="X"
-          />
           <div>
             <h2>Choisir ce plat </h2>
           </div>
           <MainButton content="Valider" />
-          <MainButton content="Changer" />
+          <MainButton
+            clickCallback={() => {
+              hideTheModal();
+            }}
+            content="Changer"
+          />
         </SFoodModal>
       ) : (
         ''
