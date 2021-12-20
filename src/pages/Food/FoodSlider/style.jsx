@@ -29,7 +29,7 @@ const SFoodSlider = styled.section`
     object-fit: cover;
   }
   .typeName {
-    margin-top: 35%;
+    margin-top: 60%;
     font-size: 20px;
     font-weight: 600;
     align-items: center;

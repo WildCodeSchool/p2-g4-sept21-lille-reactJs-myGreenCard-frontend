@@ -1,10 +1,18 @@
-import MainButton from 'components/MainButton';
+import { useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import FoodSlider from './FoodSlider/index';
+import FoodModal from './FoodModal';
 import SFood from './style';
 import 'react-tabs/style/react-tabs.css';
+import MainButton from '../../components/MainButton';
 
 export default function Food() {
+  const [renderModal, setRenderModal] = useState(false);
+
+  const makeTheModalAppear = () => {
+    setRenderModal(!renderModal);
+  };
+
   const plats = [
     {
       name: 'Tartiflette',
@@ -93,6 +101,7 @@ export default function Food() {
     <SFood>
       <h1 className="menuOfDay"> Le menu du jour</h1>
       <section className="choiceMenu">
+        {renderModal ? <FoodModal /> : null}
         <Tabs>
           <TabList>
             <Tab>Plats</Tab>
@@ -115,7 +124,15 @@ export default function Food() {
         </Tabs>
       </section>
 
-      <MainButton content="Réserver" />
+      <MainButton
+        content="Réserver"
+        clickCallback={() => {
+          makeTheModalAppear();
+        }}
+      />
+      <button type="button" onClick={makeTheModalAppear}>
+        TOTO
+      </button>
     </SFood>
   );
 }
