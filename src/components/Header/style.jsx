@@ -4,7 +4,7 @@ const SHeader = styled.header`
   height: 75px;
   width: 100vw;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   position: relative;
   &::after {
@@ -21,6 +21,10 @@ const SHeader = styled.header`
   img {
     height: 60px;
     width: auto;
+  }
+  .logo {
+    width: 40vw;
+    height: auto;
   }
 `;
 
