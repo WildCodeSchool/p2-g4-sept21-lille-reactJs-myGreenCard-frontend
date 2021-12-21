@@ -19,6 +19,14 @@ const SLoggingPage = styled.section`
     border: none;
     border-bottom: 1px solid black;
     width: 80vw;
+  button {
+    &.dark {
+      background: white;
+      span {
+        background: black;
+        left: 38px;
+      }
+    }
   }
 `;
 

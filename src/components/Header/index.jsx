@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import UserAvatar from 'components/UserAvatar';
 import { Link } from 'react-router-dom';
+import UserAvatar from '../UserAvatar';
 import SHeader from './style';
 import home from '../../assets/Img/home.svg';
 
