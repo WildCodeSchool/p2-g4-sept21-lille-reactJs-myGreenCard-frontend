@@ -6,14 +6,25 @@ body{
   background: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.text};
 }
-button{
-  border : none;
-  background: none;
-  cursor: pointer;
-  color: white;
+
 }
-h1,h2,h3,p,span{
+p,h1,h2,h3{
   font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color:black;
+}
+
+button{
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
 }
 
 `;
