@@ -23,10 +23,15 @@ const FoodSlider = ({ typeOfFood }) => {
           <SwiperSlide className="swiperComponent">
             <SFoodSlider>
               <div className="imgContain">
-                <img className="typeImg" src={type.img} alt="" />
+                <img
+                  className="typeImg"
+                  src={type.picture}
+                  alt={`${type.name}`}
+                />
               </div>
               <p className="typeName">{type.name}</p>
               <p className="price">{type.price}</p>
+              <span>{type.calories}</span>
             </SFoodSlider>
           </SwiperSlide>
         </>
