@@ -11,7 +11,7 @@ function FoodModal() {
 
   return (
     <>
-      {renderModal ? (
+      {renderModal && (
         <SFoodModal>
           <div>
             <h2>Choisir ce plat </h2>
@@ -24,8 +24,6 @@ function FoodModal() {
             content="Changer"
           />
         </SFoodModal>
-      ) : (
-        ''
       )}
     </>
   );
