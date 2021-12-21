@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import UserProfile from 'components/UserProfile';
+import UserAvatar from 'components/UserAvatar';
 import { Link } from 'react-router-dom';
 import SHeader from './style';
 import home from '../../assets/Img/home.svg';
@@ -12,7 +12,7 @@ export default function Header({ logo }) {
       </Link>
       <img className="logo" src={logo} alt="logo" />
       <Link to="/profilPage">
-        <UserProfile />
+        <UserAvatar size="45px" />
       </Link>
     </SHeader>
   );

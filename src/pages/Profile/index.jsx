@@ -1,5 +1,6 @@
 import Header from 'components/Header';
 import { Link } from 'react-router-dom';
+import UserAvatar from 'components/UserAvatar';
 import SProfilPage from './style';
 import apple from '../../assets/Img/apple.png';
 import samsung from '../../assets/Img/samsung.png';
@@ -14,18 +15,21 @@ const solde = '37,64€';
 export default function ProfilPage() {
   return (
     <>
-      <Header logo={logo} />
+      <Header logo={logo} display="none" />
       <SProfilPage>
+        <article>
+          <UserAvatar />
+        </article>
         <article className="solde">
           <h3>Solde : {solde} </h3>
           <div className="recharge">
-            <button type="button">recharger</button>
-            <button type="button">donner</button>
+            <button type="button">Recharger</button>
+            <button type="button">Donner</button>
           </div>
           <div className="paimentLogo">
-            <img src={cb} alt="apple wallet" />
-            <img src={applePay} alt="apple wallet" />
-            <img src={larrondi} alt="apple wallet" />
+            <img src={cb} alt="CB" />
+            <img src={applePay} alt="apple pay" />
+            <img src={larrondi} alt="l&#039;arrondi" />
           </div>
         </article>
         <article className="badge">
@@ -34,7 +38,7 @@ export default function ProfilPage() {
             <div className="wallet">
               <a
                 target="_blank"
-                href="https://meetflo.zendesk.com/hc/en-us/articles/230425728-Privacy-Policies"
+                href="https://www.apple.com/apple-card/"
                 rel="noreferrer"
               >
                 <img src={apple} alt="apple wallet" />
@@ -55,7 +59,7 @@ export default function ProfilPage() {
           </div>
         </article>
         <article className="resumeF">
-          <h2>Ma commande</h2>
+          <h2>Mes commandes</h2>
           <p>Recapitulatif commande en cours ...</p>
         </article>
         <article className="resumeL">
