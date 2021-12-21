@@ -9,7 +9,7 @@ body{
 
 }
 p,h1,h2,h3{
-  font-family: Carmen;
+  font-family: 'Montserrat', sans-serif;
 }
 
 a {
@@ -25,7 +25,6 @@ button{
   font-family: inherit;
   font-size: inherit;
   cursor: pointer;
-  outline: inherit;
 }
 
 `;
