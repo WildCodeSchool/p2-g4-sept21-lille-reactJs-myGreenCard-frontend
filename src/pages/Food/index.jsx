@@ -6,104 +6,24 @@ import SFood from './style';
 import 'react-tabs/style/react-tabs.css';
 import MainButton from '../../components/MainButton';
 
+const data = require('./food.json');
+
 export default function Food() {
   const [renderModal, setRenderModal] = useState(false);
+
+  const dataLunch = data.food[0].lunch;
+  const dataDrinks = data.food[0].drinks;
+  const dataDesserts = data.food[0].desserts;
 
   const makeTheModalAppear = () => {
     setRenderModal(!renderModal);
   };
 
-  const plats = [
-    {
-      name: 'Tartiflette',
-      price: '4€50',
-      img: 'https://files.meilleurduchef.com/mdc/photo/recette/tartiflette/tartiflette-640.jpg',
-    },
-    {
-      name: 'Tartiflette',
-      price: '4€50',
-      img: 'https://files.meilleurduchef.com/mdc/photo/recette/tartiflette/tartiflette-640.jpg',
-    },
-    {
-      name: 'Tartiflette',
-      price: '4€50',
-      img: 'https://files.meilleurduchef.com/mdc/photo/recette/tartiflette/tartiflette-640.jpg',
-    },
-    {
-      name: 'Tartiflette',
-      price: '4€50',
-      img: 'https://files.meilleurduchef.com/mdc/photo/recette/tartiflette/tartiflette-640.jpg',
-    },
-    {
-      name: 'Tartiflette',
-      price: '4€50',
-      img: 'https://files.meilleurduchef.com/mdc/photo/recette/tartiflette/tartiflette-640.jpg',
-    },
-  ];
-
-  const desserts = [
-    {
-      name: 'Tiramisu',
-      price: '5€',
-      img: 'https://media.houra.fr/images/widget/recette/gd_recette_tiramisu.jpg',
-    },
-    {
-      name: 'Tiramisu',
-      price: '5€',
-      img: 'https://media.houra.fr/images/widget/recette/gd_recette_tiramisu.jpg',
-    },
-    {
-      name: 'Tiramisu',
-      price: '5€',
-      img: 'https://media.houra.fr/images/widget/recette/gd_recette_tiramisu.jpg',
-    },
-    {
-      name: 'Tiramisu',
-      price: '5€',
-      img: 'https://media.houra.fr/images/widget/recette/gd_recette_tiramisu.jpg',
-    },
-    {
-      name: 'Tiramisu',
-      price: '5€',
-      img: 'https://media.houra.fr/images/widget/recette/gd_recette_tiramisu.jpg',
-    },
-  ];
-
-  const drinks = [
-    {
-      name: 'Coca zero',
-      price: '2€50',
-      img: 'https://www.lsa-conso.fr/mediatheque/7/4/4/000189447_5.jpg',
-    },
-    {
-      name: 'Coca zero',
-      price: '2€50',
-      img: 'https://www.lsa-conso.fr/mediatheque/7/4/4/000189447_5.jpg',
-    },
-    {
-      name: 'Coca zero',
-      price: '2€50',
-      img: 'https://www.lsa-conso.fr/mediatheque/7/4/4/000189447_5.jpg',
-    },
-    {
-      name: 'Coca zero',
-      price: '2€50',
-      img: 'https://www.lsa-conso.fr/mediatheque/7/4/4/000189447_5.jpg',
-    },
-    {
-      name: 'Coca zero',
-      price: '2€50',
-      img: 'https://www.lsa-conso.fr/mediatheque/7/4/4/000189447_5.jpg',
-    },
-  ];
-
-  console.log(renderModal);
-
   return (
     <SFood>
       <h1 className="menuOfDay"> Le menu du jour</h1>
       <section className="choiceMenu">
-        {renderModal ? <FoodModal /> : ''}
+        {renderModal && <FoodModal />}
         <Tabs>
           <TabList>
             <Tab>Plats</Tab>
@@ -112,13 +32,13 @@ export default function Food() {
           </TabList>
 
           <TabPanel>
-            <FoodSlider typeOfFood={plats} />
+            <FoodSlider typeOfFood={dataLunch} />
           </TabPanel>
           <TabPanel>
-            <FoodSlider typeOfFood={desserts} />
+            <FoodSlider typeOfFood={dataDesserts} />
           </TabPanel>
           <TabPanel>
-            <FoodSlider typeOfFood={drinks} />
+            <FoodSlider typeOfFood={dataDrinks} />
           </TabPanel>
         </Tabs>
       </section>
