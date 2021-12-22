@@ -4,16 +4,20 @@ import SValidationPopup from './style';
 export default function ValidationPopup({
   validationPopup,
   setValidationPopup,
-  id,
+  reservation,
 }) {
   const makeTheModalAppear = () => {
     setValidationPopup(!validationPopup);
   };
+  console.log(reservation);
   return (
     <SValidationPopup>
       <div className="modalContent">
         <h2>Confirmation</h2>
-        <p>Confirmez-vous la réservation de la salle de réunion n°{id} ?</p>
+        <p>
+          Confirmez-vous la réservation de la salle de réunion n°
+          {reservation.roomId} {reservation.day} de {reservation.slot} ?
+        </p>
         <div>
           <button type="button"> Oui</button>
           <button type="button" onClick={makeTheModalAppear}>
@@ -28,11 +32,15 @@ export default function ValidationPopup({
 ValidationPopup.propTypes = {
   validationPopup: propTypes.bool,
   setValidationPopup: propTypes.func,
-  id: propTypes.number,
+  reservation: propTypes.shape({
+    roomId: propTypes.string,
+    day: propTypes.string,
+    slot: propTypes.string,
+  }),
 };
 
 ValidationPopup.defaultProps = {
   validationPopup: false,
   setValidationPopup: () => {},
-  id: 1,
+  reservation: null,
 };
