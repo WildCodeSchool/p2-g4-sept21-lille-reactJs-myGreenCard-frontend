@@ -13,6 +13,7 @@ import Supplies from './pages/Supplies';
 import LostCard from './pages/LostCard';
 import Room from './pages/Meeting/Room';
 import ProfilPage from './pages/Profile';
+import FoodProfile from './pages/Food/FoodProfile';
 
 function App() {
   const [theme, setTheme] = useState('light');
@@ -32,6 +33,7 @@ function App() {
           />
           <Route path="EazyCard" element={<EazyCard />} />
           <Route path="Food" element={<Food />} />
+          <Route path="Food/Profile" element={<FoodProfile />} />
           <Route path="Office" element={<Office />} />
           <Route path="meetingRooms" element={<Meeting />} />
           <Route path="meetingRooms/:id" element={<Room />} />
