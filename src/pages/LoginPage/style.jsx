@@ -94,6 +94,10 @@ const SLogingPage = styled.section`
     border-bottom: 1px solid black;
     width: 75vw;
   }
+  textarea:focus,
+  input:focus {
+    outline: none;
+  }
   a {
     margin-top: 7vh;
   }

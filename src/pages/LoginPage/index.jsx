@@ -8,18 +8,29 @@ import Tabs from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import { useState } from 'react';
 import logo from '../../assets/Img/easyApp.png';
+import logoDark from '../../assets/Img/easyAppDark.png';
 import SLogingPage from './style';
 import ToggleButton from '../../components/ToggleButton';
 import MainButton from '../../components/MainButton';
 import nfcLight from '../../assets/Img/nfcConnectLight.gif';
+import nfcDark from '../../assets/Img/nfcConnectDark.gif';
 
 export default function LoginPage({ theme, setTheme }) {
   const isDarkTheme = theme === 'dark';
   const toggleTheme = () => {
     return setTheme(isDarkTheme ? 'light' : 'dark');
   };
-  const [value, setValue] = useState('1');
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+  });
+  const HandleChangeFormData = (e) => {
+    const newData = { ...formData };
+    newData[e.target.name] = e.target.value;
+    setFormData(newData);
+  };
 
+  const [value, setValue] = useState('1');
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -37,7 +48,7 @@ export default function LoginPage({ theme, setTheme }) {
             />
             <p>Dark</p>
           </div>
-          <img src={logo} alt="homeIcon" />
+          <img src={isDarkTheme ? logoDark : logo} alt="homeIcon" />
           <div className="UserCard">
             <UserAvatar size="125px" border="none" />
           </div>
@@ -50,7 +61,7 @@ export default function LoginPage({ theme, setTheme }) {
             TabIndicatorProps={{
               style: {
                 height: '3px',
-                backgroundColor: 'black',
+                backgroundColor: isDarkTheme ? 'white' : 'black',
                 width: '27vw',
               },
             }}
@@ -62,10 +73,21 @@ export default function LoginPage({ theme, setTheme }) {
         <TabPanel value="1">
           <form>
             <p>Email</p>
-            <input type="email" />
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={HandleChangeFormData}
+            />
             <p>Mot de passe</p>
-            <input type="password" />
+            <input
+              type="password"
+              name="password"
+              value={formData.password}
+              onChange={HandleChangeFormData}
+            />
           </form>
+
           <p>Mot de passe oublié</p>
 
           <Link to="/home">
@@ -73,7 +95,7 @@ export default function LoginPage({ theme, setTheme }) {
           </Link>
         </TabPanel>
         <TabPanel value="2">
-          <img src={nfcLight} alt="nfc" />
+          <img src={isDarkTheme ? nfcDark : nfcLight} alt="nfc" />
         </TabPanel>
       </TabContext>
     </SLogingPage>
