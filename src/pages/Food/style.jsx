@@ -53,7 +53,7 @@ const SFood = styled.main`
     background-color: #eeeded;
   }
   .swiper-slide .swiper-slide-active {
-    width: 100px !important;
+    width: 100px;
   }
 `;
 

@@ -97,7 +97,6 @@ function FoodProfile() {
           {allergies.map((allergie) => (
             <li>
               <img src={allergie.icon} alt={allergie.name} />
-              <p>{allergie.name}</p>
             </li>
           ))}
         </FoodProfileList>
@@ -107,7 +106,6 @@ function FoodProfile() {
           {preferences.map((preference) => (
             <li>
               <img src={preference.icon} alt={preference.name} />
-              <p>{preference.name}</p>
             </li>
           ))}
         </FoodProfileList>
