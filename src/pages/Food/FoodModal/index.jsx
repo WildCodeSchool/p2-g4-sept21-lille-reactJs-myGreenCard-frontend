@@ -17,7 +17,7 @@ function FoodModal({ menuElement }) {
             <h2>Votre choix </h2>
             <article>
               <div className="imgContain">
-                <img src={menuElement.picture} alt="" />
+                <img src={menuElement.picture} alt={`${menuElement.name}`} />
               </div>
               <p className="foodTitle">{menuElement.name}</p>
               <span>{menuElement.price}</span>
