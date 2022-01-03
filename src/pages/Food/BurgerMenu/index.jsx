@@ -17,7 +17,7 @@ function BurgerMenu() {
             </li>
           </li>
           <li>
-            <Link to="/Food/randomlunch">Random lunch</Link>
+            <Link to="/Food/randomLunch">Random lunch</Link>
           </li>
         </ul>
       </Menu>
