@@ -28,19 +28,19 @@ const SMenu = styled.nav`
   .bm-burger-bars {
     background: #000000;
     width: 32px;
-    height: 10% !important;
+    height: 10%;
   }
 
   .bm-cross-button {
-    height: 40px !important;
-    width: 40px !important;
+    height: 40px;
+    width: 40px;
     margin-right: 30px;
   }
 
   .bm-cross {
     position: absolute;
     background: #161616;
-    height: 40px !important;
+    height: 40px;
   }
 
   .bm-menu-wrap {
@@ -59,7 +59,7 @@ const SMenu = styled.nav`
   }
 
   .bm-item-list {
-    height: 600px !important;
+    height: 600px;
     color: #fff;
     padding: 0.8em;
   }

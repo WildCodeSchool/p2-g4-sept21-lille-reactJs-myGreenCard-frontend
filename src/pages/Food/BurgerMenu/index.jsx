@@ -8,38 +8,22 @@ function BurgerMenu() {
       <Menu>
         <ul>
           <li>
-            <Link
-              to="/"
-              className="home"
-              style={{ color: 'inherit', textDecoration: 'inherit' }}
-            >
+            <Link to="/" className="home">
               Accueil
             </Link>
           </li>
           <li>
-            <Link
-              to="/Food"
-              className="home"
-              style={{ color: 'inherit', textDecoration: 'inherit' }}
-            >
+            <Link to="/Food" className="home">
               Menu du jour
             </Link>
             <li>
-              <Link
-                to="/Food/Profile"
-                className="home"
-                style={{ color: 'inherit', textDecoration: 'inherit' }}
-              >
+              <Link to="/Food/Profile" className="home">
                 Profil alimentaire
               </Link>
             </li>
           </li>
           <li>
-            <Link
-              to="/Food/randomlunch"
-              className="home"
-              style={{ color: 'inherit', textDecoration: 'inherit' }}
-            >
+            <Link to="/Food/randomlunch" className="home">
               Random lunch
             </Link>
           </li>
