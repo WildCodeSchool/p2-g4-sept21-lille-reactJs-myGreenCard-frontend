@@ -8,24 +8,16 @@ function BurgerMenu() {
       <Menu>
         <ul>
           <li>
-            <Link to="/" className="home">
-              Accueil
-            </Link>
+            <Link to="/">Accueil</Link>
           </li>
           <li>
-            <Link to="/Food" className="home">
-              Menu du jour
-            </Link>
+            <Link to="/Food">Menu du jour</Link>
             <li>
-              <Link to="/Food/Profile" className="home">
-                Profil alimentaire
-              </Link>
+              <Link to="/Food/Profile">Profil alimentaire</Link>
             </li>
           </li>
           <li>
-            <Link to="/Food/randomlunch" className="home">
-              Random lunch
-            </Link>
+            <Link to="/Food/randomlunch">Random lunch</Link>
           </li>
         </ul>
       </Menu>
