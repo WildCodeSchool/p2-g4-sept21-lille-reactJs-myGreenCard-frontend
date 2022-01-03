@@ -1,11 +1,18 @@
 import styled from 'styled-components';
 
 const SHome = styled.section`
+ button {
+    &.dark {
+      background: white;
+      span {
+        background: black;
+        left: 38px;
+      }
+    }
+  }
+  margin: 1.75rem;
 
-margin: 1.75rem;
-
-article {
-    height: 200px;
+  article {
     width: 80vw;
     margin: 20px 0 10px 0px;
     border-radius: 10px;
@@ -16,24 +23,25 @@ article {
     flex-direction: column;
     justify-content: space-between;
   }
+  img {
+  height: 140px;
+  object-fit:contain;
+  }
   .menu {
     height: 180px;
     font-weight: bold;
   }
   .meal {
     height: 30px;
-    width: 80vw;
   }
   .mealList {
     font-weight: normal;
     display: flex;
-    flex-flow: raw;
     height: 100px;
   }
   .description {
     list-style: none;
     width: 60vw;
-    text-align: left;
   }
  
   .dishes {
@@ -43,6 +51,7 @@ article {
     height: 80px;
     width: 50px;
     justify-content: space-between;
+
     img {
       border-radius: 45px;
       object-fit: cover;
@@ -56,10 +65,6 @@ article {
     text-decoration: underline;
   }
 
-
-
-  //
-
   .office {  
     display: flex;
     flex-wrap: wrap;
@@ -67,113 +72,71 @@ article {
     height:150px;
   }
   .reservation {
-    height: 50px;
     width: 40vw;
   }
-  /*.officeReservation {
-    font-weight: normal;
-    display: flex;
-    flex-flow: raw;
-    height: 170px;
-  }*/
   }
   .chooseYourOffice {
     font-weight: normal;
     height: 100px;
     width:30vw;
-
   }
-
-  .officePicture {
-    height: 150px;
-    width: 45vw;
-
-    img {
-      height: 150px;
-      width: 40vw;
-      border-radius: 15px;
-     
-    }
-  }
-
-//
-.meeting {
+  .meeting {
   display: flex;
     flex-wrap: wrap;
     font-weight: bold;
-    height:150px;
-}
-.roomReservation {
-  height: 50px;
-    width: 40vw;
-}
-.meetingReservation {
+    height: 150px;
+  }
+  .roomReservation {
+  width: 40vw;
+  }
+  .meetingReservation {
   font-weight: normal;
     height: 100px;
     width:30vw;
-
-}
-  .meetingRoomPicture {
-   
-    height: 150px;
-    width:40vw;
-    
-    img {
-      height: 150px;
-      width: 40vw;
-      
-    }
   }
-//
-.furnitures {
+  .furnitures {
   display: flex;
   flex-wrap: wrap;
   font-weight: bold;
   height: 150px;
-}
-.commande {
+  }
+  .order {
   height: 50px;
   width: 40vw;
-}
-.shop {
+  }
+  .shop {
   font-weight: normal;
     height: 100px;
     width:30vw;
-}
-  .furniture 
-    height: 140px;
-    width: 40vw;
-    img {
+  }
+  .picturefurniture {
+  height: 140px;
+  width: 40vw;
+  img {
       height: 140px;
       width: 40vw;
     }
   }
-//
-.lostcard {
+  .lostcard {
   display: flex;
   flex-wrap: wrap;
   font-weight: bold;
   height: 150px;
-
-}
-.card {
+  }
+  .card {
   height: 40px;
-  width: 40vw;
-}
-.unactivCard { 
+  width: 20vw;
+  }
+  .unactivCard { 
    font-weight: normal;
-    height: 110px;
-    width:30vw;}
-
-.pictureCard  {
-    
-    height: 80px;
-    width: 40px;
+    height: 100px;
+    width:25vw;
+  }
+  .pictureCard  {   
     img {
-      object-fit: contain;
-     
-    }
-
+      width: 50vw;
+      }
+  }
 
 `;
 

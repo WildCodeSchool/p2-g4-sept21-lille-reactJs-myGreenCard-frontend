@@ -1,0 +1,23 @@
+{
+  "users":
+  [
+    {"firstName":"Maxime",
+    "lastName":"Duvauchelle",
+    "job":" CEO (Chief Executive Officer)" },
+    {"firstName":"Samuel",
+      "lastName":"Sellam",
+      "job":" HR (Human Ressources)" },
+    {"firstName":"Alexandre",
+      "lastName":"Duvauchelle",
+      "job":"CPO (Chief Product Officer)" },
+    {"firstName":"Jules",
+      "lastName":"Sigal",
+      "job":" COO (Chief Operating Officer)" },
+    {"firstName":"Manon",
+      "lastName":"Dirou",
+      "job":"  Executive Assistant" },
+    {"firstName":"Pauline",
+      "lastName":"Begue",
+      "job":" Growth Hacker" }
+  ]
+}
