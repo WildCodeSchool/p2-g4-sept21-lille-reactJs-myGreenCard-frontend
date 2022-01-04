@@ -20,26 +20,25 @@ function App() {
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
       <GlobalStyles />
-      <main>
-        <Routes>
-          <Route
-            path="/"
-            element={<LoginPage setTheme={setTheme} theme={theme} />}
-          />
-          <Route
-            path="home"
-            element={<Home setTheme={setTheme} theme={theme} />}
-          />
-          <Route path="EazyCard" element={<EazyCard />} />
-          <Route path="Food" element={<Food />} />
-          <Route path="Office" element={<Office />} />
-          <Route path="meetingRooms" element={<Meeting />} />
-          <Route path="meetingRooms/:id" element={<Room />} />
-          <Route path="Supplies" element={<Supplies />} />
-          <Route path="LostCard" element={<LostCard />} />
-          <Route path="ProfilPage" element={<ProfilPage />} />
-        </Routes>
-      </main>
+
+      <Routes>
+        <Route
+          path="/"
+          element={<LoginPage setTheme={setTheme} theme={theme} />}
+        />
+        <Route
+          path="home"
+          element={<Home setTheme={setTheme} theme={theme} />}
+        />
+        <Route path="EazyCard" element={<EazyCard />} />
+        <Route path="Food" element={<Food />} />
+        <Route path="Office" element={<Office />} />
+        <Route path="meetingRooms" element={<Meeting />} />
+        <Route path="meetingRooms/:id" element={<Room />} />
+        <Route path="Supplies" element={<Supplies />} />
+        <Route path="LostCard" element={<LostCard />} />
+        <Route path="ProfilPage" element={<ProfilPage />} />
+      </Routes>
     </ThemeProvider>
   );
 }

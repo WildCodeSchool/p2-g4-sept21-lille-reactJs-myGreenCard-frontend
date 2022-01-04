@@ -1,0 +1,377 @@
+[33mcommit 2da8977f589747197a7e406038dd307008d8e43a[m[33m ([m[1;36mHEAD -> [m[1;32mMeeting[m[33m)[m
+Author: HeloiseFerla <ferla.heloise@gmail.com>
+Date:   Wed Dec 22 11:40:26 2021 +0100
+
+    Add reservation info to popupValidation
+
+[33mcommit 1f85e1f652a9f63cdf5463f2f65e925dfe469028[m[33m ([m[1;32mdev[m[33m)[m
+Merge: 3cbd793 cbc07e1
+Author: HeloiseFerla <ferla.heloise@gmail.com>
+Date:   Tue Dec 21 13:44:56 2021 +0100
+
+    Merge origin dev
+
+[33mcommit cbc07e1c032ce9c1c182c092acc2a1b5735c9878[m[33m ([m[1;31morigin/dev[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 30f68fb 3bf8992
+Author: HeloiseFerla <80771376+HeloiseFerla@users.noreply.github.com>
+Date:   Tue Dec 21 10:18:39 2021 +0100
+
+    Merge pull request #4 from WildCodeSchool/MenuDuJour
+    
+    Menu du jour
+
+[33mcommit 3bf8992389bac6797b819f9d554f8e4bf29f37ca[m[33m ([m[1;31morigin/MenuDuJour[m[33m)[m
+Merge: de9024a eafbf16
+Author: Quentin Macquart <macquart.quentin@gmail.com>
+Date:   Tue Dec 21 10:07:50 2021 +0100
+
+    Merge branch 'MenuDuJour' of github.com:WildCodeSchool/p3-g4-sept21-lille-reactJs-eazyapp-frontend into MenuDuJour
+
+[33mcommit de9024af110d5bd179d5e43ad520e4db856d6e4b[m
+Author: Quentin Macquart <macquart.quentin@gmail.com>
+Date:   Tue Dec 21 10:06:17 2021 +0100
+
+    Create a json file which has all datas we need to filter the dishes
+
+[33mcommit 80337d6864cdf30e64df4729fdbeb609b5aa93e4[m
+Author: Quentin Macquart <macquart.quentin@gmail.com>
+Date:   Tue Dec 21 10:05:26 2021 +0100
+
+    Change the slider with json file
+
+[33mcommit 5959dcb9846e98167d38474be868b36555be0b0c[m
+Author: Quentin Macquart <macquart.quentin@gmail.com>
+Date:   Tue Dec 21 10:05:00 2021 +0100
+
+    Correction of code to let the PR pass
+
+[33mcommit eafbf1679a6797eaf2435b5187ba84abe778f621[m
+Merge: 02df9aa 30f68fb
+Author: Quentin Macquart <77687596+Quentin-Macquart@users.noreply.github.com>
+Date:   Tue Dec 21 09:27:07 2021 +0100
+
+    Merge branch 'dev' into MenuDuJour
+
+[33mcommit 30f68fbfdf1073563c7523d5c3d919856890f889[m
+Merge: 0b0a12f 3a9633f
+Author: HeloiseFerla <80771376+HeloiseFerla@users.noreply.github.com>
+Date:   Mon Dec 20 17:49:56 2021 +0100
+
+    Merge pull request #8 from WildCodeSchool/meeting
+    
+    Meeting
+
+[33mcommit 3cbd793f3f00c29f130862e2d2a995840cd0df43[m
+Author: HeloiseFerla <ferla.heloise@gmail.com>
+Date:   Mon Dec 20 16:43:54 2021 +0100
+
+    Pull origin dev
+
+[33mcommit 3a9633f5fbc12a388d85cba3f5addc97ba1c6949[m[33m ([m[1;31morigin/meeting[m[33m, [m[1;32mmeeting[m[33m)[m
+Merge: ebf45bb 0b0a12f
+Author: HeloiseFerla <ferla.heloise@gmail.com>
+Date:   Mon Dec 20 16:35:18 2021 +0100
+
+    Fix conflicts
+
+[33mcommit ebf45bb65d51b21e648735a7fe4a15161eeb1829[m
+Author: HeloiseFerla <ferla.heloise@gmail.com>
+Date:   Mon Dec 20 16:13:15 2021 +0100
+
+    Change Room page structure to display modals according to states
+
+[33mcommit 1e89a9bf50933a2abc5ce5309cd4b2d41d3c22ed[m
+Author: Quentin Macquart <macquart.quentin@gmail.com>
+Date:   Mon Dec 20 15:56:31 2021 +0100
+
+    Add json files for lunch dessert and drinks
+
+[33mcommit 0b0a12f30943f22e1c859fda9041d6777746925d[m
+Merge: 968a1cc 9b9b550
+Author: HeloiseFerla <80771376+HeloiseFerla@users.noreply.github.com>
+Date:   Mon Dec 20 15:40:38 2021 +0100
+
+    Merge pull request #5 from WildCodeSchool/officePage
+    
+    Created the office page with the style
+
+[33mcommit f42241b65c1d834c4aba04f5bfa7f7977b22e5e0[m
+Merge: 0d5cad5 968a1cc
+Author: HeloiseFerla <ferla.heloise@gmail.com>
+Date:   Mon Dec 20 13:07:34 2021 +0100
+
+    Fix conflicts
+
+[33mcommit 0d5cad5797e1c1e04a6487e1fe0e85182de6b721[m
+Author: HeloiseFerla <ferla.heloise@gmail.com>
+Date:   Mon Dec 20 13:01:38 2021 +0100
+
+    Add a validation modal to confirm reservation
+
+[33mcommit 9b9b5509e153a75d0493144f73b548e076985be5[m[33m ([m[1;31morigin/officePage[m[33m)[m
+Merge: 91bb6d9 968a1cc
+Author: Othmane-Khiter <87830889+Othmane-Khiter@users.noreply.github.com>
+Date:   Mon Dec 20 12:39:02 2021 +0100
+
+    Merge branch 'dev' into officePage
+
+[33mcommit 968a1cc6015768a7f7cdac2e0a29ffab68c99ba2[m
+Merge: 7fc10f0 c233b42
+Author: HeloiseFerla <80771376+HeloiseFerla@users.noreply.github.com>
+Date:   Mon Dec 20 12:32:54 2021 +0100
+
+    Merge pull request #6 from WildCodeSchool/UserAvatar
+    
+    Changing userProfil component to userAvatar, and adding props to him …
+
+[33mcommit c233b425525877bf87cdfef6fa81b10390c0c11f[m
+Author: BBriset <briset.b@gmail.com>
+Date:   Mon Dec 20 11:29:36 2021 +0100
+
+    Changing userProfil component to userAvatar, and adding props to him to make it full reusable
+
+[33mcommit 02df9aaf4902656c6b5d432b70d77581580d57ee[m
+Author: Quentin Macquart <macquart.quentin@gmail.com>
+Date:   Mon Dec 20 10:27:28 2021 +0100
+
+    Delete toto button and empty instead of null statement
+
+[33mcommit 8ebabfc2bb42034a690b3567e98692ea08bbfc36[m
+Merge: a015e60 7fc10f0
+Author: Quentin Macquart <macquart.quentin@gmail.com>
+Date:   Mon Dec 20 10:12:24 2021 +0100
+
+    Merge branch 'dev' of github.com:WildCodeSchool/p3-g4-sept21-lille-reactJs-eazyapp-frontend into MenuDuJour
+
+[33mcommit a015e6063f1660c284a480aeb9adfeb5a249247d[m
+Author: Quentin Macquart <macquart.quentin@gmail.com>
+Date:   Mon Dec 20 10:10:50 2021 +0100
+
+    Delete empty space to validate the PR
+
+[33mcommit c3eee6367df931e01cd3310331d430c88ef9b70f[m
+Author: Quentin Macquart <macquart.quentin@gmail.com>
+Date:   Mon Dec 20 10:09:14 2021 +0100
+
+    Add modal to the Slider menu
+
+[33mcommit ab8d556e36cce4a2a3190814e0cc1170ef07e16a[m
+Author: Quentin Macquart <macquart.quentin@gmail.com>
+Date:   Mon Dec 20 10:06:26 2021 +0100
+
+    Add modal to the Slider menu
+
+[33mcommit d3a62b5171c7c5b75d13f58742ed26f22a8af9bb[m
+Author: Quentin Macquart <macquart.quentin@gmail.com>
+Date:   Mon Dec 20 10:04:17 2021 +0100
+
+    Update Food page to add a first confirmation window
+
+[33mcommit 1c2b7e1ec0ff761d4e4d90040c3e66afc263e98a[m
+Author: HeloiseFerla <ferla.heloise@gmail.com>
+Date:   Mon Dec 20 09:51:22 2021 +0100
+
+    Add users.json
+
+[33mcommit 08f4a089149a99851906165a911930cacf43dddd[m
+Author: HeloiseFerla <ferla.heloise@gmail.com>
+Date:   Mon Dec 20 09:50:55 2021 +0100
+
+    Add style on slot when reserved
+
+[33mcommit 7fc10f09b6420b6c964f243a5714eac54f9bbc2e[m
+Merge: 75e27d6 1d0d127
+Author: HeloiseFerla <80771376+HeloiseFerla@users.noreply.github.com>
+Date:   Mon Dec 20 09:30:47 2021 +0100
+
+    Merge pull request #3 from WildCodeSchool/Eazycard
+    
+    Eazycard
+
+[33mcommit 91bb6d9b854e9d53b15e4bfb752b925c1dd83abb[m
+Merge: 434f236 75e27d6
+Author: Othmane-Khiter <87830889+Othmane-Khiter@users.noreply.github.com>
+Date:   Fri Dec 17 17:09:33 2021 +0100
+
+    Merge branch 'dev' into officePage
+
+[33mcommit 1d0d1277842de673757c3a3f613c4c5d642baecd[m
+Author: BBriset <briset.b@gmail.com>
+Date:   Fri Dec 17 08:58:28 2021 +0100
+
+    Fixing empty space e tminors others evils
+
+[33mcommit 434f2362ef06359b8360d55357f5c601fcc5f11d[m
+Author: Othmane Khiter <othmane.khiter@gmail.com>
+Date:   Thu Dec 16 17:35:22 2021 +0100
+
+    Created the office page with the style
+
+[33mcommit 76f6a567d8bd77de83ab541ada1747f78abb4b6c[m
+Author: HeloiseFerla <ferla.heloise@gmail.com>
+Date:   Thu Dec 16 17:12:47 2021 +0100
+
+    Add slider to meetingRoom
+
+[33mcommit 5b89102b7ea32c9e1606ebf89b0d3507e3b7294a[m
+Merge: a6550f1 75e27d6
+Author: Quentin Macquart <macquart.quentin@gmail.com>
+Date:   Thu Dec 16 17:08:07 2021 +0100
+
+    Delete Global.jsx for Global.js
+
+[33mcommit a6550f1c86ca2c21678ecd637dc4b23d256a0a80[m
+Author: Quentin Macquart <macquart.quentin@gmail.com>
+Date:   Thu Dec 16 16:56:18 2021 +0100
+
+    Add modifications of the index.js of the Food component
+
+[33mcommit 9fe623f5d56971a66e095ceb89b51667ac1bf1b0[m
+Author: Quentin Macquart <macquart.quentin@gmail.com>
+Date:   Thu Dec 16 16:51:14 2021 +0100
+
+    Add Food page and FoodSlider and the CSS for it
+
+[33mcommit 0d75d620516fc9966c164a5fc219efe0550ea2b4[m
+Author: Quentin Macquart <macquart.quentin@gmail.com>
+Date:   Thu Dec 16 16:50:38 2021 +0100
+
+    Add Main button component for all buttons and the CSS for it
+
+[33mcommit 29520e2c5623facc981a0cc2e96d913c10c526d5[m
+Author: Quentin Macquart <macquart.quentin@gmail.com>
+Date:   Thu Dec 16 16:49:49 2021 +0100
+
+    Add changes to Global style
+
+[33mcommit 147a4dd9bd3698f14c6a74ca1dd9573cd44e1e03[m
+Author: Quentin Macquart <macquart.quentin@gmail.com>
+Date:   Thu Dec 16 16:49:11 2021 +0100
+
+    Add font Montserra on the document
+
+[33mcommit edb2cd1cb4a34688f6a3697a202902ca4fefbf52[m
+Author: Quentin Macquart <macquart.quentin@gmail.com>
+Date:   Thu Dec 16 16:48:44 2021 +0100
+
+    Download librairies
+
+[33mcommit 6e0fc295f030e5ea783303c35c758ffda346cdcf[m[33m ([m[1;31morigin/Demo[m[33m)[m
+Author: BBriset <briset.b@gmail.com>
+Date:   Thu Dec 16 16:45:48 2021 +0100
+
+    adding profilPage route and dependencies
+
+[33mcommit b2c7599a6f8b6d6626ea76befd9b2f9867e7df5a[m
+Author: BBriset <briset.b@gmail.com>
+Date:   Thu Dec 16 16:44:04 2021 +0100
+
+     adding Img assets
+
+[33mcommit e9028d37aa0add75b5b611f6d7c0c17e850fef85[m
+Author: BBriset <briset.b@gmail.com>
+Date:   Thu Dec 16 16:43:03 2021 +0100
+
+    Profile page v1
+
+[33mcommit b460d00003b0174bb68db432e6c5e01762612cd1[m
+Author: BBriset <briset.b@gmail.com>
+Date:   Thu Dec 16 16:41:44 2021 +0100
+
+    Eazycard page with nfc animation
+
+[33mcommit ebea8eba106653b6eb93d32f649694c62d2a1a46[m
+Author: BBriset <briset.b@gmail.com>
+Date:   Thu Dec 16 16:38:49 2021 +0100
+
+    Basic User avatar
+
+[33mcommit 81992fbecd75f547dd27f3ad1952b2d184a177c9[m
+Author: BBriset <briset.b@gmail.com>
+Date:   Thu Dec 16 16:35:46 2021 +0100
+
+    Build Header, links from, and styling it
+
+[33mcommit 1d98beef9fd7590f44ea2f5edb81dd2adc30d1aa[m
+Author: HeloiseFerla <ferla.heloise@gmail.com>
+Date:   Thu Dec 16 09:53:12 2021 +0100
+
+    Add meetingRooms page and link to meetingRoom
+
+[33mcommit 75e27d63f5c1985c322db00046455ecc9019ea20[m
+Merge: de6c646 4e30c45
+Author: HeloiseFerla <80771376+HeloiseFerla@users.noreply.github.com>
+Date:   Wed Dec 15 09:43:52 2021 +0100
+
+    Merge pull request #2 from WildCodeSchool/darkMode
+    
+    Add dark and light mode to Home and Login Pages
+
+[33mcommit 4e30c45788f56477125bb0f38fbf2c0cdc6b6d6c[m[33m ([m[1;31morigin/darkMode[m[33m, [m[1;32mdarkMode[m[33m)[m
+Author: HeloiseFerla <ferla.heloise@gmail.com>
+Date:   Tue Dec 14 09:50:06 2021 +0100
+
+    Add dark and light mode to Home and Login Pages
+
+[33mcommit de6c6465230bfc3b7515160252301a9104318c8a[m[33m ([m[1;31morigin/Eazycard[m[33m)[m
+Merge: cf1b784 f09241c
+Author: HeloiseFerla <80771376+HeloiseFerla@users.noreply.github.com>
+Date:   Thu Dec 9 11:17:40 2021 +0100
+
+    Merge pull request #1 from WildCodeSchool/Skeleton
+    
+    Skeleton
+
+[33mcommit f09241c9a20e7077a3cb65911ddd108dd2bffc34[m
+Author: BBriset <briset.b@gmail.com>
+Date:   Thu Dec 9 11:13:54 2021 +0100
+
+    Normalize english name
+
+[33mcommit 7d679df244e57a554923fc8f29a53db5134d6ac1[m
+Author: BBriset <briset.b@gmail.com>
+Date:   Thu Dec 9 10:32:24 2021 +0100
+
+    Renaming style files, adding header component
+
+[33mcommit d28232bcbcfcc8fca3bdaa75345afbf861d7a2ac[m
+Author: BBriset <briset.b@gmail.com>
+Date:   Thu Dec 9 10:04:42 2021 +0100
+
+    Fixing folder name
+
+[33mcommit 4546f2e5c659b911fd14e546a3dc14ba620a4e06[m
+Author: BBriset <briset.b@gmail.com>
+Date:   Wed Dec 8 16:38:18 2021 +0100
+
+    Reusable components skeleton
+
+[33mcommit 701e5d1a02fb2465d713d3fa71dae46c02cb2d9a[m
+Author: BBriset <briset.b@gmail.com>
+Date:   Wed Dec 8 15:31:25 2021 +0100
+
+    Adding Food component's skeleton
+
+[33mcommit 981a56fa4b7bec2aab787c32200dc181561b10d5[m
+Author: BBriset <briset.b@gmail.com>
+Date:   Wed Dec 8 13:51:52 2021 +0100
+
+    Building app skeleton to start working with pages, routes, and styles files
+
+[33mcommit 20310c267617900c2bdcd7a34858e26b97534cf7[m
+Author: BBriset <briset.b@gmail.com>
+Date:   Wed Dec 8 13:49:06 2021 +0100
+
+    Change the app name
+
+[33mcommit 2786b6e76127b151fc3b9db88d17f922f6b9c04f[m
+Author: BBriset <briset.b@gmail.com>
+Date:   Wed Dec 8 13:47:51 2021 +0100
+
+    Initializing packages
+
+[33mcommit cf1b7842c4946f9c0795bf1d63a9a4e34c356bed[m
+Author: Hacene Hamroune <69973331+Hacene010@users.noreply.github.com>
+Date:   Mon Dec 6 14:02:46 2021 +0100
+
+    Initial commit

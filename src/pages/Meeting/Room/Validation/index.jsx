@@ -7,20 +7,25 @@ import 'swiper/swiper.min.css';
 import 'swiper/components/navigation/navigation.min.css';
 import SwiperCore, { Navigation } from 'swiper';
 import SValidation from './style';
-import ValidationPopup from '../ValidationPopup';
+import ValidationPopup from './ValidationPopup';
 
 SwiperCore.use([Navigation]);
 const data = require('../../meeting.json');
 
 const dataRooms = data.rooms;
-export default function Validation({ setAlreadyBooked, setValidation }) {
+export default function Validation({
+  setAlreadyBooked,
+  setValidation,
+  reservation,
+  setReservation,
+  setShare,
+}) {
   const { id } = useParams();
 
   const [validationPopup, setValidationPopup] = useState(false);
-  const [reservation, setReservation] = useState({});
 
   const showValidationPopup = () => {
-    setValidationPopup(!validationPopup);
+    setValidationPopup(true);
   };
 
   const showAlreadyBooked = () => {
@@ -29,7 +34,6 @@ export default function Validation({ setAlreadyBooked, setValidation }) {
   };
 
   const handleClick = (occupation) => {
-    console.log(occupation);
     return occupation === 'yes' ? showAlreadyBooked() : showValidationPopup();
   };
 
@@ -67,13 +71,15 @@ export default function Validation({ setAlreadyBooked, setValidation }) {
           );
         })}
       </Swiper>
-      {validationPopup ? (
+      {validationPopup && (
         <ValidationPopup
           validationPopup={validationPopup}
           setValidationPopup={setValidationPopup}
+          setValidation={setValidation}
           reservation={reservation}
+          setShare={setShare}
         />
-      ) : null}
+      )}
     </SValidation>
   );
 }
@@ -81,9 +87,19 @@ export default function Validation({ setAlreadyBooked, setValidation }) {
 Validation.propTypes = {
   setAlreadyBooked: propTypes.func,
   setValidation: propTypes.func,
+  reservation: propTypes.shape({
+    roomId: propTypes.string,
+    day: propTypes.string,
+    slot: propTypes.string,
+  }),
+  setReservation: propTypes.func,
+  setShare: propTypes.func,
 };
 
 Validation.defaultProps = {
   setAlreadyBooked: () => {},
   setValidation: () => {},
+  reservation: null,
+  setReservation: () => {},
+  setShare: () => {},
 };

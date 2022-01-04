@@ -2,14 +2,21 @@ import propTypes from 'prop-types';
 import SValidationPopup from './style';
 
 export default function ValidationPopup({
-  validationPopup,
   setValidationPopup,
   reservation,
+  setValidation,
+  setShare,
 }) {
-  const makeTheModalAppear = () => {
-    setValidationPopup(!validationPopup);
+  const makeTheModalDisappear = () => {
+    setValidationPopup(false);
   };
-  console.log(reservation);
+  // It will also be necessary to store information of the reservation
+
+  const showShare = () => {
+    makeTheModalDisappear();
+    setValidation(false);
+    setShare(true);
+  };
   return (
     <SValidationPopup>
       <div className="modalContent">
@@ -19,8 +26,10 @@ export default function ValidationPopup({
           {reservation.roomId} {reservation.day} de {reservation.slot} ?
         </p>
         <div>
-          <button type="button"> Oui</button>
-          <button type="button" onClick={makeTheModalAppear}>
+          <button type="button" onClick={showShare}>
+            Oui
+          </button>
+          <button type="button" onClick={makeTheModalDisappear}>
             Non
           </button>
         </div>
@@ -30,17 +39,19 @@ export default function ValidationPopup({
 }
 
 ValidationPopup.propTypes = {
-  validationPopup: propTypes.bool,
   setValidationPopup: propTypes.func,
+  setValidation: propTypes.func,
   reservation: propTypes.shape({
     roomId: propTypes.string,
     day: propTypes.string,
     slot: propTypes.string,
   }),
+  setShare: propTypes.func,
 };
 
 ValidationPopup.defaultProps = {
-  validationPopup: false,
   setValidationPopup: () => {},
   reservation: null,
+  setShare: () => {},
+  setValidation: () => {},
 };
