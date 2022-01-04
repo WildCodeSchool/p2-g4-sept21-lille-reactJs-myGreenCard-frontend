@@ -80,7 +80,7 @@ export default function Home({ theme, setTheme }) {
               <p>Choisissez votre bureau</p>
             </div>
             <div className="officePicture">
-              <img src={Office} alt={Office} />
+              <img src={Office} alt="Bureau" />
             </div>
           </article>
         </Link>
@@ -93,7 +93,7 @@ export default function Home({ theme, setTheme }) {
               <p>Réservez votre salle de réunion</p>
             </div>
             <div className="meetingRoomPicture">
-              <img src={MeetingRoom} alt={MeetingRoom} />
+              <img src={MeetingRoom} alt="Salle de réunion" />
             </div>
           </article>
         </Link>
@@ -105,13 +105,13 @@ export default function Home({ theme, setTheme }) {
             <div className="shop">
               <p>Ajoutez les articles dont vous avez besoin</p>
             </div>
-            <div className="picturefurniture">
-              <img src={Furnitures} alt={Furnitures} />
+            <div className="pictureFurniture">
+              <img src={Furnitures} alt="Fournitures" />
             </div>
           </article>
         </Link>
         <Link to="/lostCard">
-          <article className="lostcard">
+          <article className="lostCard">
             <div className="card">
               <h2>Carte perdue</h2>
             </div>
@@ -119,7 +119,7 @@ export default function Home({ theme, setTheme }) {
               <p>Désactiver votre carte en cas de perte</p>
             </div>
             <div className="pictureCard">
-              <img src={Card} alt={Card} />
+              <img src={Card} alt="Eazypass" />
             </div>
           </article>
         </Link>
