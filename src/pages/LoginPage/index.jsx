@@ -7,13 +7,13 @@ import TabContext from '@mui/lab/TabContext';
 import Tabs from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import { useState } from 'react';
-import logo from '../../assets/Img/easyApp.png';
-import logoDark from '../../assets/Img/easyAppDark.png';
+import nfcLight from 'assets/Img/nfcConnectLight.gif';
+import nfcDark from 'assets/Img/nfcConnectDark.gif';
+import logo from 'assets/Img/easyApp.png';
+import logoDark from 'assets/Img/easyAppDark.png';
+import ToggleButton from 'components/ToggleButton';
+import MainButton from 'components/MainButton';
 import SLogingPage from './style';
-import ToggleButton from '../../components/ToggleButton';
-import MainButton from '../../components/MainButton';
-import nfcLight from '../../assets/Img/nfcConnectLight.gif';
-import nfcDark from '../../assets/Img/nfcConnectDark.gif';
 
 export default function LoginPage({ theme, setTheme }) {
   const isDarkTheme = theme === 'dark';
@@ -55,7 +55,7 @@ export default function LoginPage({ theme, setTheme }) {
           <Tabs
             variant="fullWidth"
             onChange={handleChange}
-            aria-label="Connection choice"
+            aria-label="ConnectionChoice"
             textColor="black"
             centered
             TabIndicatorProps={{

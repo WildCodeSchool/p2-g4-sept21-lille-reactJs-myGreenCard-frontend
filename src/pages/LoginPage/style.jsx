@@ -30,7 +30,6 @@ const SLogingPage = styled.section`
     height: 30vh;
     margin: -2vh 0 6vh 0;
   }
-
   .MuiBox-root {
     display: flex;
     flex-direction: column;
@@ -66,7 +65,6 @@ const SLogingPage = styled.section`
     letter-spacing: 0;
     padding: none;
   }
-
   .MuiTabPanel-root {
     display: flex;
     flex-direction: column;
