@@ -13,7 +13,7 @@ const FoodSlider = ({ typeOfFood }) => {
   const [renderModal, setRenderModal] = useState(false);
   const [menuItem, setMenuItem] = useState({});
 
-  const makeTheModalAppear = () => {
+  const toggleModal = () => {
     setRenderModal(!renderModal);
   };
 
@@ -35,7 +35,7 @@ const FoodSlider = ({ typeOfFood }) => {
               <button
                 type="button"
                 onClick={() => {
-                  makeTheModalAppear();
+                  toggleModal();
                   setMenuItem(type);
                 }}
                 className="imgContain"

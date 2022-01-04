@@ -6,7 +6,7 @@ import SFoodModal from './style';
 function FoodModal({ menuElement }) {
   const [renderModal, setRenderModal] = useState(true);
 
-  const hideTheModal = () => {
+  const toggleModal = () => {
     setRenderModal(!renderModal);
   };
 
@@ -38,7 +38,7 @@ function FoodModal({ menuElement }) {
           <div className="buttonWrapper">
             <MainButton
               clickCallback={() => {
-                hideTheModal();
+                toggleModal();
               }}
               content="Changer"
             />
