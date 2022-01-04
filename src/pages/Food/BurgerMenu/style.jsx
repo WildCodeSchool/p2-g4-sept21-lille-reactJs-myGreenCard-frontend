@@ -6,6 +6,7 @@ const SMenu = styled.nav`
     color: black;
     line-height: 50px;
   }
+
   .bm-burger-button {
     position: fixed;
     width: 35px;
@@ -13,6 +14,7 @@ const SMenu = styled.nav`
     left: 15px;
     top: 18px;
   }
+
   .menu {
     height: 10vh;
     position: fixed;

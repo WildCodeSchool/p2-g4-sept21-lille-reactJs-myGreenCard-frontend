@@ -9,6 +9,7 @@ function FoodModal({ menuElement }) {
   const hideTheModal = () => {
     setRenderModal(!renderModal);
   };
+
   return (
     <>
       {renderModal && (
@@ -26,9 +27,13 @@ function FoodModal({ menuElement }) {
           <span>{menuElement.calories}</span>
           <p> Contient:</p>
           <section className="foodContent">
-            {menuElement.content.map((oneContent) => (
-              <p className="FoodContent">{oneContent},&#160; </p>
-            ))}
+            {menuElement.content.map((oneContent, index) => {
+              return index === menuElement.content.length - 1 ? (
+                <p>{oneContent}</p>
+              ) : (
+                <p>{oneContent},&nbsp;</p>
+              );
+            })}
           </section>
           <div className="buttonWrapper">
             <MainButton

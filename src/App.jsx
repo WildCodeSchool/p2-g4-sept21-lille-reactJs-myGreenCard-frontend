@@ -31,15 +31,15 @@ function App() {
             path="home"
             element={<Home setTheme={setTheme} theme={theme} />}
           />
-          <Route path="EazyCard" element={<EazyCard />} />
-          <Route path="Food" element={<Food />} />
-          <Route path="Food/Profile" element={<FoodProfile />} />
-          <Route path="Office" element={<Office />} />
+          <Route path="eazyCard" element={<EazyCard />} />
+          <Route path="food" element={<Food />} />
+          <Route path="food/profile" element={<FoodProfile />} />
+          <Route path="office" element={<Office />} />
           <Route path="meetingRooms" element={<Meeting />} />
           <Route path="meetingRooms/:id" element={<Room />} />
-          <Route path="Supplies" element={<Supplies />} />
-          <Route path="LostCard" element={<LostCard />} />
-          <Route path="ProfilPage" element={<ProfilPage />} />
+          <Route path="supplies" element={<Supplies />} />
+          <Route path="lostCard" element={<LostCard />} />
+          <Route path="profilPage" element={<ProfilPage />} />
         </Routes>
       </main>
     </ThemeProvider>
