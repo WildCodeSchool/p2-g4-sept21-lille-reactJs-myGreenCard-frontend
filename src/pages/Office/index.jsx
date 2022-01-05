@@ -5,8 +5,8 @@ import SwiperCore, { Navigation } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
 import 'swiper/swiper.min.css';
 import 'swiper/components/navigation/navigation.min.css';
+import officeRoom from 'assets/Img/OfficePictures/officeRoom.png';
 import SOffice from './style';
-import officeRoom from '../../assets/Img/OfficePictures/officeRoom.png';
 
 SwiperCore.use([Navigation]);
 
