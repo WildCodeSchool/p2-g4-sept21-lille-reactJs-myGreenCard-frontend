@@ -53,12 +53,10 @@ export default function Home({ theme, setTheme }) {
             </div>
             <div className="mealList">
               <div className="description">
-                <ul>
-                  <li>Salade tomates et avocats</li>
-                  <li>Rôti de Boeuf</li>
-                  <li>Pizza aux légumes</li>
-                  <li>Muffin</li>
-                </ul>
+                <p>Salade</p>
+                <p>Rôti de Boeuf</p>
+                <p>Pizza aux légumes</p>
+                <p>Muffin</p>
               </div>
               <div className="dishes">
                 {meals.map((meal) => {

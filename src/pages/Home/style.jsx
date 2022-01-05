@@ -2,6 +2,9 @@ import styled from 'styled-components';
 
 const SHome = styled.section`
   button {
+    float: right;
+    margin-top: -0.5em;
+    margin-bottom: 1em;
     &.dark {
       background: white;
       span {
@@ -10,6 +13,7 @@ const SHome = styled.section`
       }
     }
   }
+
   margin: 1.75rem;
 
   article {
@@ -35,7 +39,7 @@ const SHome = styled.section`
   }
 
   .meal {
-    height: 30px;
+    height: 40px;
   }
 
   .mealList {
@@ -45,23 +49,22 @@ const SHome = styled.section`
   }
 
   .description {
-    list-style: none;
-    width: 60vw;
+    width: 55vw;
   }
 
   .dishes {
     display: flex;
     flex-flow: row wrap;
     align-items: right;
-    height: 80px;
-    width: 50px;
+    height: 100px;
+    width: 70px;
     justify-content: space-between;
 
     img {
       border-radius: 45px;
       object-fit: cover;
-      height: 35px;
-      width: 20px;
+      height: 40px;
+      width: 30px;
     }
   }
 
