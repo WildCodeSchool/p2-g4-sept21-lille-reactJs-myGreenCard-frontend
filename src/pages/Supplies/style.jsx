@@ -7,16 +7,6 @@ const SSupplies = styled.main`
     margin: auto;
   }
 
-  h1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-    color: white;
-    font-weight: bold;
-    height: 8vh;
-  }
-
   h2 {
     font-weight: bold;
   }
@@ -24,6 +14,16 @@ const SSupplies = styled.main`
   p {
     font-size: small;
     color: #5f5f5ffb;
+  }
+
+  .panier {
+    display: block;
+    margin: auto;
+    margin-bottom: 30px;
+    height: 8vh;
+    width: 60vw;
+    font-size: large;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
   }
 
   .container {

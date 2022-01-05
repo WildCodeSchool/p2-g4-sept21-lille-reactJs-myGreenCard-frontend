@@ -1,17 +1,19 @@
 import Counter from 'components/Counter';
-import kitCovid from '../../assets/Img/SuppliesPictures/kitCovid.png';
-import stylos from '../../assets/Img/SuppliesPictures/stylos.png';
-import notebook from '../../assets/Img/SuppliesPictures/notebook.png';
-import earphones from '../../assets/Img/SuppliesPictures/earphones.png';
-import stabilo from '../../assets/Img/SuppliesPictures/stabilo.png';
-import postit from '../../assets/Img/SuppliesPictures/postit.png';
+import Header from 'components/Header';
+import postit from 'assets/Img/SuppliesPictures/postit.png';
+import kitCovid from 'assets/Img/SuppliesPictures/kitCovid.png';
+import stylos from 'assets/Img/SuppliesPictures/stylos.png';
+import notebook from 'assets/Img/SuppliesPictures/notebook.png';
+import earphones from 'assets/Img/SuppliesPictures/earphones.png';
+import stabilo from 'assets/Img/SuppliesPictures/stabilo.png';
+import fournitures from 'assets/Img/fournitures.png';
 import SSupplies from './style';
 
 export default function Supplies() {
   return (
     <>
       <SSupplies>
-        <h1>Fournitures</h1>
+        <Header logo={fournitures} />
         <div className="container">
           <div className="kitCovid">
             <img src={kitCovid} alt="kitCovid" />
@@ -65,6 +67,9 @@ export default function Supplies() {
             </div>
           </div>
         </div>
+        <button className="panier" type="button">
+          Ajouter au panier
+        </button>
       </SSupplies>
     </>
   );

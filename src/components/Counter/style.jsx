@@ -3,11 +3,21 @@ import styled from 'styled-components';
 const SCounter = styled.main`
   display: flex;
   justify-content: space-evenly;
-  padding-top: 15px;
+  padding-top: 20px;
 
   Button {
     background-color: black;
-    /* border-radius: 100%; */
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: bold;
   }
 `;
 
