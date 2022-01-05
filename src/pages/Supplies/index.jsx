@@ -67,7 +67,7 @@ export default function Supplies() {
             </div>
           </div>
         </div>
-        <button className="panier" type="button">
+        <button className="addCart" type="button">
           Ajouter au panier
         </button>
       </SSupplies>

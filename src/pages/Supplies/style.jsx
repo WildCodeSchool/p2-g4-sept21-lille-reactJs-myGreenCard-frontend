@@ -16,7 +16,7 @@ const SSupplies = styled.main`
     color: #5f5f5ffb;
   }
 
-  .panier {
+  .addCart {
     display: block;
     margin: auto;
     margin-bottom: 30px;
