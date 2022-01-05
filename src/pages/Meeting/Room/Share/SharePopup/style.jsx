@@ -21,8 +21,9 @@ const SSharePopup = styled.section`
     p {
       padding: 15px;
     }
-    div{
-      button,a{
+    div {
+      button,
+      a {
         width: 80px;
         background: #ececec;
         margin: 15px;
@@ -31,7 +32,6 @@ const SSharePopup = styled.section`
         -webkit-box-shadow: 0px 7px 12px -3px #afafaf;
         box-shadow: 0px 7px 12px -3px #afafaf;
       }
-    }
     }
   }
 `;
