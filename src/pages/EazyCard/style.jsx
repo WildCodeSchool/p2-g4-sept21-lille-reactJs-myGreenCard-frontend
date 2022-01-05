@@ -5,7 +5,7 @@ const SEazyCard = styled.section`
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  margin-top: 100px;
+  margin-top: 18vh;
   img {
     border-radius: 15px;
     width: 90vw;
@@ -13,11 +13,11 @@ const SEazyCard = styled.section`
   .nfc {
       width: 100px;
       height: 100px;
-      margin-top: 15vh;
+      margin-top: 5vh;
     }
   }
   p {
-    margin-top: 20px;
+    margin-top: 5vh;
   }
 `;
 
