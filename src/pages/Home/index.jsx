@@ -45,6 +45,7 @@ export default function Home({ theme, setTheme }) {
           label="Dark/light mode"
           handleClick={toggleTheme}
           className={isDarkTheme ? 'dark' : null}
+          size={0.75}
         />
         <Link to="/food">
           <article className="menu">

@@ -2,14 +2,12 @@ import styled from 'styled-components';
 
 const SHome = styled.section`
   button {
-    margin-left: 65vw;
-    margin-top: -0.5em;
-    margin-bottom: 1em;
+    margin-left: 72vw;
     &.dark {
       background: white;
       span {
         background: black;
-        left: 38px;
+        left: 28px;
       }
     }
   }

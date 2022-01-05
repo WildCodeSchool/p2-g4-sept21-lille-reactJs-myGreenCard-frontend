@@ -3,21 +3,28 @@
   [
     {"firstName":"Maxime",
     "lastName":"Duvauchelle",
-    "job":" CEO (Chief Executive Officer)" },
+    "job":" CEO (Chief Executive Officer)",
+    "picture": "/assets/Img/users/e6.png"},
+    
     {"firstName":"Samuel",
       "lastName":"Sellam",
-      "job":" HR (Human Ressources)" },
+      "job":" HR (Human Ressources)",
+      "picture": "/assets/Img/users/e4.png" },
     {"firstName":"Alexandre",
       "lastName":"Duvauchelle",
-      "job":"CPO (Chief Product Officer)" },
+      "job":"CPO (Chief Product Officer)",
+      "picture": "/assets/Img/users/e5.png"  },
     {"firstName":"Jules",
       "lastName":"Sigal",
-      "job":" COO (Chief Operating Officer)" },
+      "job":" COO (Chief Operating Officer)",
+      "picture": "/assets/Img/users/e3.png"  },
     {"firstName":"Manon",
       "lastName":"Dirou",
-      "job":"  Executive Assistant" },
+      "job":"  Executive Assistant",
+      "picture": "/assets/Img/users/e1.png" },
     {"firstName":"Pauline",
       "lastName":"Begue",
-      "job":" Growth Hacker" }
+      "job":" Growth Hacker",
+      "picture": "/assets/Img/users/e2.png" }
   ]
 }

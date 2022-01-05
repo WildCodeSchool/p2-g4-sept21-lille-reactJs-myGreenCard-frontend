@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const SValidation = styled.main`
+const SValidation = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
