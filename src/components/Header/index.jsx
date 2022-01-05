@@ -12,7 +12,7 @@ export default function Header({ logo }) {
       </Link>
       <img className="logo" src={logo} alt="logo" />
       <Link to="/profilPage">
-        <UserAvatar />
+        <UserAvatar size="45px" />
       </Link>
     </SHeader>
   );
