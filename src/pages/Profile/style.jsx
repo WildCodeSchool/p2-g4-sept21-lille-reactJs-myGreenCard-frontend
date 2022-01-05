@@ -28,6 +28,18 @@ const SProfilPage = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    button {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      letter-spacing: 1px;
+      border: none;
+      border-radius: 10px;
+      padding: 15px;
+      cursor: pointer;
+      width: 30vw;
+      -webkit-box-shadow: 0px 7px 12px -3px #000000;
+      box-shadow: 0px 7px 12px -3px #000000;
+    }
   }
   .paimentLogo {
     display: flex;
