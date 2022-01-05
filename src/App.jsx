@@ -21,6 +21,7 @@ function App() {
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
       <GlobalStyles />
+
       <main>
         <Routes>
           <Route
@@ -42,6 +43,7 @@ function App() {
           <Route path="profilPage" element={<ProfilPage />} />
         </Routes>
       </main>
+
     </ThemeProvider>
   );
 }
