@@ -71,7 +71,7 @@ const SMenu = styled.nav`
   }
 
   .bm-overlay {
-    background: rgba(153, 152, 152, 0.692);
+    background: #9fa0a1;
     height: 100%;
   }
 
