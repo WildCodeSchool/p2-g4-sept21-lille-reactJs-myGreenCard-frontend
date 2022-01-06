@@ -38,7 +38,7 @@ export default function ProfilPage({ theme, setTheme }) {
             />
           </div>
           <img src={isDarkTheme ? logoDark : logo} alt="homeIcon" />
-          <div className="UserCard">
+          <div className="userCard">
             <UserAvatar size="125px" border="none" />
             <h2>{name}</h2>
             <p>{job}</p>
