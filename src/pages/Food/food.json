@@ -58,7 +58,7 @@
         },
         {
           "id": 7,
-          "name": "Salade de haricots verts à la feta",
+          "name": "Salade de haricots verts, feta",
           "price": "4€",
           "calories": "320kcal",
           "picture": "https://az826390.vo.msecnd.net/cdn/media/home/inspiring_recipes/recipes/new_-_s/pub83585-ailduqc-salade-1160x650-bs012141.ashx?la=fr&mw=1160&w=1160&hash=BFBEE0F6EF3F6D293D28AFAD1E464FB07AB656D7",
@@ -76,9 +76,9 @@
         },
         {
           "id": 9,
-          "name": "Rôti de porc, pommes de terre",
+          "name": "Rôti de porc",
           "price": "4,60€",
-          "calories": "619kcal",
+          "calories": "523kcal",
           "picture": "https://img.cuisineaz.com/660x660/2013/12/20/i27858-roti-de-porc-et-pommes-glacees-au-cidre.jpg",
           "content": ["viande", "pommes de terre"],
           "allergies": ["amidon"]
@@ -219,13 +219,7 @@
           "price": "1€",
           "calories": "225kcal",
           "picture": "https://www.papillesetpupilles.fr/wp-content/uploads/2005/07/Muffins-aux-pe%CC%81pites-de-chocolat-%C2%A9-Elena-Shashkina-Shutterstock.jpg",
-          "content": [
-            "chocolat",
-            "oeufs",
-            "lait",
-            "levrure chimique",
-            "farine"
-          ],
+          "content": ["chocolat", "oeufs", "lait", "levure chimique", "farine"],
           "allergies": ["lait"]
         },
         {
@@ -234,13 +228,7 @@
           "price": "1€",
           "calories": "195kcal",
           "picture": "https://www.cuisinelolo.fr/wp-content/uploads/2020/04/Cookies-tout-chocolat-3.jpg",
-          "content": [
-            "chocolat",
-            "oeufs",
-            "lait",
-            "levrure chimique",
-            "farine"
-          ],
+          "content": ["chocolat", "oeufs", "lait", "farine"],
           "allergies": ["lait"]
         },
         {
