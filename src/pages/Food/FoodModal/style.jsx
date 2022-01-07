@@ -41,7 +41,6 @@ const SFoodModal = styled.section`
     left: 26%;
     width: 180px;
     height: 180px;
-    overflow: hidden;
     border-radius: 50%;
   }
   .foodTitle {
@@ -63,6 +62,10 @@ const SFoodModal = styled.section`
     display: flex;
     justify-content: space-between;
     width: 60%;
+  }
+  .foodContent {
+    display: flex;
+    flex-direction: column;
   }
 `;
 
