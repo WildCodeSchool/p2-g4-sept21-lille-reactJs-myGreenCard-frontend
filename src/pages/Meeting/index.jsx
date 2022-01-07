@@ -16,7 +16,7 @@ export default function Meeting() {
         {dataRooms.map((dataRoom) => {
           const path = `${dataRoom.id}`;
           return (
-            <Link to={path}>
+            <Link key={dataRoom.id} to={path}>
               <RoomCard
                 localisation={dataRoom.localisation}
                 id={dataRoom.id}

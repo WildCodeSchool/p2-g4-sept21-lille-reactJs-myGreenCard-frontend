@@ -5,52 +5,20 @@ const SEazyCard = styled.section`
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  margin-top: 100px;
+  margin-top: 18vh;
   img {
     border-radius: 15px;
-    width:90vw;
-  }
-  .anime {
-    margin-top: 100px;
-    width: 65px;
-    height: 65px;
-    border: 2px solid black;
-    border-radius: 50%;
-    overflow: hidden;
+    width: 90vw;
   }
   .nfc {
-    bottom: -12px;
-    position: relative;
-    width: 65px;
-    height: 70px;
-    animation: phoneNfc 5s infinite;
-    perspective: 1000px;
+    width: 100px;
+    height: 100px;
+    margin-top: 5vh;
   }
+
   p {
-    margin-top: 20px;
+    margin-top: 5vh;
   }
-  @keyframes phoneNfc {
-    0% {      
-      transform: rotateX(0deg)rotateY(0deg);
-      -webkit-transform: rotateX(0deg)rotateY(0deg);
-     -moz-transform: rotateX(0deg)rotateY(0deg);
-     -ms-transform: rotateX(0deg)rotateY(0deg);
-     -o-transform: rotate(0deg)rotateY(0deg);
-       }
-    40% {
-      transform: rotateX(40deg)rotateY(0deg);
-     -webkit-transform: rotateX(40deg)rotateY(0deg);
-     -moz-transform: rotateX(40deg)rotateY(0deg);
-     -ms-transform: rotateX(40deg)rotateY(0deg);
-     -o-transform: rotate(40deg)rotateY(0deg);      
-    }
-    100% {
-      transform: rotateX(0deg)rotateY(0deg);
-     -webkit-transform: rotateX(0deg)rotateY(0deg);
-     -moz-transform: rotateX(0deg)rotateY(0deg);
-     -ms-transform: rotateX(0deg)rotateY(0deg);
-     -o-transform: rotate(0deg)rotateY(0deg);  
-    }     
 `;
 
 export default SEazyCard;

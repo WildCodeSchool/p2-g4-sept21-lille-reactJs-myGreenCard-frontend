@@ -18,12 +18,10 @@ const SHeader = styled.header`
     right: 15%;
     left: 15%;
   }
-
   img {
     height: 60px;
     width: auto;
   }
-
   .logo {
     width: 40vw;
     height: auto;
