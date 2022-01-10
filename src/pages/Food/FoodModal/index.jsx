@@ -10,6 +10,8 @@ function FoodModal({ menuElement }) {
     setRenderModal(!renderModal);
   };
 
+  const menuElementSplit = menuElement.content.split(',');
+
   return (
     <>
       {renderModal && (
@@ -21,17 +23,17 @@ function FoodModal({ menuElement }) {
                 <img src={menuElement.picture} alt={`${menuElement.name}`} />
               </div>
               <p className="foodTitle">{menuElement.name}</p>
-              <span>{menuElement.price}</span>
+              <span>{menuElement.price}€</span>
             </article>
           </section>
-          <span>{menuElement.calories}</span>
+          <span>{menuElement.calories} kcal</span>
           <p> Contient:</p>
           <section className="foodContent">
-            {menuElement.content.map((oneContent, index) => {
-              return index === menuElement.content.length - 1 ? (
-                <p>{oneContent}</p>
+            {menuElementSplit.map((oneContent, index) => {
+              return index === menuElementSplit.length - 1 ? (
+                <p className="ingredients">{oneContent} </p>
               ) : (
-                <p>{oneContent},&nbsp;</p>
+                <p className="ingredients">{oneContent},&nbsp; </p>
               );
             })}
           </section>
