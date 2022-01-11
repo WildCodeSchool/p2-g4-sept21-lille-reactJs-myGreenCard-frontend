@@ -3,23 +3,25 @@ import styled from 'styled-components';
 const SFoodSlider = styled.section`
   overflow: contain;
   position: relative;
-  aspect-ratio: 2/3;
-  height: 220px;
+  aspect-ratio: 2.1/3.5;
+  height: 280px;
   background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 40px;
-  margin: 40px 30px 10px 30px;
+  margin: 40px 30px 40px 30px;
 
   .imgContain {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     overflow: hidden;
     position: absolute;
     bottom: 55%;
-    left: 9%;
-    width: 120px;
-    height: 120px;
+    left: 7%;
+    width: 150px;
+    height: 150px;
     overflow: hidden;
     border-radius: 50%;
   }
@@ -29,6 +31,7 @@ const SFoodSlider = styled.section`
     object-fit: cover;
   }
   .typeName {
+    width: 80%;
     margin-top: 60%;
     font-size: 20px;
     font-weight: 600;
@@ -36,10 +39,6 @@ const SFoodSlider = styled.section`
   }
   .price {
     margin-top: 10%;
-  }
-  .swiperComponent {
-    width: 370px;
-    background-color: yellow;
   }
 `;
 

@@ -11,11 +11,11 @@ const SEazyCard = styled.section`
     width: 90vw;
   }
   .nfc {
-      width: 100px;
-      height: 100px;
-      margin-top: 5vh;
-    }
+    width: 100px;
+    height: 100px;
+    margin-top: 5vh;
   }
+
   p {
     margin-top: 5vh;
   }
