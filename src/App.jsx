@@ -43,7 +43,6 @@ function App() {
           <Route path="profilPage" element={<ProfilPage />} />
         </Routes>
       </main>
-
     </ThemeProvider>
   );
 }
