@@ -1,3 +1,5 @@
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 import corn from 'assets/foodIcons/corn.png';
 import dairy from 'assets/foodIcons/dairy.png';
 import diet from 'assets/foodIcons/diet.png';
@@ -17,96 +19,130 @@ import BurgerMenu from '../BurgerMenu';
 import FoodProfileList from './style';
 
 function FoodProfile() {
-  const allergies = [
-    {
-      name: 'Oeuf',
-      icon: egg,
-    },
-    {
-      name: 'Gluten',
-      icon: gluten,
-    },
-    {
-      name: 'OGM',
-      icon: gmo,
-    },
-    {
-      name: 'Arachides',
-      icon: nut,
-    },
-    {
-      name: 'Sucres',
-      icon: sugar,
-    },
-    {
-      name: 'Maïs',
-      icon: corn,
-    },
-    {
-      name: 'Produits laitiers',
-      icon: dairy,
-    },
-    {
-      name: 'Soja',
-      icon: soy,
-    },
-    {
-      name: 'Graisses transformées',
-      icon: transfat,
-    },
-  ];
+  const [allData, setAllData] = useState([]);
 
-  const preferences = [
+  const [preferences, setPreferences] = useState([
     {
       name: 'Vegan',
       icon: vegan,
+      isFree: false,
     },
     {
       name: 'Pas de poissons',
       icon: shellfish,
+      isFree: false,
     },
     {
       name: 'Pas de porc',
       icon: pork,
+      isFree: false,
     },
     {
       name: 'Végétarien',
       icon: vegetarian,
+      isFree: false,
     },
     {
       name: 'Vendredi saint',
       icon: friday,
+      isFree: false,
     },
     {
       name: 'Non calorique',
       icon: diet,
+      isFree: false,
     },
-  ];
+  ]);
+
+  const [allergies, setAllergies] = useState([
+    {
+      name: 'Oeuf',
+      icon: egg,
+      isFree: false,
+    },
+    {
+      name: 'Gluten',
+      icon: gluten,
+      isFree: false,
+    },
+    {
+      name: 'OGM',
+      icon: gmo,
+      isFree: false,
+    },
+    {
+      name: 'Arachides',
+      icon: nut,
+      isFree: false,
+    },
+    {
+      name: 'Sucres',
+      icon: sugar,
+      isFree: false,
+    },
+    {
+      name: 'Maïs',
+      icon: corn,
+      isFree: false,
+    },
+    {
+      name: 'Produits laitiers',
+      icon: dairy,
+      isFree: false,
+    },
+    {
+      name: 'Soja',
+      icon: soy,
+      isFree: false,
+    },
+    {
+      name: 'Graisses transformées',
+      icon: transfat,
+      isFree: false,
+    },
+  ]);
+
+  const changeAllergiesState = () => {
+    setAllergies(allergies);
+  };
+
+  const changePreferencesState = () => {
+    setPreferences(preferences);
+  };
+
+  useEffect(() => {
+    axios.get('http://localhost:5000/food').then(({ data }) => {
+      setAllData(data);
+    });
+  }, []);
+  console.log(allergies[0].isFree);
+  console.log(allergies[1].isFree);
+  console.log(allData);
 
   return (
     <>
       <BurgerMenu />
       <FoodProfileList>
         <div>
-          <h2>Votre profil alimentaire</h2>
+          <p className="votreProfil">Votre profil alimentaire</p>
           <br />
-          <h3 className="foodProfileTitle">Allergies</h3>
+          <h2 className="foodProfileTitle">Allergies</h2>
         </div>
         <FoodProfileList>
           <br />
           {allergies.map((allergie) => (
-            <li>
+            <button type="button" onClick={changeAllergiesState}>
               <img src={allergie.icon} alt={allergie.name} />
-            </li>
+            </button>
           ))}
         </FoodProfileList>
 
-        <h3 className="foodProfileTitle">Préférences</h3>
+        <h2 className="foodProfileTitle">Préférences</h2>
         <FoodProfileList>
           {preferences.map((preference) => (
-            <li>
+            <button type="button" onClick={changePreferencesState}>
               <img src={preference.icon} alt={preference.name} />
-            </li>
+            </button>
           ))}
         </FoodProfileList>
       </FoodProfileList>
