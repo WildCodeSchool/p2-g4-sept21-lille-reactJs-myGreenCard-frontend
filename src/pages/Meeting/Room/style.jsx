@@ -42,7 +42,7 @@ const SRoom = styled.main`
         button {
           font-size: 1rem;
           width: 80px;
-          background: #ececec;
+          background: #e7f6fdef;
           margin: 15px;
           padding: 5px;
           border-radius: 5px;
