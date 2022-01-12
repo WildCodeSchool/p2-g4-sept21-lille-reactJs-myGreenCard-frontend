@@ -1,12 +1,10 @@
 import styled from 'styled-components';
 
 const SProfilPage = styled.section`
-  
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
   h3 {
     font-size: 30px;
   }
@@ -61,7 +59,6 @@ const SProfilPage = styled.section`
     justify-content: space-around;
     align-items: center;
   }
-
   .logo {
     display: flex;
     flex-direction: row;
@@ -74,7 +71,6 @@ const SProfilPage = styled.section`
     width: 40vw;
     justify-content: space-around;
     height: 120px;
-
     img {
       width: 40vw;
     }
@@ -88,7 +84,7 @@ const SProfilPage = styled.section`
     }
   }
   .resume {
-    height:auto;
+    height: auto;
     width: 85vw;
     border-radius: 10px;
     -webkit-box-shadow: 0px 7px 12px -3px #000000;
@@ -108,38 +104,39 @@ const SProfilPage = styled.section`
     border-radius: 0px 0px 10px 10px;
     -webkit-box-shadow: 0px 7px 12px -3px #000000;
     box-shadow: 0px 7px 12px -3px #000000;
-    .head{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 90vw;
+    .head {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 90vw;
       img {
-    height: 60px;
-    width: auto;
-    margin-top:0;
-  }
-  button{
-  margin-right :2vw;
-}
-  }
-  img{
-    width:60vw;
-    margin-top:-0.75vh;
+        height: 60px;
+        width: auto;
+        margin-top: 0;
       }
-  .userCard {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 30vh;
-    div{
-      margin-bottom: 5vh;
+      button {
+        margin-right: 2vw;
+      }
     }
-    p{
-      margin-top:1vh
+    img {
+      width: 60vw;
+      margin-top: -0.75vh;
+    }
+    .userCard {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 30vh;
+      div {
+        margin-bottom: 5vh;
+      }
+      p {
+        margin-top: 1vh;
+      }
     }
   }
- `;
+`;
 
 export default SProfilPage;
