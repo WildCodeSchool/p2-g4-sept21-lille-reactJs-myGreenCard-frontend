@@ -65,7 +65,6 @@ const SProfilPage = styled.section`
   .logo {
     display: flex;
     flex-direction: row;
-    
     align-items: center;
     justify-content: space-between;
   }
@@ -104,7 +103,7 @@ const SProfilPage = styled.section`
     flex-direction: column;
     align-items: center;
     height: 50vh;
-    width: 90vw;
+    width: 95vw;
     margin-bottom: 3vh;
     border-radius: 0px 0px 10px 10px;
     -webkit-box-shadow: 0px 7px 12px -3px #000000;

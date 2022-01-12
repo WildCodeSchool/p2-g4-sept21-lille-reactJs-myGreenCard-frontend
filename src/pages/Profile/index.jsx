@@ -11,17 +11,21 @@ import cb from 'assets/Img/logo-cb.svg';
 import larrondi from 'assets/Img/LARRONDI.svg';
 import card from 'assets/Img/easyCard.png';
 import home from 'assets/Img/home.svg';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 import SProfilPage from './style';
 
-const solde = '37,64€';
-const name = 'Samuel Sellam';
-const job = 'HR(Human Ressources)';
-
 export default function ProfilPage({ theme, setTheme }) {
+  const [userData, setUserData] = useState([]);
   const isDarkTheme = theme === 'dark';
   const toggleTheme = () => {
     return setTheme(isDarkTheme ? 'light' : 'dark');
   };
+  useEffect(() => {
+    axios.get('http://localhost:5000/user/3').then(({ data }) => {
+      setUserData(data);
+    });
+  }, []);
   return (
     <>
       <SProfilPage>
@@ -40,12 +44,14 @@ export default function ProfilPage({ theme, setTheme }) {
           <img src={isDarkTheme ? logoDark : logo} alt="homeIcon" />
           <div className="UserCard">
             <UserAvatar size="125px" border="none" />
-            <h2>{name}</h2>
-            <p>{job}</p>
+            <h2>
+              {userData.firstname} {userData.lastname}
+            </h2>
+            <p>{userData.job}</p>
           </div>
         </div>
         <article className="solde">
-          <h3>Solde : {solde} </h3>
+          <h3>Solde : {userData.Amount} € </h3>
           <div className="recharge">
             <button type="button" className="money">
               Recharger
