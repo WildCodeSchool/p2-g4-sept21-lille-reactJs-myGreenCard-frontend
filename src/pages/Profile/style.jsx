@@ -127,7 +127,7 @@ const SProfilPage = styled.section`
     width:60vw;
     margin-top:-0.75vh;
       }
-  .UserCard {
+  .userCard {
     display: flex;
     flex-direction: column;
     justify-content: center;
