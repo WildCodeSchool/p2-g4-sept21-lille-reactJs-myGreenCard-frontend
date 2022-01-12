@@ -36,18 +36,17 @@ for (let i = 0; i < 7; i += 1) {
   });
   const slots = [];
   for (let j = 0; j < slotsDisplay.length; j += 1) {
-    const slotTime = dayDate;
-    const slotDisplay = slotsDisplay[j];
-    slotTime.setHours(slotsDisplay[j].slotHour, 0, 0);
+    const { slotDisplay } = slotsDisplay[j];
+    const slotTime = dayDate.setHours(slotsDisplay[j].slotHour, 0, 0);
     slots.push({ slotDisplay, slotTime });
   }
   days.push({ display: dayDisplay, slots });
 }
 export default function Validation({
-  // setAlreadyBooked,
+  setAlreadyBooked,
   setValidation,
   reservation,
-  // setReservation,
+  setReservation,
   setShare,
 }) {
   const { id } = useParams();
@@ -67,19 +66,6 @@ export default function Validation({
       });
   }, []);
 
-  // const showValidationPopup = () => {
-  //   setValidationPopup(true);
-  // };
-
-  // const showAlreadyBooked = () => {
-  //   setAlreadyBooked(true);
-  //   setValidation(false);
-  // };
-
-  // const handleClick = (occupation) => {
-  //   return occupation === 'yes' ? showAlreadyBooked() : showValidationPopup();
-  // };
-
   return (
     <SValidation>
       <img src={dataRoom.picture} alt="Salle de réunion" />
@@ -87,12 +73,21 @@ export default function Validation({
       <Swiper navigation className="mySwiper">
         {days.map((day) => {
           return (
-            <SwiperSlide key={day}>
+            <SwiperSlide key={day.display}>
               <h3>{day.display}</h3>
               <div className="slots">
                 {day.slots.map((slot) => {
-                  console.log(slot);
-                  return <Slot key={slot} slot={slot} />;
+                  return (
+                    <Slot
+                      key={slot.slotTime}
+                      slot={slot}
+                      setAlreadyBooked={setAlreadyBooked}
+                      setReservation={setReservation}
+                      setValidation={setValidation}
+                      setValidationPopup={setValidationPopup}
+                      roomPicture={dataRoom.picture}
+                    />
+                  );
                 })}
               </div>
             </SwiperSlide>
@@ -113,21 +108,25 @@ export default function Validation({
 }
 
 Validation.propTypes = {
-  // setAlreadyBooked: propTypes.func,
+  setAlreadyBooked: propTypes.func,
   setValidation: propTypes.func,
   reservation: propTypes.shape({
+    room: propTypes.number,
     roomId: propTypes.string,
-    day: propTypes.string,
     slot: propTypes.string,
+    userFirstname: propTypes.string,
+    userLastname: propTypes.string,
+    userPicture: propTypes.string,
+    roomPicture: propTypes.string,
   }),
-  // setReservation: propTypes.func,
+  setReservation: propTypes.func,
   setShare: propTypes.func,
 };
 
 Validation.defaultProps = {
-  // setAlreadyBooked: () => {},
+  setAlreadyBooked: () => {},
   setValidation: () => {},
   reservation: null,
-  // setReservation: () => {},
+  setReservation: () => {},
   setShare: () => {},
 };

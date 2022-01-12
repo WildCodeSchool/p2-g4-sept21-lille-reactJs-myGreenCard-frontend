@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const SAlreadyBooked = styled.div`
+  width: 80vw;
   margin-top: 15vh;
   display: flex;
   justify-content: center;
@@ -31,7 +32,7 @@ const SAlreadyBooked = styled.div`
     margin: 30px;
   }
   .participants {
-    margin: 30px;
+    margin: 45px 0px;
 
     .participant {
       margin: 0 2px;

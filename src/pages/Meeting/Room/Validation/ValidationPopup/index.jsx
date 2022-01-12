@@ -1,4 +1,6 @@
 import propTypes from 'prop-types';
+import moment from 'moment';
+import 'moment/locale/fr';
 import SValidationPopup from './style';
 
 export default function ValidationPopup({
@@ -10,7 +12,6 @@ export default function ValidationPopup({
   const makeTheModalDisappear = () => {
     setValidationPopup(false);
   };
-  // It will also be necessary to store information of the reservation
 
   const showShare = () => {
     makeTheModalDisappear();
@@ -23,7 +24,9 @@ export default function ValidationPopup({
         <h2>Confirmation</h2>
         <p>
           Confirmez-vous la réservation de la salle de réunion n°
-          {reservation.roomId} {reservation.day} de {reservation.slot} ?
+          {reservation.roomId}
+          {moment(reservation.slot).format('  dddd ')} à
+          {moment(reservation.slot).format('  HH ')}h ?
         </p>
         <div>
           <button type="button" onClick={showShare}>
@@ -42,9 +45,13 @@ ValidationPopup.propTypes = {
   setValidationPopup: propTypes.func,
   setValidation: propTypes.func,
   reservation: propTypes.shape({
+    room: propTypes.number,
     roomId: propTypes.string,
-    day: propTypes.string,
     slot: propTypes.string,
+    userFirstname: propTypes.string,
+    userLastname: propTypes.string,
+    userPicture: propTypes.string,
+    roomPicture: propTypes.string,
   }),
   setShare: propTypes.func,
 };

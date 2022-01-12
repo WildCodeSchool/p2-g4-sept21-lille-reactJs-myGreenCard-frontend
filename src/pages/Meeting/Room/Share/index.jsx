@@ -5,10 +5,6 @@ import MainButton from 'components/MainButton';
 import SShare from './style';
 import SharePopup from './SharePopup';
 
-const data = require('../../meeting.json');
-
-const dataRooms = data.rooms;
-
 export default function Share({ reservation, setValidation, setShare }) {
   const [sharePopup, setSharePopup] = useState(false);
 
@@ -17,10 +13,14 @@ export default function Share({ reservation, setValidation, setShare }) {
   };
   return (
     <SShare>
-      <p>Vous venez de reserver la salle de réunion n° {reservation.roomId}</p>
+      {console.log(reservation)}
+      <p>
+        Vous venez de reserver la salle de réunion n°
+        {reservation.roomId}
+      </p>
       <Avatar
         alt="Salle de réunion"
-        src={dataRooms[reservation.roomId - 1].picture}
+        src={reservation.roomPicture}
         className="meetingRoom"
       />
       <p>Partagez cette réunion avec vos collègues</p>
@@ -44,8 +44,11 @@ export default function Share({ reservation, setValidation, setShare }) {
 Share.propTypes = {
   reservation: propTypes.shape({
     roomId: propTypes.string,
-    day: propTypes.string,
     slot: propTypes.string,
+    userFirstname: propTypes.string,
+    userLastname: propTypes.string,
+    userPicture: propTypes.string,
+    roomPicture: propTypes.string,
   }),
   setValidation: propTypes.func,
   setShare: propTypes.func,
