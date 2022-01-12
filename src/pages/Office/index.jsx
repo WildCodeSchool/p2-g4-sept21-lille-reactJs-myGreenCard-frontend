@@ -7,7 +7,7 @@ import 'swiper/swiper.min.css';
 import 'swiper/components/navigation/navigation.min.css';
 import officeRoom from 'assets/Img/OfficePictures/officeRoom.png';
 import logo from 'assets/reservationBureau.png';
-import Header from '../../components/Header';
+import Header from 'components/Header';
 import SOffice from './style';
 
 SwiperCore.use([Navigation]);
