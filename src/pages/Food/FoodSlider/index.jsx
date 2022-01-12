@@ -56,7 +56,7 @@ const FoodSlider = ({ typeOfFood, theme }) => {
                 />
               </button>
               <p className="typeName">{type.name}</p>
-              <p className="price">{type.price}</p>
+              <p className="price">{type.price} €</p>
             </SFoodSlider>
           </SwiperSlide>
         ))}
