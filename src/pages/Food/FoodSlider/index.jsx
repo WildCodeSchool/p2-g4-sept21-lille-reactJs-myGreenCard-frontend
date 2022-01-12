@@ -9,7 +9,8 @@ import FoodModal from '../FoodModal';
 
 import SFoodSlider from './style';
 
-const FoodSlider = ({ typeOfFood }) => {
+const FoodSlider = ({ typeOfFood, theme }) => {
+  const isDarkTheme = theme === 'dark';
   const [renderModal, setRenderModal] = useState(false);
   const [menuItem, setMenuItem] = useState({});
 
@@ -21,17 +22,25 @@ const FoodSlider = ({ typeOfFood }) => {
     <>
       {renderModal && <FoodModal menuElement={menuItem} />}
       <Swiper
-        className="swiperComponent"
         modules={[Navigation, Pagination]}
-        slidesPerView={2}
+        slidesPerView={1}
         spaceBetween={0}
         pagination={{
           clickable: true,
         }}
       >
         {typeOfFood.map((type) => (
-          <SwiperSlide className="swiperComponent" key={type.id}>
-            <SFoodSlider>
+          <SwiperSlide
+            className={
+              isDarkTheme
+                ? 'swiperComponent darkThemeBackground'
+                : 'swiperComponent swiperComponentColor'
+            }
+            key={type.id}
+          >
+            <SFoodSlider
+              className={isDarkTheme ? 'darkThemeMode' : 'lightThemeMode'}
+            >
               <button
                 type="button"
                 onClick={() => {
@@ -57,10 +66,12 @@ const FoodSlider = ({ typeOfFood }) => {
 };
 
 FoodSlider.propTypes = {
+  theme: PropTypes.string,
   typeOfFood: PropTypes.arrayOf(PropTypes.string),
 };
 
 FoodSlider.defaultProps = {
+  theme: '',
   typeOfFood: [],
 };
 

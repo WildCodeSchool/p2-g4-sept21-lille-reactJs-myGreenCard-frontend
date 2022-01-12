@@ -4,9 +4,9 @@ const SFoodSlider = styled.section`
   overflow: contain;
   position: relative;
   aspect-ratio: 2.1/3.5;
-  height: 280px;
-  background-color: white;
+  height: 500px;
   display: flex;
+  background-color: white;
   flex-direction: column;
   justify-content: center;
   align-items: center;

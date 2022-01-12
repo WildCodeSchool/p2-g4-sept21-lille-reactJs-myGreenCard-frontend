@@ -10,7 +10,12 @@ const SFoodModal = styled.section`
   position: absolute;
   width: 100vw;
   z-index: 2;
-
+  &.yourChoice {
+    background-color: #eeeded;
+  }
+  &.darkThemeBackground {
+    background-color: #303134;
+  }
   section {
     display: flex;
     flex-direction: column;
@@ -22,11 +27,14 @@ const SFoodModal = styled.section`
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    background-color: white;
     width: 230px;
     height: 300px;
     margin: 50px 0 20px 0;
+    &.foodChoice {
+      background-color: white;
+    }
   }
+
   img {
     height: 100%;
     object-position: center;
@@ -37,7 +45,7 @@ const SFoodModal = styled.section`
       rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     overflow: hidden;
     position: absolute;
-    top: 5%;
+    top: 10%;
     left: 26%;
     width: 180px;
     height: 180px;
