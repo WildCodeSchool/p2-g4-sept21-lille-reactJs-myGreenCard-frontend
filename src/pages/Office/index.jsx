@@ -6,6 +6,8 @@ import 'swiper/swiper-bundle.min.css';
 import 'swiper/swiper.min.css';
 import 'swiper/components/navigation/navigation.min.css';
 import officeRoom from 'assets/Img/OfficePictures/officeRoom.png';
+import logo from 'assets/reservationBureau.png';
+import Header from '../../components/Header';
 import SOffice from './style';
 
 SwiperCore.use([Navigation]);
@@ -13,8 +15,8 @@ SwiperCore.use([Navigation]);
 export default function Office() {
   return (
     <>
+      <Header logo={logo} />
       <SOffice>
-        <h1>Reservation de bureaux</h1>
         <img className="plan" src={officeRoom} alt="office room" />
         <div className="rowProfiles">
           <div className="circle" />

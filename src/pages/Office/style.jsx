@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const SOffice = styled.main`
   min-height: 100vh;
+  margin-top: 40px;
 
   h1 {
     display: flex;
@@ -76,12 +77,11 @@ const SOffice = styled.main`
     span {
       font-size: 1rem;
       width: 80px;
-      background: #ececec;
+      background: #e7f6fdef;
       margin: 5px;
       padding: 5px;
       border-radius: 5px;
-      -webkit-box-shadow: 0px 7px 12px -3px #afafaf;
-      box-shadow: 0px 7px 12px -3px #afafaf;
+      box-shadow: 0px 6px 5px -3px #afafaf;
     }
   }
   .swiper-slide img {
