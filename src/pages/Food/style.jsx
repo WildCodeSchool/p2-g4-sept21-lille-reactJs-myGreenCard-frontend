@@ -3,9 +3,18 @@ import styled from 'styled-components';
 const SFood = styled.main`
   display: flex;
   flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
 
+  .userAvatar {
+    top: 0;
+    position: absolute;
+    width: 97vw;
+    height: 100px;
+    display: flex;
+    justify-content: flex-end;
+  }
   .choiceMenu {
-    margin-top: 20px;
+    margin-top: 60px;
   }
   .swiper {
     width: 100%;
@@ -31,7 +40,7 @@ const SFood = styled.main`
   }
   .menuOfDay {
     text-align: center;
-    margin: 20px 0 20px 0;
+    margin: 10vh 0 20px 0;
   }
   .swiper-slide img {
     display: block;
@@ -42,6 +51,9 @@ const SFood = styled.main`
   .swiperComponent {
     width: 370px;
     background-color: #eeeded;
+  }
+  .swiper-slide .swiper-slide-active {
+    width: 100px;
   }
 `;
 

@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   p,h1,h2,h3{
-    font-family: Carmen;
+    font-family: 'Montserrat', sans-serif;
   }
   a {
     text-decoration: none;
