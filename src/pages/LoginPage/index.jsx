@@ -13,27 +13,56 @@ import logo from 'assets/Img/easyApp.png';
 import logoDark from 'assets/Img/easyAppDark.png';
 import ToggleButton from 'components/ToggleButton';
 import MainButton from 'components/MainButton';
+import { api, cookies } from 'conf';
+import { useDispatch } from 'react-redux';
+import { toast, ToastContainer } from 'react-toastify';
+import axios from 'axios';
 import SLogingPage from './style';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function LoginPage({ theme, setTheme }) {
+  const [form, setForm] = useState({
+    email: '',
+    password: '',
+  });
+  const [value, setValue] = useState('1');
+  const dispatch = useDispatch();
+
   const isDarkTheme = theme === 'dark';
   const toggleTheme = () => {
     return setTheme(isDarkTheme ? 'light' : 'dark');
   };
-  const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-  });
+
   const HandleChangeFormData = (e) => {
-    const newData = { ...formData };
+    const newData = { ...form };
     newData[e.target.name] = e.target.value;
-    setFormData(newData);
+    setForm(newData);
   };
 
-  const [value, setValue] = useState('1');
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const { email, password } = form;
+    const url = 'http://localhost:5000/auth/login';
+    const formData = { email, password };
+    axios
+      .post(url, formData)
+      .then(({ data }) => {
+        const { token, user } = data;
+        cookies.set('token', token);
+        console.log(user);
+        api.defaults.headers.authorization = `Bearer ${token}`;
+        dispatch({ type: 'LOGIN', user });
+        toast(`You're now logged in, ${user.firstname} <3`);
+      })
+      .catch((err) => {
+        toast.error(`Achtung!${err}`);
+      });
+  };
+
   return (
     <SLogingPage>
       <TabContext value={value}>
@@ -71,23 +100,24 @@ export default function LoginPage({ theme, setTheme }) {
           </Tabs>
         </Box>
         <TabPanel value="1">
-          <form>
+          <form onSubmit={handleSubmit}>
             <p>Email</p>
             <input
               type="email"
               name="email"
-              value={formData.email}
+              value={form.email}
               onChange={HandleChangeFormData}
             />
             <p>Mot de passe</p>
             <input
               type="password"
               name="password"
-              value={formData.password}
+              value={form.password}
               onChange={HandleChangeFormData}
             />
+            <input type="submit" value="Lets go" />
           </form>
-
+          <ToastContainer />
           <p>Mot de passe oublié</p>
 
           <Link to="/home">

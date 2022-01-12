@@ -9,6 +9,7 @@ body{
 
 p,h1,h2,h3{
   font-family: 'Montserrat', sans-serif;
+  color: ${({ theme }) => theme.text};
 }
 
 a {
