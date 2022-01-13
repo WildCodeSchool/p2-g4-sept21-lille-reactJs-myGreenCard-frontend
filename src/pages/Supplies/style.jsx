@@ -30,38 +30,13 @@ const SSupplies = styled.main`
     img {
       height: 15vh;
     }
-    .kitCovid {
+    .supply {
       display: flex;
       padding: 10px;
       box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
       padding-top: 50px;
     }
-    .pencils {
-      display: flex;
-      box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
-      padding-top: 50px;
-    }
-    .notebook {
-      display: flex;
-      box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
-      padding-top: 50px;
-    }
-    .earphones {
-      display: flex;
-      box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
-      padding-top: 50px;
-    }
-    .stabilo {
-      display: flex;
-      box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
-      padding-top: 50px;
-    }
-    .postit {
-      display: flex;
-      box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
-      padding-top: 50px;
-      margin-bottom: 30px;
-    }
+
     .description {
       margin-left: auto;
       margin-right: auto;
