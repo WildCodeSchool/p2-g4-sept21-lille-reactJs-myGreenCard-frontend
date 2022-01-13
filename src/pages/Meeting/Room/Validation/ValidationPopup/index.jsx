@@ -23,15 +23,9 @@ export default function ValidationPopup({
     setValidationPopup(false);
   };
   const storeMeeting = () => {
-    console.log(meeting);
-    axios
-      .post(`http://localhost:5000/meeting/`, meeting)
-      .then(({ data }) => {
-        console.log(data);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
+    axios.post(`http://localhost:5000/meeting/`, meeting).catch((e) => {
+      console.log(e);
+    });
   };
   const showShare = () => {
     makeTheModalDisappear();
