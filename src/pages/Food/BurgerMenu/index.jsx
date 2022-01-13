@@ -8,9 +8,9 @@ function BurgerMenu() {
       <Menu>
         <section>
           <Link to="/">Accueil</Link> <br />
-          <Link to="/Food">Menu du jour</Link> <br />
-          <Link to="/Food/Profile">Profil alimentaire</Link> <br />
-          <Link to="/Food/randomLunch">Random lunch</Link>
+          <Link to="/food">Menu du jour</Link> <br />
+          <Link to="/food/Profile">Profil alimentaire</Link> <br />
+          <Link to="/food/randomLunch">Random lunch</Link>
         </section>
       </Menu>
     </SMenu>
