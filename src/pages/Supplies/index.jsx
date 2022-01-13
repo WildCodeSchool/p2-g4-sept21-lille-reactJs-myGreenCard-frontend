@@ -1,11 +1,5 @@
 import Counter from 'components/Counter';
 import Header from 'components/Header';
-// import postit from 'assets/Img/SuppliesPictures/postit.png';
-// import kitCovid from 'assets/Img/SuppliesPictures/kitCovid.png';
-// import stylos from 'assets/Img/SuppliesPictures/stylos.png';
-// import notebook from 'assets/Img/SuppliesPictures/notebook.png';
-// import earphones from 'assets/Img/SuppliesPictures/earphones.png';
-// import stabilo from 'assets/Img/SuppliesPictures/stabilo.png';
 import fournitures from 'assets/Img/fournitures.png';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
