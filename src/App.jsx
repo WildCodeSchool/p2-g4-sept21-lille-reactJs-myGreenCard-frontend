@@ -21,7 +21,6 @@ function App() {
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
       <GlobalStyles />
-
       <main>
         <Routes>
           <Route

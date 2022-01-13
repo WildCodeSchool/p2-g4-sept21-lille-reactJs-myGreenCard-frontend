@@ -20,6 +20,7 @@ const SMeetingCard = styled.article`
     width: 60%;
     padding: 10px 5px;
   }
+
   img {
     object-fit: cover;
     height: 80px;

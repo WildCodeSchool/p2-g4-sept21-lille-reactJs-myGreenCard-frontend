@@ -1,28 +1,36 @@
 import propTypes from 'prop-types';
+import moment from 'moment';
+import axios from 'axios';
+import 'moment/locale/fr';
 import Avatar from '@mui/material/Avatar';
 import Badge from '@mui/material/Badge';
-import avatarManon from 'assets/Img/users/e1.png';
-import avatarPauline from 'assets/Img/users/e2.png';
-import avatarJules from 'assets/Img/users/e3.png';
-import avatarSamuel from 'assets/Img/users/e4.png';
-import avatarAlexandre from 'assets/Img/users/e5.png';
-import avatarMaxime from 'assets/Img/users/e6.png';
 import { AvatarGroup } from '@mui/material';
 import iconComputer from 'assets/computer.png';
 import iconPin from 'assets/pin.png';
 import MainButton from 'components/MainButton';
-
+import { useState, useEffect } from 'react';
 import SAlreadyBooked from './style';
-
-const data = require('../../meeting.json');
-
-const dataRooms = data.rooms;
 
 export default function AlreadyBooked({
   reservation,
   setAlreadyBooked,
   setValidation,
 }) {
+  const [participants, setParticipants] = useState([]);
+
+  useEffect(() => {
+    const { id } = reservation;
+    axios
+      .get(`${process.env.REACT_APP_API_URL}/meeting/${id}/participants`)
+
+      .then(({ data }) => {
+        setParticipants(data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, []);
+
   const showValidation = () => {
     setAlreadyBooked(false);
     setValidation(true);
@@ -37,108 +45,54 @@ export default function AlreadyBooked({
         badgeContent={
           <Avatar
             className="smallAvatar"
-            alt="Stock avatar"
-            src={avatarMaxime}
+            alt="avatar personne qui réserve"
+            src={reservation.userPicture}
           />
         }
       >
         <Avatar
           alt="Salle de réunion"
-          src={dataRooms[reservation.roomId - 1].picture}
+          src={reservation.roomPicture}
           className="meetingRoom"
         />
       </Badge>
 
       <h2>Bureau n° {reservation.roomId}</h2>
       <p>
-        Réservé par Maxime pour le créneau de {reservation.slot}
-        {reservation.day}
+        Réservé par Maxime pour le créneau de
+        {moment(reservation.slot).format('  HH ')}h
+        {moment(reservation.slot).format('  dddd ')}
       </p>
       <AvatarGroup className="participants" max="4">
-        <Badge
-          className="badge"
-          anchorOrigin={{
-            vertical: 'top',
-            horizontal: 'right',
-          }}
-          badgeContent={
-            <Avatar className="mode" alt="En présentiel" src={iconPin} />
-          }
-        >
-          <Avatar
-            className="participant"
-            alt="Stock avatar"
-            src={avatarManon}
-          />
-        </Badge>
-        <Badge
-          className="badge"
-          anchorOrigin={{
-            vertical: 'top',
-            horizontal: 'right',
-          }}
-          badgeContent={
-            <Avatar
-              className="mode dist"
-              alt="En distanciel"
-              src={iconComputer}
-            />
-          }
-        >
-          <Avatar
-            className="participant"
-            alt="Stock avatar"
-            src={avatarPauline}
-          />
-        </Badge>
-        <Badge
-          className="badge"
-          anchorOrigin={{
-            vertical: 'top',
-            horizontal: 'right',
-          }}
-          badgeContent={
-            <Avatar className="mode" alt="En présentiel" src={iconPin} />
-          }
-        >
-          <Avatar
-            className="participant"
-            alt="Stock avatar"
-            src={avatarJules}
-          />
-        </Badge>
-        <Badge
-          className="badge"
-          anchorOrigin={{
-            vertical: 'top',
-            horizontal: 'right',
-          }}
-          badgeContent={
-            <Avatar className="mode" alt="En présentiel" src={iconPin} />
-          }
-        >
-          <Avatar
-            className="participant"
-            alt="Stock avatar"
-            src={avatarSamuel}
-          />
-        </Badge>
-        <Badge
-          className="badge"
-          anchorOrigin={{
-            vertical: 'top',
-            horizontal: 'right',
-          }}
-          badgeContent={
-            <Avatar className="mode" alt="En présentiel" src={iconPin} />
-          }
-        >
-          <Avatar
-            className="participant"
-            alt="Stock avatar"
-            src={avatarAlexandre}
-          />
-        </Badge>
+        {participants.map((participant) => {
+          return (
+            <Badge
+              key={participant.picture}
+              className="badge"
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              badgeContent={
+                <Avatar
+                  className={
+                    participant.status === 'présentiel' ? 'mode' : 'mode dist'
+                  }
+                  alt={participant.status}
+                  src={
+                    participant.status === 'présentiel' ? iconPin : iconComputer
+                  }
+                />
+              }
+            >
+              <Avatar
+                className="participant"
+                alt="Stock avatar"
+                src={participant.picture}
+              />
+            </Badge>
+          );
+        })}
       </AvatarGroup>
       <MainButton
         clickCallback={() => {
@@ -154,9 +108,13 @@ AlreadyBooked.propTypes = {
   setAlreadyBooked: propTypes.func,
   setValidation: propTypes.func,
   reservation: propTypes.shape({
-    roomId: propTypes.string,
-    day: propTypes.string,
+    id: propTypes.number,
+    roomId: propTypes.number,
     slot: propTypes.string,
+    userFirstname: propTypes.string,
+    userLastname: propTypes.string,
+    userPicture: propTypes.string,
+    roomPicture: propTypes.string,
   }),
 };
 

@@ -1,5 +1,6 @@
 import { useParams } from 'react-router';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import propTypes from 'prop-types';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.min.css';
@@ -8,11 +9,39 @@ import 'swiper/components/navigation/navigation.min.css';
 import SwiperCore, { Navigation } from 'swiper';
 import SValidation from './style';
 import ValidationPopup from './ValidationPopup';
+import Slot from './Slot';
 
 SwiperCore.use([Navigation]);
-const data = require('../../meeting.json');
 
-const dataRooms = data.rooms;
+const today = new Date();
+const days = [];
+
+const slotsDisplay = [
+  { slotHour: 8, slotDisplay: '8h-9h' },
+  { slotHour: 9, slotDisplay: '9h-10h' },
+  { slotHour: 10, slotDisplay: '10h-11h' },
+  { slotHour: 14, slotDisplay: '14h-15h' },
+  { slotHour: 15, slotDisplay: '15h-16h' },
+  { slotHour: 16, slotDisplay: '16h-17h' },
+];
+
+for (let i = 0; i < 7; i += 1) {
+  const dayDate = new Date();
+  dayDate.setDate(today.getDate() + i + 1);
+  const dayDisplay = dayDate.toLocaleString('fr-FR', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+  const slots = [];
+  for (let j = 0; j < slotsDisplay.length; j += 1) {
+    const { slotDisplay } = slotsDisplay[j];
+    const slotTime = dayDate.setHours(slotsDisplay[j].slotHour, 0, 0);
+    slots.push({ slotDisplay, slotTime });
+  }
+  days.push({ display: dayDisplay, slots });
+}
 export default function Validation({
   setAlreadyBooked,
   setValidation,
@@ -23,47 +52,41 @@ export default function Validation({
   const { id } = useParams();
 
   const [validationPopup, setValidationPopup] = useState(false);
+  const [dataRoom, setDataRoom] = useState([]);
 
-  const showValidationPopup = () => {
-    setValidationPopup(true);
-  };
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/meetingRoom/${id}`)
 
-  const showAlreadyBooked = () => {
-    setAlreadyBooked(true);
-    setValidation(false);
-  };
-
-  const handleClick = (occupation) => {
-    return occupation === 'yes' ? showAlreadyBooked() : showValidationPopup();
-  };
+      .then(({ data }) => {
+        setDataRoom(data[0]);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, []);
 
   return (
     <SValidation>
-      <img src={dataRooms[id - 1].picture} alt="Salle de réunion" />
-      <h2>Salle de réunion n°{id}</h2>
+      <img src={dataRoom.picture} alt="Salle de réunion" />
+      <h2>Salle de réunion n°{dataRoom.number}</h2>
       <Swiper navigation className="mySwiper">
-        {dataRooms[id - 1].disponibility.map((day) => {
+        {days.map((day) => {
           return (
-            <SwiperSlide key={day.name}>
-              <h3>{day.name}</h3>
+            <SwiperSlide key={day.display}>
+              <h3>{day.display}</h3>
               <div className="slots">
                 {day.slots.map((slot) => {
                   return (
-                    <button
-                      type="button"
-                      className={slot.occupation === 'yes' ? 'reserved' : null}
-                      key={slot.id}
-                      onClick={() => {
-                        setReservation({
-                          roomId: id,
-                          day: day.name,
-                          slot: slot.description,
-                        });
-                        handleClick(slot.occupation);
-                      }}
-                    >
-                      {slot.description}
-                    </button>
+                    <Slot
+                      key={slot.slotTime}
+                      slot={slot}
+                      setAlreadyBooked={setAlreadyBooked}
+                      setReservation={setReservation}
+                      setValidation={setValidation}
+                      setValidationPopup={setValidationPopup}
+                      roomPicture={dataRoom.picture}
+                    />
                   );
                 })}
               </div>
@@ -88,9 +111,13 @@ Validation.propTypes = {
   setAlreadyBooked: propTypes.func,
   setValidation: propTypes.func,
   reservation: propTypes.shape({
+    room: propTypes.number,
     roomId: propTypes.string,
-    day: propTypes.string,
     slot: propTypes.string,
+    userFirstname: propTypes.string,
+    userLastname: propTypes.string,
+    userPicture: propTypes.string,
+    roomPicture: propTypes.string,
   }),
   setReservation: propTypes.func,
   setShare: propTypes.func,

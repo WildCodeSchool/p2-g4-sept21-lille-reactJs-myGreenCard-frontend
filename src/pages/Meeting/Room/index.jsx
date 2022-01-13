@@ -11,6 +11,7 @@ export default function Room() {
   const [alreadyBooked, setAlreadyBooked] = useState(false);
   const [share, setShare] = useState(false);
   const [reservation, setReservation] = useState({});
+
   return (
     <>
       <Header logo={logo} />
