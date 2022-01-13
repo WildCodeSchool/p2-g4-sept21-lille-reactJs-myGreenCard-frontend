@@ -10,8 +10,10 @@ const SLogingPage = styled.section`
     display: flex;
     flex-direction: row;
     height: 2vh;
-    width: 90vw;
-    margin: 1vh 15px 0 0;
+
+    width: 95vw;
+    margin: 0.5vh 15px 2vh 0px;
+
     justify-content: flex-end;
     font-size: 8px;
     align-items: center;
@@ -23,20 +25,23 @@ const SLogingPage = styled.section`
   p {
     align-items: right;
   }
-  .UserCard {
+  .userCard {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 30vh;
-    margin: -2vh 0 6vh 0;
+    margin: 0vh 0 6vh 0;
+  }
+  .userCard img {
+    margin-top: 1vh;
   }
   .MuiBox-root {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 50vh;
-    width: 90vw;
+    width: 95vw;
     margin-bottom: 5vh;
     border-radius: 0px 0px 10px 10px;
     -webkit-box-shadow: 0px 7px 12px -3px #000000;
@@ -53,7 +58,7 @@ const SLogingPage = styled.section`
     height: 35px;
   }
   .MuiTabs-indicator {
-    margin-left: 9.15vw;
+    margin-left: 10.15vw;
     border-radius: 25px;
   }
   .MuiButtonBase-root {
@@ -98,6 +103,24 @@ const SLogingPage = styled.section`
   }
   a {
     margin-top: 7vh;
+  }
+
+  .darkThemeBackground {
+    background-color: #303134;
+    border-radius: 20px 20px 10px 10px;
+    width: 95vw;
+  }
+
+  .lightThemeBackground {
+    background-color: white;
+    border-radius: 20px 20px 10px 10px;
+    width: 90vw;
+    height: 500px;
+  }
+
+  .darkThemeInput {
+    background: black;
+    border-bottom: 2px solid #303134;
   }
 `;
 
