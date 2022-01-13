@@ -11,7 +11,7 @@ const SLogingPage = styled.section`
     flex-direction: row;
     height: 2vh;
     width: 90vw;
-    margin: 0.5vh 15px 2vh 0px;
+    margin: 1vh 15px 0 0;
     justify-content: flex-end;
     font-size: 8px;
     align-items: center;

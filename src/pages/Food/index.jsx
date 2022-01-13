@@ -1,4 +1,6 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import UserAvatar from 'components/UserAvatar';
 import FoodSlider from './FoodSlider/index';
@@ -6,12 +8,28 @@ import SFood from './style';
 import 'react-tabs/style/react-tabs.css';
 import BurgerMenu from './BurgerMenu';
 
-const data = require('./food.json');
-
 export default function Food() {
-  const dataLunch = data.food[0].lunch;
-  const dataDrinks = data.food[0].drinks;
-  const dataDesserts = data.food[0].desserts;
+  const [dataLunch, setDataLunch] = useState([]);
+  const [dataDesserts, setDataDesserts] = useState([]);
+  const [dataDrinks, setDataDrinks] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:5000/food/lunch').then(({ data }) => {
+      setDataLunch(data);
+    });
+  }, []);
+
+  useEffect(() => {
+    axios.get('http://localhost:5000/food/desserts').then(({ data }) => {
+      setDataDesserts(data);
+    });
+  }, []);
+
+  useEffect(() => {
+    axios.get('http://localhost:5000/food/drinks').then(({ data }) => {
+      setDataDrinks(data);
+    });
+  }, []);
 
   return (
     <>
