@@ -88,7 +88,7 @@ function FoodProfile() {
       <BurgerMenu />
       <FoodProfileList>
         <div>
-          <p className="votreProfil">Votre profil alimentaire</p>
+          <p>Votre profil alimentaire</p>
           <br />
           <h2 className="foodProfileTitle">Allergies</h2>
         </div>
