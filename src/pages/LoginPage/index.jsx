@@ -67,42 +67,53 @@ export default function LoginPage({ theme, setTheme }) {
     <SLogingPage>
       <TabContext value={value}>
         <Box>
-          <div className="theme">
-            <p>Light</p>
-            <ToggleButton
-              label="Dark/light mode"
-              handleClick={toggleTheme}
-              className={isDarkTheme ? 'dark' : null}
-              size={0.5}
-            />
-            <p>Dark</p>
-          </div>
-          <img src={isDarkTheme ? logoDark : logo} alt="homeIcon" />
-          <div className="UserCard">
-            <UserAvatar size="125px" border="none" />
-          </div>
-          <Tabs
-            variant="fullWidth"
-            onChange={handleChange}
-            aria-label="ConnectionChoice"
-            textColor="black"
-            centered
-            TabIndicatorProps={{
-              style: {
-                height: '3px',
-                backgroundColor: isDarkTheme ? 'white' : 'black',
-                width: '27vw',
-              },
-            }}
+
+          <div
+            className={
+              isDarkTheme ? 'darkThemeBackground' : 'lightThemeBakcground'
+            }
+
           >
-            <Tab label="Se connecter" value="1" />
-            <Tab label="Sans contact" value="2" />
-          </Tabs>
+            <div className="theme">
+              <p>Light</p>
+              <ToggleButton
+                label="Dark/light mode"
+                handleClick={toggleTheme}
+                className={isDarkTheme ? 'dark' : null}
+                size={0.5}
+              />
+              <p>Dark</p>
+            </div>
+            <div className="userCard">
+              <img src={isDarkTheme ? logoDark : logo} alt="homeIcon" />
+              <UserAvatar size="125px" border="none" />
+            </div>
+
+            <Tabs
+              variant="fullWidth"
+              onChange={handleChange}
+              aria-label="ConnectionChoice"
+              textColor="black"
+              centered
+              TabIndicatorProps={{
+                style: {
+                  height: '3px',
+                  backgroundColor: isDarkTheme ? 'white' : 'black',
+                  width: '27vw',
+                },
+              }}
+            >
+              <Tab label="Se connecter" value="1" />
+              <Tab label="Sans contact" value="2" />
+            </Tabs>
+          </div>
         </Box>
+
         <TabPanel value="1">
           <form onSubmit={handleSubmit}>
             <p>Email</p>
             <input
+              className={isDarkTheme ? 'darkThemeInput' : 'lightThemeInput'}
               type="email"
               name="email"
               value={form.email}
@@ -110,6 +121,7 @@ export default function LoginPage({ theme, setTheme }) {
             />
             <p>Mot de passe</p>
             <input
+              className={isDarkTheme ? 'darkThemeInput' : 'lightThemeInput'}
               type="password"
               name="password"
               value={form.password}
@@ -117,6 +129,8 @@ export default function LoginPage({ theme, setTheme }) {
             />
             <input type="submit" value="Lets go" />
           </form>
+
+          <p>Mot de passe oublié ?</p>
           <ToastContainer />
           <p>Mot de passe oublié</p>
 

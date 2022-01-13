@@ -23,8 +23,6 @@ const SFood = styled.main`
   .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: #fff;
-
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -41,6 +39,7 @@ const SFood = styled.main`
   .menuOfDay {
     text-align: center;
     margin: 10vh 0 20px 0;
+    font-weight: 400;
   }
   .swiper-slide img {
     display: block;
@@ -50,6 +49,8 @@ const SFood = styled.main`
   }
   .swiperComponent {
     width: 370px;
+  }
+  .swiperComponentColor {
     background-color: #eeeded;
   }
   .swiper-slide .swiper-slide-active {

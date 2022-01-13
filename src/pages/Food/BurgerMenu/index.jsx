@@ -6,20 +6,12 @@ function BurgerMenu() {
   return (
     <SMenu>
       <Menu>
-        <ul>
-          <li>
-            <Link to="/">Accueil</Link>
-          </li>
-          <li>
-            <Link to="/Food">Menu du jour</Link>
-            <li>
-              <Link to="/Food/Profile">Profil alimentaire</Link>
-            </li>
-          </li>
-          <li>
-            <Link to="/Food/randomLunch">Random lunch</Link>
-          </li>
-        </ul>
+        <section>
+          <Link to="/">Accueil</Link> <br />
+          <Link to="/food">Menu du jour</Link> <br />
+          <Link to="/food/Profile">Profil alimentaire</Link> <br />
+          <Link to="/food/randomLunch">Random lunch</Link>
+        </section>
       </Menu>
     </SMenu>
   );
