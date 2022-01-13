@@ -12,7 +12,10 @@ const FoodProfileList = styled.ul`
     font-weight: bold;
     text-align: center;
   }
-
+  button {
+    width: 110px;
+    height: 110px;
+  }
   h2 {
     text-align: left;
     width: 90vw;
@@ -20,9 +23,13 @@ const FoodProfileList = styled.ul`
     font-size: 25px;
     font-weight: bold;
   }
-  img {
-    width: 120px;
-    height: 120px;
+  .allergiePic {
+    width: 100%;
+    height: 100%;
+  }
+  .preferencePic {
+    width: 100%;
+    height: 100%;
   }
   p {
     font-size: 13px;

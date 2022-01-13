@@ -67,12 +67,10 @@ export default function LoginPage({ theme, setTheme }) {
     <SLogingPage>
       <TabContext value={value}>
         <Box>
-
           <div
             className={
               isDarkTheme ? 'darkThemeBackground' : 'lightThemeBakcground'
             }
-
           >
             <div className="theme">
               <p>Light</p>
@@ -132,7 +130,6 @@ export default function LoginPage({ theme, setTheme }) {
 
           <p>Mot de passe oublié ?</p>
           <ToastContainer />
-          <p>Mot de passe oublié</p>
 
           <Link to="/home">
             <MainButton content="Let&#39;s gooooo" />

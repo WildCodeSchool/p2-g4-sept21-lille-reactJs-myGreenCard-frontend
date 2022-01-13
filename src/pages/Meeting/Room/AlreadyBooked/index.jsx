@@ -21,7 +21,7 @@ export default function AlreadyBooked({
   useEffect(() => {
     const { id } = reservation;
     axios
-      .get(`${process.env.REACT_APP_API_URL}/meeting/${id}/participants`)
+      .get(`http://localhost:5000/meeting/${id}/participants`)
 
       .then(({ data }) => {
         setParticipants(data);

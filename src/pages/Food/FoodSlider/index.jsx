@@ -5,12 +5,13 @@ import 'swiper/swiper.min.css';
 import 'swiper/components/navigation/navigation.min.css';
 import { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import MainButton from 'components/MainButton';
 import FoodModal from '../FoodModal';
-
 import SFoodSlider from './style';
 
 const FoodSlider = ({ typeOfFood, theme }) => {
   const isDarkTheme = theme === 'dark';
+  console.log(theme);
   const [renderModal, setRenderModal] = useState(false);
   const [menuItem, setMenuItem] = useState({});
 
@@ -57,6 +58,13 @@ const FoodSlider = ({ typeOfFood, theme }) => {
               </button>
               <p className="typeName">{type.name}</p>
               <p className="price">{type.price} €</p>
+              <MainButton
+                clickCallback={() => {
+                  toggleModal();
+                  setMenuItem(type);
+                }}
+                content="Choisir ce plat"
+              />
             </SFoodSlider>
           </SwiperSlide>
         ))}
