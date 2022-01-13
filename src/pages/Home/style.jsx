@@ -89,7 +89,6 @@ const SHome = styled.section`
   .meeting {
     position: relative;
     display: flex;
-    flex-direction: row;
     font-weight: bold;
     height: 150px;
     width: 80vw;
