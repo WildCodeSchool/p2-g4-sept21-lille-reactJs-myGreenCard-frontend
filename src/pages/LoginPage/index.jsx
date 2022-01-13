@@ -73,7 +73,7 @@ export default function LoginPage({ theme, setTheme }) {
               label="Dark/light mode"
               handleClick={toggleTheme}
               className={isDarkTheme ? 'dark' : null}
-              size={0.5}
+              size={0.75}
             />
             <p>Dark</p>
           </div>
