@@ -23,9 +23,11 @@ export default function ValidationPopup({
     setValidationPopup(false);
   };
   const storeMeeting = () => {
-    axios.post(`http://localhost:5000/meeting/`, meeting).catch((e) => {
-      console.log(e);
-    });
+    axios
+      .post(`${process.env.REACT_APP_API_URL}/meeting/`, meeting)
+      .catch((e) => {
+        console.log(e);
+      });
   };
   const showShare = () => {
     makeTheModalDisappear();
@@ -69,33 +71,6 @@ ValidationPopup.propTypes = {
     roomPicture: propTypes.string,
   }),
   setShare: propTypes.func,
-  // user: propTypes.shape({
-  //   id: propTypes.number,
-  //   email: propTypes.string,
-  //   firstname: propTypes.string,
-  //   lastname: propTypes.string,
-  //   picture: propTypes.string,
-  //   job: propTypes.string,
-  //   isLogged: propTypes.bool,
-  //   cardNumber: propTypes.number,
-  //   Amount: propTypes.string,
-  //   isInvited: propTypes.bool,
-  //   eggFree: propTypes.bool,
-  //   glutenFree: propTypes.bool,
-  //   gmoFree: propTypes.bool,
-  //   nutFree: propTypes.bool,
-  //   sugarFree: propTypes.bool,
-  //   cornFree: propTypes.bool,
-  //   dairyFree: propTypes.bool,
-  //   soyFree: propTypes.bool,
-  //   transFatsFree: propTypes.bool,
-  //   vegan: propTypes.bool,
-  //   shellfishFree: propTypes.bool,
-  //   porkFree: propTypes.bool,
-  //   vegetarian: propTypes.bool,
-  //   fridayFish: propTypes.bool,
-  //   onDiet: propTypes.bool,
-  // }),
 };
 
 ValidationPopup.defaultProps = {
@@ -103,5 +78,4 @@ ValidationPopup.defaultProps = {
   reservation: null,
   setShare: () => {},
   setValidation: () => {},
-  // user: null,
 };

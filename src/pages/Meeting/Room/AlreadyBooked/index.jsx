@@ -4,7 +4,6 @@ import axios from 'axios';
 import 'moment/locale/fr';
 import Avatar from '@mui/material/Avatar';
 import Badge from '@mui/material/Badge';
-// import avatarMaxime from 'assets/Img/users/e6.png';
 import { AvatarGroup } from '@mui/material';
 import iconComputer from 'assets/computer.png';
 import iconPin from 'assets/pin.png';
@@ -22,7 +21,7 @@ export default function AlreadyBooked({
   useEffect(() => {
     const { id } = reservation;
     axios
-      .get(`http://localhost:5000/meeting/${id}/participants`)
+      .get(`${process.env.REACT_APP_API_URL}/meeting/${id}/participants`)
 
       .then(({ data }) => {
         setParticipants(data);

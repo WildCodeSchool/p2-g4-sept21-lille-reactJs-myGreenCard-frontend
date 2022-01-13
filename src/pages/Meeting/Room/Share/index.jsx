@@ -13,7 +13,6 @@ export default function Share({ reservation, setValidation, setShare }) {
   };
   return (
     <SShare>
-      {console.log(reservation)}
       <p>
         Vous venez de reserver la salle de réunion n°
         {reservation.roomId}
