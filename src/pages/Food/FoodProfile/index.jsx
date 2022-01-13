@@ -1,5 +1,4 @@
-import axios from 'axios';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import corn from 'assets/foodIcons/corn.png';
 import dairy from 'assets/foodIcons/dairy.png';
 import diet from 'assets/foodIcons/diet.png';
@@ -19,8 +18,6 @@ import BurgerMenu from '../BurgerMenu';
 import FoodProfileList from './style';
 
 function FoodProfile() {
-  const [allData, setAllData] = useState([]);
-
   const [preferences, setPreferences] = useState([
     {
       name: 'Vegan',
@@ -102,39 +99,54 @@ function FoodProfile() {
     },
   ]);
 
-  const changeAllergiesState = () => {
-    setAllergies(allergies);
-  };
-
-  const changePreferencesState = () => {
-    setPreferences(preferences);
-  };
-
-  useEffect(() => {
-    axios.get('http://localhost:5000/food').then(({ data }) => {
-      setAllData(data);
+  const changeAllergiesState = (name) => {
+    let newData = JSON.parse(JSON.stringify(allergies));
+    newData = newData.map((item) => {
+      if (item.name !== name) {
+        return item;
+      }
+      return {
+        ...item,
+        isFree: !item.isFree,
+      };
     });
-  }, []);
-  console.log(allergies[0].isFree);
-  console.log(allergies[1].isFree);
-  console.log(allData);
+    setAllergies(newData);
+  };
+
+  const changePreferencesState = (name) => {
+    let newData = JSON.parse(JSON.stringify(preferences));
+    newData = newData.map((item) => {
+      if (item.name !== name) {
+        return item;
+      }
+      return {
+        ...item,
+        isFree: !item.isFree,
+      };
+    });
+    setPreferences(newData);
+  };
 
   return (
     <>
       <BurgerMenu />
       <FoodProfileList>
         <div>
-          <p className="votreProfil">Votre profil alimentaire</p>
+          <h3 className="yourProfile">Votre profil alimentaire</h3>
           <br />
           <h2 className="foodProfileTitle">Allergies</h2>
         </div>
         <FoodProfileList>
           <br />
           {allergies.map((allergie) => (
-            <button type="button" onClick={changeAllergiesState}>
-              <div />
+            <button
+              type="button"
+              onClick={() => {
+                changeAllergiesState(allergie.name);
+              }}
+            >
               <img
-                className="allergiePic"
+                className={allergie.isFree ? 'isFree' : 'isNotFree'}
                 src={allergie.icon}
                 alt={allergie.name}
               />
@@ -145,9 +157,14 @@ function FoodProfile() {
         <h2 className="foodProfileTitle">Préférences</h2>
         <FoodProfileList>
           {preferences.map((preference) => (
-            <button type="button" onClick={changePreferencesState}>
+            <button
+              type="button"
+              onClick={() => {
+                changePreferencesState(preference.name);
+              }}
+            >
               <img
-                className="preferencePic"
+                className={preference.isFree ? 'isFree' : 'isNotFree'}
                 src={preference.icon}
                 alt={preference.name}
               />

@@ -3,33 +3,23 @@ import styled from 'styled-components';
 const FoodProfileList = styled.ul`
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
-  width: 96%;
+  justify-content: space-between;
+  width: 95%;
 
-  .votreProfil {
+  .yourProfile {
     margin-top: 70px;
     font-size: 20px;
     font-weight: bold;
     text-align: center;
-  }
-  button {
-    width: 110px;
-    height: 110px;
+    margin-left: 60px;
   }
   h2 {
     text-align: left;
-    width: 90vw;
-    margin-left: 20px;
     font-size: 25px;
     font-weight: bold;
   }
-  .allergiePic {
-    width: 100%;
-    height: 100%;
-  }
-  .preferencePic {
-    width: 100%;
-    height: 100%;
+  img {
+    width: 100px;
   }
   p {
     font-size: 13px;
@@ -37,6 +27,11 @@ const FoodProfileList = styled.ul`
   li {
     width: 100px;
     height: 120px;
+  }
+  .isFree {
+    opacity: 0.5;
+    transform: translateY(-3px);
+    transition: 0.4s ease-out;
   }
 `;
 
