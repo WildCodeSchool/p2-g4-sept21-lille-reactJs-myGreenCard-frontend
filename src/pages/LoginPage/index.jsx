@@ -67,10 +67,12 @@ export default function LoginPage({ theme, setTheme }) {
     <SLogingPage>
       <TabContext value={value}>
         <Box>
+
           <div
             className={
               isDarkTheme ? 'darkThemeBackground' : 'lightThemeBakcground'
             }
+
           >
             <div className="theme">
               <p>Light</p>
