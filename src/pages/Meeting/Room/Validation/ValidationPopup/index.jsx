@@ -1,6 +1,8 @@
 import propTypes from 'prop-types';
 import moment from 'moment';
 import 'moment/locale/fr';
+import { useSelector } from 'react-redux';
+import axios from 'axios';
 import SValidationPopup from './style';
 
 export default function ValidationPopup({
@@ -9,14 +11,33 @@ export default function ValidationPopup({
   setValidation,
   setShare,
 }) {
+  const user = useSelector((state) => state.user);
+  const meetingRoomId = parseInt(reservation.roomId, 10);
+  const meeting = {
+    beginning: reservation.slot,
+    userId: user.id,
+    meetingRoomId: parseInt(meetingRoomId, 10),
+  };
+
   const makeTheModalDisappear = () => {
     setValidationPopup(false);
   };
-
+  const storeMeeting = () => {
+    console.log(meeting);
+    axios
+      .post(`http://localhost:5000/meeting/`, meeting)
+      .then(({ data }) => {
+        console.log(data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
   const showShare = () => {
     makeTheModalDisappear();
     setValidation(false);
     setShare(true);
+    storeMeeting();
   };
   return (
     <SValidationPopup>
@@ -54,6 +75,33 @@ ValidationPopup.propTypes = {
     roomPicture: propTypes.string,
   }),
   setShare: propTypes.func,
+  // user: propTypes.shape({
+  //   id: propTypes.number,
+  //   email: propTypes.string,
+  //   firstname: propTypes.string,
+  //   lastname: propTypes.string,
+  //   picture: propTypes.string,
+  //   job: propTypes.string,
+  //   isLogged: propTypes.bool,
+  //   cardNumber: propTypes.number,
+  //   Amount: propTypes.string,
+  //   isInvited: propTypes.bool,
+  //   eggFree: propTypes.bool,
+  //   glutenFree: propTypes.bool,
+  //   gmoFree: propTypes.bool,
+  //   nutFree: propTypes.bool,
+  //   sugarFree: propTypes.bool,
+  //   cornFree: propTypes.bool,
+  //   dairyFree: propTypes.bool,
+  //   soyFree: propTypes.bool,
+  //   transFatsFree: propTypes.bool,
+  //   vegan: propTypes.bool,
+  //   shellfishFree: propTypes.bool,
+  //   porkFree: propTypes.bool,
+  //   vegetarian: propTypes.bool,
+  //   fridayFish: propTypes.bool,
+  //   onDiet: propTypes.bool,
+  // }),
 };
 
 ValidationPopup.defaultProps = {
@@ -61,4 +109,5 @@ ValidationPopup.defaultProps = {
   reservation: null,
   setShare: () => {},
   setValidation: () => {},
+  // user: null,
 };
