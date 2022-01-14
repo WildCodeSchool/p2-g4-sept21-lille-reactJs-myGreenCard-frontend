@@ -125,7 +125,7 @@ export default function LoginPage({ theme, setTheme }) {
               value={form.password}
               onChange={HandleChangeFormData}
             />
-            <input type="submit" value="Lets go" />
+            <input className="letsgo" type="submit" value="Lets go" />
           </form>
 
           <p>Mot de passe oublié ?</p>

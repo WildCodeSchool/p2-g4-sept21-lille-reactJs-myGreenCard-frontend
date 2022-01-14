@@ -63,7 +63,7 @@ const FoodSlider = ({ typeOfFood, theme }) => {
                   toggleModal();
                   setMenuItem(type);
                 }}
-                content="Choisir ce plat"
+                content="Choisir"
               />
             </SFoodSlider>
           </SwiperSlide>

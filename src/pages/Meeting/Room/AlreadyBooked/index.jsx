@@ -37,6 +37,8 @@ export default function AlreadyBooked({
   };
   return (
     <SAlreadyBooked>
+      {console.log(reservation)}
+
       <Badge
         anchorOrigin={{
           vertical: 'top',
@@ -59,7 +61,7 @@ export default function AlreadyBooked({
 
       <h2>Bureau n° {reservation.roomId}</h2>
       <p>
-        Réservé par Maxime pour le créneau de
+        Réservé par {reservation.userFirstname} pour le créneau de
         {moment(reservation.slot).format('  HH ')}h
         {moment(reservation.slot).format('  dddd ')}
       </p>
