@@ -1,6 +1,8 @@
 import Header from 'components/Header';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import apple from 'assets/Img/apple.png';
+import google from './pictures/googleWallet.png';
 import ToggleButton from '../../components/ToggleButton';
 import logo from '../../assets/Img/easyApp.png';
 import darkLogo from '../../assets/Img/easyAppNight.png';
@@ -30,6 +32,32 @@ export default function Home({ theme, setTheme }) {
           className={isDarkTheme ? 'dark' : null}
           size={0.5}
         />
+        <article className="badge">
+          <h2>Votre badge digital</h2>
+          <div className="logo">
+            <div className="wallet">
+              <a
+                target="_blank"
+                href="https://www.apple.com/apple-card/"
+                rel="noreferrer"
+              >
+                <img src={apple} alt="apple wallet" />
+              </a>
+              <a
+                target="_blank"
+                href="https://pay.google.com/intl/fr_fr/about/"
+                rel="noreferrer"
+              >
+                <img src={google} alt="google wallet" />
+              </a>
+            </div>
+            <div className="eazyCard">
+              <Link to="/eazycard">
+                <img src={Card} alt="Eazycard" />
+              </Link>
+            </div>
+          </div>
+        </article>
         <Link to="/food">
           <article
             className={isDarkTheme ? 'darkThemeBackground menu' : 'menu'}
