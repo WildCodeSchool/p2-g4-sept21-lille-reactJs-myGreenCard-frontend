@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const SMenu = styled.nav`
   font-family: 'Montserrat', sans-serif;
-  li {
+  a {
     color: black;
     line-height: 50px;
   }
@@ -28,7 +28,7 @@ const SMenu = styled.nav`
   /* Customize library CSS in order to fit with the wireframe */
 
   .bm-burger-bars {
-    background: #000000;
+    background: #57595e;
     width: 32px;
     height: 10%;
   }

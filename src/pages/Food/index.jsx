@@ -41,6 +41,7 @@ export default function Food() {
             <UserAvatar />
           </Link>
         </div>
+
         <h1 className="menuOfDay"> Le menu du jour</h1>
         <section className="choiceMenu">
           <Tabs>

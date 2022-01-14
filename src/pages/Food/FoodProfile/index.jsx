@@ -88,9 +88,9 @@ function FoodProfile() {
       <BurgerMenu />
       <FoodProfileList>
         <div>
-          <h2>Votre profil alimentaire</h2>
+          <p>Votre profil alimentaire</p>
           <br />
-          <h3 className="foodProfileTitle">Allergies</h3>
+          <h2 className="foodProfileTitle">Allergies</h2>
         </div>
         <FoodProfileList>
           <br />
@@ -101,7 +101,7 @@ function FoodProfile() {
           ))}
         </FoodProfileList>
 
-        <h3 className="foodProfileTitle">Préférences</h3>
+        <h2 className="foodProfileTitle">Préférences</h2>
         <FoodProfileList>
           {preferences.map((preference) => (
             <li>

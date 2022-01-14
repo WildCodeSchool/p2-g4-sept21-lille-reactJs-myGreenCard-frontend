@@ -17,9 +17,10 @@ const SMeetingCard = styled.article`
     font-size: 1.2rem;
   }
   p {
+    width: 60%;
     padding: 10px 5px;
-    font-weight: bold;
   }
+
   img {
     object-fit: cover;
     height: 80px;
@@ -27,8 +28,8 @@ const SMeetingCard = styled.article`
     border-radius: 50%;
     border: 4px #0da00d solid;
     position: absolute;
-    top: 20px;
-    right: 5px;
+    top: 50px;
+    right: 20px;
   }
 `;
 export default SMeetingCard;

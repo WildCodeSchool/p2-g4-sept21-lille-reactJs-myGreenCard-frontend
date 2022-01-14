@@ -16,10 +16,9 @@ const SHome = styled.section`
 
   article {
     width: 80vw;
-    margin: 20px 0 10px 0px;
+    margin: 20px 0 30px 0px;
     border-radius: 10px;
-    -webkit-box-shadow: 0px 7px 12px -3px #000000;
-    box-shadow: 0px 7px 12px -3px #000000;
+    box-shadow: rgba(76, 100, 104, 0.767) 0px 20px 25px -18px;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -27,13 +26,18 @@ const SHome = styled.section`
   }
 
   img {
-    height: 140px;
+    width: 120px;
     object-fit: contain;
+  }
+
+  p {
+    width: 50vw;
   }
 
   .menu {
     height: 180px;
     font-weight: bold;
+    position: relative;
   }
 
   .meal {
@@ -50,20 +54,14 @@ const SHome = styled.section`
     width: 55vw;
   }
 
-  .dishes {
+  .foodIcon {
     display: flex;
-    flex-flow: row wrap;
-    align-items: right;
-    height: 100px;
-    width: 70px;
-    justify-content: space-between;
-
-    img {
-      border-radius: 45px;
-      object-fit: cover;
-      height: 40px;
-      width: 30px;
-    }
+    justify-content: center;
+    width: 0px;
+    height: 150px;
+    position: absolute;
+    right: 30%;
+    bottom: 10%;
   }
 
   .dinnersReady {
@@ -89,20 +87,38 @@ const SHome = styled.section`
   }
 
   .meeting {
+    position: relative;
     display: flex;
-    flex-wrap: wrap;
     font-weight: bold;
     height: 150px;
-  }
-
-  .roomReservation {
-    width: 40vw;
+    width: 80vw;
   }
 
   .meetingReservation {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+  }
+
+  .meetingReservation h3 {
+    width: 50vw;
+  }
+
+  .meetingReservation p {
     font-weight: normal;
     height: 100px;
     width: 30vw;
+    margin-top: 10px;
+  }
+
+  .meetingRoomPicture {
+    position: absolute;
+    left: 55%;
+    bottom: 10%;
+  }
+
+  .meetingRoomPicture img {
+    rotate: 90deg;
   }
 
   .furnitures {
@@ -137,6 +153,11 @@ const SHome = styled.section`
     flex-wrap: wrap;
     font-weight: bold;
     height: 150px;
+    position: relative;
+  }
+
+  .lostCard p {
+    width: 130px;
   }
 
   .card {
@@ -151,9 +172,14 @@ const SHome = styled.section`
   }
 
   .pictureCard {
-    img {
-      width: 50vw;
-    }
+    position: absolute;
+    width: 35vw;
+    left: 50%;
+    bottom: 30%;
+  }
+
+  .pictureCard img {
+    width: 100%;
   }
 `;
 

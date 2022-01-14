@@ -4,6 +4,10 @@ import fournitures from 'assets/Img/fournitures.png';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import SSupplies from './style';
+import PropTypes from 'prop-types';
+import fournitures from 'assets/Img/fournitures.png';
+import MainButton from 'components/MainButton';
+import SSupplies from './style';
 
 require('dotenv').config();
 
@@ -16,6 +20,11 @@ export default function Supplies() {
     });
   }, []);
 
+
+
+
+export default function Supplies({ theme }) {
+  const isDarkTheme = theme === 'dark';
   return (
     <>
       <SSupplies>
@@ -34,10 +43,18 @@ export default function Supplies() {
             );
           })}
         </div>
-        <button className="addCart" type="button">
-          Ajouter au panier
-        </button>
+        <section>
+          <MainButton className="addToCart" content="Ajouter au panier" />
+        </section>
       </SSupplies>
     </>
   );
 }
+
+Supplies.propTypes = {
+  theme: PropTypes.string,
+};
+
+Supplies.defaultProps = {
+  theme: '',
+};

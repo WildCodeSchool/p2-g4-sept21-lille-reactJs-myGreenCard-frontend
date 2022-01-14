@@ -7,7 +7,7 @@ const SSupplies = styled.main`
     margin: auto;
   }
 
-  h2 {
+  h3 {
     font-weight: bold;
   }
 
@@ -16,14 +16,10 @@ const SSupplies = styled.main`
     color: #5f5f5ffb;
   }
 
-  .addCart {
-    display: block;
-    margin: auto;
-    margin-bottom: 30px;
-    height: 8vh;
-    width: 60vw;
-    font-size: large;
-    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
   }
 
   .container {

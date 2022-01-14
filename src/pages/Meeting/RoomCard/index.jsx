@@ -4,13 +4,13 @@ import SRoomCard from './style';
 export default function RoomCard({
   localisation,
   capacity,
-  id,
+  number,
   equipment,
   picture,
 }) {
   return (
     <SRoomCard>
-      <h2>Salle de reunion n°{id}</h2>
+      <h2>Salle de reunion n°{number}</h2>
       <p>{localisation}</p>
       <p>Capacité : {capacity} </p>
       <p>{equipment}</p>
@@ -22,7 +22,7 @@ export default function RoomCard({
 RoomCard.propTypes = {
   localisation: PropTypes.string,
   capacity: PropTypes.number,
-  id: PropTypes.number,
+  number: PropTypes.number,
   equipment: PropTypes.string,
   picture: PropTypes.string,
 };
@@ -30,7 +30,7 @@ RoomCard.propTypes = {
 RoomCard.defaultProps = {
   localisation: '',
   capacity: 0,
-  id: PropTypes.number,
+  number: PropTypes.number,
   equipment: '',
   picture: '',
 };

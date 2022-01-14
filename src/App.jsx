@@ -21,7 +21,6 @@ function App() {
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
       <GlobalStyles />
-
       <main>
         <Routes>
           <Route
@@ -33,7 +32,10 @@ function App() {
             element={<Home setTheme={setTheme} theme={theme} />}
           />
           <Route path="eazyCard" element={<EazyCard />} />
-          <Route path="food" element={<Food />} />
+          <Route
+            path="food"
+            element={<Food setTheme={setTheme} theme={theme} />}
+          />
           <Route path="food/profile" element={<FoodProfile />} />
           <Route path="office" element={<Office />} />
           <Route path="meetingRooms" element={<Meeting />} />

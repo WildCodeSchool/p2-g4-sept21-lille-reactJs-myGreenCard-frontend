@@ -1,4 +1,8 @@
 import propTypes from 'prop-types';
+import moment from 'moment';
+import 'moment/locale/fr';
+import { useSelector } from 'react-redux';
+import axios from 'axios';
 import SValidationPopup from './style';
 
 export default function ValidationPopup({
@@ -7,15 +11,29 @@ export default function ValidationPopup({
   setValidation,
   setShare,
 }) {
+  const user = useSelector((state) => state.user);
+  const meetingRoomId = parseInt(reservation.roomId, 10);
+  const meeting = {
+    beginning: reservation.slot,
+    userId: user.id,
+    meetingRoomId: parseInt(meetingRoomId, 10),
+  };
+
   const makeTheModalDisappear = () => {
     setValidationPopup(false);
   };
-  // It will also be necessary to store information of the reservation
-
+  const storeMeeting = () => {
+    axios
+      .post(`${process.env.REACT_APP_API_URL}/meeting/`, meeting)
+      .catch((e) => {
+        console.log(e);
+      });
+  };
   const showShare = () => {
     makeTheModalDisappear();
     setValidation(false);
     setShare(true);
+    storeMeeting();
   };
   return (
     <SValidationPopup>
@@ -23,7 +41,9 @@ export default function ValidationPopup({
         <h2>Confirmation</h2>
         <p>
           Confirmez-vous la réservation de la salle de réunion n°
-          {reservation.roomId} {reservation.day} de {reservation.slot} ?
+          {reservation.roomId}
+          {moment(reservation.slot).format('  dddd ')} à
+          {moment(reservation.slot).format('  HH ')}h ?
         </p>
         <div>
           <button type="button" onClick={showShare}>
@@ -42,9 +62,13 @@ ValidationPopup.propTypes = {
   setValidationPopup: propTypes.func,
   setValidation: propTypes.func,
   reservation: propTypes.shape({
+    room: propTypes.number,
     roomId: propTypes.string,
-    day: propTypes.string,
     slot: propTypes.string,
+    userFirstname: propTypes.string,
+    userLastname: propTypes.string,
+    userPicture: propTypes.string,
+    roomPicture: propTypes.string,
   }),
   setShare: propTypes.func,
 };
