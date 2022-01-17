@@ -1,6 +1,7 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useSelector } from 'react-redux';
+import { api } from 'conf';
 import { Link } from 'react-router-dom';
 import UserAvatar from 'components/UserAvatar';
 import FoodSlider from './FoodSlider/index';
@@ -12,24 +13,33 @@ export default function Food() {
   const [dataLunch, setDataLunch] = useState([]);
   const [dataDesserts, setDataDesserts] = useState([]);
   const [dataDrinks, setDataDrinks] = useState([]);
+  const user = useSelector((state) => state.user);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/food/lunch').then(({ data }) => {
+    api.get(`/food/lunch`).then(({ data }) => {
       setDataLunch(data);
+      console.log(user);
     });
-  }, []);
+  }, [user]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/food/desserts').then(({ data }) => {
+    api.get(`/food/desserts`).then(({ data }) => {
       setDataDesserts(data);
     });
   }, []);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/food/drinks').then(({ data }) => {
+    api.get(`/food/drinks`).then(({ data }) => {
       setDataDrinks(data);
     });
   }, []);
+
+  // import user with useSelector in order to recover the :id
+  // axios call of my user/:id/foodProfile page. recover the json
+  // Make a filter which allows to rend my dishes if it does not contain what i dislike/can't eat
+  // ex dish with eggs, if i don't want eggs i'll pass in true
+  // dataOmelette = 0 cause there is egg in it. So rend me the dishes where eggFree=1
+  // don't forget to put the json in the condition of the useEffect
 
   return (
     <>

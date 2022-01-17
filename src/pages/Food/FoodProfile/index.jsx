@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import axios from 'axios';
 import corn from 'assets/foodIcons/corn.png';
 import dairy from 'assets/foodIcons/dairy.png';
 import diet from 'assets/foodIcons/diet.png';
@@ -14,40 +16,49 @@ import sugar from 'assets/foodIcons/sugar.png';
 import transfat from 'assets/foodIcons/transfat.png';
 import vegan from 'assets/foodIcons/vegan.png';
 import vegetarian from 'assets/foodIcons/vegetarian.png';
+import MainButton from 'components/MainButton';
 import BurgerMenu from '../BurgerMenu';
 import FoodProfileList from './style';
 
 function FoodProfile() {
+  const user = useSelector((state) => state.user);
+  const { id } = user;
   const [preferences, setPreferences] = useState([
     {
       name: 'Vegan',
       icon: vegan,
       isFree: false,
+      bdName: 'vegan',
     },
     {
       name: 'Pas de poissons',
       icon: shellfish,
       isFree: false,
+      bdName: 'shellfishFree',
     },
     {
       name: 'Pas de porc',
       icon: pork,
       isFree: false,
+      bdName: 'porkFree',
     },
     {
       name: 'Végétarien',
       icon: vegetarian,
       isFree: false,
+      bdName: 'vegetarian',
     },
     {
       name: 'Vendredi saint',
       icon: friday,
       isFree: false,
+      bdName: 'fridayFish',
     },
     {
       name: 'Non calorique',
       icon: diet,
       isFree: false,
+      bdName: 'onDiet',
     },
   ]);
 
@@ -56,48 +67,59 @@ function FoodProfile() {
       name: 'Oeuf',
       icon: egg,
       isFree: false,
+      bdName: 'eggFree',
     },
     {
       name: 'Gluten',
       icon: gluten,
       isFree: false,
+      bdName: 'glutenFree',
     },
     {
       name: 'OGM',
       icon: gmo,
       isFree: false,
+      bdName: 'gmoFree',
     },
     {
       name: 'Arachides',
       icon: nut,
       isFree: false,
+      bdName: 'nutFree',
     },
     {
       name: 'Sucres',
       icon: sugar,
       isFree: false,
+      bdName: 'sugarFree',
     },
     {
       name: 'Maïs',
       icon: corn,
       isFree: false,
+      bdName: 'cornFree',
     },
     {
       name: 'Produits laitiers',
       icon: dairy,
       isFree: false,
+      bdName: 'dairyFree',
     },
     {
       name: 'Soja',
       icon: soy,
       isFree: false,
+      bdName: 'soyFree',
     },
     {
       name: 'Graisses transformées',
       icon: transfat,
       isFree: false,
+      bdName: 'transFatsFree',
     },
   ]);
+
+  useEffect(() => {}, []);
 
   const changeAllergiesState = (name) => {
     let newData = JSON.parse(JSON.stringify(allergies));
@@ -125,6 +147,33 @@ function FoodProfile() {
       };
     });
     setPreferences(newData);
+  };
+
+  const isFreePreferences = preferences.reduce((accu, item) => {
+    return {
+      ...accu,
+      [item.bdName]: item.isFree,
+    };
+  }, {});
+
+  const isFreeAllergies = allergies.reduce((accu, item) => {
+    return {
+      ...accu,
+      [item.bdName]: item.isFree,
+    };
+  }, {});
+
+  const isFreeProfile = { ...isFreeAllergies, ...isFreePreferences };
+
+  const storeFoodProfile = () => {
+    axios
+      .post(
+        `${process.env.REACT_APP_API_URL}/user/${id}/foodProfile`,
+        isFreeProfile
+      )
+      .catch((e) => {
+        console.log(e);
+      });
   };
 
   return (
@@ -172,6 +221,12 @@ function FoodProfile() {
           ))}
         </FoodProfileList>
       </FoodProfileList>
+      <MainButton
+        content="Mettre à jour mes informations"
+        clickCallback={() => {
+          storeFoodProfile();
+        }}
+      />
     </>
   );
 }
