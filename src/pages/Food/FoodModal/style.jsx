@@ -10,12 +10,8 @@ const SFoodModal = styled.section`
   position: absolute;
   width: 100vw;
   z-index: 2;
-  &.yourChoice {
-    background-color: #eeeded;
-  }
-  &.darkThemeBackground {
-    background-color: #303134;
-  }
+  background-color: ${(props) => props.theme.secondBackground};
+
   section {
     display: flex;
     flex-direction: column;
@@ -30,9 +26,7 @@ const SFoodModal = styled.section`
     width: 230px;
     height: 300px;
     margin: 50px 0 20px 0;
-    &.foodChoice {
-      background-color: white;
-    }
+    background-color: ${(props) => props.theme.background};
   }
 
   img {

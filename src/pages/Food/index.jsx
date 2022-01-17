@@ -14,21 +14,27 @@ export default function Food() {
   const [dataDrinks, setDataDrinks] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/food/lunch').then(({ data }) => {
-      setDataLunch(data);
-    });
+    axios
+      .get(`${process.env.REACT_APP_API_URL}/food/lunch`)
+      .then(({ data }) => {
+        setDataLunch(data);
+      });
   }, []);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/food/desserts').then(({ data }) => {
-      setDataDesserts(data);
-    });
+    axios
+      .get(`${process.env.REACT_APP_API_URL}/food/desserts`)
+      .then(({ data }) => {
+        setDataDesserts(data);
+      });
   }, []);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/food/drinks').then(({ data }) => {
-      setDataDrinks(data);
-    });
+    axios
+      .get(`${process.env.REACT_APP_API_URL}/food/drinks`)
+      .then(({ data }) => {
+        setDataDrinks(data);
+      });
   }, []);
 
   return (

@@ -40,7 +40,7 @@ export default function Slot({
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/meeting?id=${id}&slot=${slotT}`)
+      .get(`${process.env.REACT_APP_API_URL}/meeting?id=${id}&slot=${slotT}`)
 
       .then(({ data }) => {
         if (data[0]) {
