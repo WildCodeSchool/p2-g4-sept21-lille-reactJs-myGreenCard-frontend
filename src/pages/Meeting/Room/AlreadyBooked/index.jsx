@@ -25,7 +25,6 @@ export default function AlreadyBooked({
 
       .then(({ data }) => {
         setParticipants(data);
-        console.log(participants);
       })
       .catch((e) => {
         console.log(e);
@@ -38,8 +37,6 @@ export default function AlreadyBooked({
   };
   return (
     <SAlreadyBooked>
-      {console.log(reservation)}
-
       <Badge
         anchorOrigin={{
           vertical: 'top',

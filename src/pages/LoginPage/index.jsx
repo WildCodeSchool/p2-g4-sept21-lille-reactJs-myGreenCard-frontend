@@ -53,13 +53,12 @@ export default function LoginPage({ theme, setTheme }) {
       .then(({ data }) => {
         const { token, user } = data;
         cookies.set('token', token);
-        console.log(user);
         api.defaults.headers.authorization = `Bearer ${token}`;
         dispatch({ type: 'LOGIN', user });
-        toast(`You're now logged in, ${user.firstname} <3`);
+        toast(`Bienvenue sur EasyApp, ${user.firstname} !`);
       })
       .catch((err) => {
-        toast.error(`Achtung!${err}`);
+        toast.error(`Une erreur est survenue!${err}`);
       });
   };
 
