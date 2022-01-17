@@ -18,7 +18,6 @@ export default function Food() {
   useEffect(() => {
     api.get(`/food/lunch`).then(({ data }) => {
       setDataLunch(data);
-      console.log(user);
     });
   }, [user]);
 
@@ -33,13 +32,6 @@ export default function Food() {
       setDataDrinks(data);
     });
   }, []);
-
-  // import user with useSelector in order to recover the :id
-  // axios call of my user/:id/foodProfile page. recover the json
-  // Make a filter which allows to rend my dishes if it does not contain what i dislike/can't eat
-  // ex dish with eggs, if i don't want eggs i'll pass in true
-  // dataOmelette = 0 cause there is egg in it. So rend me the dishes where eggFree=1
-  // don't forget to put the json in the condition of the useEffect
 
   return (
     <>
