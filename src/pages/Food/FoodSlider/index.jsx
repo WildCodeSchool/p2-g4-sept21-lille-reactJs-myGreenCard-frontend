@@ -5,14 +5,14 @@ import 'swiper/swiper.min.css';
 import 'swiper/components/navigation/navigation.min.css';
 import { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { useTheme } from 'styled-components';
 import FoodModal from '../FoodModal';
-
 import SFoodSlider from './style';
 
-const FoodSlider = ({ typeOfFood, theme }) => {
-  const isDarkTheme = theme === 'dark';
+const FoodSlider = ({ typeOfFood }) => {
   const [renderModal, setRenderModal] = useState(false);
   const [menuItem, setMenuItem] = useState({});
+  const themeContext = useTheme();
 
   const toggleModal = () => {
     setRenderModal(!renderModal);
@@ -30,17 +30,8 @@ const FoodSlider = ({ typeOfFood, theme }) => {
         }}
       >
         {typeOfFood.map((type) => (
-          <SwiperSlide
-            className={
-              isDarkTheme
-                ? 'swiperComponent darkThemeBackground'
-                : 'swiperComponent swiperComponentColor'
-            }
-            key={type.id}
-          >
-            <SFoodSlider
-              className={isDarkTheme ? 'darkThemeMode' : 'lightThemeMode'}
-            >
+          <SwiperSlide className="swiperComponent" key={type.id}>
+            <SFoodSlider theme={themeContext}>
               <button
                 type="button"
                 onClick={() => {
@@ -66,12 +57,10 @@ const FoodSlider = ({ typeOfFood, theme }) => {
 };
 
 FoodSlider.propTypes = {
-  theme: PropTypes.string,
   typeOfFood: PropTypes.arrayOf(PropTypes.string),
 };
 
 FoodSlider.defaultProps = {
-  theme: '',
   typeOfFood: [],
 };
 

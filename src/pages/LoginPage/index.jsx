@@ -6,7 +6,7 @@ import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import Tabs from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import nfcLight from 'assets/Img/nfcConnectLight.gif';
 import nfcDark from 'assets/Img/nfcConnectDark.gif';
 import logo from 'assets/Img/easyApp.png';
@@ -29,9 +29,13 @@ export default function LoginPage({ theme, setTheme }) {
   const dispatch = useDispatch();
 
   const isDarkTheme = theme === 'dark';
+
   const toggleTheme = () => {
-    return setTheme(isDarkTheme ? 'light' : 'dark');
+    setTheme(isDarkTheme ? 'light' : 'dark');
   };
+  useEffect(() => {
+    localStorage.setItem('theme', `${theme}`);
+  }, [theme]);
 
   const HandleChangeFormData = (e) => {
     const newData = { ...form };
@@ -67,12 +71,12 @@ export default function LoginPage({ theme, setTheme }) {
     <SLogingPage>
       <TabContext value={value}>
         <Box>
-
           <div
             className={
-              isDarkTheme ? 'darkThemeBackground' : 'lightThemeBakcground'
+              isDarkTheme
+                ? 'darkThemeBackground background'
+                : 'lightThemeBakcground background'
             }
-
           >
             <div className="theme">
               <p>Light</p>
