@@ -5,8 +5,8 @@ import 'swiper/swiper.min.css';
 import 'swiper/components/navigation/navigation.min.css';
 import { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { useTheme } from 'styled-components';
 import MainButton from 'components/MainButton';
+import { useTheme } from 'styled-components';
 import FoodModal from '../FoodModal';
 import SFoodSlider from './style';
 
