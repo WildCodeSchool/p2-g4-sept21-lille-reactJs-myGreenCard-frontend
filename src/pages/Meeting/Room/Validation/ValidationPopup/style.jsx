@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 const SValidationPopup = styled.section`
   display: flex;
-  
   width: 100%;
   height: 100%;
   position: absolute;
