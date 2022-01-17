@@ -6,13 +6,15 @@ const SFoodSlider = styled.section`
   aspect-ratio: 2.1/3.5;
   height: 500px;
   display: flex;
-  background-color: white;
+  background-color: ${(props) => props.theme.background};
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 40px;
   margin: 40px 30px 40px 30px;
-
+  p {
+    color: ${(props) => props.theme.color};
+  }
   .imgContain {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
       rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;

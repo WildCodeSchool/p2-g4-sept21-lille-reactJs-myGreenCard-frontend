@@ -6,6 +6,11 @@ const SLogingPage = styled.section`
   align-items: center;
   width: 100vw;
   height: 100vh;
+
+  .background {
+    border-radius: 20px 20px 10px 10px;
+    width: 95vw;
+  }
   .theme {
     display: flex;
     flex-direction: row;
@@ -32,6 +37,7 @@ const SLogingPage = styled.section`
     align-items: center;
     height: 30vh;
     margin: 0vh 0 6vh 0;
+    border-radius: 20px 20px 10px 10px;
   }
   .userCard img {
     margin-top: 1vh;
@@ -107,20 +113,16 @@ const SLogingPage = styled.section`
 
   .darkThemeBackground {
     background-color: #303134;
-    border-radius: 20px 20px 10px 10px;
-    width: 95vw;
   }
 
   .lightThemeBackground {
     background-color: white;
-    border-radius: 20px 20px 10px 10px;
-    width: 90vw;
-    height: 500px;
   }
 
   .darkThemeInput {
     background: black;
     border-bottom: 2px solid #303134;
+    color: white;
   }
   .letsGo {
     margin-top: 20px;

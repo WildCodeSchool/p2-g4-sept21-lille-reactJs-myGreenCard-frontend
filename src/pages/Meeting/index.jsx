@@ -11,7 +11,7 @@ export default function Meeting() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/meetingRoom`)
+      .get(`${process.env.REACT_APP_API_URL}/meetingRoom`)
       .then(({ data }) => {
         setDataRooms(data);
       })
