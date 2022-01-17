@@ -56,7 +56,7 @@ export default function Validation({
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/meetingRoom/${id}`)
+      .get(`${process.env.REACT_APP_API_URL}/meetingRoom/${id}`)
 
       .then(({ data }) => {
         setDataRoom(data[0]);

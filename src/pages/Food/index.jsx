@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { api } from 'conf';
 import { Link } from 'react-router-dom';
 import UserAvatar from 'components/UserAvatar';
-import FoodSlider from './FoodSlider/index';
+import FoodSlider from './FoodSlider';
 import SFood from './style';
 import 'react-tabs/style/react-tabs.css';
 import BurgerMenu from './BurgerMenu';

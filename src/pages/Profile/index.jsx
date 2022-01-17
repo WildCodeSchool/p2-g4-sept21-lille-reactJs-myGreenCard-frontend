@@ -22,7 +22,7 @@ export default function ProfilPage({ theme, setTheme }) {
     return setTheme(isDarkTheme ? 'light' : 'dark');
   };
   useEffect(() => {
-    axios.get('http://localhost:5000/user/3').then(({ data }) => {
+    axios.get(`${process.env.REACT_APP_API_URL}/user/3`).then(({ data }) => {
       setUserData(data);
     });
   }, []);
