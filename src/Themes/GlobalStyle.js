@@ -48,16 +48,6 @@ button{
   cursor: pointer;
 }
 
-//HOME //FOOD
-.darkThemeBackground {
-    background-color: #303134;
-  }
-
-//FOODPAGE
-
-  .blackBackground {
-    background-color: black;
-  }
 `;
 
 export default GlobalStyles;
