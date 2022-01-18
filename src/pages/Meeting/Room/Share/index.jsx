@@ -2,17 +2,23 @@ import Avatar from '@mui/material/Avatar';
 import propTypes from 'prop-types';
 import { useState } from 'react';
 import MainButton from 'components/MainButton';
+import Header from 'components/Header';
+import logo from 'assets/reservationReunion.png';
+import SearchBar from './SearchBar';
 import SShare from './style';
 import SharePopup from './SharePopup';
 
 export default function Share({ reservation, setValidation, setShare }) {
   const [sharePopup, setSharePopup] = useState(false);
+  const [newParticipants, setNewParticipants] = useState([]);
+  const [participants, setParticipants] = useState([]);
 
   const showSharePopup = () => {
     setSharePopup(true);
   };
   return (
     <SShare>
+      <Header logo={logo} />
       <p>
         Vous venez de reserver la salle de réunion n°
         {reservation.roomId}
@@ -23,7 +29,13 @@ export default function Share({ reservation, setValidation, setShare }) {
         className="meetingRoom"
       />
       <p>Partagez cette réunion avec vos collègues</p>
+      <SearchBar
+        setNewParticipants={setNewParticipants}
+        participants={participants}
+        setParticipants={setParticipants}
+      />
       <MainButton
+        className="share"
         clickCallback={() => {
           showSharePopup();
         }}
@@ -34,6 +46,10 @@ export default function Share({ reservation, setValidation, setShare }) {
           setSharePopup={setSharePopup}
           setValidation={setValidation}
           setShare={setShare}
+          newParticipants={newParticipants}
+          participants={participants}
+          setNewParticipants={setNewParticipants}
+          reservation={reservation}
         />
       )}
     </SShare>
