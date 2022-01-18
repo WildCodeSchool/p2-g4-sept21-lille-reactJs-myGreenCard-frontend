@@ -2,14 +2,12 @@ import styled from 'styled-components';
 
 const SMeetingCard = styled.article`
   width: 90vw;
-  height: 20vh;
   margin: 15px;
   position: relative;
   border-radius: 10px;
   -webkit-box-shadow: 0px 7px 12px -3px #000000;
   box-shadow: 0px 7px 12px -3px #000000;
   background-color: ${(props) => props.theme.secondBackground};
-
   h2 {
     margin-bottom: 15px;
     text-align: center;
@@ -21,7 +19,6 @@ const SMeetingCard = styled.article`
     width: 60%;
     padding: 10px 5px;
   }
-
   img {
     object-fit: cover;
     height: 80px;
