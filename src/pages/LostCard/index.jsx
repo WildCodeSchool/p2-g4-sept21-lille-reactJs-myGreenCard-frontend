@@ -29,7 +29,7 @@ export default function LostCard() {
               <img src={logo} alt="logo" />
             </div>
             <div className="cMain">
-              <img src={user.picture} alt="pp" />
+              <img src={user.picture} alt="profilpicture" />
               <div className="userInfo">
                 <h3>
                   {user.firstname} {user.lastname}

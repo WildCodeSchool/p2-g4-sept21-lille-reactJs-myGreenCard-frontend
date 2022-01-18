@@ -4,9 +4,7 @@ const SLostCard = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-
   height: 100vh;
-
   main {
     height: 70vh;
     display: flex;
