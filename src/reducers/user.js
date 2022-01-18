@@ -7,7 +7,7 @@ const initialState = {
   job: '',
   isLogged: 0,
   cardNumber: '',
-  Amount: '',
+  amount: 0,
   isInvited: '',
   eggFree: 0,
   glutenFree: 0,
