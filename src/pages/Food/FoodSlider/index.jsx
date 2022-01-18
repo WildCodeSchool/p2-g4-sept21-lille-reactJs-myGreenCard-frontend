@@ -5,6 +5,7 @@ import 'swiper/swiper.min.css';
 import 'swiper/components/navigation/navigation.min.css';
 import { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import MainButton from 'components/MainButton';
 import { useTheme } from 'styled-components';
 import FoodModal from '../FoodModal';
 import SFoodSlider from './style';
@@ -48,6 +49,13 @@ const FoodSlider = ({ typeOfFood }) => {
               </button>
               <p className="typeName">{type.name}</p>
               <p className="price">{type.price} €</p>
+              <MainButton
+                clickCallback={() => {
+                  toggleModal();
+                  setMenuItem(type);
+                }}
+                content="Choisir"
+              />
             </SFoodSlider>
           </SwiperSlide>
         ))}

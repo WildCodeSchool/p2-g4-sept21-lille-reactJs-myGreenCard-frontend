@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import SUserAvatar from './style';
-import user from '../../assets/Img/users/e3.png';
 
 export default function UserAvatar({ size, border }) {
+  const user = useSelector((state) => state.user);
   return (
     <SUserAvatar width={size} height={size} border={border}>
-      <img src={user} alt="userName" />
+      <img src={user.picture} alt="userName" />
     </SUserAvatar>
   );
 }

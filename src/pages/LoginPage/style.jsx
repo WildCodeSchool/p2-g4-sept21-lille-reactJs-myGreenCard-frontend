@@ -124,6 +124,9 @@ const SLogingPage = styled.section`
     border-bottom: 2px solid #303134;
     color: white;
   }
+  .letsGo {
+    margin-top: 20px;
+  }
 `;
 
 export default SLogingPage;

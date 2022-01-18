@@ -59,10 +59,10 @@ export default function LoginPage({ theme, setTheme }) {
         cookies.set('token', token);
         api.defaults.headers.authorization = `Bearer ${token}`;
         dispatch({ type: 'LOGIN', user });
-        toast(`You're now logged in, ${user.firstname} <3`);
+        toast(`Bienvenue sur EasyApp, ${user.firstname} !`);
       })
       .catch((err) => {
-        toast.error(`Achtung!${err}`);
+        toast.error(`Une erreur est survenue!${err}`);
       });
   };
 
@@ -130,12 +130,11 @@ export default function LoginPage({ theme, setTheme }) {
               value={form.password}
               onChange={HandleChangeFormData}
             />
-            <input type="submit" value="Lets go" />
+            <input className="letsGo" type="submit" value="Lets go" />
           </form>
 
           <p>Mot de passe oublié ?</p>
           <ToastContainer />
-          <p>Mot de passe oublié</p>
 
           <Link to="/home">
             <MainButton content="Let&#39;s gooooo" />

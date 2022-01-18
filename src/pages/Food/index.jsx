@@ -1,9 +1,10 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useSelector } from 'react-redux';
+import { api } from 'conf';
 import { Link } from 'react-router-dom';
 import UserAvatar from 'components/UserAvatar';
-import FoodSlider from './FoodSlider/index';
+import FoodSlider from './FoodSlider';
 import SFood from './style';
 import 'react-tabs/style/react-tabs.css';
 import BurgerMenu from './BurgerMenu';
@@ -12,29 +13,24 @@ export default function Food() {
   const [dataLunch, setDataLunch] = useState([]);
   const [dataDesserts, setDataDesserts] = useState([]);
   const [dataDrinks, setDataDrinks] = useState([]);
+  const user = useSelector((state) => state.user);
 
   useEffect(() => {
-    axios
-      .get(`${process.env.REACT_APP_API_URL}/food/lunch`)
-      .then(({ data }) => {
-        setDataLunch(data);
-      });
+    api.get(`/food/lunch`).then(({ data }) => {
+      setDataLunch(data);
+    });
+  }, [user]);
+
+  useEffect(() => {
+    api.get(`/food/desserts`).then(({ data }) => {
+      setDataDesserts(data);
+    });
   }, []);
 
   useEffect(() => {
-    axios
-      .get(`${process.env.REACT_APP_API_URL}/food/desserts`)
-      .then(({ data }) => {
-        setDataDesserts(data);
-      });
-  }, []);
-
-  useEffect(() => {
-    axios
-      .get(`${process.env.REACT_APP_API_URL}/food/drinks`)
-      .then(({ data }) => {
-        setDataDrinks(data);
-      });
+    api.get(`/food/drinks`).then(({ data }) => {
+      setDataDrinks(data);
+    });
   }, []);
 
   return (

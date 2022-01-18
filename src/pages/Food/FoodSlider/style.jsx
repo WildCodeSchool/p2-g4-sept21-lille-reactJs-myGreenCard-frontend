@@ -20,10 +20,10 @@ const SFoodSlider = styled.section`
       rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     overflow: hidden;
     position: absolute;
-    bottom: 55%;
-    left: 7%;
-    width: 150px;
-    height: 150px;
+    bottom: 48%;
+    left: 9%;
+    width: 250px;
+    height: 250px;
     overflow: hidden;
     border-radius: 50%;
   }
