@@ -1,6 +1,6 @@
 import propTypes from 'prop-types';
-import { api } from 'conf';
-import { useSelector } from 'react-redux';
+import { api, cookies } from 'conf';
+import { useSelector, useDispatch } from 'react-redux';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import SRefillModal from './style';
@@ -8,19 +8,36 @@ import SRefillModal from './style';
 export default function RefillModal({ toggleModal }) {
   const user = useSelector((state) => state.user);
   const userAmount = Number(user.amount);
+  const dispatch = useDispatch();
   const refillTen = () => {
     const amount = { ...user, amount: userAmount + 10 };
-    api.put(`http://localhost:5000/user/${user.id}`, amount).catch((e) => {
-      console.log(e);
-    });
-    toast.success(`Votre compte est crédité de  ${userAmount}€ `);
+    api
+      .put(`http://localhost:5000/user/${user.id}`, amount)
+      .then(({ data }) => {
+        const { token, user: userData } = data;
+        cookies.set('token', token);
+        api.defaults.headers.authorization = `Bearer ${token}`;
+        dispatch({ type: 'UPDATE', userData });
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+    toast.success(`Votre compte est crédité de  ${user.amount + 10}€ `);
   };
   const refillFifty = () => {
     const amount = { ...user, amount: userAmount + 50 };
-    api.put(`http://localhost:5000/user/${user.id}`, amount).catch((e) => {
-      console.log(e);
-    });
-    toast.success(`Votre compte est crédité de  ${userAmount}€ `);
+    api
+      .put(`http://localhost:5000/user/${user.id}`, amount)
+      .then(({ data }) => {
+        const { token, user: userData } = data;
+        cookies.set('token', token);
+        api.defaults.headers.authorization = `Bearer ${token}`;
+        dispatch({ type: 'UPDATE', userData });
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+    toast.success(`Votre compte est crédité de  ${user.amount + 50}€ `);
   };
   return (
     <SRefillModal>

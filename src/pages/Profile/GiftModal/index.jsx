@@ -1,6 +1,6 @@
 import propTypes from 'prop-types';
-import { api } from 'conf';
-import { useSelector } from 'react-redux';
+import { api, cookies } from 'conf';
+import { useSelector, useDispatch } from 'react-redux';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import SGiftModal from './style';
@@ -8,15 +8,23 @@ import SGiftModal from './style';
 export default function GiftModal({ toggleGiftModal }) {
   const user = useSelector((state) => state.user);
   const userAmount = Number(user.amount);
-
+  const dispatch = useDispatch();
   const giftTen = () => {
     if (userAmount >= 10) {
       const amount = { ...user, amount: userAmount - 10 };
-      api.put(`http://localhost:5000/user/${user.id}`, amount).catch((e) => {
-        console.log(e);
-      });
+      api
+        .put(`http://localhost:5000/user/${user.id}`, amount)
+        .then(({ data }) => {
+          const { token, user: userData } = data;
+          cookies.set('token', token);
+          api.defaults.headers.authorization = `Bearer ${token}`;
+          dispatch({ type: 'UPDATE', userData });
+        })
+        .catch((e) => {
+          console.log(e);
+        });
       toast.success(
-        `Vous avez donner  10€, votre solde est de ${userAmount}€ `
+        `Vous avez donner  10€, votre solde est de ${user.amount - 10}€ `
       );
     } else {
       toast.error(`Don impossible crédit insufisant `);
@@ -25,11 +33,19 @@ export default function GiftModal({ toggleGiftModal }) {
   const giftFifty = () => {
     if (userAmount >= 50) {
       const amount = { ...user, amount: userAmount - 50 };
-      api.put(`http://localhost:5000/user/${user.id}`, amount).catch((e) => {
-        console.log(e);
-      });
+      api
+        .put(`http://localhost:5000/user/${user.id}`, amount)
+        .then(({ data }) => {
+          const { token, user: userData } = data;
+          cookies.set('token', token);
+          api.defaults.headers.authorization = `Bearer ${token}`;
+          dispatch({ type: 'UPDATE', userData });
+        })
+        .catch((e) => {
+          console.log(e);
+        });
       toast.success(
-        `Vous avez donner  50€, votre solde est de ${userAmount}€ `
+        `Vous avez donner  50€, votre solde est de ${userAmount - 50}€ `
       );
     } else {
       toast.error(`Don impossible crédit insufisant `);
