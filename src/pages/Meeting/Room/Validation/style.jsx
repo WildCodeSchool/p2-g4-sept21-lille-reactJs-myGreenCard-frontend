@@ -42,7 +42,7 @@ const SValidation = styled.div`
         flex-direction: column;
         flex-wrap: wrap;
         button {
-          color: ${(props) => props.theme.secondText};
+          color: black;
           font-size: 1rem;
           width: 80px;
           background: #ececec;
