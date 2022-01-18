@@ -39,7 +39,7 @@ a {
 }
 
 button{
-  color: ${(theme) => theme.secondText};
+  color: black;
   background: none;
   border: none;
   padding: 0;
