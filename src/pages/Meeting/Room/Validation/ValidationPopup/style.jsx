@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 const SValidationPopup = styled.section`
   display: flex;
-  background-color: rgba(0, 0, 0, 0.8);
   width: 100%;
   height: 100%;
   position: absolute;
@@ -11,8 +10,8 @@ const SValidationPopup = styled.section`
   align-items: center;
   z-index: 2;
   div.modalContent {
+    background-color: ${(props) => props.theme.secondBackground};
     text-align: center;
-    background-color: white;
     position: absolute;
     z-index: 2;
     height: 25vh;

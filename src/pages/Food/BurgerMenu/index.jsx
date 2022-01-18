@@ -7,7 +7,7 @@ function BurgerMenu() {
     <SMenu>
       <Menu>
         <section>
-          <Link to="/">Accueil</Link> <br />
+          <Link to="/home">Accueil</Link> <br />
           <Link to="/food">Menu du jour</Link> <br />
           <Link to="/food/Profile">Profil alimentaire</Link> <br />
           <Link to="/food/randomLunch">Random lunch</Link>

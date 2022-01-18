@@ -6,7 +6,7 @@ import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import Tabs from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import nfcLight from 'assets/Img/nfcConnectLight.gif';
 import nfcDark from 'assets/Img/nfcConnectDark.gif';
 import logo from 'assets/Img/easyApp.png';
@@ -29,9 +29,13 @@ export default function LoginPage({ theme, setTheme }) {
   const dispatch = useDispatch();
 
   const isDarkTheme = theme === 'dark';
+
   const toggleTheme = () => {
-    return setTheme(isDarkTheme ? 'light' : 'dark');
+    setTheme(isDarkTheme ? 'light' : 'dark');
   };
+  useEffect(() => {
+    localStorage.setItem('theme', `${theme}`);
+  }, [theme]);
 
   const HandleChangeFormData = (e) => {
     const newData = { ...form };
@@ -46,7 +50,7 @@ export default function LoginPage({ theme, setTheme }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     const { email, password } = form;
-    const url = 'http://localhost:5000/auth/login';
+    const url = `${process.env.REACT_APP_API_URL}/auth/login`;
     const formData = { email, password };
     axios
       .post(url, formData)
@@ -55,10 +59,10 @@ export default function LoginPage({ theme, setTheme }) {
         cookies.set('token', token);
         api.defaults.headers.authorization = `Bearer ${token}`;
         dispatch({ type: 'LOGIN', user });
-        toast.success(`You're now logged in, ${user.firstname}`);
+        toast.success(`Bienvenue sur EasyApp, ${user.firstname} !`);
       })
       .catch((err) => {
-        toast.error(`Achtung!${err}`);
+        toast.error(`Une erreur est survenue!${err}`);
       });
   };
 
@@ -68,7 +72,9 @@ export default function LoginPage({ theme, setTheme }) {
         <Box>
           <div
             className={
-              isDarkTheme ? 'darkThemeBackground' : 'lightThemeBakcground'
+              isDarkTheme
+                ? 'darkThemeBackground background'
+                : 'lightThemeBakcground background'
             }
           >
             <div className="theme">
@@ -124,12 +130,11 @@ export default function LoginPage({ theme, setTheme }) {
               value={form.password}
               onChange={HandleChangeFormData}
             />
-            <input type="submit" value="Lets go" />
+            <input className="letsGo" type="submit" value="Lets go" />
           </form>
 
           <p>Mot de passe oublié ?</p>
           <ToastContainer />
-          <p>Mot de passe oublié</p>
 
           <Link to="/home">
             <MainButton content="Let&#39;s gooooo" />

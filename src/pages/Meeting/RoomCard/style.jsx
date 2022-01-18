@@ -8,6 +8,7 @@ const SMeetingCard = styled.article`
   border-radius: 10px;
   -webkit-box-shadow: 0px 7px 12px -3px #000000;
   box-shadow: 0px 7px 12px -3px #000000;
+  background-color: ${(props) => props.theme.secondBackground};
 
   h2 {
     margin-bottom: 15px;
