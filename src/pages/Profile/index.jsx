@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import ToggleButton from 'components/ToggleButton';
+
 import UserAvatar from 'components/UserAvatar';
 import logo from 'assets/Img/easyApp.png';
 import logoDark from 'assets/Img/easyAppDark.png';
@@ -10,11 +10,16 @@ import larrondi from 'assets/Img/LARRONDI.svg';
 import home from 'assets/Img/home.svg';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
+import ToggleButton from 'components/ToggleButton';
 import SProfilPage from './style';
 import RefillModal from './RefillModal';
 import GiftModal from './GiftModal';
 
 export default function ProfilPage({ theme, setTheme }) {
+  const isDarkTheme = theme === 'dark';
+  const toggleTheme = () => {
+    return setTheme(isDarkTheme ? 'light' : 'dark');
+  };
   const user = useSelector((state) => state.user);
   const [refillModal, setRefillModal] = useState(true);
   const toggleModal = () => {
@@ -24,11 +29,6 @@ export default function ProfilPage({ theme, setTheme }) {
   const toggleGiftModal = () => {
     setGiftModal(!giftModal);
   };
-  const isDarkTheme = theme === 'dark';
-  const toggleTheme = () => {
-    return setTheme(isDarkTheme ? 'light' : 'dark');
-  };
-
   return (
     <>
       <SProfilPage>

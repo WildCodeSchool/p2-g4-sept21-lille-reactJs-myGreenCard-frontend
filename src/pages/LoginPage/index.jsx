@@ -53,10 +53,9 @@ export default function LoginPage({ theme, setTheme }) {
       .then(({ data }) => {
         const { token, user } = data;
         cookies.set('token', token);
-        console.log(user);
         api.defaults.headers.authorization = `Bearer ${token}`;
         dispatch({ type: 'LOGIN', user });
-        toast(`You're now logged in, ${user.firstname} <3`);
+        toast.success(`You're now logged in, ${user.firstname}`);
       })
       .catch((err) => {
         toast.error(`Achtung!${err}`);
@@ -67,12 +66,10 @@ export default function LoginPage({ theme, setTheme }) {
     <SLogingPage>
       <TabContext value={value}>
         <Box>
-
           <div
             className={
               isDarkTheme ? 'darkThemeBackground' : 'lightThemeBakcground'
             }
-
           >
             <div className="theme">
               <p>Light</p>

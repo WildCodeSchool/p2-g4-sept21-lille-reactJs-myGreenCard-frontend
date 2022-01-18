@@ -129,9 +129,7 @@ const SProfilPage = styled.section`
       justify-content: center;
       align-items: center;
       height: 30vh;
-      div {
-        margin-bottom: 5vh;
-      }
+
       p {
         margin-top: 1vh;
       }
