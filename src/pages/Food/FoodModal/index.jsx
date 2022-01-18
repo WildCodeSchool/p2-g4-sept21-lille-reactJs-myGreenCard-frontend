@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import MainButton from 'components/MainButton';
 import SFoodModal from './style';
 
-function FoodModal({ menuElement, theme }) {
-  const isDarkTheme = theme === 'dark';
+function FoodModal({ menuElement }) {
   const [renderModal, setRenderModal] = useState(true);
 
   const toggleModal = () => {
@@ -16,12 +15,10 @@ function FoodModal({ menuElement, theme }) {
   return (
     <>
       {renderModal && (
-        <SFoodModal
-          className={isDarkTheme ? 'darkThemeBackground' : 'yourChoice'}
-        >
+        <SFoodModal>
           <section>
             <h2>Votre choix </h2>
-            <article className={isDarkTheme ? 'blackBackground' : 'foodChoice'}>
+            <article>
               <div className="imgContain">
                 <img src={menuElement.picture} alt={`${menuElement.name}`} />
               </div>
@@ -56,7 +53,6 @@ function FoodModal({ menuElement, theme }) {
 }
 
 FoodModal.propTypes = {
-  theme: PropTypes.string,
   menuElement: PropTypes.shape({
     id: PropTypes.string,
     name: PropTypes.string,
@@ -69,7 +65,6 @@ FoodModal.propTypes = {
 };
 
 FoodModal.defaultProps = {
-  theme: '',
   menuElement: null,
 };
 

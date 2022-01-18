@@ -29,6 +29,7 @@ export default function ProfilPage({ theme, setTheme }) {
   const toggleGiftModal = () => {
     setGiftModal(!giftModal);
   };
+
   return (
     <>
       <SProfilPage>

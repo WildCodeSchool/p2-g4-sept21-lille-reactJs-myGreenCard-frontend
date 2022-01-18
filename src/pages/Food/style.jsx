@@ -49,10 +49,9 @@ const SFood = styled.main`
   }
   .swiperComponent {
     width: 370px;
+    background: ${({ theme }) => theme.secondBackground};
   }
-  .swiperComponentColor {
-    background-color: #eeeded;
-  }
+
   .swiper-slide .swiper-slide-active {
     width: 100px;
   }

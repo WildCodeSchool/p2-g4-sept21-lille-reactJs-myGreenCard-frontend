@@ -3,9 +3,6 @@ import Header from 'components/Header';
 import fournitures from 'assets/Img/fournitures.png';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import SSupplies from './style';
-import PropTypes from 'prop-types';
-import fournitures from 'assets/Img/fournitures.png';
 import MainButton from 'components/MainButton';
 import SSupplies from './style';
 
@@ -20,11 +17,6 @@ export default function Supplies() {
     });
   }, []);
 
-
-
-
-export default function Supplies({ theme }) {
-  const isDarkTheme = theme === 'dark';
   return (
     <>
       <SSupplies>
@@ -50,11 +42,3 @@ export default function Supplies({ theme }) {
     </>
   );
 }
-
-Supplies.propTypes = {
-  theme: PropTypes.string,
-};
-
-Supplies.defaultProps = {
-  theme: '',
-};
