@@ -35,7 +35,6 @@ export default function SharePopup({
       .get(
         `${process.env.REACT_APP_API_URL}/meeting?id=${reservation.roomId}&slot=${reservation.slot}`
       )
-
       .then(({ data }) => {
         if (data[0]) {
           const tempParticipants = Array.from(participants, ({ id }) => [
