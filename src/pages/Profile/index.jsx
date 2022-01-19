@@ -14,6 +14,7 @@ import home from 'assets/Img/home.svg';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import SProfilPage from './style';
+import Meetings from './Meetings';
 
 export default function ProfilPage({ theme, setTheme }) {
   const [userData, setUserData] = useState([]);
@@ -92,6 +93,7 @@ export default function ProfilPage({ theme, setTheme }) {
             </div>
           </div>
         </article>
+        <Meetings />
         <article className="resume">
           <h2>Mes commandes</h2>
           <p>Recapitulatif commande en cours ...</p>
