@@ -68,7 +68,7 @@ export default function Validation({
 
   return (
     <SValidation>
-      <img src={dataRoom.picture} alt="Salle de réunion" />
+      <img className="room" src={dataRoom.picture} alt="Salle de réunion" />
       <h2>Salle de réunion n°{dataRoom.number}</h2>
       <Swiper navigation className="mySwiper">
         {days.map((day) => {
