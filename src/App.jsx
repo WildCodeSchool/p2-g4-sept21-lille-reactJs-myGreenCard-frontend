@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyles from 'Themes/GlobalStyle';
 import { useDispatch } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
 import axios from 'axios';
 import { api, cookies } from 'conf';
 import { lightTheme, darkTheme } from './Themes/Themes';
@@ -20,7 +21,6 @@ import FoodProfile from './pages/Food/FoodProfile';
 import RandomLunch from './pages/Food/RandomLunch';
 
 function App() {
-
   const dispatch = useDispatch();
   useEffect(() => {
     api.defaults.headers.authorization = `Bearer ${cookies.get('token')}`;
@@ -69,6 +69,7 @@ function App() {
         <Route path="profilPage" element={<ProfilPage />} />
         <Route path="randomLunch" element={<RandomLunch />} />
       </Routes>
+      <ToastContainer />
     </ThemeProvider>
   );
 }
