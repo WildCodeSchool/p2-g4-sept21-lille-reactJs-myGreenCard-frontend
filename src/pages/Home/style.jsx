@@ -25,6 +25,40 @@ const SHome = styled.section`
     justify-content: space-between;
   }
 
+  .badge {
+    height: 190px;
+    font-weight: bold;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .wallet {
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    justify-content: space-around;
+    height: 140px;
+
+    img {
+      height: 40px;
+      width: 40vw;
+    }
+  }
+
+  .eazyCard {
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 35vw;
+      height: 100px;
+    }
+  }
+
   img {
     width: 120px;
     object-fit: contain;

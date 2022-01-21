@@ -11,7 +11,7 @@ body{
 
 }
 
-p,h1,h2,h3{
+p,h1,h2,h3, button,input{
   font-family: 'Montserrat', sans-serif;
   color: ${({ theme }) => theme.text};
   
@@ -39,11 +39,10 @@ a {
 }
 
 button{
-  color: ${(theme) => theme.secondText};
+  color: black;
   background: none;
   border: none;
   padding: 0;
-  font-family: inherit;
   font-size: inherit;
   cursor: pointer;
 }
