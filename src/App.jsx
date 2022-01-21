@@ -1,11 +1,11 @@
 import { Routes, Route } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyles from 'Themes/GlobalStyle';
-import { useDispatch } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
+import { cookies, api } from 'conf';
 import axios from 'axios';
-import { api, cookies } from 'conf';
 import { lightTheme, darkTheme } from './Themes/Themes';
 import LoginPage from './pages/LoginPage';
 import Home from './pages/Home';
@@ -26,9 +26,18 @@ function App() {
     api.defaults.headers.authorization = `Bearer ${cookies.get('token')}`;
     axios
       .post(
+        `${process.env.REACT_APP_API_URL}/auth/login/token`,
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${cookies.get('token')}`,
+          },
+        }
+
         `http://localhost:5000/auth/login/token`,
         {},
         { headers: { Authorization: `Bearer ${cookies.get('token')}` } }
+
       )
       .then(({ data }) => {
         const { user } = data;
@@ -40,6 +49,7 @@ function App() {
         }
       });
   }, []);
+  
   const themeStorage = localStorage.getItem('theme');
   const [theme, setTheme] = useState(themeStorage || 'light');
   const isDarkTheme = theme === 'dark';

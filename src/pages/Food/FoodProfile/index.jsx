@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import axios from 'axios';
+import { useSelector, useDispatch } from 'react-redux';
+import { api, cookies } from 'conf';
 import corn from 'assets/foodIcons/corn.png';
 import dairy from 'assets/foodIcons/dairy.png';
 import diet from 'assets/foodIcons/diet.png';
@@ -21,6 +21,7 @@ import BurgerMenu from '../BurgerMenu';
 import FoodProfileList from './style';
 
 function FoodProfile() {
+  const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
   const { id } = user;
   const [preferences, setPreferences] = useState([
@@ -166,11 +167,17 @@ function FoodProfile() {
   const isFreeProfile = { ...isFreeAllergies, ...isFreePreferences };
 
   const storeFoodProfile = () => {
-    axios
-      .post(
+    api
+      .put(
         `${process.env.REACT_APP_API_URL}/user/${id}/foodProfile`,
         isFreeProfile
       )
+      .then(({ data }) => {
+        const { token, user: userdata } = data;
+        cookies.set('token', token);
+        api.defaults.headers.authorization = `Bearer ${token}`;
+        dispatch({ type: 'LOGIN', userdata });
+      })
       .catch((e) => {
         console.log(e);
       });
