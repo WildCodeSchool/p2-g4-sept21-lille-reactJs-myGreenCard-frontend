@@ -20,19 +20,19 @@ export default function Meetings() {
   return (
     <SMeetings>
       <h2>Mes reunions</h2>
-      <p>Récapitulatif des salles de réunion réservées</p>
+      <h3>Récapitulatif des salles de réunion réservées</h3>
       <ul>
+        {console.log(meetings)}
         {meetings.map((meeting) => {
           return (
-            <li key="meeting.id">{`Salle de réunion n°${
-              meeting.meetingRoomId
-            }, ${meeting.location}, le ${moment(meeting.beninning).format(
-              'dddd Do MMMM'
-            )}`}</li>
+            <li key="meeting.id">
+              {`Salle n°${meeting.meetingRoomId}, ${
+                meeting.location
+              }, le ${moment(meeting.beninning).format('dddd Do MMMM')}`}
+            </li>
           );
         })}
       </ul>
-      {console.log(meetings)}
     </SMeetings>
   );
 }

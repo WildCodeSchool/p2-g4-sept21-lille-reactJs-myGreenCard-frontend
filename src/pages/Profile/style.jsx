@@ -5,15 +5,12 @@ const SProfilPage = styled.section`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  h3 {
-    font-size: 30px;
-  }
   h2 {
     font-weight: Bold;
     height: 30px;
   }
   p {
-    font-size: 15px;
+    font-size: 1rem;
   }
   article {
     height: 200px;

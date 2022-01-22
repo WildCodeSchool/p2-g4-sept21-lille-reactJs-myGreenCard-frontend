@@ -52,7 +52,7 @@ export default function ProfilPage({ theme, setTheme }) {
           </div>
         </div>
         <article className="solde">
-          <h3>Solde : {userData.Amount} € </h3>
+          <h2>Solde : {userData.Amount} € </h2>
           <div className="recharge">
             <button type="button" className="money">
               Recharger
