@@ -39,7 +39,7 @@ const SProfilPage = styled.section`
   .badge {
     height: 150px;
   }
-  .paimentLogo {
+  .paymentLogo {
     display: flex;
     flex-direction: row;
     height: 20vh;
@@ -50,7 +50,7 @@ const SProfilPage = styled.section`
       height: 35px;
     }
   }
-  .recharge {
+  .refill {
     display: flex;
     height: 25vh;
     justify-content: space-around;
@@ -126,9 +126,7 @@ const SProfilPage = styled.section`
       justify-content: center;
       align-items: center;
       height: 30vh;
-      div {
-        margin-bottom: 5vh;
-      }
+
       p {
         margin-top: 1vh;
       }

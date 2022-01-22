@@ -10,7 +10,7 @@ const SRoom = styled.main`
     font-size: 1.2rem;
     font-weight: bold;
   }
-  img {
+  img.room {
     margin: 25px 0;
     height: 30vh;
     width: 90vw;

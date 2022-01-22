@@ -11,7 +11,7 @@ body{
   font-family: 'Montserrat', sans-serif;
 }
 
-p,h1,h2,h3{
+p,h1,h2,h3, button,input{
   font-family: 'Montserrat', sans-serif;
   color: ${({ theme }) => theme.text};
   
@@ -43,7 +43,6 @@ button{
   background: none;
   border: none;
   padding: 0;
-  font-family: inherit;
   font-size: inherit;
   cursor: pointer;
 }

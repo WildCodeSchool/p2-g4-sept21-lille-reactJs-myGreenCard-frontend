@@ -1,18 +1,18 @@
 import styled from 'styled-components';
 
-const SValidationPopup = styled.section`
+const SRefillModal = styled.section`
   display: flex;
-  width: 100%;
-  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100vw;
+  height: 100vh;
   position: absolute;
   top: 0;
   justify-content: center;
   align-items: center;
   z-index: 2;
-  background-color: rgba(0, 0, 0, 0.8);
-  div.modalContent {
-    background-color: ${(props) => props.theme.secondBackground};
+  .modalContent {
     text-align: center;
+    background-color: white;
     position: absolute;
     z-index: 2;
     height: 25vh;
@@ -21,9 +21,15 @@ const SValidationPopup = styled.section`
     p {
       padding: 15px;
     }
-    div {
-      button,
-      a {
+    .close{
+     width:auto;
+     background-color: transparent;
+     box-shadow:none;
+     margin-left: 65vw;
+     font-size: 24px;
+     font-weight: bold;
+   }
+    button{
         width: 80px;
         background: #ececec;
         margin: 15px;
@@ -36,4 +42,4 @@ const SValidationPopup = styled.section`
   }
 `;
 
-export default SValidationPopup;
+export default SRefillModal;

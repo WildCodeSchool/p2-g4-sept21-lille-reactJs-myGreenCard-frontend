@@ -59,7 +59,7 @@ export default function LoginPage({ theme, setTheme }) {
         cookies.set('token', token);
         api.defaults.headers.authorization = `Bearer ${token}`;
         dispatch({ type: 'LOGIN', user });
-        toast(`Bienvenue sur EasyApp, ${user.firstname} !`);
+        toast.success(`Bienvenue sur EasyApp, ${user.firstname} !`);
       })
       .catch((err) => {
         toast.error(`Une erreur est survenue!${err}`);
