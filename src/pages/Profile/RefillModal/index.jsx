@@ -1,7 +1,7 @@
 import propTypes from 'prop-types';
 import { api, cookies } from 'conf';
 import { useSelector, useDispatch } from 'react-redux';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import SRefillModal from './style';
 
@@ -53,7 +53,6 @@ export default function RefillModal({ toggleModal }) {
           50€
         </button>
       </div>
-      <ToastContainer />
     </SRefillModal>
   );
 }

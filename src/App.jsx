@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyles from 'Themes/GlobalStyle';
+import { ToastContainer } from 'react-toastify';
 import { cookies, api } from 'conf';
 import axios from 'axios';
 import { lightTheme, darkTheme } from './Themes/Themes';
@@ -78,6 +79,7 @@ function App() {
         <Route path="profilPage" element={<ProfilPage />} />
         <Route path="randomLunch" element={<RandomLunch />} />
       </Routes>
+      <ToastContainer />
     </ThemeProvider>
   );
 }
