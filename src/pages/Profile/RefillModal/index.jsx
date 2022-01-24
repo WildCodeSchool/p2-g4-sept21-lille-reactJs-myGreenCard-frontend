@@ -1,7 +1,7 @@
 import propTypes from 'prop-types';
 import { api, cookies } from 'conf';
 import { useSelector, useDispatch } from 'react-redux';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import SRefillModal from './style';
 
@@ -22,7 +22,7 @@ export default function RefillModal({ toggleModal }) {
       .catch((e) => {
         console.log(e);
       });
-    toast.success(`Votre compte est crédité de  ${user.amount + 10}€ `);
+    toast.success(`Votre compte est crédité de  ${userAmount + 10}€ `);
   };
   const refillFifty = () => {
     const amount = { ...user, amount: userAmount + 50 };
@@ -37,7 +37,7 @@ export default function RefillModal({ toggleModal }) {
       .catch((e) => {
         console.log(e);
       });
-    toast.success(`Votre compte est crédité de  ${user.amount + 50}€ `);
+    toast.success(`Votre compte est crédité de  ${userAmount + 50}€ `);
   };
   return (
     <SRefillModal>
@@ -53,7 +53,6 @@ export default function RefillModal({ toggleModal }) {
           50€
         </button>
       </div>
-      <ToastContainer />
     </SRefillModal>
   );
 }

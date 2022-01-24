@@ -1,7 +1,7 @@
 import propTypes from 'prop-types';
 import { api, cookies } from 'conf';
 import { useSelector, useDispatch } from 'react-redux';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import SGiftModal from './style';
 
@@ -24,7 +24,7 @@ export default function GiftModal({ toggleGiftModal }) {
           console.log(e);
         });
       toast.success(
-        `Vous avez donner  10€, votre solde est de ${user.amount - 10}€ `
+        `Vous avez donner  10€, votre solde est de ${userAmount - 10}€ `
       );
     } else {
       toast.error(`Don impossible crédit insufisant `);
@@ -65,7 +65,6 @@ export default function GiftModal({ toggleGiftModal }) {
           50€
         </button>
       </div>
-      <ToastContainer />
     </SGiftModal>
   );
 }

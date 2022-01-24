@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import UserAvatar from 'components/UserAvatar';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
@@ -12,10 +12,9 @@ import nfcDark from 'assets/Img/nfcConnectDark.gif';
 import logo from 'assets/Img/easyApp.png';
 import logoDark from 'assets/Img/easyAppDark.png';
 import ToggleButton from 'components/ToggleButton';
-import MainButton from 'components/MainButton';
 import { api, cookies } from 'conf';
 import { useDispatch } from 'react-redux';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import axios from 'axios';
 import SLogingPage from './style';
 import 'react-toastify/dist/ReactToastify.css';
@@ -27,9 +26,7 @@ export default function LoginPage({ theme, setTheme }) {
   });
   const [value, setValue] = useState('1');
   const dispatch = useDispatch();
-
   const isDarkTheme = theme === 'dark';
-
   const toggleTheme = () => {
     setTheme(isDarkTheme ? 'light' : 'dark');
   };
@@ -42,11 +39,10 @@ export default function LoginPage({ theme, setTheme }) {
     newData[e.target.name] = e.target.value;
     setForm(newData);
   };
-
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     const { email, password } = form;
@@ -59,6 +55,7 @@ export default function LoginPage({ theme, setTheme }) {
         cookies.set('token', token);
         api.defaults.headers.authorization = `Bearer ${token}`;
         dispatch({ type: 'LOGIN', user });
+        navigate('../home', { replace: true });
         toast.success(`Bienvenue sur EasyApp, ${user.firstname} !`);
       })
       .catch((err) => {
@@ -91,7 +88,6 @@ export default function LoginPage({ theme, setTheme }) {
               <img src={isDarkTheme ? logoDark : logo} alt="homeIcon" />
               <UserAvatar size="125px" border="none" />
             </div>
-
             <Tabs
               variant="fullWidth"
               onChange={handleChange}
@@ -111,9 +107,8 @@ export default function LoginPage({ theme, setTheme }) {
             </Tabs>
           </div>
         </Box>
-
         <TabPanel value="1">
-          <form onSubmit={handleSubmit}>
+          <form id="letsGo" onSubmit={handleSubmit}>
             <p>Email</p>
             <input
               className={isDarkTheme ? 'darkThemeInput' : 'lightThemeInput'}
@@ -130,15 +125,14 @@ export default function LoginPage({ theme, setTheme }) {
               value={form.password}
               onChange={HandleChangeFormData}
             />
-            <input className="letsGo" type="submit" value="Lets go" />
           </form>
-
           <p>Mot de passe oublié ?</p>
-          <ToastContainer />
-
-          <Link to="/home">
-            <MainButton content="Let&#39;s gooooo" />
-          </Link>
+          <input
+            className="letsGo"
+            form="letsGo"
+            type="submit"
+            value="Let&#39;s gooooo"
+          />
         </TabPanel>
         <TabPanel value="2">
           <img src={isDarkTheme ? nfcDark : nfcLight} alt="nfc" />

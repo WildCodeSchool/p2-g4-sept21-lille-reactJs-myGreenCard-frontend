@@ -27,32 +27,43 @@ export default function Office() {
     <>
       <Header logo={logo} />
       <SOffice avatar={user}>
-        {
-          <button
-            aria-label="pinButton"
-            onClick={resTheme}
-            type="button"
-            className={resaOffice ? 'buttonUser button1' : 'button1'}
-          /> /* {resaOffice ? (
-          <>
-            <button onClick={resTheme} type="button" className="button1">
-              {' '}
-            </button>
-          </>
-        ) : (
-          <>
-            <div className="userResa">
-              <img src={user} id="userPic" alt="userPic" />
-            </div>
-          </>
-        )} */
-        }
+        <button
+          aria-label="pinButton"
+          onClick={resTheme}
+          type="button"
+          className={resaOffice ? 'buttonUser button1' : 'button1'}
+        />
 
-        <div className="button2" />
-        <div className="button3" />
-        <div className="button4" />
-        <div className="button5" />
-        <div className="button6" />
+        <button
+          aria-label="pinButton"
+          onClick={resTheme}
+          type="button"
+          className={resaOffice ? 'buttonUser button2' : 'button2'}
+        />
+        <button
+          aria-label="pinButton"
+          onClick={resTheme}
+          type="button"
+          className={resaOffice ? 'buttonUser button3' : 'button3'}
+        />
+        <button
+          aria-label="pinButton"
+          onClick={resTheme}
+          type="button"
+          className={resaOffice ? 'buttonUser button4' : 'button4'}
+        />
+        <button
+          aria-label="pinButton"
+          onClick={resTheme}
+          type="button"
+          className={resaOffice ? 'buttonUser button5' : 'button5'}
+        />
+        <button
+          aria-label="pinButton"
+          onClick={resTheme}
+          type="button"
+          className={resaOffice ? 'buttonUser button6' : 'button6'}
+        />
         <div style={plan} className="plan" alt="office room" />
         <div className="rowProfiles">
           <div className="circle1" />
