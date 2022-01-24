@@ -20,12 +20,6 @@ const SOffice = styled.main`
     margin-left: 5vw;
     font-weight: bold;
   }
-  /* #userPic {
-   
-    width: 25px;
-    height: 25px;
-    z-index: 1;
-  } */
 
   .button1 {
     margin-left: 16vw;
@@ -38,14 +32,7 @@ const SOffice = styled.main`
     z-index: 1;
     cursor: pointer;
   }
-  .buttonUser {
-    width: 50px;
-    height: 50px;
-    background: inherit;
-    background-size: 50px 50px;
-    background-position: center;
-    background-image: url(${(props) => props.avatar});
-  }
+
   .button2 {
     margin-left: 40.5vw;
     margin-top: 5.6vh;
@@ -56,6 +43,14 @@ const SOffice = styled.main`
     position: absolute;
     z-index: 1;
     cursor: pointer;
+  }
+  .buttonUser2 {
+    width: 50px;
+    height: 50px;
+    background: inherit;
+    background-size: 50px 50px;
+    background-position: center;
+    background-image: url(${(props) => props.avatar});
   }
   .button3 {
     margin-left: 58.26vw;
@@ -91,6 +86,7 @@ const SOffice = styled.main`
     z-index: 1;
     cursor: pointer;
   }
+
   .button6 {
     margin-left: 42.5vw;
     margin-top: 23.6vh;
@@ -102,6 +98,15 @@ const SOffice = styled.main`
     z-index: 1;
     cursor: pointer;
   }
+  .buttonUser {
+    width: 50px;
+    height: 50px;
+    background: inherit;
+    background-size: 50px 50px;
+    background-position: center;
+    background-image: url(${(props) => props.avatar});
+  }
+
   .plan {
     background-size: 100%;
     background-repeat: no-repeat;

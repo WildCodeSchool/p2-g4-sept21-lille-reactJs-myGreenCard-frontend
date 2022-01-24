@@ -2,68 +2,40 @@ import Avatar from '@mui/material/Avatar';
 import AvatarGroup from '@mui/material/AvatarGroup';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation } from 'swiper';
+import { useSelector } from 'react-redux';
 import 'swiper/swiper-bundle.min.css';
 import 'swiper/swiper.min.css';
 import 'swiper/components/navigation/navigation.min.css';
 import officeRoom from 'assets/Img/OfficePictures/officeRoom.png';
 import logo from 'assets/reservationBureau.png';
 import Header from 'components/Header';
-import React, { useState } from 'react';
-import user from '../../assets/Img/users/e3.png';
+import Pin from './Pin';
 import SOffice from './style';
 
 export default function Office() {
+  const user = useSelector((state) => state.user);
   SwiperCore.use([Navigation]);
   const plan = {
     backgroundImage: `url(${officeRoom})`,
   };
 
-  const [resaOffice, setResaOffice] = useState(false);
-  const resTheme = () => {
-    return setResaOffice(!resaOffice);
-  };
+  const pinClasses = [
+    'button1',
+    'button2',
+    'button3',
+    'button4',
+    'button5',
+    'button6',
+  ];
 
   return (
     <>
       <Header logo={logo} />
-      <SOffice avatar={user}>
-        <button
-          aria-label="pinButton"
-          onClick={resTheme}
-          type="button"
-          className={resaOffice ? 'buttonUser button1' : 'button1'}
-        />
+      <SOffice avatar={user.picture}>
+        {pinClasses.map((pinClass) => (
+          <Pin pinClass={pinClass} />
+        ))}
 
-        <button
-          aria-label="pinButton"
-          onClick={resTheme}
-          type="button"
-          className={resaOffice ? 'buttonUser button2' : 'button2'}
-        />
-        <button
-          aria-label="pinButton"
-          onClick={resTheme}
-          type="button"
-          className={resaOffice ? 'buttonUser button3' : 'button3'}
-        />
-        <button
-          aria-label="pinButton"
-          onClick={resTheme}
-          type="button"
-          className={resaOffice ? 'buttonUser button4' : 'button4'}
-        />
-        <button
-          aria-label="pinButton"
-          onClick={resTheme}
-          type="button"
-          className={resaOffice ? 'buttonUser button5' : 'button5'}
-        />
-        <button
-          aria-label="pinButton"
-          onClick={resTheme}
-          type="button"
-          className={resaOffice ? 'buttonUser button6' : 'button6'}
-        />
         <div style={plan} className="plan" alt="office room" />
         <div className="rowProfiles">
           <div className="circle1" />
