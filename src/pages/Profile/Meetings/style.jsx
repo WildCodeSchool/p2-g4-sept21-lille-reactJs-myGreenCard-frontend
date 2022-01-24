@@ -34,7 +34,6 @@ const SMeetings = styled.article`
     justify-content: center;
     margin: 45px 0px;
     height: 30px;
-
     .participant {
       margin: 0 2px;
       img {

@@ -10,8 +10,7 @@ export default function FirstSummary() {
   const [active, setActive] = useState(false);
   const user = useSelector((state) => state.user);
 
-  const handleToggle = (e) => {
-    console.log(e);
+  const handleToggle = () => {
     setActive(!active);
   };
   useEffect(() => {
