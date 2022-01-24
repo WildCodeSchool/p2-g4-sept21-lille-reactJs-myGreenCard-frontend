@@ -37,7 +37,7 @@ export default function RefillModal({ toggleModal }) {
       .catch((e) => {
         console.log(e);
       });
-    toast.success(`Votre compte est rechargé 50€ `);
+    toast.success(`Votre compte est rechargé de 50€ `);
   };
   return (
     <SRefillModal>
