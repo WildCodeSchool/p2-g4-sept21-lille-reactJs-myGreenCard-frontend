@@ -12,6 +12,7 @@ export default function Slot({
   setValidationPopup,
   slot,
   roomPicture,
+  isSunday,
 }) {
   const [dataSlot, setDataSlot] = useState(null);
   const [isBooked, setIsBooked] = useState(false);
@@ -55,7 +56,8 @@ export default function Slot({
   return (
     <SSlot
       type="button"
-      className={isBooked === true ? 'reserved' : null}
+      disabled={!!isSunday}
+      className={isBooked || isSunday === true ? 'reserved' : null}
       onClick={() => {
         handleClick(isBooked);
       }}
@@ -75,6 +77,7 @@ Slot.propTypes = {
     slotTime: propTypes.number,
   }),
   roomPicture: propTypes.string,
+  isSunday: propTypes.bool,
 };
 
 Slot.defaultProps = {
@@ -84,4 +87,5 @@ Slot.defaultProps = {
   setValidationPopup: () => {},
   slot: null,
   roomPicture: '',
+  isSunday: false,
 };

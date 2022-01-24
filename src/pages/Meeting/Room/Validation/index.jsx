@@ -40,7 +40,7 @@ for (let i = 0; i < 7; i += 1) {
     const slotTime = dayDate.setHours(slotsDisplay[j].slotHour, 0, 0);
     slots.push({ slotDisplay, slotTime });
   }
-  days.push({ display: dayDisplay, slots });
+  days.push({ display: dayDisplay, dayDate, slots });
 }
 export default function Validation({
   setAlreadyBooked,
@@ -50,7 +50,6 @@ export default function Validation({
   setShare,
 }) {
   const { id } = useParams();
-
   const [validationPopup, setValidationPopup] = useState(false);
   const [dataRoom, setDataRoom] = useState([]);
 
@@ -74,11 +73,14 @@ export default function Validation({
         {days.map((day) => {
           return (
             <SwiperSlide key={day.display}>
-              <h3>{day.display}</h3>
+              <h3 className={day.dayDate.getDay() === 0 ? 'disabled' : null}>
+                {day.display}
+              </h3>
               <div className="slots">
                 {day.slots.map((slot) => {
                   return (
                     <Slot
+                      isSunday={day.dayDate.getDay() === 0}
                       key={slot.slotTime}
                       slot={slot}
                       setAlreadyBooked={setAlreadyBooked}

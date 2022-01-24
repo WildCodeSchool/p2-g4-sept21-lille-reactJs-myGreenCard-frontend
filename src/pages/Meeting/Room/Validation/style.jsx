@@ -5,7 +5,9 @@ const SValidation = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  h3.disabled {
+    color: #000000a6;
+  }
   h2 {
     margin: 15px;
     font-size: 1.2rem;
@@ -58,7 +60,6 @@ const SValidation = styled.div`
       }
     }
   }
-
   .swiper-slide img {
     display: block;
     width: 100%;
