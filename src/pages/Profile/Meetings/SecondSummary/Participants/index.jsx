@@ -10,8 +10,8 @@ import { useSelector } from 'react-redux';
 
 export default function Participants({ meetingId }) {
   const [participants, setParticipants] = useState([]);
-  const id = meetingId;
   const user = useSelector((state) => state.user);
+  const id = meetingId;
 
   useEffect(() => {
     axios

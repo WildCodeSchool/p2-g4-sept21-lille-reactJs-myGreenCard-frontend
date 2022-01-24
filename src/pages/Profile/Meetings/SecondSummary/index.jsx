@@ -27,6 +27,7 @@ export default function SecondSummary() {
   }, [active]);
   return (
     <>
+      {console.log(meetings)}
       <button type="button" onClick={handleToggle}>
         <h3>Récapitulatif des salles de réunion (participant)</h3>
       </button>
@@ -34,7 +35,7 @@ export default function SecondSummary() {
         <ul>
           {meetings.map((meeting) => {
             return (
-              <li key={meeting.beginning}>
+              <li key={meeting.picture}>
                 {`Salle n°${meeting.meetingRoomId}, ${
                   meeting.location
                 }, le ${moment(meeting.beginning).format(

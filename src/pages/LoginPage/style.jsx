@@ -6,7 +6,6 @@ const SLogingPage = styled.section`
   align-items: center;
   width: 100vw;
   height: 100vh;
-
   .background {
     border-radius: 20px 20px 10px 10px;
     width: 95vw;
@@ -15,10 +14,8 @@ const SLogingPage = styled.section`
     display: flex;
     flex-direction: row;
     height: 2vh;
-
     width: 95vw;
     margin: 0.5vh 15px 2vh 0px;
-
     justify-content: flex-end;
     font-size: 8px;
     align-items: center;
@@ -110,22 +107,32 @@ const SLogingPage = styled.section`
   a {
     margin-top: 7vh;
   }
-
   .darkThemeBackground {
     background-color: #303134;
   }
-
   .lightThemeBackground {
     background-color: white;
   }
-
   .darkThemeInput {
     background: black;
     border-bottom: 2px solid #303134;
     color: white;
   }
   .letsGo {
-    margin-top: 20px;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+      rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+      rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    background-color: white;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
+    margin-top: 10vh;
+    width: 50vw;
   }
 `;
 
