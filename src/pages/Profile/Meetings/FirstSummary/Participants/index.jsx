@@ -13,7 +13,6 @@ export default function Participants({ meetingId }) {
   useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_API_URL}/meeting/${id}/participants`)
-
       .then(({ data }) => {
         setParticipants(data);
       })
