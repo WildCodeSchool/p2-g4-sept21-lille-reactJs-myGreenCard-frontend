@@ -14,30 +14,37 @@ export default function Room() {
 
   return (
     <>
-      <Header logo={logo} />
       <SRoom>
         {validation && (
-          <Validation
-            setAlreadyBooked={setAlreadyBooked}
-            setValidation={setValidation}
-            reservation={reservation}
-            setReservation={setReservation}
-            setShare={setShare}
-          />
+          <>
+            <Header logo={logo} />
+            <Validation
+              setAlreadyBooked={setAlreadyBooked}
+              setValidation={setValidation}
+              reservation={reservation}
+              setReservation={setReservation}
+              setShare={setShare}
+            />
+          </>
         )}
         {alreadyBooked && (
-          <AlreadyBooked
-            reservation={reservation}
-            setAlreadyBooked={setAlreadyBooked}
-            setValidation={setValidation}
-          />
+          <>
+            <Header logo={logo} />
+            <AlreadyBooked
+              reservation={reservation}
+              setAlreadyBooked={setAlreadyBooked}
+              setValidation={setValidation}
+            />
+          </>
         )}
         {share && (
-          <Share
-            reservation={reservation}
-            setValidation={setValidation}
-            setShare={setShare}
-          />
+          <>
+            <Share
+              reservation={reservation}
+              setValidation={setValidation}
+              setShare={setShare}
+            />
+          </>
         )}
       </SRoom>
     </>

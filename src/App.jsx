@@ -1,7 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyles from 'Themes/GlobalStyle';
+import { cookies, api } from 'conf';
+import axios from 'axios';
 import { lightTheme, darkTheme } from './Themes/Themes';
 import LoginPage from './pages/LoginPage';
 import Home from './pages/Home';
@@ -14,37 +17,64 @@ import LostCard from './pages/LostCard';
 import Room from './pages/Meeting/Room';
 import ProfilPage from './pages/Profile';
 import FoodProfile from './pages/Food/FoodProfile';
+import RandomLunch from './pages/Food/RandomLunch';
 
 function App() {
-  const [theme, setTheme] = useState('light');
+  const dispatch = useDispatch();
+  useEffect(() => {
+    api.defaults.headers.authorization = `Bearer ${cookies.get('token')}`;
+    axios
+      .post(
+        `${process.env.REACT_APP_API_URL}/auth/login/token`,
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${cookies.get('token')}`,
+          },
+        }`http://localhost:5000/auth/login/token`,
+        {},
+        { headers: { Authorization: `Bearer ${cookies.get('token')}` } }
+      )
+      .then(({ data }) => {
+        const { user } = data;
+        dispatch({ type: 'LOGIN', user });
+      })
+      .catch((error) => {
+        if (error.response) {
+          console.log(error.response);
+        }
+      });
+  }, []);
+
+  const themeStorage = localStorage.getItem('theme');
+  const [theme, setTheme] = useState(themeStorage || 'light');
   const isDarkTheme = theme === 'dark';
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
       <GlobalStyles />
-      <main>
-        <Routes>
-          <Route
-            path="/"
-            element={<LoginPage setTheme={setTheme} theme={theme} />}
-          />
-          <Route
-            path="home"
-            element={<Home setTheme={setTheme} theme={theme} />}
-          />
-          <Route path="eazyCard" element={<EazyCard />} />
-          <Route
-            path="food"
-            element={<Food setTheme={setTheme} theme={theme} />}
-          />
-          <Route path="food/profile" element={<FoodProfile />} />
-          <Route path="office" element={<Office />} />
-          <Route path="meetingRooms" element={<Meeting />} />
-          <Route path="meetingRooms/:id" element={<Room />} />
-          <Route path="supplies" element={<Supplies />} />
-          <Route path="lostCard" element={<LostCard />} />
-          <Route path="profilPage" element={<ProfilPage />} />
-        </Routes>
-      </main>
+      <Routes>
+        <Route
+          path="/"
+          element={<LoginPage setTheme={setTheme} theme={theme} />}
+        />
+        <Route
+          path="home"
+          element={<Home setTheme={setTheme} theme={theme} />}
+        />
+        <Route path="eazyCard" element={<EazyCard />} />
+        <Route
+          path="food"
+          element={<Food setTheme={setTheme} theme={theme} />}
+        />
+        <Route path="food/profile" element={<FoodProfile />} />
+        <Route path="office" element={<Office />} />
+        <Route path="meetingRooms" element={<Meeting />} />
+        <Route path="meetingRooms/:id" element={<Room />} />
+        <Route path="supplies" element={<Supplies />} />
+        <Route path="lostCard" element={<LostCard />} />
+        <Route path="profilPage" element={<ProfilPage />} />
+        <Route path="randomLunch" element={<RandomLunch />} />
+      </Routes>
     </ThemeProvider>
   );
 }

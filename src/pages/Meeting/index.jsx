@@ -9,9 +9,14 @@ import RoomCard from './RoomCard';
 export default function Meeting() {
   const [dataRooms, setDataRooms] = useState([]);
 
+  const initMeeting = () => {
+    axios.post(`${process.env.REACT_APP_API_URL}/meetingReset`).catch((e) => {
+      console.log(e);
+    });
+  };
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/meetingRoom`)
+      .get(`${process.env.REACT_APP_API_URL}/meetingRoom`)
       .then(({ data }) => {
         setDataRooms(data);
       })
@@ -38,6 +43,14 @@ export default function Meeting() {
             </Link>
           );
         })}
+        <button
+          onClick={() => {
+            initMeeting();
+          }}
+          className="init"
+          type="button"
+          aria-label="Bouton réinitialisaton base de données"
+        />
       </SMeeting>
     </>
   );

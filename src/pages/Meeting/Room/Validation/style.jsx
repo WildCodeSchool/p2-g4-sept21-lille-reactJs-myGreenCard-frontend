@@ -5,6 +5,7 @@ const SValidation = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   h2 {
     margin: 15px;
     font-size: 1.2rem;
@@ -21,13 +22,13 @@ const SValidation = styled.div`
     width: 100vw;
     height: 300px;
     .swiper-slide {
+      background-color: ${(props) => props.theme.background};
       display: flex;
       flex-direction: column;
       text-align: center;
       justify-content: center;
       align-items: center;
       font-size: 18px;
-      background: #fff;
       h3 {
         font-size: 1.2rem;
         margin: 15px;
@@ -41,6 +42,7 @@ const SValidation = styled.div`
         flex-direction: column;
         flex-wrap: wrap;
         button {
+          color: black;
           font-size: 1rem;
           width: 80px;
           background: #ececec;
@@ -65,7 +67,7 @@ const SValidation = styled.div`
   }
   .swiper-button-next,
   .swiper-button-prev {
-    color: black;
+    color: ${(props) => props.theme.text};
     &::after {
       font-size: 20px;
       font-weight: bold;

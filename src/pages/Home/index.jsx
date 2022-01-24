@@ -2,6 +2,7 @@ import Header from 'components/Header';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import apple from 'assets/Img/apple.png';
+import { useEffect } from 'react';
 import google from './pictures/googleWallet.png';
 import ToggleButton from '../../components/ToggleButton';
 import logo from '../../assets/Img/easyApp.png';
@@ -20,8 +21,11 @@ import SHome from './style';
 export default function Home({ theme, setTheme }) {
   const isDarkTheme = theme === 'dark';
   const toggleTheme = () => {
-    return setTheme(isDarkTheme ? 'light' : 'dark');
+    setTheme(isDarkTheme ? 'light' : 'dark');
   };
+  useEffect(() => {
+    localStorage.setItem('theme', `${theme}`);
+  }, [theme]);
   return (
     <>
       <Header logo={isDarkTheme ? darkLogo : logo} />

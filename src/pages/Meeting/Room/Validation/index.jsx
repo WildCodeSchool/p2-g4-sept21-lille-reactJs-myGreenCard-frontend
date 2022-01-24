@@ -56,7 +56,7 @@ export default function Validation({
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/meetingRoom/${id}`)
+      .get(`${process.env.REACT_APP_API_URL}/meetingRoom/${id}`)
 
       .then(({ data }) => {
         setDataRoom(data[0]);
@@ -68,7 +68,7 @@ export default function Validation({
 
   return (
     <SValidation>
-      <img src={dataRoom.picture} alt="Salle de réunion" />
+      <img className="room" src={dataRoom.picture} alt="Salle de réunion" />
       <h2>Salle de réunion n°{dataRoom.number}</h2>
       <Swiper navigation className="mySwiper">
         {days.map((day) => {
