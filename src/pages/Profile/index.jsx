@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
 import UserAvatar from 'components/UserAvatar';
 import logo from 'assets/Img/easyApp.png';
 import logoDark from 'assets/Img/easyAppDark.png';
@@ -31,61 +30,59 @@ export default function ProfilPage({ theme, setTheme }) {
   };
 
   return (
-    <>
-      <SProfilPage>
-        <div className="profilCard">
-          <div className="head">
-            <Link to="/home">
-              <img src={home} alt="homeIcon" />
-            </Link>
-            <ToggleButton
-              label="Dark/light mode"
-              handleClick={toggleTheme}
-              className={isDarkTheme ? 'dark' : null}
-              size={0.75}
-            />
-          </div>
-          <img src={isDarkTheme ? logoDark : logo} alt="homeIcon" />
-          <div className="userCard">
-            <UserAvatar size="125px" border="none" />
-            <h2>
-              {user.firstname} {user.lastname}
-            </h2>
-            <p>{user.job}</p>
-          </div>
+    <SProfilPage>
+      <div className="profilCard">
+        <div className="head">
+          <Link to="/home">
+            <img src={home} alt="homeIcon" />
+          </Link>
+          <ToggleButton
+            label="Dark/light mode"
+            handleClick={toggleTheme}
+            className={isDarkTheme ? 'dark' : null}
+            size={0.75}
+          />
         </div>
-        <article className="solde">
-          <h3>Solde : {user.amount} € </h3>
-          <div className="refill">
-            <button type="button" className="money" onClick={toggleModal}>
-              Recharger
-            </button>
-            <button type="button" className="money" onClick={toggleGiftModal}>
-              Donner
-            </button>
-          </div>
-          <div className="paymentLogo">
-            <img src={cb} alt="CB" />
-            <img src={applePay} alt="apple pay" />
-            <img src={larrondi} alt="l&#39;arrondi" />
-          </div>
-        </article>
-        <article className="resume">
-          <h2>Mes reservations</h2>
-          <p>Recapitulatif des reservations en cours ...</p>
-        </article>
-        <article className="resume">
-          <h2>Mes commandes</h2>
-          <p>Recapitulatif commande en cours ...</p>
-        </article>
-        <article className="resume">
-          <h2>Mon repas</h2>
-          <p>Recapitulatif commande en cours ...</p>
-        </article>
-        {!refillModal && <RefillModal toggleModal={toggleModal} />}
-        {!giftModal && <GiftModal toggleGiftModal={toggleGiftModal} />}
-      </SProfilPage>
-    </>
+        <img src={isDarkTheme ? logoDark : logo} alt="homeIcon" />
+        <div className="userCard">
+          <UserAvatar size="125px" border="none" />
+          <h2>
+            {user.firstname} {user.lastname}
+          </h2>
+          <p>{user.job}</p>
+        </div>
+      </div>
+      <article className="solde">
+        <h3>Solde : {user.amount} € </h3>
+        <div className="refill">
+          <button type="button" className="money" onClick={toggleModal}>
+            Recharger
+          </button>
+          <button type="button" className="money" onClick={toggleGiftModal}>
+            Donner
+          </button>
+        </div>
+        <div className="paymentLogo">
+          <img src={cb} alt="CB" />
+          <img src={applePay} alt="apple pay" />
+          <img src={larrondi} alt="l&#39;arrondi" />
+        </div>
+      </article>
+      <article className="resume">
+        <h2>Mes reservations</h2>
+        <p>Recapitulatif des reservations en cours ...</p>
+      </article>
+      <article className="resume">
+        <h2>Mes commandes</h2>
+        <p>Recapitulatif commande en cours ...</p>
+      </article>
+      <article className="resume">
+        <h2>Mon repas</h2>
+        <p>Recapitulatif commande en cours ...</p>
+      </article>
+      {!refillModal && <RefillModal toggleModal={toggleModal} />}
+      {!giftModal && <GiftModal toggleGiftModal={toggleGiftModal} />}
+    </SProfilPage>
   );
 }
 
