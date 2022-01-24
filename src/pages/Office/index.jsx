@@ -8,18 +8,54 @@ import 'swiper/components/navigation/navigation.min.css';
 import officeRoom from 'assets/Img/OfficePictures/officeRoom.png';
 import logo from 'assets/reservationBureau.png';
 import Header from 'components/Header';
+import React, { useState } from 'react';
+import user from '../../assets/Img/users/e3.png';
 import SOffice from './style';
 
-SwiperCore.use([Navigation]);
-
 export default function Office() {
+  SwiperCore.use([Navigation]);
+  const plan = {
+    backgroundImage: `url(${officeRoom})`,
+  };
+
+  const [resaOffice, setResaOffice] = useState(false);
+  const resTheme = () => {
+    return setResaOffice(!resaOffice);
+  };
+
   return (
     <>
       <Header logo={logo} />
-      <SOffice>
-        <img className="plan" src={officeRoom} alt="office room" />
+      <SOffice avatar={user}>
+        {
+          <button
+            aria-label="pinButton"
+            onClick={resTheme}
+            type="button"
+            className={resaOffice ? 'buttonUser button1' : 'button1'}
+          /> /* {resaOffice ? (
+          <>
+            <button onClick={resTheme} type="button" className="button1">
+              {' '}
+            </button>
+          </>
+        ) : (
+          <>
+            <div className="userResa">
+              <img src={user} id="userPic" alt="userPic" />
+            </div>
+          </>
+        )} */
+        }
+
+        <div className="button2" />
+        <div className="button3" />
+        <div className="button4" />
+        <div className="button5" />
+        <div className="button6" />
+        <div style={plan} className="plan" alt="office room" />
         <div className="rowProfiles">
-          <div className="circle" />
+          <div className="circle1" />
           <AvatarGroup max={5}>
             <Avatar alt="User avatar 1" src="https://www.placecage.com/80/80" />
             <Avatar alt="User avatar 2" src="https://www.placecage.com/81/81" />

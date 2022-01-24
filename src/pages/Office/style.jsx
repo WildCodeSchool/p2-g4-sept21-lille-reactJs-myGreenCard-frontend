@@ -20,11 +20,90 @@ const SOffice = styled.main`
     margin-left: 5vw;
     font-weight: bold;
   }
+  #userPic {
+    /* object-fit: contain; */
+    width: 25px;
+    height: 25px;
+    z-index: 1;
+  }
 
+  .button1 {
+    margin-left: 16vw;
+    margin-top: 5.5vh;
+    width: 16px;
+    height: 16px;
+    border-radius: 20px;
+    background: #44df44;
+    position: absolute;
+    z-index: 1;
+    cursor: pointer;
+  }
+  .buttonUser {
+    width: 50px;
+    height: 50px;
+    background: inherit;
+    background-size: 50px 50px;
+    background-position: center;
+    background-image: url(${(props) => props.avatar});
+  }
+
+  .button2 {
+    margin-left: 40.5vw;
+    margin-top: 5.6vh;
+    width: 16px;
+    height: 16px;
+    border-radius: 20px;
+    background: #44df44;
+    position: absolute;
+    z-index: 1;
+  }
+
+  .button3 {
+    margin-left: 58.26vw;
+    margin-top: 6.3vh;
+    width: 16px;
+    height: 16px;
+    border-radius: 20px;
+    background: #44df44;
+    position: absolute;
+    z-index: 1;
+  }
+
+  .button4 {
+    margin-left: 85.4vw;
+    margin-top: 3.4vh;
+    width: 16px;
+    height: 16px;
+    border-radius: 20px;
+    background: #44df44;
+    position: absolute;
+    z-index: 1;
+  }
+  .button5 {
+    margin-left: 89vw;
+    margin-top: 10.2vh;
+    width: 16px;
+    height: 16px;
+    border-radius: 20px;
+    background: #44df44;
+    position: absolute;
+    z-index: 1;
+  }
+  .button6 {
+    margin-left: 42.5vw;
+    margin-top: 23.6vh;
+    width: 16px;
+    height: 16px;
+    border-radius: 20px;
+    background: #44df44;
+    position: absolute;
+    z-index: 1;
+  }
   .plan {
+    background-size: 100%;
+    background-repeat: no-repeat;
     height: 40vh;
-    width: 90%;
-    margin-left: 5vw;
+    width: auto;
   }
 
   .rowProfiles {
@@ -32,7 +111,7 @@ const SOffice = styled.main`
     align-items: center;
   }
 
-  .circle {
+  .circle1 {
     width: 16px;
     height: 16px;
     border-radius: 20px;
