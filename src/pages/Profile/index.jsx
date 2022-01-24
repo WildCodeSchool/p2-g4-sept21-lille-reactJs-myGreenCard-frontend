@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
 import UserAvatar from 'components/UserAvatar';
 import logo from 'assets/Img/easyApp.png';
 import logoDark from 'assets/Img/easyAppDark.png';

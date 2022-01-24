@@ -17,7 +17,7 @@ export default function SharePopup({
   };
   const storeParticipants = () => {
     axios
-      .post(`${process.env.REACT_APP_API_URL}/meeting/participants`, [
+      .post(`${process.env.REACT_APP_API_URL}/meetings/participants`, [
         newParticipants,
       ])
       .catch((e) => {
@@ -33,7 +33,7 @@ export default function SharePopup({
   useEffect(() => {
     axios
       .get(
-        `${process.env.REACT_APP_API_URL}/meeting?id=${reservation.roomId}&slot=${reservation.slot}`
+        `${process.env.REACT_APP_API_URL}/meetings?id=${reservation.roomId}&slot=${reservation.slot}`
       )
       .then(({ data }) => {
         if (data[0]) {

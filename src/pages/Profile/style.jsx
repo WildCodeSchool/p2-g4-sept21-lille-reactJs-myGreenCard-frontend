@@ -5,6 +5,9 @@ const SProfilPage = styled.section`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  .meetings {
+    height: auto;
+  }
   h2 {
     font-weight: Bold;
     height: 30px;

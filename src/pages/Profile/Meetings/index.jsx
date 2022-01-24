@@ -1,38 +1,14 @@
-import axios from 'axios';
-import { useState, useEffect } from 'react';
-import moment from 'moment';
-import 'moment/locale/fr';
+import arrow from 'assets/arrow-bottom.svg';
 import SMeetings from './style';
+import FirstSummary from './FirstSummary';
+import SecondSummary from './SecondSummary';
 
 export default function Meetings() {
-  const [meetings, setMeetings] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get(`${process.env.REACT_APP_API_URL}/meeting/user/${3}`)
-      .then(({ data }) => {
-        setMeetings(data);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  }, []);
   return (
-    <SMeetings>
+    <SMeetings className="meetings" arrow={arrow}>
       <h2>Mes reunions</h2>
-      <h3>Récapitulatif des salles de réunion réservées</h3>
-      <ul>
-        {console.log(meetings)}
-        {meetings.map((meeting) => {
-          return (
-            <li key="meeting.id">
-              {`Salle n°${meeting.meetingRoomId}, ${
-                meeting.location
-              }, le ${moment(meeting.beninning).format('dddd Do MMMM')}`}
-            </li>
-          );
-        })}
-      </ul>
+      <FirstSummary />
+      <SecondSummary />
     </SMeetings>
   );
 }
