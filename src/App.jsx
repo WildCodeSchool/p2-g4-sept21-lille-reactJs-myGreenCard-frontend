@@ -33,11 +33,6 @@ function App() {
             Authorization: `Bearer ${cookies.get('token')}`,
           },
         }
-
-        `http://localhost:5000/auth/login/token`,
-        {},
-        { headers: { Authorization: `Bearer ${cookies.get('token')}` } }
-
       )
       .then(({ data }) => {
         const { user } = data;
@@ -49,7 +44,7 @@ function App() {
         }
       });
   }, []);
-  
+
   const themeStorage = localStorage.getItem('theme');
   const [theme, setTheme] = useState(themeStorage || 'light');
   const isDarkTheme = theme === 'dark';
