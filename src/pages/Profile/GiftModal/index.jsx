@@ -13,7 +13,7 @@ export default function GiftModal({ toggleGiftModal }) {
     if (userAmount >= 10) {
       const amount = { ...user, amount: userAmount - 10 };
       api
-        .put(`http://localhost:5000/user/${user.id}`, amount)
+        .put(`${process.env.REACT_APP_API_URL}/user/${user.id}`, amount)
         .then(({ data }) => {
           const { token, user: userData } = data;
           cookies.set('token', token);
@@ -24,7 +24,7 @@ export default function GiftModal({ toggleGiftModal }) {
           console.log(e);
         });
       toast.success(
-        `Vous avez donner  10€, votre solde est de ${user.amount - 10}€ `
+        `Vous avez donner  10€, votre solde est de ${userAmount - 10}€ `
       );
     } else {
       toast.error(`Don impossible crédit insufisant `);
@@ -34,7 +34,7 @@ export default function GiftModal({ toggleGiftModal }) {
     if (userAmount >= 50) {
       const amount = { ...user, amount: userAmount - 50 };
       api
-        .put(`http://localhost:5000/user/${user.id}`, amount)
+        .put(`${process.env.REACT_APP_API_URL}/user/${user.id}`, amount)
         .then(({ data }) => {
           const { token, user: userData } = data;
           cookies.set('token', token);
@@ -48,7 +48,7 @@ export default function GiftModal({ toggleGiftModal }) {
         `Vous avez donner  50€, votre solde est de ${userAmount - 50}€ `
       );
     } else {
-      toast.error(`Don impossible crédit insufisant `);
+      toast.error(`Don impossible, solde insufisant`);
     }
   };
   return (

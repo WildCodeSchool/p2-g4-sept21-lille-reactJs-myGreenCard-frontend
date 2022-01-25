@@ -134,6 +134,16 @@ const SLogingPage = styled.section`
     margin-top: 10vh;
     width: 50vw;
   }
+  .css-1ujykiq-MuiButtonBase-root-MuiTab-root.Mui-selected {
+    color: black;
+  }
+  .log {
+    height: 125px;
+    width: 125px;
+    border-radius: 50%;
+    background-color: grey;
+    margin: 10px;
+  }
 `;
 
 export default SLogingPage;

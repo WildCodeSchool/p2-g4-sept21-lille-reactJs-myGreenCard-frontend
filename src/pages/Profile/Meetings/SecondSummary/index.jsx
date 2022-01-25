@@ -26,7 +26,6 @@ export default function SecondSummary() {
   }, [active]);
   return (
     <>
-      {console.log(meetings)}
       <button type="button" onClick={handleToggle}>
         <h3>Récapitulatif des salles de réunion (participant)</h3>
       </button>
