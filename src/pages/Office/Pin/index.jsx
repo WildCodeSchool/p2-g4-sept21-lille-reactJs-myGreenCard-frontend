@@ -6,6 +6,7 @@ export default function Pin({ pinClass }) {
   const resTheme = () => {
     return setResaOffice(!resaOffice);
   };
+
   return (
     <button
       aria-label="pinButton"

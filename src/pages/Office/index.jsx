@@ -10,6 +10,7 @@ import officeRoom from 'assets/Img/OfficePictures/officeRoom.png';
 import logo from 'assets/reservationBureau.png';
 import Header from 'components/Header';
 import Pin from './Pin';
+import Slot from './officeSlot';
 import SOffice from './style';
 
 export default function Office() {
@@ -27,7 +28,31 @@ export default function Office() {
     'button5',
     'button6',
   ];
+  const today = new Date();
+  const days = [];
 
+  const slotsDisplay = [
+    { slotHour: 8, slotDisplay: '8h-12h' },
+    { slotHour: 9, slotDisplay: '14h-18h' },
+  ];
+
+  for (let i = 0; i < 7; i += 1) {
+    const dayDate = new Date();
+    dayDate.setDate(today.getDate() + i + 1);
+    const dayDisplay = dayDate.toLocaleString('fr-FR', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
+    const slots = [];
+    for (let j = 0; j < slotsDisplay.length; j += 1) {
+      const { slotDisplay } = slotsDisplay[j];
+      const slotTime = dayDate.setHours(slotsDisplay[j].slotHour, 0, 0);
+      slots.push({ slotDisplay, slotTime });
+    }
+    days.push({ display: dayDisplay, slots });
+  }
   return (
     <>
       <Header logo={logo} />
@@ -57,42 +82,19 @@ export default function Office() {
           <p>sont présents aujourd&apos;hui</p>
         </div>
         <h2>Bureau n°1</h2>
-        <Swiper navigation slidesPerView={2}>
-          <SwiperSlide className="swiperComponent">
-            <h3>Lundi</h3>
-            <div className="slots">
-              <span>Matin: 8h-12h</span>
-              <span>Après-midi: 14h-18h</span>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className="swiperComponent">
-            <h3>Mardi</h3>
-            <div className="slots">
-              <span>Matin: 8h-12h</span>
-              <span>Après-midi: 14h-18h</span>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className="swiperComponent">
-            <h3>Mercredi</h3>
-            <div className="slots">
-              <span>Matin: 8h-12h</span>
-              <span>Après-midi: 14h-18h</span>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className="swiperComponent">
-            <h3>Jeudi</h3>
-            <div className="slots">
-              <span>Matin: 8h-12h</span>
-              <span>Après-midi: 14h-18h</span>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className="swiperComponent">
-            <h3>Vendredi</h3>
-            <div className="slots">
-              <span>Matin: 8h-12h</span>
-              <span>Après-midi: 14h-18h</span>
-            </div>
-          </SwiperSlide>
+        <Swiper navigation slidesPerView={2} className="mySwiper">
+          {days.map((day) => {
+            return (
+              <SwiperSlide key={day.display}>
+                <h3>{day.display}</h3>
+                <div className="slots">
+                  {day.slots.map((slot) => {
+                    return <Slot key={slot.slotTime} slot={slot} />;
+                  })}
+                </div>
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
       </SOffice>
     </>
