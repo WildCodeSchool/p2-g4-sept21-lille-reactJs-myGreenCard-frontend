@@ -72,7 +72,7 @@ function App() {
         <Route path="supplies" element={<Supplies />} />
         <Route path="lostCard" element={<LostCard />} />
         <Route path="profilPage" element={<ProfilPage />} />
-        <Route path="randomLunch" element={<RandomLunch />} />
+        <Route path="food/randomLunch" element={<RandomLunch />} />
       </Routes>
       <ToastContainer />
     </ThemeProvider>
