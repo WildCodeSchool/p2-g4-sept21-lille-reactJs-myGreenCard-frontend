@@ -38,7 +38,7 @@ export default function Supplies() {
   return (
     <>
       <SSupplies>
-        {console.log(cart)}
+        {console.log(modal)}
         <Header logo={fournitures} />{' '}
         {!modal ? (
           <>
@@ -50,6 +50,7 @@ export default function Supplies() {
                     <div className="description">
                       <h2>{supply.name}</h2>
                       <p>{supply.description}</p>
+                      <p>{supply.price}</p>
                       <Counter setCart={setCart} id={supply.id} cart={cart} />
                     </div>
                   </div>
@@ -65,7 +66,12 @@ export default function Supplies() {
             />{' '}
           </>
         ) : (
-          <SuppliesModal supplyElement={supplies} />
+          <SuppliesModal
+            supplyElement={supplies}
+            cart={cart}
+            modal={modal}
+            setModal={setModal}
+          />
         )}
       </SSupplies>
     </>

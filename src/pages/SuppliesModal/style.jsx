@@ -11,7 +11,7 @@ const SSuppliesModal = styled.main`
     padding-top: 20px;
   }
 
-  .cartIcon {
+  .basketIcon {
     height: 8vh;
     margin-left: 30vw;
     padding-top: 20px;

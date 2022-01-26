@@ -1,30 +1,74 @@
-import { useState } from 'react';
+// import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import axios from 'axios';
 import PropTypes from 'prop-types';
 import MainButton from 'components/MainButton';
-import cart from 'assets/Img/SuppliesPictures/cart.png';
+import basket from 'assets/Img/SuppliesPictures/cart.png';
 import SSuppliesModal from './style';
 
-export default function SuppliesModal({ supplyElement }) {
-  const [modal, setModal] = useState(true);
+export default function SuppliesModal({
+  supplyElement,
+  cart,
+  modal,
+  setModal,
+}) {
   const toggleModal = () => {
     setModal(!modal);
   };
+  const user = useSelector((state) => state.user);
+  const { id } = user;
+  const supplyItem = cart.map((item, index) => {
+    if (item > 0) {
+      return [item, supplyElement[index].id];
+    }
+    return null;
+  });
+  const newItems = supplyItem.filter((item) => item !== null);
+  // const myOrder = {}
+  const sendData = () => {
+    axios
+      .post(
+        `${process.env.REACT_APP_API_URL}/supplies/${id}/cartSupplies`,
+        newItems
+      )
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+
   return (
     <>
       {modal && (
         <SSuppliesModal>
           <h2>Mon panier</h2>
-          <img className="cartIcon" src={cart} alt="cart icon" />
-          <div>
-            <p>{supplyElement.name}</p>
-            <p>{supplyElement.quantity}</p>
-            <img src={supplyElement.picture} alt="" />
+          <img className="basketIcon" src={basket} alt="basket icon" />
+          <div className="container">
+            {cart.map((item, index) => {
+              return (
+                item !== 0 && (
+                  <div className="supply">
+                    <img
+                      className="cartPictures"
+                      src={supplyElement[index].picture}
+                      alt={supplyElement[index].name}
+                    />
+                    <div className="description">
+                      <p>{supplyElement[index].name}</p>
+                      <p>{item}</p>
+                    </div>
+                  </div>
+                )
+              );
+            })}
           </div>
           <MainButton
             className="order"
             content="Passer la commande"
             clickCallback={() => {
-              toggleModal();
+              sendData();
             }}
           />
           <MainButton
@@ -47,8 +91,14 @@ SuppliesModal.propTypes = {
     quantity: PropTypes.number,
     picture: PropTypes.string,
   }),
+  cart: PropTypes.arrayOf(PropTypes.number),
+  modal: PropTypes.bool,
+  setModal: PropTypes.func,
 };
 
 SuppliesModal.defaultProps = {
   supplyElement: null,
+  cart: [],
+  modal: false,
+  setModal: () => {},
 };
