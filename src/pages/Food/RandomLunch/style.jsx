@@ -36,22 +36,26 @@ const SRandomLunch = styled.section`
     height: 5vh;
   }
   .guests {
+    width: 160px;
     text-align: center;
+    font-size: 15px;
+  }
+  .name {
+    margin-top: 10px;
+    margin-bottom: 7px;
   }
   .users {
     height: 50vh;
-    width: 75vw;
-    margin: auto;
-    margin-top: 5vh;
-    margin-bottom: 3vh;
+    width: 90vw;
+    margin: 5vh 0 3vh 4vh;
     display: flex;
-    flex-direction: row;
     flex-flow: row wrap;
-    justify-content: space-around;
     img {
       height: 26vw;
       position: relative;
     }
+  }
+  .currUser {
   }
   .circle {
     width: 25px;
