@@ -16,20 +16,21 @@ export default function SuppliesModal({
     setModal(!modal);
   };
   const user = useSelector((state) => state.user);
-  const { id } = user;
-  const supplyItem = cart.map((item, index) => {
-    if (item > 0) {
-      return [item, supplyElement[index].id];
-    }
-    return null;
-  });
-  const newItems = supplyItem.filter((item) => item !== null);
-  // const myOrder = {}
+
   const sendData = () => {
+    const myOrder = cart
+      .filter((item) => item > 0)
+      .map((item) => {
+        return {
+          itemId: supplyElement[item].id,
+          qtty: item,
+        };
+      });
+
     axios
       .post(
-        `${process.env.REACT_APP_API_URL}/supplies/${id}/cartSupplies`,
-        newItems
+        `${process.env.REACT_APP_API_URL}/supplies/${user.id}/cartSupplies`,
+        myOrder
       )
       .then((data) => {
         console.log(data);
