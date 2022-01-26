@@ -22,7 +22,6 @@ export default function AlreadyBooked({
     const { id } = reservation;
     axios
       .get(`${process.env.REACT_APP_API_URL}/meeting/${id}/participants`)
-
       .then(({ data }) => {
         setParticipants(data);
       })
@@ -61,7 +60,7 @@ export default function AlreadyBooked({
       <p>
         Réservé par {reservation.userFirstname} pour le créneau de
         {moment(reservation.slot).format('  HH ')}h
-        {moment(reservation.slot).format('  dddd ')}
+        {moment(reservation.slot).format('  dddd Do MMMM')}
       </p>
       <AvatarGroup className="participants" max="4">
         {participants.map((participant) => {

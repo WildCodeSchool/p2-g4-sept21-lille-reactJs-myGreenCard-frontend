@@ -5,15 +5,15 @@ const SProfilPage = styled.section`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  h3 {
-    font-size: 30px;
+  .meetings {
+    height: auto;
   }
   h2 {
     font-weight: Bold;
     height: 30px;
   }
   p {
-    font-size: 15px;
+    font-size: 1rem;
   }
   ul {
     display: flex;

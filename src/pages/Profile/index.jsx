@@ -12,6 +12,7 @@ import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 import ToggleButton from 'components/ToggleButton';
 import SProfilPage from './style';
+import Meetings from './Meetings';
 import RefillModal from './RefillModal';
 import GiftModal from './GiftModal';
 
@@ -63,7 +64,7 @@ export default function ProfilPage({ theme, setTheme }) {
         </div>
       </div>
       <article className="solde">
-        <h3>Solde : {user.amount} € </h3>
+        <h2>Solde : {user.amount} € </h2>
         <div className="refill">
           <button type="button" className="money" onClick={toggleModal}>
             Recharger
