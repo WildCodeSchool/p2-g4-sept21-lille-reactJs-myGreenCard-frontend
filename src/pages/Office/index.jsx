@@ -9,38 +9,36 @@ import 'swiper/components/navigation/navigation.min.css';
 import officeRoom from 'assets/Img/OfficePictures/officeRoom.png';
 import logo from 'assets/reservationBureau.png';
 import Header from 'components/Header';
-import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Pin from './Pin';
-import Slot from './officeSlot';
+import Slot from './Slot';
 import SOffice from './style';
 
 export default function Office() {
+  // const [dataSlots, setDataSlots] = useState({
+  //   slot1: [],
+  //   slot2: [],
+  //   slot3: [],
+  //   slot4: [],
+  //   slot5: [],
+  //   slot6: [],
+  // });
+  const [dataSlot, setDataSlot] = useState([]);
+  const [myResOffice, setMyResOffice] = useState([]);
+  const [resOffice, setResOffice] = useState([]);
   const user = useSelector((state) => state.user);
   SwiperCore.use([Navigation]);
   const plan = {
     backgroundImage: `url(${officeRoom})`,
   };
-  const [setDataOffice] = useState([]);
-  useEffect(() => {
-    axios
-      .get(`${process.env.REACT_APP_API_URL}/officeReservation`)
-      .then(({ data }) => {
-        setDataOffice(data);
-        console.log(data);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  }, []);
 
-  const pinClasses = [
-    'button1',
-    'button2',
-    'button3',
-    'button4',
-    'button5',
-    'button6',
+  const pins = [
+    { class: 'button1', number: 1 },
+    { class: 'button2', number: 2 },
+    { class: 'button3', number: 3 },
+    { class: 'button4', number: 4 },
+    { class: 'button5', number: 5 },
+    { class: 'button6', number: 6 },
   ];
   const today = new Date();
   const days = [];
@@ -71,8 +69,14 @@ export default function Office() {
     <>
       <Header logo={logo} />
       <SOffice avatar={user.picture}>
-        {pinClasses.map((pinClass) => (
-          <Pin pinClass={pinClass} />
+        {pins.map((pin) => (
+          <Pin
+            key={pin.number}
+            pin={pin}
+            dataSlot={dataSlot}
+            myResOffice={myResOffice}
+            resOffice={resOffice}
+          />
         ))}
 
         <div style={plan} className="plan" alt="office room" />
@@ -103,7 +107,15 @@ export default function Office() {
                 <h3>{day.display}</h3>
                 <div className="slots">
                   {day.slots.map((slot) => {
-                    return <Slot key={slot.slotTime} slot={slot} />;
+                    return (
+                      <Slot
+                        key={slot.slotTime}
+                        slot={slot}
+                        setDataSlot={setDataSlot}
+                        setResOffice={setResOffice}
+                        setMyResOffice={setMyResOffice}
+                      />
+                    );
                   })}
                 </div>
               </SwiperSlide>

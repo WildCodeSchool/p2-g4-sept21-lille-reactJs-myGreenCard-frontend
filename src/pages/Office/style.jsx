@@ -20,29 +20,14 @@ const SOffice = styled.main`
     margin-left: 5vw;
     font-weight: bold;
   }
-
   .button1 {
     margin-left: 16vw;
     margin-top: 5.5vh;
-    width: 16px;
-    height: 16px;
-    border-radius: 20px;
-    background: #44df44;
-    position: absolute;
-    z-index: 1;
-    cursor: pointer;
   }
 
   .button2 {
     margin-left: 40.5vw;
     margin-top: 5.6vh;
-    width: 16px;
-    height: 16px;
-    border-radius: 20px;
-    background: #44df44;
-    position: absolute;
-    z-index: 1;
-    cursor: pointer;
   }
   .buttonUser2 {
     width: 50px;
@@ -55,49 +40,22 @@ const SOffice = styled.main`
   .button3 {
     margin-left: 58.26vw;
     margin-top: 6.3vh;
-    width: 16px;
-    height: 16px;
-    border-radius: 20px;
-    background: #44df44;
-    position: absolute;
-    z-index: 1;
-    cursor: pointer;
   }
 
   .button4 {
     margin-left: 85.4vw;
     margin-top: 3.4vh;
-    width: 16px;
-    height: 16px;
-    border-radius: 20px;
-    background: #44df44;
-    position: absolute;
-    z-index: 1;
-    cursor: pointer;
   }
   .button5 {
     margin-left: 89vw;
     margin-top: 10.2vh;
-    width: 16px;
-    height: 16px;
-    border-radius: 20px;
-    background: #44df44;
-    position: absolute;
-    z-index: 1;
-    cursor: pointer;
   }
 
   .button6 {
     margin-left: 42.5vw;
     margin-top: 23.6vh;
-    width: 16px;
-    height: 16px;
-    border-radius: 20px;
-    background: #44df44;
-    position: absolute;
-    z-index: 1;
-    cursor: pointer;
   }
+
   .buttonUser {
     width: 50px;
     height: 50px;
@@ -106,11 +64,10 @@ const SOffice = styled.main`
     background-position: center;
     background-image: url(${(props) => props.avatar});
   }
-
   .plan {
     background-size: 100%;
     background-repeat: no-repeat;
-    height: 40vh;
+    height: 35vh;
     width: auto;
   }
 
