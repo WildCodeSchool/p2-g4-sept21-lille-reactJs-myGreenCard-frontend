@@ -40,44 +40,43 @@ export default function ProfilPage({ theme, setTheme }) {
   }, []);
 
   return (
-    <>
-      <SProfilPage>
-        <div className="profilCard">
-          <div className="head">
-            <Link to="/home">
-              <img src={home} alt="homeIcon" />
-            </Link>
-            <ToggleButton
-              label="Dark/light mode"
-              handleClick={toggleTheme}
-              className={isDarkTheme ? 'dark' : null}
-              size={0.75}
-            />
-          </div>
-          <img src={isDarkTheme ? logoDark : logo} alt="homeIcon" />
-          <div className="userCard">
-            <UserAvatar size="125px" border="none" />
-            <h2>
-              {user.firstname} {user.lastname}
-            </h2>
-            <p>{user.job}</p>
-          </div>
+    <SProfilPage>
+      <div className="profilCard">
+        <div className="head">
+          <Link to="/home">
+            <img src={home} alt="homeIcon" />
+          </Link>
+          <ToggleButton
+            label="Dark/light mode"
+            handleClick={toggleTheme}
+            className={isDarkTheme ? 'dark' : null}
+            size={0.75}
+          />
         </div>
-        <article className="solde">
-          <h3>Solde : {user.amount} € </h3>
-          <div className="refill">
-            <button type="button" className="money" onClick={toggleModal}>
-              Recharger
-            </button>
-            <button type="button" className="money" onClick={toggleGiftModal}>
-              Donner
-            </button>
-          </div>
-          <div className="paymentLogo">
-            <img src={cb} alt="CB" />
-            <img src={applePay} alt="apple pay" />
-            <img src={larrondi} alt="l&#39;arrondi" />
-          </div>
+        <img src={isDarkTheme ? logoDark : logo} alt="homeIcon" />
+        <div className="userCard">
+          <UserAvatar size="125px" border="none" />
+          <h2>
+            {user.firstname} {user.lastname}
+          </h2>
+          <p>{user.job}</p>
+        </div>
+      </div>
+      <article className="solde">
+        <h3>Solde : {user.amount} € </h3>
+        <div className="refill">
+          <button type="button" className="money" onClick={toggleModal}>
+            Recharger
+          </button>
+          <button type="button" className="money" onClick={toggleGiftModal}>
+            Donner
+          </button>
+        </div>
+        <div className="paymentLogo">
+          <img src={cb} alt="CB" />
+          <img src={applePay} alt="apple pay" />
+          <img src={larrondi} alt="l&#39;arrondi" />
+        </div>
         </article>
         <article className="resume">
           <h2>Mes reservations</h2>
@@ -106,6 +105,7 @@ export default function ProfilPage({ theme, setTheme }) {
         {!giftModal && <GiftModal toggleGiftModal={toggleGiftModal} />}
       </SProfilPage>
     </>
+
   );
 }
 
