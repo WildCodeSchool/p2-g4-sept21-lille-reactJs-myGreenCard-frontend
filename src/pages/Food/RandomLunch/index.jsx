@@ -1,42 +1,33 @@
 import Header from 'components/Header';
 import ToggleButton from 'components/ToggleButton';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import axios from 'axios';
 import logo from 'assets/Img/easyApp.png';
 import randomTime from 'assets/Img/RandomLunchPictures/randomTime.png';
 import concentration from 'assets/Img/RandomLunchPictures/concentration.png';
-import User1 from 'assets/Img/users/e1.png';
-import User2 from 'assets/Img/users/e2.png';
-import User3 from 'assets/Img/users/e3.png';
-import User4 from 'assets/Img/users/e4.png';
 import SRandomLunch from './style';
 
 export default function RandomLunch() {
+  const user = useSelector((state) => state.user);
+  const { id } = user;
+  const [dataPeople, setDataPeople] = useState([]);
   const [randomLunch, setRandomLunch] = useState(true);
   const toggleTheme = () => {
     return setRandomLunch(!randomLunch);
   };
-  const users = [
-    {
-      picture: User1,
-      name: 'User 1',
-      job: 'job1',
-    },
-    {
-      picture: User2,
-      name: 'User 2',
-      job: 'job2',
-    },
-    {
-      picture: User3,
-      name: 'User 3',
-      job: 'job3',
-    },
-    {
-      picture: User4,
-      name: 'User 4',
-      job: 'job4',
-    },
-  ];
+
+  useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_API_URL}/user/${id}/randomLunch`)
+      .then(({ data }) => {
+        setDataPeople(data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, []);
+
   return (
     <>
       <Header logo={logo} />
@@ -61,16 +52,22 @@ export default function RandomLunch() {
               <p>Patio, ce jour à 12h35</p>
             </div>
             <div className="users">
-              {users.map((user) => {
+              {dataPeople.map((oneUser) => {
                 return (
                   <div className="guests">
                     <div className="circle" />
-                    <img src={user.picture} alt={user.name} />
-                    <h2 className="name">{user.name}</h2>
-                    <h3 className="job">{user.job}</h3>
+                    <img src={oneUser.picture} alt={oneUser.name} />
+                    <p className="name">{oneUser.firstname}</p>
+                    <p className="job">{oneUser.job}</p>
                   </div>
                 );
               })}
+              <div className="guests currUser">
+                <div className="circle" />
+                <img src={user.picture} alt={user.name} />
+                <p className="name">{user.firstname}</p>
+                <p className="job">{user.job}</p>
+              </div>
             </div>
             <div className="button">
               <button className="cancelRandomLunch" type="button">

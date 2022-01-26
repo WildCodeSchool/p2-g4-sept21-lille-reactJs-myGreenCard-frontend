@@ -12,7 +12,7 @@ export default function RefillModal({ toggleModal }) {
   const refillTen = () => {
     const amount = { ...user, amount: userAmount + 10 };
     api
-      .put(`http://localhost:5000/user/${user.id}`, amount)
+      .put(`${process.env.REACT_APP_API_URL}/user/${user.id}`, amount)
       .then(({ data }) => {
         const { token, user: userData } = data;
         cookies.set('token', token);
@@ -22,12 +22,12 @@ export default function RefillModal({ toggleModal }) {
       .catch((e) => {
         console.log(e);
       });
-    toast.success(`Votre compte est crédité de  ${user.amount + 10}€ `);
+    toast.success(`Votre compte est rechargé de 10€ `);
   };
   const refillFifty = () => {
     const amount = { ...user, amount: userAmount + 50 };
     api
-      .put(`http://localhost:5000/user/${user.id}`, amount)
+      .put(`${process.env.REACT_APP_API_URL}/user/${user.id}`, amount)
       .then(({ data }) => {
         const { token, user: userData } = data;
         cookies.set('token', token);
@@ -37,7 +37,7 @@ export default function RefillModal({ toggleModal }) {
       .catch((e) => {
         console.log(e);
       });
-    toast.success(`Votre compte est crédité de  ${user.amount + 50}€ `);
+    toast.success(`Votre compte est rechargé de 50€ `);
   };
   return (
     <SRefillModal>

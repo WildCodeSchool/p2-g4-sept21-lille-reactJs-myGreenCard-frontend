@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom';
-import UserAvatar from 'components/UserAvatar';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
@@ -86,13 +85,12 @@ export default function LoginPage({ theme, setTheme }) {
             </div>
             <div className="userCard">
               <img src={isDarkTheme ? logoDark : logo} alt="homeIcon" />
-              <UserAvatar size="125px" border="none" />
+              <div className="log" alt="login logo" />
             </div>
             <Tabs
               variant="fullWidth"
               onChange={handleChange}
               aria-label="ConnectionChoice"
-              textColor="black"
               centered
               TabIndicatorProps={{
                 style: {
