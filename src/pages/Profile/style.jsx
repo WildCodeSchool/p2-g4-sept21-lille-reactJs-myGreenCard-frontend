@@ -15,6 +15,35 @@ const SProfilPage = styled.section`
   p {
     font-size: 15px;
   }
+  ul {
+    display: flex;
+    flex-direction: column;
+  }
+  li {
+    border-radius: 80px;
+    background-color: #eeedede8;
+    margin-bottom: 10px;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    line-height: 20px;
+    div {
+      border-radius: 50%;
+      overflow: hidden;
+      border: 1px solid grey;
+      aspect-ratio: 1/1;
+      width: 100px;
+      height: 100px;
+    }
+    img {
+      height: 100%;
+    }
+    p {
+      width: 180px;
+      text-align: center;
+    }
+  }
   article {
     height: 200px;
     width: 85vw;

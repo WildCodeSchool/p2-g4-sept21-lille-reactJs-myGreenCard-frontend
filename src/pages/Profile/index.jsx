@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
+import { api } from 'conf';
 import UserAvatar from 'components/UserAvatar';
 import logo from 'assets/Img/easyApp.png';
 import logoDark from 'assets/Img/easyAppDark.png';
@@ -9,7 +9,7 @@ import cb from 'assets/Img/logo-cb.svg';
 import larrondi from 'assets/Img/LARRONDI.svg';
 import home from 'assets/Img/home.svg';
 import { useSelector } from 'react-redux';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ToggleButton from 'components/ToggleButton';
 import SProfilPage from './style';
 import RefillModal from './RefillModal';
@@ -21,6 +21,8 @@ export default function ProfilPage({ theme, setTheme }) {
     return setTheme(isDarkTheme ? 'light' : 'dark');
   };
   const user = useSelector((state) => state.user);
+  const { id } = user;
+
   const [refillModal, setRefillModal] = useState(true);
   const toggleModal = () => {
     setRefillModal(!refillModal);
@@ -29,6 +31,13 @@ export default function ProfilPage({ theme, setTheme }) {
   const toggleGiftModal = () => {
     setGiftModal(!giftModal);
   };
+
+  const [myMeal, setMyMeal] = useState([]);
+  useEffect(() => {
+    api.get(`user/${id}/myMeal`).then(({ data }) => {
+      setMyMeal(data);
+    });
+  }, []);
 
   return (
     <>
@@ -79,8 +88,19 @@ export default function ProfilPage({ theme, setTheme }) {
           <p>Recapitulatif commande en cours ...</p>
         </article>
         <article className="resume">
-          <h2>Mon repas</h2>
-          <p>Recapitulatif commande en cours ...</p>
+          <h2>Votre repas</h2>
+          <ul>
+            {myMeal.map((meal) => {
+              return (
+                <li>
+                  <div>
+                    <img src={meal.picture} alt="foodPicture" />
+                  </div>
+                  <p>{meal.name}</p>
+                </li>
+              );
+            })}
+          </ul>
         </article>
         {!refillModal && <RefillModal toggleModal={toggleModal} />}
         {!giftModal && <GiftModal toggleGiftModal={toggleGiftModal} />}
