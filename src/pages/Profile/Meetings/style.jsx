@@ -7,7 +7,6 @@ const SMeetings = styled.article`
     background-position: right 14px center;
     background-repeat: no-repeat;
     background-color: white;
-    background-color: none;
     h3 {
       text-align: left;
     }
