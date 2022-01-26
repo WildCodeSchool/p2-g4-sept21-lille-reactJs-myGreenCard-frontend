@@ -9,6 +9,8 @@ import 'swiper/components/navigation/navigation.min.css';
 import officeRoom from 'assets/Img/OfficePictures/officeRoom.png';
 import logo from 'assets/reservationBureau.png';
 import Header from 'components/Header';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 import Pin from './Pin';
 import Slot from './officeSlot';
 import SOffice from './style';
@@ -19,6 +21,18 @@ export default function Office() {
   const plan = {
     backgroundImage: `url(${officeRoom})`,
   };
+  const [setDataOffice] = useState([]);
+  useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_API_URL}/officeReservation`)
+      .then(({ data }) => {
+        setDataOffice(data);
+        console.log(data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, []);
 
   const pinClasses = [
     'button1',

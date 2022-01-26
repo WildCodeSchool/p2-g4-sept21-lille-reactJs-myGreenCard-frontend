@@ -141,36 +141,45 @@ const SOffice = styled.main`
   /* Slider */
 
   .swiper-container {
-    margin: 25px 0;
     width: 100vw;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-  }
-
-  h3 {
-    font-size: 1rem;
-    text-align: center;
-    font-weight: bold;
-    margin: 15px;
-  }
-
-  div.slots {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    flex-wrap: wrap;
-    span {
-      font-size: 1rem;
-      width: 80px;
-      background: #e7f6fdef;
-      margin: 5px;
-      padding: 5px;
-      border-radius: 5px;
-      box-shadow: 0px 6px 5px -3px #afafaf;
+    height: 300px;
+    .swiper-slide {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      background: #fff;
+      h3 {
+        font-size: 1.2rem;
+        margin: 15px;
+      }
+      div.slots {
+        width: 70%;
+        height: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        button {
+          font-size: 1rem;
+          width: 80px;
+          background: #e7f6fdef;
+          margin: 15px;
+          padding: 5px;
+          border-radius: 5px;
+          -webkit-box-shadow: 0px 7px 12px -3px #afafaf;
+          box-shadow: 0px 7px 12px -3px #afafaf;
+          &.reserved {
+            background: grey;
+          }
+        }
+      }
     }
   }
+
   .swiper-slide img {
     display: block;
     width: 100%;

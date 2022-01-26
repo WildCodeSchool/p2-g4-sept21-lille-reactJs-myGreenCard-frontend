@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import SPin from './style';
 
 export default function Pin({ pinClass }) {
   const [resaOffice, setResaOffice] = useState(false);
@@ -8,7 +9,7 @@ export default function Pin({ pinClass }) {
   };
 
   return (
-    <button
+    <SPin
       aria-label="pinButton"
       onClick={resTheme}
       type="button"
