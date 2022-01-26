@@ -1,4 +1,3 @@
-// import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 import PropTypes from 'prop-types';
@@ -24,18 +23,12 @@ export default function SuppliesModal({
         qtty: item,
       };
     });
-    const newMyOrder = myOrder.filter((item) => item.qtty > 0);
 
-    console.log(newMyOrder);
     axios
-
       .post(
         `${process.env.REACT_APP_API_URL}/supplies/${user.id}/cartSupplies`,
         myOrder
       )
-      .then((data) => {
-        console.log(data);
-      })
       .catch((e) => {
         console.log(e);
       });
