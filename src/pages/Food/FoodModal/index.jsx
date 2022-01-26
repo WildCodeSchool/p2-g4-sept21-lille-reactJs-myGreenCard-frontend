@@ -1,13 +1,31 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 import MainButton from 'components/MainButton';
+import { useSelector } from 'react-redux';
 import SFoodModal from './style';
 
 function FoodModal({ menuElement }) {
+  const user = useSelector((state) => state.user);
+  const { id } = user;
   const [renderModal, setRenderModal] = useState(true);
 
   const toggleModal = () => {
     setRenderModal(!renderModal);
+  };
+
+  const sendData = () => {
+    axios
+      .post(
+        `${process.env.REACT_APP_API_URL}/user/${id}/menuItems`,
+        menuElement
+      )
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
   };
 
   const menuElementSplit = menuElement.content.split(',');
@@ -44,7 +62,12 @@ function FoodModal({ menuElement }) {
               }}
               content="Changer"
             />
-            <MainButton content="Valider" />
+            <MainButton
+              content="Valider"
+              clickCallback={() => {
+                sendData();
+              }}
+            />
           </div>
         </SFoodModal>
       )}
