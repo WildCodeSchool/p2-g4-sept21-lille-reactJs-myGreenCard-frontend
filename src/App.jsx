@@ -16,7 +16,7 @@ import Meeting from './pages/Meeting';
 import Supplies from './pages/Supplies';
 import LostCard from './pages/LostCard';
 import Room from './pages/Meeting/Room';
-import ProfilPage from './pages/ProfilePage';
+import ProfilPage from './pages/Profile';
 import FoodProfile from './pages/Food/FoodProfile';
 import RandomLunch from './pages/Food/RandomLunch';
 import Chat from './pages/Chat';
