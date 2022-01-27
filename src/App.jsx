@@ -26,7 +26,6 @@ function App() {
   useEffect(() => {
     api.defaults.headers.authorization = `Bearer ${cookies.get('token')}`;
     axios
-
       .post(
         `${process.env.REACT_APP_API_URL}/auth/login/token`,
         {},
@@ -36,7 +35,6 @@ function App() {
           },
         }
       )
-
       .then(({ data }) => {
         const { user } = data;
         dispatch({ type: 'LOGIN', user });
