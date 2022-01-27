@@ -9,9 +9,10 @@ export default function Pin({
   dataSlot,
   resOffice,
   myResOffice,
-  // setMyResOffice,
+  setMyResOffice,
 }) {
   const [slot, setSlot] = useState({});
+  const [click, setClick] = useState(false);
   const user = useSelector((state) => state.user);
   const reservation = {
     beginning: pin.slot,
@@ -19,7 +20,8 @@ export default function Pin({
     officeId: pin.number,
   };
   const resTheme = () => {
-    const newMyResOffice = [...myResOffice];
+    setClick(!click);
+    let newMyResOffice = [...myResOffice];
     let resSlot = false;
 
     newMyResOffice.forEach((res) => {
@@ -27,13 +29,19 @@ export default function Pin({
         resSlot = true;
       }
     });
-    console.log(resSlot);
     if (resSlot === true) {
-      console.log(user.id);
       axios
         .delete(`${process.env.REACT_APP_API_URL}/office/officeReservation/`, {
-          data: { userId: user.id },
+          data: { userId: user.id, beginning: pin.slot },
         })
+        .catch((e) => {
+          console.log(e);
+        });
+      axios
+        .post(
+          `${process.env.REACT_APP_API_URL}/office/officeReservation/`,
+          reservation
+        )
         .catch((e) => {
           console.log(e);
         });
@@ -47,11 +55,14 @@ export default function Pin({
           console.log(e);
         });
     }
+    newMyResOffice = newMyResOffice.map(() => {
+      return false;
+    });
     const pinRes = !newMyResOffice[pin.number - 1];
-
     newMyResOffice[pin.number - 1] = pinRes;
-    console.log(newMyResOffice[pin.number - 1]);
-    // setMyResOffice(!newMyResOffice);
+    setMyResOffice(newMyResOffice);
+    const newSlot = [{ picture: user.picture }];
+    setSlot(newSlot);
   };
 
   useEffect(() => {
@@ -61,15 +72,10 @@ export default function Pin({
       const newSlot = dataSlot.filter((data) => data.officeId === pin.number);
       setSlot(newSlot);
     }
-  }, [myResOffice, resOffice, dataSlot]);
+  }, [resOffice]);
 
   return (
     <>
-      {/* {console.log(`resOffice ${resOffice}`)} */}
-      {console.log(`myResOffice ${myResOffice}`)}
-      {/* {console.log(pin.number)}
-      {console.log(slot)} */}
-
       <SPin
         disabled={resOffice[pin.number - 1]}
         slot={
@@ -106,7 +112,7 @@ Pin.propTypes = {
   ),
   resOffice: propTypes.arrayOf(propTypes.bool),
   myResOffice: propTypes.arrayOf(propTypes.bool),
-  // setMyResOffice: propTypes.func,
+  setMyResOffice: propTypes.func,
 };
 
 Pin.defaultProps = {
@@ -114,5 +120,5 @@ Pin.defaultProps = {
   dataSlot: [],
   resOffice: [],
   myResOffice: [],
-  // setMyResOffice: () => {},
+  setMyResOffice: () => {},
 };

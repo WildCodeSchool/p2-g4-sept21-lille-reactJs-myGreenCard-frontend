@@ -69,6 +69,9 @@ export default function Office() {
             myResOffice={myResOffice}
             resOffice={resOffice}
             setMyResOffice={setMyResOffice}
+            pins={pins}
+            setDataSlot={setDataSlot}
+            setResOffice={setResOffice}
           />
         ))}
 
