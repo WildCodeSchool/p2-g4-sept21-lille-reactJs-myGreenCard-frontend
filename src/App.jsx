@@ -16,9 +16,10 @@ import Meeting from './pages/Meeting';
 import Supplies from './pages/Supplies';
 import LostCard from './pages/LostCard';
 import Room from './pages/Meeting/Room';
-import ProfilPage from './pages/Profile';
+import ProfilPage from './pages/ProfilePage';
 import FoodProfile from './pages/Food/FoodProfile';
 import RandomLunch from './pages/Food/RandomLunch';
+import Chat from './pages/Chat';
 
 function App() {
   const dispatch = useDispatch();
@@ -73,6 +74,7 @@ function App() {
         <Route path="lostCard" element={<LostCard />} />
         <Route path="profilPage" element={<ProfilPage />} />
         <Route path="randomLunch" element={<RandomLunch />} />
+        <Route path="chat" element={<Chat />} />
       </Routes>
       <ToastContainer />
     </ThemeProvider>
