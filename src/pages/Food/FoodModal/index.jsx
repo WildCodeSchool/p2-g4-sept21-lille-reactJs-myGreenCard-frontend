@@ -20,9 +20,6 @@ function FoodModal({ menuElement }) {
         `${process.env.REACT_APP_API_URL}/user/${id}/menuItems`,
         menuElement
       )
-      .then((data) => {
-        console.log(data);
-      })
       .catch((e) => {
         console.log(e);
       });
