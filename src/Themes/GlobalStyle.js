@@ -8,7 +8,7 @@ body{
   &.darkThemeBackground {
     background: ${({ theme }) => theme.secondBackground};
   }
-
+  font-family: 'Montserrat', sans-serif;
 }
 
 p,h1,h2,h3, button,input{
