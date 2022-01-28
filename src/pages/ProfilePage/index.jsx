@@ -8,9 +8,6 @@ import applePay from 'assets/Img/Apple_Pay_logo.svg';
 import cb from 'assets/Img/logo-cb.svg';
 import larrondi from 'assets/Img/LARRONDI.svg';
 import home from 'assets/Img/home.svg';
-import { api } from 'conf';
-import moment from 'moment';
-import 'moment/locale/fr';
 import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 import ToggleButton from 'components/ToggleButton';
@@ -19,15 +16,13 @@ import RefillModal from './RefillModal';
 import GiftModal from './GiftModal';
 
 export default function ProfilPage({ theme, setTheme }) {
-  const user = useSelector((state) => state.user);
-  const { id } = user;
   const isDarkTheme = theme === 'dark';
   const toggleTheme = () => {
     return setTheme(isDarkTheme ? 'light' : 'dark');
   };
-
   const user = useSelector((state) => state.user);
   const { id } = user;
+
   const [refillModal, setRefillModal] = useState(true);
   const toggleModal = () => {
     setRefillModal(!refillModal);
@@ -36,14 +31,6 @@ export default function ProfilPage({ theme, setTheme }) {
   const toggleGiftModal = () => {
     setGiftModal(!giftModal);
   };
-
-
-  const [reservations, setReservations] = useState([]);
-  useEffect(() => {
-    api.get(`office/${id}/myReservation`).then(({ data }) => {
-      setReservations(data[0]);
-    });
-  }, []);
 
   const [myMeal, setMyMeal] = useState([]);
   useEffect(() => {
@@ -95,23 +82,6 @@ export default function ProfilPage({ theme, setTheme }) {
         <h2>Mes reservations</h2>
         <p>Recapitulatif des reservations en cours ...</p>
       </article>
-      <article className="officeReservation">
-        <h2>Mes reservations de bureau</h2>
-        <ul className="deskList">
-          {reservations.map((reservation) => {
-            return (
-              <li>
-                <p>
-                  {`Le ${moment(reservation.beginning).format(
-                    'Do MMMM  YYYY, h:mm a'
-                  )}`}
-                </p>
-              </li>
-            );
-          })}
-        </ul>
-      </article>
-      <Meetings />
       <article className="resume">
         <h2>Mes commandes</h2>
         <p>Recapitulatif commande en cours ...</p>
