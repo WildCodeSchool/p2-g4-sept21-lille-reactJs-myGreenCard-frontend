@@ -164,6 +164,13 @@ export default function Home({ theme, setTheme }) {
             </div>
           </article>
         </Link>
+        <Link to="/chat">
+          <article
+            className={isDarkTheme ? 'darkThemeBackground chat' : 'chat'}
+          >
+            <h3>Chat</h3>
+          </article>
+        </Link>
         <button
           onClick={() => {
             initMeeting();
