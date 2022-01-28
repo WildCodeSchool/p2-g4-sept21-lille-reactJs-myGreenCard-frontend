@@ -63,7 +63,7 @@ export default function Supplies() {
               clickCallback={() => {
                 toggleModal();
               }}
-            />{' '}
+            />
           </>
         ) : (
           <SuppliesModal
