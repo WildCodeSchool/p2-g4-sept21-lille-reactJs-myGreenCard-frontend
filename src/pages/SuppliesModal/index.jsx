@@ -31,9 +31,6 @@ export default function SuppliesModal({
         `${process.env.REACT_APP_API_URL}/supplies/${user.id}/cartSupplies`,
         myOrder
       )
-      .then((data) => {
-        console.log(data);
-      })
       .catch((e) => {
         console.log(e);
       });

@@ -37,7 +37,7 @@ export default function Supplies() {
   return (
     <>
       <SSupplies>
-        <Header logo={fournitures} />{' '}
+        <Header logo={fournitures} />
         {!modal ? (
           <>
             <div className="container">
