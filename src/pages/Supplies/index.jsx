@@ -19,7 +19,6 @@ export default function Supplies() {
       newArray.push(0);
     }
     setCart(newArray);
-    console.log(cart);
   };
   const toggleModal = () => {
     setModal(!modal);
@@ -38,8 +37,7 @@ export default function Supplies() {
   return (
     <>
       <SSupplies>
-        {console.log(modal)}
-        <Header logo={fournitures} />{' '}
+        <Header logo={fournitures} />
         {!modal ? (
           <>
             <div className="container">
@@ -63,7 +61,7 @@ export default function Supplies() {
               clickCallback={() => {
                 toggleModal();
               }}
-            />{' '}
+            />
           </>
         ) : (
           <SuppliesModal

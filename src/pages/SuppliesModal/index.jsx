@@ -26,7 +26,6 @@ export default function SuppliesModal({
           qtty: item,
         };
       });
-
     axios
       .post(
         `${process.env.REACT_APP_API_URL}/supplies/${user.id}/cartSupplies`,
