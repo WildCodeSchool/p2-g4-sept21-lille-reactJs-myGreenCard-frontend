@@ -23,7 +23,6 @@ export default function Pin({
     setClick(!click);
     let newMyResOffice = [...myResOffice];
     let resSlot = false;
-
     newMyResOffice.forEach((res) => {
       if (res === true) {
         resSlot = true;

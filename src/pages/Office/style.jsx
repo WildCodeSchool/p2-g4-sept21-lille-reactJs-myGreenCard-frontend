@@ -3,7 +3,6 @@ import styled from 'styled-components';
 const SOffice = styled.main`
   min-height: 100vh;
   margin-top: 40px;
-
   h1 {
     display: flex;
     justify-content: center;
@@ -14,7 +13,6 @@ const SOffice = styled.main`
     text-decoration: underline;
     font-weight: bold;
   }
-
   h2 {
     padding-top: 10vh;
     margin-left: 5vw;
@@ -43,20 +41,10 @@ const SOffice = styled.main`
     margin-left: 89vw;
     margin-top: 10.2vh;
   }
-
   .button6 {
     margin-left: 42.5vw;
     margin-top: 23.6vh;
   }
-  /* 
-  .buttonUser {
-    width: 50px;
-    height: 50px;
-    background: inherit;
-    background-size: 50px 50px;
-    background-position: center;
-    background-image: url(${(props) => props.avatar});
-  } */
   .plan {
     background-size: 100%;
     background-repeat: no-repeat;
@@ -68,7 +56,6 @@ const SOffice = styled.main`
     display: flex;
     align-items: center;
   }
-
   .circle1 {
     width: 16px;
     height: 16px;
@@ -78,12 +65,10 @@ const SOffice = styled.main`
     margin-left: 10px;
     z-index: 1;
   }
-
   .rowProfiles p {
     font-size: 11px;
     font-weight: bold;
   }
-
   .MuiAvatarGroup-root {
     margin-left: 15px;
   }
@@ -129,7 +114,6 @@ const SOffice = styled.main`
       }
     }
   }
-
   .swiper-slide img {
     display: block;
     width: 100%;

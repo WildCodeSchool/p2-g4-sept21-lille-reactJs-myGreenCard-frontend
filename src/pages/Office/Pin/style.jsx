@@ -12,14 +12,6 @@ const SPin = styled.button`
   z-index: 1;
   border-radius: 20px;
   cursor: pointer;
-  /* .buttonUser {
-    width: 50px;
-    height: 50px;
-    background: inherit;
-    background-size: 50px 50px;
-    background-position: center;
-    background-image: url(${(props) => props.avatar});
-  } */
 `;
 
 export default SPin;
