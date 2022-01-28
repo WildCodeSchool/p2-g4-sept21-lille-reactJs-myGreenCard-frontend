@@ -16,14 +16,13 @@ import RefillModal from './RefillModal';
 import GiftModal from './GiftModal';
 
 export default function ProfilPage({ theme, setTheme }) {
-  const [orderRecap, setOrderRecap] = useState([]);
-  const [quantityRecap, setQuantityRecap] = useState([]);
   const isDarkTheme = theme === 'dark';
   const toggleTheme = () => {
     return setTheme(isDarkTheme ? 'light' : 'dark');
   };
   const user = useSelector((state) => state.user);
   const { id } = user;
+
   const [refillModal, setRefillModal] = useState(true);
   const toggleModal = () => {
     setRefillModal(!refillModal);
@@ -33,19 +32,10 @@ export default function ProfilPage({ theme, setTheme }) {
     setGiftModal(!giftModal);
   };
 
-
-  useEffect(() => {
-    api.get(`/supplies/${id}/myOrder`).then(({ data }) => {
-      setOrderRecap(data.orderRecap);
-      setQuantityRecap(data.quantityRecap);
-          });
-  }, []);
-
   const [myMeal, setMyMeal] = useState([]);
   useEffect(() => {
     api.get(`user/${id}/myMeal`).then(({ data }) => {
       setMyMeal(data);
-
     });
   }, []);
 
@@ -92,26 +82,9 @@ export default function ProfilPage({ theme, setTheme }) {
         <h2>Mes reservations</h2>
         <p>Recapitulatif des reservations en cours ...</p>
       </article>
-      <Meetings />
-      <article className="orders">
+      <article className="resume">
         <h2>Mes commandes</h2>
-        <div className="mainContainer">
-          <div className="quantity">
-            {quantityRecap.map((qtty) => {
-              return <p>x {qtty.quantity}</p>;
-            })}
-          </div>
-          <section>
-            {orderRecap.map((order) => {
-              return (
-                <div className="orderRecap">
-                  <p>{order.name}</p>
-                  <img src={order.picture} alt={`${order.name} photography`} />
-                </div>
-              );
-            })}
-          </section>
-        </div>
+        <p>Recapitulatif commande en cours ...</p>
       </article>
       <article className="resume">
         <h2>Votre repas</h2>
