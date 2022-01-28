@@ -26,7 +26,15 @@ function App() {
   useEffect(() => {
     api.defaults.headers.authorization = `Bearer ${cookies.get('token')}`;
     axios
-      .post(`${process.env.REACT_APP_API_URL}/auth/login/token`, {})
+      .post(
+        `${process.env.REACT_APP_API_URL}/auth/login/token`,
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${cookies.get('token')}`,
+          },
+        }
+      )
       .then(({ data }) => {
         const { user } = data;
         dispatch({ type: 'LOGIN', user });
@@ -66,6 +74,7 @@ function App() {
         <Route path="lostCard" element={<LostCard />} />
         <Route path="profilPage" element={<ProfilPage />} />
         <Route path="randomLunch" element={<RandomLunch />} />
+        <Route path="chat" element={<Chat />} />
       </Routes>
       <ToastContainer />
     </ThemeProvider>
