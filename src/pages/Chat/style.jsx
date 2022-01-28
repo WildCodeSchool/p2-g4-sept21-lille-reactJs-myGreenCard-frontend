@@ -6,7 +6,6 @@ const SChat = styled.main`
   display: flex;
   flex-direction: column-reverse;
   align-items: flex-end;
-
   li {
     border-radius: 20px;
     width: 90vw;

@@ -18,9 +18,7 @@ export default function Counter({ setCart, id, cart }) {
       <button type="button" onClick={prev}>
         -
       </button>
-
       <h3>{count}</h3>
-
       <button type="button" onClick={next}>
         +
       </button>
