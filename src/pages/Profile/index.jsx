@@ -43,8 +43,6 @@ export default function ProfilPage({ theme, setTheme }) {
 
   return (
     <SProfilPage>
-      {console.log(orderRecap)}
-      {console.log(quantityRecap)}
       <div className="profilCard">
         <div className="head">
           <Link to="/home">
