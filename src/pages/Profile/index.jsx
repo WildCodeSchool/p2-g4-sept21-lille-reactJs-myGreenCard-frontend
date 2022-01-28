@@ -8,7 +8,6 @@ import applePay from 'assets/Img/Apple_Pay_logo.svg';
 import cb from 'assets/Img/logo-cb.svg';
 import larrondi from 'assets/Img/LARRONDI.svg';
 import home from 'assets/Img/home.svg';
-import { api } from 'conf';
 import moment from 'moment';
 import 'moment/locale/fr';
 import { useSelector } from 'react-redux';
@@ -17,26 +16,26 @@ import ToggleButton from 'components/ToggleButton';
 import SProfilPage from './style';
 import RefillModal from './RefillModal';
 import GiftModal from './GiftModal';
+import Meetings from './Meetings';
 
-export default function ProfilPage({ theme, setTheme }) {
+export default function Profile({ theme, setTheme }) {
   const user = useSelector((state) => state.user);
   const { id } = user;
   const isDarkTheme = theme === 'dark';
+
   const toggleTheme = () => {
     return setTheme(isDarkTheme ? 'light' : 'dark');
   };
 
-  const user = useSelector((state) => state.user);
-  const { id } = user;
   const [refillModal, setRefillModal] = useState(true);
   const toggleModal = () => {
     setRefillModal(!refillModal);
   };
+
   const [giftModal, setGiftModal] = useState(true);
   const toggleGiftModal = () => {
     setGiftModal(!giftModal);
   };
-
 
   const [reservations, setReservations] = useState([]);
   useEffect(() => {
@@ -137,12 +136,12 @@ export default function ProfilPage({ theme, setTheme }) {
   );
 }
 
-ProfilPage.propTypes = {
+Profile.propTypes = {
   theme: PropTypes.string,
   setTheme: PropTypes.func,
 };
 
-ProfilPage.defaultProps = {
+Profile.defaultProps = {
   theme: '',
   setTheme: () => {},
 };
