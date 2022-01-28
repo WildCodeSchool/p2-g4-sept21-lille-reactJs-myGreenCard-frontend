@@ -49,8 +49,6 @@ const SMeetings = styled.article`
       div.status.mode {
         top: -130px;
       }
-      img {
-      }
     }
     .badge {
       .mode {
