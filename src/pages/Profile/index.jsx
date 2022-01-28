@@ -13,6 +13,7 @@ import { useState, useEffect } from 'react';
 import ToggleButton from 'components/ToggleButton';
 import SProfilPage from './style';
 import RefillModal from './RefillModal';
+import Meetings from './Meetings';
 import GiftModal from './GiftModal';
 
 export default function ProfilPage({ theme, setTheme }) {
@@ -33,19 +34,17 @@ export default function ProfilPage({ theme, setTheme }) {
     setGiftModal(!giftModal);
   };
 
-
   useEffect(() => {
     api.get(`/supplies/${id}/myOrder`).then(({ data }) => {
       setOrderRecap(data.orderRecap);
       setQuantityRecap(data.quantityRecap);
-          });
+    });
   }, []);
 
   const [myMeal, setMyMeal] = useState([]);
   useEffect(() => {
     api.get(`user/${id}/myMeal`).then(({ data }) => {
       setMyMeal(data);
-
     });
   }, []);
 
