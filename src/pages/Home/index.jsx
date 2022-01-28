@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import apple from 'assets/Img/apple.png';
 import { useEffect } from 'react';
+import axios from 'axios';
 import google from './pictures/googleWallet.png';
 import ToggleButton from '../../components/ToggleButton';
 import logo from '../../assets/Img/easyApp.png';
@@ -23,6 +24,13 @@ export default function Home({ theme, setTheme }) {
   const toggleTheme = () => {
     setTheme(isDarkTheme ? 'light' : 'dark');
   };
+
+  const initMeeting = () => {
+    axios.post(`${process.env.REACT_APP_API_URL}/reset`).catch((e) => {
+      console.log(e);
+    });
+  };
+
   useEffect(() => {
     localStorage.setItem('theme', `${theme}`);
   }, [theme]);
@@ -156,6 +164,14 @@ export default function Home({ theme, setTheme }) {
             </div>
           </article>
         </Link>
+        <button
+          onClick={() => {
+            initMeeting();
+          }}
+          className="init"
+          type="button"
+          aria-label="Bouton réinitialisaton base de données"
+        />
       </SHome>
     </>
   );
