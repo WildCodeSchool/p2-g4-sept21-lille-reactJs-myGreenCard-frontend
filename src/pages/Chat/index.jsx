@@ -62,8 +62,7 @@ export default function Chat() {
               let className = 'alienMsg';
               if (userId !== user.id) {
                 className = 'notice';
-              }
-              if (userId === user.id) {
+              } else {
                 className = 'ownMsg';
               }
               return (
