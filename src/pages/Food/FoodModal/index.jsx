@@ -42,7 +42,7 @@ function FoodModal({ menuElement }) {
             </article>
           </section>
           <span>{menuElement.calories} kcal</span>
-          <p> Contient:</p>
+          {menuElement.content && <p> Contient:</p>}
           <section className="foodContent">
             {menuElementSplit.map((oneContent, index) => {
               return index === menuElementSplit.length - 1 ? (
