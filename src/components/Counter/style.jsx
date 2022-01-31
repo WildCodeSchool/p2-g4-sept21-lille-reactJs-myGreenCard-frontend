@@ -5,7 +5,7 @@ const SCounter = styled.main`
   justify-content: space-evenly;
   padding-top: 20px;
   align-items: center;
-
+  width: 60vw;
   button {
     background-color: black;
     color: white;

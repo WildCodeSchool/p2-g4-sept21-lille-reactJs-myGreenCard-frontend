@@ -2,9 +2,8 @@ import styled from 'styled-components';
 
 const SSupplies = styled.main`
   .container {
-    min-width: 80vw;
+    min-width: 90vw;
     display: block;
-    margin: auto;
   }
 
   h3 {
@@ -34,16 +33,10 @@ const SSupplies = styled.main`
     }
 
     .description {
-      margin-left: auto;
-      margin-right: auto;
       p {
         padding-top: 10px;
+        margin-left: 20px;
       }
-    }
-    .Counter {
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
   }
   .watchCart {

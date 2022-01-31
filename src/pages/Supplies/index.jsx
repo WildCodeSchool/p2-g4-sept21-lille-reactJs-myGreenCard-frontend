@@ -36,8 +36,8 @@ export default function Supplies() {
 
   return (
     <>
+      <Header logo={fournitures} />
       <SSupplies>
-        <Header logo={fournitures} />
         {!modal ? (
           <>
             <div className="container">
@@ -49,12 +49,7 @@ export default function Supplies() {
                       <h2>{supply.name}</h2>
                       <p>{supply.description}</p>
                       <p>{supply.price}</p>
-                      <Counter
-                        className="Counter"
-                        setCart={setCart}
-                        id={supply.id}
-                        cart={cart}
-                      />
+                      <Counter setCart={setCart} id={supply.id} cart={cart} />
                     </div>
                   </div>
                 );
