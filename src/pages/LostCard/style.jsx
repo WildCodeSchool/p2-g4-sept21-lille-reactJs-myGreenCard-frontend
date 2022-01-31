@@ -12,7 +12,7 @@ const SLostCard = styled.section`
     align-items: center;
     justify-content: space-around;
     height: 70vh;
-    m h2 {
+    h2 {
       font-size: 28px;
       font-weight: bolder;
     }

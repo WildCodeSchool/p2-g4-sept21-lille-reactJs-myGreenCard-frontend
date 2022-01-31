@@ -6,7 +6,7 @@ const SValidation = styled.div`
   justify-content: center;
   align-items: center;
   h3.disabled {
-    color: #000000a6;
+    color: ${(props) => props.theme.disabledText};
   }
   h2 {
     margin: 15px;

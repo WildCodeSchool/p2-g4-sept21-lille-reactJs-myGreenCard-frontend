@@ -8,6 +8,7 @@ import 'swiper/swiper.min.css';
 import 'swiper/components/navigation/navigation.min.css';
 import officeRoom from 'assets/Img/OfficePictures/officeRoom.png';
 import logo from 'assets/reservationBureau.png';
+import logoDark from 'assets/reservationBureauNight.png';
 import Header from 'components/Header';
 import { useState } from 'react';
 import Pin from './Pin';
@@ -27,6 +28,7 @@ export default function Office() {
     { class: 'button6', number: 6, slot: null },
   ]);
   const user = useSelector((state) => state.user);
+  const themeStorage = localStorage.getItem('theme');
   SwiperCore.use([Navigation]);
   const plan = {
     backgroundImage: `url(${officeRoom})`,
@@ -59,7 +61,7 @@ export default function Office() {
   }
   return (
     <>
-      <Header logo={logo} />
+      <Header logo={themeStorage === 'light' ? logo : logoDark} />
       <SOffice avatar={user.picture}>
         {pins.map((pin) => (
           <Pin

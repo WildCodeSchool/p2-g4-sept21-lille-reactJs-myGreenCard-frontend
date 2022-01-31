@@ -15,8 +15,8 @@ const SValidationPopup = styled.section`
     text-align: center;
     position: absolute;
     z-index: 2;
-    height: 25vh;
     width: 80vw;
+    height: 100%;
     border-radius: 10px;
     p {
       padding: 15px;

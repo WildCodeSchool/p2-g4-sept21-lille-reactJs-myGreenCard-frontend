@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const SProfilPage = styled.section`
+const SProfile = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,32 +19,9 @@ const SProfilPage = styled.section`
     display: flex;
     flex-direction: column;
   }
-  li {
-    border-radius: 80px;
-    background-color: #eeedede8;
-    margin-bottom: 10px;
-    height: 130px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    line-height: 20px;
-    div {
-      border-radius: 50%;
-      overflow: hidden;
-      border: 1px solid grey;
-      aspect-ratio: 1/1;
-      width: 100px;
-      height: 100px;
-    }
-    img {
-      height: 100%;
-    }
-    p {
-      width: 180px;
-      text-align: center;
-    }
-  }
+
   article {
+    background: ${({ theme }) => theme.secondBackground};
     height: 200px;
     width: 85vw;
     margin: 20px 0 10px 0px;
@@ -57,6 +34,7 @@ const SProfilPage = styled.section`
     justify-content: space-between;
     .money {
       font-family: 'Montserrat', sans-serif;
+      background-color: white;
       font-weight: 600;
       letter-spacing: 1px;
       border: none;
@@ -128,6 +106,7 @@ const SProfilPage = styled.section`
     flex-direction: column;
     align-items: center;
     height: 50vh;
+
     width: 95vw;
     margin-bottom: 3vh;
     border-radius: 0px 0px 10px 10px;
@@ -140,7 +119,7 @@ const SProfilPage = styled.section`
       align-items: center;
       width: 90vw;
       img {
-        height: 60px;
+        height: 100px;
         width: auto;
         margin-top: 0;
       }
@@ -194,6 +173,33 @@ const SProfilPage = styled.section`
     justify-content: space-around;
     align-items: center;
   }
+  .foodList {
+    li {
+      border-radius: 80px;
+      background-color: #eeedede8;
+      margin-bottom: 10px;
+      height: 130px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      line-height: 20px;
+      div {
+        border-radius: 50%;
+        overflow: hidden;
+        border: 1px solid grey;
+        aspect-ratio: 1/1;
+        width: 100px;
+        height: 100px;
+      }
+      img {
+        height: 100%;
+      }
+      p {
+        width: 180px;
+        text-align: center;
+      }
+    }
+  }
 `;
 
-export default SProfilPage;
+export default SProfile;

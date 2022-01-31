@@ -1,11 +1,12 @@
 import Header from 'components/Header';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import logo from 'assets/Img/easyApp.png';
 import nfc from 'assets/Img/nfcIcon.png';
 import emptyCard from 'assets/Img/emptyCard.png';
 import ToggleButton from 'components/ToggleButton';
 import MainButton from 'components/MainButton';
+import darkLogo from '../../assets/Img/easyAppDark.png';
+import logo from '../../assets/Img/easyApp.png';
 import SCard from './SCard';
 import SLostCard from './style';
 import DisableModal from './disableModal';
@@ -13,13 +14,14 @@ import DisableModal from './disableModal';
 export default function LostCard() {
   const user = useSelector((state) => state.user);
   const [renderModal, setRenderModal] = useState(true);
+  const themeStorage = localStorage.getItem('theme');
   const toggleTheme = () => {
     setRenderModal(!renderModal);
   };
 
   return (
     <>
-      <Header logo={logo} />
+      <Header logo={themeStorage === 'light' ? logo : darkLogo} />
       <SLostCard>
         <main>
           <h2>Carte perdue</h2>

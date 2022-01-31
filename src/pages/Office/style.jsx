@@ -65,12 +65,12 @@ const SOffice = styled.main`
     margin-left: 10px;
     z-index: 1;
   }
-  .rowProfiles p {
-    font-size: 11px;
-    font-weight: bold;
-  }
-  .MuiAvatarGroup-root {
-    margin-left: 15px;
+  .rowProfiles {
+    margin-top: 20px;
+    p {
+      font-size: 11px;
+      font-weight: bold;
+    }
   }
 
   /* Slider */
@@ -85,7 +85,7 @@ const SOffice = styled.main`
       justify-content: center;
       align-items: center;
       font-size: 18px;
-      background: #fff;
+      background-color: ${(props) => props.theme.background};
       h3 {
         font-size: 1.2rem;
         margin: 15px;

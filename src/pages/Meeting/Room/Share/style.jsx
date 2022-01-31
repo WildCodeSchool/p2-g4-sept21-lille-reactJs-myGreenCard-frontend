@@ -6,6 +6,7 @@ const SShare = styled.div`
   align-items: center;
   flex-direction: column;
   width: 80vw;
+  height: 120vh;
   text-align: center;
   header {
     a {
@@ -23,8 +24,8 @@ const SShare = styled.div`
       width: 180px;
     }
   }
-  button.share {
-    margin-top: 20px;
+  button {
+    margin: 20px 0px;
   }
 `;
 export default SShare;

@@ -4,7 +4,7 @@ const SSharePopup = styled.section`
   display: flex;
   background-color: rgba(0, 0, 0, 0.8);
   width: 100%;
-  height: 100%;
+  height: 120vh;
   position: absolute;
   top: 0;
   justify-content: center;
@@ -12,10 +12,9 @@ const SSharePopup = styled.section`
   z-index: 2;
   div.modalContent {
     text-align: center;
-    background-color: white;
+    background-color: ${(props) => props.theme.secondBackground};
     position: absolute;
     z-index: 2;
-    height: 25vh;
     width: 80vw;
     border-radius: 10px;
     p {

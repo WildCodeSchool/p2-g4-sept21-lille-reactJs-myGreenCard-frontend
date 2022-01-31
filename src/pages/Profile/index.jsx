@@ -7,16 +7,16 @@ import logoDark from 'assets/Img/easyAppDark.png';
 import applePay from 'assets/Img/Apple_Pay_logo.svg';
 import cb from 'assets/Img/logo-cb.svg';
 import larrondi from 'assets/Img/LARRONDI.svg';
-import home from 'assets/Img/home.svg';
+import home from 'assets/Img/home.png';
 import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 import ToggleButton from 'components/ToggleButton';
-import SProfilPage from './style';
+import SProfile from './style';
 import RefillModal from './RefillModal';
 import Meetings from './Meetings';
 import GiftModal from './GiftModal';
 
-export default function ProfilPage({ theme, setTheme }) {
+export default function Profile({ theme, setTheme }) {
   const [orderRecap, setOrderRecap] = useState([]);
   const [quantityRecap, setQuantityRecap] = useState([]);
   const isDarkTheme = theme === 'dark';
@@ -49,7 +49,7 @@ export default function ProfilPage({ theme, setTheme }) {
   }, []);
 
   return (
-    <SProfilPage>
+    <SProfile>
       <div className="profilCard">
         <div className="head">
           <Link to="/home">
@@ -112,7 +112,7 @@ export default function ProfilPage({ theme, setTheme }) {
           </section>
         </div>
       </article>
-      <article className="resume">
+      <article className="foodList">
         <h2>Votre repas</h2>
         <ul>
           {myMeal.map((meal) => {
@@ -129,16 +129,16 @@ export default function ProfilPage({ theme, setTheme }) {
       </article>
       {!refillModal && <RefillModal toggleModal={toggleModal} />}
       {!giftModal && <GiftModal toggleGiftModal={toggleGiftModal} />}
-    </SProfilPage>
+    </SProfile>
   );
 }
 
-ProfilPage.propTypes = {
+Profile.propTypes = {
   theme: PropTypes.string,
   setTheme: PropTypes.func,
 };
 
-ProfilPage.defaultProps = {
+Profile.defaultProps = {
   theme: '',
   setTheme: () => {},
 };
