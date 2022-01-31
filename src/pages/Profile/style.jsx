@@ -175,6 +175,36 @@ const SProfilPage = styled.section`
       margin: 0 0 5px 10px;
     }
   }
+  .orders {
+    display: flex;
+    height: auto;
+    section {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      img {
+        height: 90px;
+      }
+    }
+  }
+  .mainContainer {
+    display: flex;
+    background-color: #eeedede8;
+  }
+  .orderRecap {
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .quantity {
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
 `;
 
 export default SProfilPage;

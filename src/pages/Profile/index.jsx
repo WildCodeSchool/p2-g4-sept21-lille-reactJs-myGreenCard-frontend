@@ -15,8 +15,10 @@ import { useState, useEffect } from 'react';
 import ToggleButton from 'components/ToggleButton';
 import SProfilPage from './style';
 import RefillModal from './RefillModal';
+import Meetings from './Meetings';
 import GiftModal from './GiftModal';
 import Meetings from './Meetings';
+
 
 export default function Profile({ theme, setTheme }) {
   const user = useSelector((state) => state.user);
@@ -26,7 +28,6 @@ export default function Profile({ theme, setTheme }) {
   const toggleTheme = () => {
     return setTheme(isDarkTheme ? 'light' : 'dark');
   };
-
   const [refillModal, setRefillModal] = useState(true);
   const toggleModal = () => {
     setRefillModal(!refillModal);
@@ -41,6 +42,11 @@ export default function Profile({ theme, setTheme }) {
   useEffect(() => {
     api.get(`office/${id}/myReservation`).then(({ data }) => {
       setReservations(data[0]);
+
+  useEffect(() => {
+    api.get(`/supplies/${id}/myOrder`).then(({ data }) => {
+      setOrderRecap(data.orderRecap);
+      setQuantityRecap(data.quantityRecap);
     });
   }, []);
 
@@ -111,9 +117,25 @@ export default function Profile({ theme, setTheme }) {
         </ul>
       </article>
       <Meetings />
-      <article className="resume">
+      <article className="orders">
         <h2>Mes commandes</h2>
-        <p>Recapitulatif commande en cours ...</p>
+        <div className="mainContainer">
+          <div className="quantity">
+            {quantityRecap.map((qtty) => {
+              return <p>x {qtty.quantity}</p>;
+            })}
+          </div>
+          <section>
+            {orderRecap.map((order) => {
+              return (
+                <div className="orderRecap">
+                  <p>{order.name}</p>
+                  <img src={order.picture} alt={`${order.name} photography`} />
+                </div>
+              );
+            })}
+          </section>
+        </div>
       </article>
       <article className="resume">
         <h2>Votre repas</h2>

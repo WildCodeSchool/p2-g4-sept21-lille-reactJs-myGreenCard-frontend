@@ -12,7 +12,6 @@ export default function Counter({ setCart, id, cart }) {
     newArray[id - 1] = count;
     setCart(newArray);
   }, [count]);
-
   return (
     <SCounter>
       <button type="button" onClick={prev}>
