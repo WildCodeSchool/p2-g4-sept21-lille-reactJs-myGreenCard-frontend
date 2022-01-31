@@ -164,6 +164,17 @@ const SProfilPage = styled.section`
       }
     }
   }
+  .officeReservation {
+    .deskList {
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    p {
+      margin: 0 0 5px 10px;
+    }
+  }
   .orders {
     display: flex;
     height: auto;
