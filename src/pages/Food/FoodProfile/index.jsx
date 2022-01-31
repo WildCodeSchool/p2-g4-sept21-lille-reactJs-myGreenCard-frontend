@@ -196,6 +196,7 @@ function FoodProfile() {
           <br />
           {allergies.map((allergie) => (
             <button
+              key={allergie.name}
               type="button"
               onClick={() => {
                 changeAllergiesState(allergie.name);
@@ -214,6 +215,7 @@ function FoodProfile() {
         <FoodProfileList>
           {preferences.map((preference) => (
             <button
+              key={preference.name}
               type="button"
               onClick={() => {
                 changePreferencesState(preference.name);

@@ -97,13 +97,13 @@ export default function Profile({ theme, setTheme }) {
         <div className="mainContainer">
           <div className="quantity">
             {quantityRecap.map((qtty) => {
-              return <p>x {qtty.quantity}</p>;
+              return <p key={qtty.quantity}>x {qtty.quantity}</p>;
             })}
           </div>
           <section>
             {orderRecap.map((order) => {
               return (
-                <div className="orderRecap">
+                <div key={order.name} className="orderRecap">
                   <p>{order.name}</p>
                   <img src={order.picture} alt={`${order.name} photography`} />
                 </div>
@@ -117,7 +117,7 @@ export default function Profile({ theme, setTheme }) {
         <ul>
           {myMeal.map((meal) => {
             return (
-              <li>
+              <li key={meal.name}>
                 <div>
                   <img src={meal.picture} alt="foodPicture" />
                 </div>

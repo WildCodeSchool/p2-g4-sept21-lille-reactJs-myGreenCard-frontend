@@ -46,9 +46,13 @@ function FoodModal({ menuElement }) {
           <section className="foodContent">
             {menuElementSplit.map((oneContent, index) => {
               return index === menuElementSplit.length - 1 ? (
-                <p className="ingredients">{oneContent} </p>
+                <p key={oneContent} className="ingredients">
+                  {oneContent}
+                </p>
               ) : (
-                <p className="ingredients">{oneContent},&nbsp; </p>
+                <p key={oneContent} className="ingredients">
+                  {oneContent},&nbsp;
+                </p>
               );
             })}
           </section>
@@ -74,12 +78,12 @@ function FoodModal({ menuElement }) {
 
 FoodModal.propTypes = {
   menuElement: PropTypes.shape({
-    id: PropTypes.string,
+    id: PropTypes.number,
     name: PropTypes.string,
     price: PropTypes.string,
-    calories: PropTypes.string,
+    calories: PropTypes.number,
     picture: PropTypes.string,
-    content: PropTypes.arrayOf(PropTypes.string),
+    content: PropTypes.string,
     allergies: PropTypes.arrayOf(PropTypes.string),
   }),
 };
