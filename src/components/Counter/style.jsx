@@ -4,6 +4,7 @@ const SCounter = styled.main`
   display: flex;
   justify-content: space-evenly;
   padding-top: 20px;
+  align-items: center;
 
   button {
     background-color: black;

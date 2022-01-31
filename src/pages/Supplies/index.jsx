@@ -49,19 +49,25 @@ export default function Supplies() {
                       <h2>{supply.name}</h2>
                       <p>{supply.description}</p>
                       <p>{supply.price}</p>
-                      <Counter setCart={setCart} id={supply.id} cart={cart} />
+                      <Counter
+                        className="Counter"
+                        setCart={setCart}
+                        id={supply.id}
+                        cart={cart}
+                      />
                     </div>
                   </div>
                 );
               })}
             </div>
-            <MainButton
-              className="watchCart"
-              content="Voir mon panier"
-              clickCallback={() => {
-                toggleModal();
-              }}
-            />
+            <div className="watchCart">
+              <MainButton
+                content="Voir mon panier"
+                clickCallback={() => {
+                  toggleModal();
+                }}
+              />
+            </div>
           </>
         ) : (
           <SuppliesModal

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const SSupplies = styled.main`
   .container {
-    width: 80vw;
+    min-width: 80vw;
     display: block;
     margin: auto;
   }
@@ -40,6 +40,18 @@ const SSupplies = styled.main`
         padding-top: 10px;
       }
     }
+    .Counter {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .watchCart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
   }
 `;
 
