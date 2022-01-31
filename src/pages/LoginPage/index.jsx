@@ -11,6 +11,7 @@ import nfcDark from 'assets/Img/nfcConnectDark.gif';
 import logo from 'assets/Img/easyApp.png';
 import logoDark from 'assets/Img/easyAppDark.png';
 import ToggleButton from 'components/ToggleButton';
+import UserAvatar from 'components/UserAvatar';
 import { api, cookies } from 'conf';
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
@@ -85,7 +86,7 @@ export default function LoginPage({ theme, setTheme }) {
             </div>
             <div className="userCard">
               <img src={isDarkTheme ? logoDark : logo} alt="homeIcon" />
-              <div className="log" alt="login logo" />
+              <UserAvatar size="125px" border="none" />
             </div>
             <Tabs
               variant="fullWidth"
