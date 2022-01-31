@@ -13,16 +13,18 @@ import { useState, useEffect } from 'react';
 import ToggleButton from 'components/ToggleButton';
 import SProfilPage from './style';
 import RefillModal from './RefillModal';
+import Meetings from './Meetings';
 import GiftModal from './GiftModal';
 
 export default function ProfilPage({ theme, setTheme }) {
+  const [orderRecap, setOrderRecap] = useState([]);
+  const [quantityRecap, setQuantityRecap] = useState([]);
   const isDarkTheme = theme === 'dark';
   const toggleTheme = () => {
     return setTheme(isDarkTheme ? 'light' : 'dark');
   };
   const user = useSelector((state) => state.user);
   const { id } = user;
-
   const [refillModal, setRefillModal] = useState(true);
   const toggleModal = () => {
     setRefillModal(!refillModal);
@@ -31,6 +33,13 @@ export default function ProfilPage({ theme, setTheme }) {
   const toggleGiftModal = () => {
     setGiftModal(!giftModal);
   };
+
+  useEffect(() => {
+    api.get(`/supplies/${id}/myOrder`).then(({ data }) => {
+      setOrderRecap(data.orderRecap);
+      setQuantityRecap(data.quantityRecap);
+    });
+  }, []);
 
   const [myMeal, setMyMeal] = useState([]);
   useEffect(() => {
@@ -82,9 +91,26 @@ export default function ProfilPage({ theme, setTheme }) {
         <h2>Mes reservations</h2>
         <p>Recapitulatif des reservations en cours ...</p>
       </article>
-      <article className="resume">
+      <Meetings />
+      <article className="orders">
         <h2>Mes commandes</h2>
-        <p>Recapitulatif commande en cours ...</p>
+        <div className="mainContainer">
+          <div className="quantity">
+            {quantityRecap.map((qtty) => {
+              return <p>x {qtty.quantity}</p>;
+            })}
+          </div>
+          <section>
+            {orderRecap.map((order) => {
+              return (
+                <div className="orderRecap">
+                  <p>{order.name}</p>
+                  <img src={order.picture} alt={`${order.name} photography`} />
+                </div>
+              );
+            })}
+          </section>
+        </div>
       </article>
       <article className="resume">
         <h2>Votre repas</h2>
