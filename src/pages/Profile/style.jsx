@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const SProfilPage = styled.section`
+const SProfile = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,6 +14,35 @@ const SProfilPage = styled.section`
   }
   p {
     font-size: 1rem;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+  }
+  li {
+    border-radius: 80px;
+    background-color: #eeedede8;
+    margin-bottom: 10px;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    line-height: 20px;
+    div {
+      border-radius: 50%;
+      overflow: hidden;
+      border: 1px solid grey;
+      aspect-ratio: 1/1;
+      width: 100px;
+      height: 100px;
+    }
+    img {
+      height: 100%;
+    }
+    p {
+      width: 180px;
+      text-align: center;
+    }
   }
   article {
     height: 200px;
@@ -135,6 +164,36 @@ const SProfilPage = styled.section`
       }
     }
   }
+  .orders {
+    display: flex;
+    height: auto;
+    section {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      img {
+        height: 90px;
+      }
+    }
+  }
+  .mainContainer {
+    display: flex;
+    background-color: #eeedede8;
+  }
+  .orderRecap {
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .quantity {
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
 `;
 
-export default SProfilPage;
+export default SProfile;

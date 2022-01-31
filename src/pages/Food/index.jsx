@@ -1,6 +1,5 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
 import { api } from 'conf';
 import { Link } from 'react-router-dom';
 import UserAvatar from 'components/UserAvatar';
@@ -13,13 +12,12 @@ export default function Food() {
   const [dataLunch, setDataLunch] = useState([]);
   const [dataDesserts, setDataDesserts] = useState([]);
   const [dataDrinks, setDataDrinks] = useState([]);
-  const user = useSelector((state) => state.user);
 
   useEffect(() => {
     api.get(`/food/lunch`).then(({ data }) => {
       setDataLunch(data);
     });
-  }, [user]);
+  }, []);
 
   useEffect(() => {
     api.get(`/food/desserts`).then(({ data }) => {

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { api } from 'conf';
 import UserAvatar from 'components/UserAvatar';
 import logo from 'assets/Img/easyApp.png';
 import logoDark from 'assets/Img/easyAppDark.png';
@@ -8,19 +9,22 @@ import cb from 'assets/Img/logo-cb.svg';
 import larrondi from 'assets/Img/LARRONDI.svg';
 import home from 'assets/Img/home.svg';
 import { useSelector } from 'react-redux';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ToggleButton from 'components/ToggleButton';
-import SProfilPage from './style';
-import Meetings from './Meetings';
+import SProfile from './style';
 import RefillModal from './RefillModal';
+import Meetings from './Meetings';
 import GiftModal from './GiftModal';
 
-export default function ProfilPage({ theme, setTheme }) {
+export default function Profile({ theme, setTheme }) {
+  const [orderRecap, setOrderRecap] = useState([]);
+  const [quantityRecap, setQuantityRecap] = useState([]);
   const isDarkTheme = theme === 'dark';
   const toggleTheme = () => {
     return setTheme(isDarkTheme ? 'light' : 'dark');
   };
   const user = useSelector((state) => state.user);
+  const { id } = user;
   const [refillModal, setRefillModal] = useState(true);
   const toggleModal = () => {
     setRefillModal(!refillModal);
@@ -30,8 +34,22 @@ export default function ProfilPage({ theme, setTheme }) {
     setGiftModal(!giftModal);
   };
 
+  useEffect(() => {
+    api.get(`/supplies/${id}/myOrder`).then(({ data }) => {
+      setOrderRecap(data.orderRecap);
+      setQuantityRecap(data.quantityRecap);
+    });
+  }, []);
+
+  const [myMeal, setMyMeal] = useState([]);
+  useEffect(() => {
+    api.get(`user/${id}/myMeal`).then(({ data }) => {
+      setMyMeal(data);
+    });
+  }, []);
+
   return (
-    <SProfilPage>
+    <SProfile>
       <div className="profilCard">
         <div className="head">
           <Link to="/home">
@@ -54,7 +72,7 @@ export default function ProfilPage({ theme, setTheme }) {
         </div>
       </div>
       <article className="solde">
-        <h2>Solde : {user.amount} € </h2>
+        <h3>Solde : {user.amount} € </h3>
         <div className="refill">
           <button type="button" className="money" onClick={toggleModal}>
             Recharger
@@ -74,26 +92,53 @@ export default function ProfilPage({ theme, setTheme }) {
         <p>Recapitulatif des reservations en cours ...</p>
       </article>
       <Meetings />
-      <article className="resume">
+      <article className="orders">
         <h2>Mes commandes</h2>
-        <p>Recapitulatif commande en cours ...</p>
+        <div className="mainContainer">
+          <div className="quantity">
+            {quantityRecap.map((qtty) => {
+              return <p>x {qtty.quantity}</p>;
+            })}
+          </div>
+          <section>
+            {orderRecap.map((order) => {
+              return (
+                <div className="orderRecap">
+                  <p>{order.name}</p>
+                  <img src={order.picture} alt={`${order.name} photography`} />
+                </div>
+              );
+            })}
+          </section>
+        </div>
       </article>
       <article className="resume">
-        <h2>Mon repas</h2>
-        <p>Recapitulatif commande en cours ...</p>
+        <h2>Votre repas</h2>
+        <ul>
+          {myMeal.map((meal) => {
+            return (
+              <li>
+                <div>
+                  <img src={meal.picture} alt="foodPicture" />
+                </div>
+                <p>{meal.name}</p>
+              </li>
+            );
+          })}
+        </ul>
       </article>
       {!refillModal && <RefillModal toggleModal={toggleModal} />}
       {!giftModal && <GiftModal toggleGiftModal={toggleGiftModal} />}
-    </SProfilPage>
+    </SProfile>
   );
 }
 
-ProfilPage.propTypes = {
+Profile.propTypes = {
   theme: PropTypes.string,
   setTheme: PropTypes.func,
 };
 
-ProfilPage.defaultProps = {
+Profile.defaultProps = {
   theme: '',
   setTheme: () => {},
 };
