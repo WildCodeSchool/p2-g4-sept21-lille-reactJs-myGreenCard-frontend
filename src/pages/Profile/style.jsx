@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const SProfilPage = styled.section`
+const SProfile = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -196,4 +196,4 @@ const SProfilPage = styled.section`
   }
 `;
 
-export default SProfilPage;
+export default SProfile;
