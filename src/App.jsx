@@ -16,7 +16,7 @@ import Meeting from './pages/Meeting';
 import Supplies from './pages/Supplies';
 import LostCard from './pages/LostCard';
 import Room from './pages/Meeting/Room';
-import ProfilPage from './pages/Profile';
+import Profile from './pages/Profile';
 import FoodProfile from './pages/Food/FoodProfile';
 import RandomLunch from './pages/Food/RandomLunch';
 import Chat from './pages/Chat';
@@ -72,7 +72,7 @@ function App() {
         <Route path="meetingRooms/:id" element={<Room />} />
         <Route path="supplies" element={<Supplies />} />
         <Route path="lostCard" element={<LostCard />} />
-        <Route path="profilPage" element={<ProfilPage />} />
+        <Route path="profile" element={<Profile />} />
         <Route path="randomLunch" element={<RandomLunch />} />
         <Route path="chat" element={<Chat />} />
       </Routes>
