@@ -13,7 +13,7 @@ import 'moment/locale/fr';
 import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 import ToggleButton from 'components/ToggleButton';
-import SProfilPage from './style';
+import SProfile from './style';
 import RefillModal from './RefillModal';
 import Meetings from './Meetings';
 import GiftModal from './GiftModal';
@@ -21,6 +21,8 @@ import Meetings from './Meetings';
 
 
 export default function Profile({ theme, setTheme }) {
+  const [orderRecap, setOrderRecap] = useState([]);
+  const [quantityRecap, setQuantityRecap] = useState([]);
   const user = useSelector((state) => state.user);
   const { id } = user;
   const isDarkTheme = theme === 'dark';
@@ -58,7 +60,7 @@ export default function Profile({ theme, setTheme }) {
   }, []);
 
   return (
-    <SProfilPage>
+    <SProfile>
       <div className="profilCard">
         <div className="head">
           <Link to="/home">
@@ -154,7 +156,7 @@ export default function Profile({ theme, setTheme }) {
       </article>
       {!refillModal && <RefillModal toggleModal={toggleModal} />}
       {!giftModal && <GiftModal toggleGiftModal={toggleGiftModal} />}
-    </SProfilPage>
+    </SProfile>
   );
 }
 
