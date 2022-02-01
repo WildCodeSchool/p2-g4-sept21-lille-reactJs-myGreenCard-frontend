@@ -17,8 +17,6 @@ import SProfile from './style';
 import RefillModal from './RefillModal';
 import Meetings from './Meetings';
 import GiftModal from './GiftModal';
-import Meetings from './Meetings';
-
 
 export default function Profile({ theme, setTheme }) {
   const [orderRecap, setOrderRecap] = useState([]);
@@ -43,7 +41,9 @@ export default function Profile({ theme, setTheme }) {
   const [reservations, setReservations] = useState([]);
   useEffect(() => {
     api.get(`office/${id}/myReservation`).then(({ data }) => {
-      setReservations(data[0]);
+      setReservations(data);
+    });
+  }, []);
 
   useEffect(() => {
     api.get(`/supplies/${id}/myOrder`).then(({ data }) => {
@@ -98,16 +98,12 @@ export default function Profile({ theme, setTheme }) {
           <img src={larrondi} alt="l&#39;arrondi" />
         </div>
       </article>
-      <article className="resume">
-        <h2>Mes reservations</h2>
-        <p>Recapitulatif des reservations en cours ...</p>
-      </article>
       <article className="officeReservation">
         <h2>Mes reservations de bureau</h2>
         <ul className="deskList">
           {reservations.map((reservation) => {
             return (
-              <li>
+              <li key={reservation.beginning}>
                 <p>
                   {`Le ${moment(reservation.beginning).format(
                     'Do MMMM  YYYY, h:mm a'
