@@ -32,7 +32,6 @@ export default function SuppliesModal({
         console.log(e);
       });
   };
-
   return (
     <>
       {modal && (
@@ -43,7 +42,7 @@ export default function SuppliesModal({
             {cart.map((item, index) => {
               return (
                 item !== 0 && (
-                  <div className="supply">
+                  <div key={supplyElement[index].name} className="supply">
                     <img
                       className="cartPictures"
                       src={supplyElement[index].picture}
@@ -78,13 +77,15 @@ export default function SuppliesModal({
 }
 
 SuppliesModal.propTypes = {
-  supplyElement: PropTypes.shape({
-    id: PropTypes.string,
-    name: PropTypes.string,
-    price: PropTypes.string,
-    quantity: PropTypes.number,
-    picture: PropTypes.string,
-  }),
+  supplyElement: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      name: PropTypes.string,
+      price: PropTypes.string,
+      quantity: PropTypes.number,
+      picture: PropTypes.string,
+    })
+  ),
   cart: PropTypes.arrayOf(PropTypes.number),
   modal: PropTypes.bool,
   setModal: PropTypes.func,
