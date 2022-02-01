@@ -41,9 +41,10 @@ export default function Profile({ theme, setTheme }) {
   const [reservations, setReservations] = useState([]);
   useEffect(() => {
     api.get(`office/${id}/myReservation`).then(({ data }) => {
-      setReservations(data[0]);
+      setReservations(data);
     });
   }, []);
+
   useEffect(() => {
     api.get(`/supplies/${id}/myOrder`).then(({ data }) => {
       setOrderRecap(data.orderRecap);
@@ -97,16 +98,12 @@ export default function Profile({ theme, setTheme }) {
           <img src={larrondi} alt="l&#39;arrondi" />
         </div>
       </article>
-      <article className="resume">
-        <h2>Mes reservations</h2>
-        <p>Recapitulatif des reservations en cours ...</p>
-      </article>
       <article className="officeReservation">
         <h2>Mes reservations de bureau</h2>
         <ul className="deskList">
           {reservations.map((reservation) => {
             return (
-              <li>
+              <li key={reservation.beginning}>
                 <p>
                   {`Le ${moment(reservation.beginning).format(
                     'Do MMMM  YYYY, h:mm a'
@@ -123,13 +120,13 @@ export default function Profile({ theme, setTheme }) {
         <div className="mainContainer">
           <div className="quantity">
             {quantityRecap.map((qtty) => {
-              return <p>x {qtty.quantity}</p>;
+              return <p key={qtty.quantity}>x {qtty.quantity}</p>;
             })}
           </div>
           <section>
             {orderRecap.map((order) => {
               return (
-                <div className="orderRecap">
+                <div key={order.name} className="orderRecap">
                   <p>{order.name}</p>
                   <img src={order.picture} alt={`${order.name} photography`} />
                 </div>
@@ -143,7 +140,7 @@ export default function Profile({ theme, setTheme }) {
         <ul>
           {myMeal.map((meal) => {
             return (
-              <li>
+              <li key={meal.name}>
                 <div>
                   <img src={meal.picture} alt="foodPicture" />
                 </div>

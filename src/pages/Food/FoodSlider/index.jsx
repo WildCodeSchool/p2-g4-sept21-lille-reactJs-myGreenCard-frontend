@@ -65,7 +65,13 @@ const FoodSlider = ({ typeOfFood }) => {
 };
 
 FoodSlider.propTypes = {
-  typeOfFood: PropTypes.arrayOf(PropTypes.string),
+  typeOfFood: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      price: PropTypes.string,
+      picture: PropTypes.string,
+    })
+  ),
 };
 
 FoodSlider.defaultProps = {
