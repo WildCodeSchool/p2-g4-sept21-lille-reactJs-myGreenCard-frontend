@@ -16,6 +16,7 @@ const SToggleButton = styled.button`
     height: calc(30px * (${(props) => props.size}));
     border-radius: 50%;
     background: ${(props) => props.truePoint};
+    transition: 0.3s linear;
   }
   &.dark {
     background: ${(props) => props.falseColor};

@@ -50,7 +50,7 @@ export default function LostCard() {
             <ToggleButton
               handleClick={toggleTheme}
               className={renderModal ? null : 'dark'}
-              size="0.70"
+              size={0.7}
               trueColor="green"
               falseColor="red"
               flasePoint="black"
