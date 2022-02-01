@@ -54,7 +54,7 @@ export default function RandomLunch() {
             <div className="users">
               {dataPeople.map((oneUser) => {
                 return (
-                  <div className="guests">
+                  <div key={oneUser.id} className="guests">
                     <div className="circle" />
                     <img src={oneUser.picture} alt={oneUser.name} />
                     <p className="name">{oneUser.firstname}</p>
