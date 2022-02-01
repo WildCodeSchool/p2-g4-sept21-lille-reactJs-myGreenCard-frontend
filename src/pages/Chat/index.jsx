@@ -25,8 +25,11 @@ export default function Chat() {
     if (!formMessage) return;
 
     const newMsg = {
-      author: user.id,
+      userId: user.id,
       content: formMessage,
+      picture: user.picture,
+      firstname: user.firstname,
+      lastname: user.lastname,
     };
     socket.emit('sendMsg', newMsg);
     setMsg('');
@@ -41,6 +44,7 @@ export default function Chat() {
     <SChat>
       <form onSubmit={handleSubmit}>
         <input
+          className="inputText"
           type="text"
           name="msg"
           placeholder="Message"
@@ -49,26 +53,36 @@ export default function Chat() {
             setMsg(evt.target.value);
           }}
         />
-        <input type="submit" value="Envoyer" />
+        <input className="inputButton" type="submit" value="↑" />
       </form>
       {messages && (
         <ul>
-          {messages.map(({ id, author, content, time }) => {
-            let className = 'alienMsg';
-            if (author !== user.firstname) {
-              className = 'notice';
+          {messages.map(
+            ({ id, userId, content, time, picture, firstname, lastname }) => {
+              let className = 'alienMsg';
+              if (userId !== user.id) {
+                className = 'notice';
+              } else {
+                className = 'ownMsg';
+              }
+              return (
+                <>
+                  <p className="userName">
+                    {firstname} {lastname}
+                  </p>
+                  <li key={id} className={className}>
+                    <div className="userImg">
+                      <img src={picture} alt="Profil photography" />
+                    </div>
+                    <p className="content">{content}</p>
+                  </li>
+                  <div className="timeContain">
+                    <p className="dateTime">{time}</p>
+                  </div>
+                </>
+              );
             }
-            if (author === user.firstname) {
-              className = 'ownMsg';
-            }
-            return (
-              <li key={id} className={className}>
-                <address>{author}</address>
-                <p>{content}</p>
-                <time>{time}</time>
-              </li>
-            );
-          })}
+          )}
         </ul>
       )}
     </SChat>

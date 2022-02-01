@@ -72,7 +72,7 @@ function App() {
         <Route path="meetingRooms/:id" element={<Room />} />
         <Route path="supplies" element={<Supplies />} />
         <Route path="lostCard" element={<LostCard />} />
-        <Route path="profilPage" element={<Profile />} />
+        <Route path="profile" element={<Profile />} />
         <Route path="food/randomLunch" element={<RandomLunch />} />
         <Route path="chat" element={<Chat />} />
       </Routes>
