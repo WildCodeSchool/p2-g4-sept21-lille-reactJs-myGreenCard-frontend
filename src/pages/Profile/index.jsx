@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 import { api } from 'conf';
 import UserAvatar from 'components/UserAvatar';
 import logo from 'assets/Img/easyApp.png';
@@ -8,6 +8,8 @@ import applePay from 'assets/Img/Apple_Pay_logo.svg';
 import cb from 'assets/Img/logo-cb.svg';
 import larrondi from 'assets/Img/LARRONDI.svg';
 import home from 'assets/Img/home.png';
+import moment from 'moment';
+import 'moment/locale/fr';
 import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 import ToggleButton from 'components/ToggleButton';
@@ -19,21 +21,29 @@ import GiftModal from './GiftModal';
 export default function Profile({ theme, setTheme }) {
   const [orderRecap, setOrderRecap] = useState([]);
   const [quantityRecap, setQuantityRecap] = useState([]);
+  const user = useSelector((state) => state.user);
+  const { id } = user;
   const isDarkTheme = theme === 'dark';
+
   const toggleTheme = () => {
     return setTheme(isDarkTheme ? 'light' : 'dark');
   };
-  const user = useSelector((state) => state.user);
-  const { id } = user;
   const [refillModal, setRefillModal] = useState(true);
   const toggleModal = () => {
     setRefillModal(!refillModal);
   };
+
   const [giftModal, setGiftModal] = useState(true);
   const toggleGiftModal = () => {
     setGiftModal(!giftModal);
   };
 
+  const [reservations, setReservations] = useState([]);
+  useEffect(() => {
+    api.get(`office/${id}/myReservation`).then(({ data }) => {
+      setReservations(data[0]);
+    });
+  }, []);
   useEffect(() => {
     api.get(`/supplies/${id}/myOrder`).then(({ data }) => {
       setOrderRecap(data.orderRecap);
@@ -91,6 +101,22 @@ export default function Profile({ theme, setTheme }) {
         <h2>Mes reservations</h2>
         <p>Recapitulatif des reservations en cours ...</p>
       </article>
+      <article className="officeReservation">
+        <h2>Mes reservations de bureau</h2>
+        <ul className="deskList">
+          {reservations.map((reservation) => {
+            return (
+              <li>
+                <p>
+                  {`Le ${moment(reservation.beginning).format(
+                    'Do MMMM  YYYY, h:mm a'
+                  )}`}
+                </p>
+              </li>
+            );
+          })}
+        </ul>
+      </article>
       <Meetings />
       <article className="orders">
         <h2>Mes commandes</h2>
@@ -132,10 +158,9 @@ export default function Profile({ theme, setTheme }) {
     </SProfile>
   );
 }
-
 Profile.propTypes = {
-  theme: PropTypes.string,
-  setTheme: PropTypes.func,
+  theme: propTypes.string,
+  setTheme: propTypes.func,
 };
 
 Profile.defaultProps = {

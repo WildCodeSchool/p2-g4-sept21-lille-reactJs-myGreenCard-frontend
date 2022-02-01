@@ -32,7 +32,6 @@ export default function SuppliesModal({
         console.log(e);
       });
   };
-
   return (
     <>
       {modal && (
