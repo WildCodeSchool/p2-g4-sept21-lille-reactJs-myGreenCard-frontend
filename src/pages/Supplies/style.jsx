@@ -5,22 +5,18 @@ const SSupplies = styled.main`
     min-width: 90vw;
     display: block;
   }
-
   h3 {
     font-weight: bold;
   }
-
   p {
     font-size: small;
     color: #5f5f5ffb;
   }
-
   section {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
   }
-
   .container {
     img {
       height: 15vh;
@@ -31,7 +27,6 @@ const SSupplies = styled.main`
       box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
       padding-top: 50px;
     }
-
     .description {
       p {
         padding-top: 10px;
