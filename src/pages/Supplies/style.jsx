@@ -6,22 +6,18 @@ const SSupplies = styled.main`
     display: block;
     margin: auto;
   }
-
   h3 {
     font-weight: bold;
   }
-
   p {
     font-size: small;
     color: #5f5f5ffb;
   }
-
   section {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
   }
-
   .container {
     img {
       height: 15vh;
@@ -35,7 +31,6 @@ const SSupplies = styled.main`
       background-color: ${(props) => props.theme.secondBackground};
       margin-top: 20px;
     }
-
     .description {
       margin-left: auto;
       margin-right: auto;

@@ -51,7 +51,6 @@ const SFood = styled.main`
     width: 370px;
     background: ${({ theme }) => theme.secondBackground};
   }
-
   .swiper-slide .swiper-slide-active {
     width: 100px;
   }

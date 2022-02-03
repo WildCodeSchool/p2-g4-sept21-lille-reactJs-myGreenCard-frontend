@@ -49,7 +49,6 @@ const SOffice = styled.main`
     height: 35vh;
     width: auto;
   }
-
   .rowProfiles {
     margin-left: 20px;
     display: flex;
@@ -74,9 +73,7 @@ const SOffice = styled.main`
       font-weight: bold;
     }
   }
-
   /* Slider */
-
   .swiper-container {
     width: 100vw;
     height: 280px;

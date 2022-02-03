@@ -6,7 +6,6 @@ const SToggleButton = styled.button`
   background: ${(props) => props.trueColor};
   border-radius: 100px;
   position: relative;
-
   span {
     content: '';
     position: absolute;

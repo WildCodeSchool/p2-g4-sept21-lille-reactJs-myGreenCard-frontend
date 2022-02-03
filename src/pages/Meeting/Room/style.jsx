@@ -55,7 +55,6 @@ const SRoom = styled.main`
       }
     }
   }
-
   .swiper-slide img {
     display: block;
     width: 100%;

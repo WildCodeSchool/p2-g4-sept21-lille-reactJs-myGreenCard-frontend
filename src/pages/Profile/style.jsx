@@ -19,7 +19,6 @@ const SProfile = styled.section`
     display: flex;
     flex-direction: column;
   }
-
   article {
     background: ${({ theme }) => theme.secondBackground};
     height: 200px;

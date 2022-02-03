@@ -20,17 +20,17 @@ const SGiftModal = styled.section`
     border-radius: 10px;
     p {
       padding: 15px;
-      color:black;
+      color: black;
     }
-     .close{
-     width:auto;
-     background-color: transparent;
-     box-shadow:none;
-     margin-left: 65vw;
-     font-size: 24px;
-     font-weight: bold;
-   }
-    button{
+    .close {
+      width: auto;
+      background-color: transparent;
+      box-shadow: none;
+      margin-left: 65vw;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    button {
       width: 80px;
       background: #ececec;
       margin: 15px;
@@ -38,7 +38,6 @@ const SGiftModal = styled.section`
       border-radius: 5px;
       -webkit-box-shadow: 0px 7px 12px -3px black;
       box-shadow: 0px 7px 12px -3px black;
-    }
     }
   }
 `;

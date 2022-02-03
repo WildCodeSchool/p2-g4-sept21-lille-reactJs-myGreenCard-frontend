@@ -82,7 +82,6 @@ export default function Pin({
 
   return (
     <>
-      {console.log(reservation)}
       <SPin
         disabled={resOffice[pin.number - 1]}
         slot={
