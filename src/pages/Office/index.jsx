@@ -81,21 +81,11 @@ export default function Office() {
         <div className="rowProfiles">
           <div className="circle1" />
           <AvatarGroup max={5}>
-            <Avatar alt="User avatar 1" src="https://www.placecage.com/80/80" />
-            <Avatar alt="User avatar 2" src="https://www.placecage.com/81/81" />
-            <Avatar
-              alt="User avatar 3"
-              src="https://www.stevensegallery.com/80/80"
-            />
-            <Avatar
-              alt="User avatar 4"
-              src="https://www.fillmurray.com/78/78"
-            />
-            <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
-            <Avatar alt="Agnes Walker" src="/static/images/avatar/4.jpg" />
-            <Avatar alt="Trevor Henderson" src="/static/images/avatar/5.jpg" />
+            {dataSlot.map((data) => (
+              <Avatar alt="avatar" src={data.picture} />
+            ))}
           </AvatarGroup>
-          <p>sont présents aujourd&apos;hui</p>
+          <p>sont présents</p>
         </div>
         <h2>Bureau n°1</h2>
         <Swiper navigation slidesPerView={2} className="mySwiper">

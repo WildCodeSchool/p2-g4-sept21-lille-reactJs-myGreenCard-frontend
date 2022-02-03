@@ -88,6 +88,9 @@ const SHome = styled.section`
     position: absolute;
     right: 30%;
     bottom: 10%;
+    img {
+      margin-left: 35px;
+    }
   }
   .dinnersReady {
     height: 30px;

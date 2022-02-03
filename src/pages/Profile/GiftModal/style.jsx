@@ -20,6 +20,7 @@ const SGiftModal = styled.section`
     border-radius: 10px;
     p {
       padding: 15px;
+      color:black;
     }
      .close{
      width:auto;
@@ -35,8 +36,8 @@ const SGiftModal = styled.section`
       margin: 15px;
       padding: 5px;
       border-radius: 5px;
-      -webkit-box-shadow: 0px 7px 12px -3px #afafaf;
-      box-shadow: 0px 7px 12px -3px #afafaf;
+      -webkit-box-shadow: 0px 7px 12px -3px black;
+      box-shadow: 0px 7px 12px -3px black;
     }
     }
   }

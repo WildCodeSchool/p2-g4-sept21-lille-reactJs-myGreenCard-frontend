@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 const SOffice = styled.main`
-  min-height: 100vh;
   margin-top: 40px;
   h1 {
     display: flex;
@@ -14,7 +13,6 @@ const SOffice = styled.main`
     font-weight: bold;
   }
   h2 {
-    padding-top: 10vh;
     margin-left: 5vw;
     font-weight: bold;
   }
@@ -53,8 +51,12 @@ const SOffice = styled.main`
   }
 
   .rowProfiles {
+    margin-left: 20px;
     display: flex;
     align-items: center;
+    p {
+      margin-left: 20px;
+    }
   }
   .circle1 {
     width: 16px;
@@ -77,7 +79,7 @@ const SOffice = styled.main`
 
   .swiper-container {
     width: 100vw;
-    height: 300px;
+    height: 280px;
     .swiper-slide {
       display: flex;
       flex-direction: column;
@@ -105,8 +107,8 @@ const SOffice = styled.main`
           margin: 15px;
           padding: 5px;
           border-radius: 5px;
-          -webkit-box-shadow: 0px 7px 12px -3px #afafaf;
-          box-shadow: 0px 7px 12px -3px #afafaf;
+          -webkit-box-shadow: 0px 7px 12px -3px black;
+          box-shadow: 0px 7px 12px -3px black;
           &.reserved {
             background: grey;
           }
@@ -122,7 +124,7 @@ const SOffice = styled.main`
   }
   .swiper-button-next,
   .swiper-button-prev {
-    color: black;
+    color: ${(props) => props.theme.text};
     &::after {
       font-size: 20px;
       font-weight: bold;

@@ -51,7 +51,7 @@ const SSearchBar = styled.div`
     }
   }
   p {
-    margin: 80px 0 0px 0;
+    margin: 50px 0 0px 0;
   }
   .avatars {
     margin: 15px 0;

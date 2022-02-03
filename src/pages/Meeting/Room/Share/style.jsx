@@ -6,7 +6,6 @@ const SShare = styled.div`
   align-items: center;
   flex-direction: column;
   width: 80vw;
-  height: 120vh;
   text-align: center;
   header {
     a {

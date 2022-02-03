@@ -46,8 +46,8 @@ const SRoom = styled.main`
           margin: 15px;
           padding: 5px;
           border-radius: 5px;
-          -webkit-box-shadow: 0px 7px 12px -3px #afafaf;
-          box-shadow: 0px 7px 12px -3px #afafaf;
+          -webkit-box-shadow: 0px 7px 12px -3px black;
+          box-shadow: 0px 7px 12px -3px black;
           &.reserved {
             background: grey;
           }
