@@ -1,14 +1,6 @@
 import styled from 'styled-components';
 
 const SRandomLunch = styled.section`
-  button {
-    &.dark {
-      background: black;
-      span {
-        background: white;
-      }
-    }
-  }
   h1 {
     font-weight: bold;
     text-align: center;

@@ -38,7 +38,7 @@ export default function RandomLunch() {
           <h2>Voulez-vous activer le Random Lunch ?</h2>
           <ToggleButton
             handleClick={toggleTheme}
-            className={randomLunch ? null : 'dark'}
+            className={randomLunch ? 'lunch darkLunch' : 'darkLunch'}
             size={1}
           />
         </div>
