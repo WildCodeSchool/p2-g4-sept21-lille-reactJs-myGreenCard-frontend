@@ -23,8 +23,8 @@ const SShare = styled.div`
       width: 180px;
     }
   }
-  button.share {
-    margin-top: 20px;
+  button {
+    margin: 20px 0px;
   }
 `;
 export default SShare;

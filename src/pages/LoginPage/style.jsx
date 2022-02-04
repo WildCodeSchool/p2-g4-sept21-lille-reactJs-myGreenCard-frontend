@@ -49,6 +49,9 @@ const SLogingPage = styled.section`
     border-radius: 0px 0px 10px 10px;
     -webkit-box-shadow: 0px 7px 12px -3px #000000;
     box-shadow: 0px 7px 12px -3px #000000;
+    button.MuiTab-root {
+      color: ${(props) => props.theme.text};
+    }
   }
   .MuiTabs-root {
     width: 100%;

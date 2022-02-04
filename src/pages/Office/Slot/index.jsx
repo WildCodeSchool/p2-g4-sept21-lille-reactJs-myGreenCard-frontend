@@ -2,7 +2,6 @@ import { useSelector } from 'react-redux';
 import propTypes from 'prop-types';
 import axios from 'axios';
 import moment from 'moment';
-import SSlot from './style';
 
 export default function Slot({
   slot,
@@ -19,7 +18,6 @@ export default function Slot({
       return { ...pin, slot: slotT };
     });
     setPins(newPins);
-
     axios
       .get(`${process.env.REACT_APP_API_URL}/office?slot=${slotT}`)
       .then(({ data }) => {
@@ -55,9 +53,9 @@ export default function Slot({
 
   return (
     <>
-      <SSlot onClick={handleClick} type="button">
+      <button onClick={handleClick} type="button">
         {slot.slotDisplay}
-      </SSlot>
+      </button>
     </>
   );
 }

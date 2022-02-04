@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Header from 'components/Header';
 import logo from 'assets/reservationReunion.png';
+import logoDark from 'assets/reservationReunionNight.png';
 import SRoom from './style';
 import Validation from './Validation';
 import AlreadyBooked from './AlreadyBooked';
@@ -11,13 +12,13 @@ export default function Room() {
   const [alreadyBooked, setAlreadyBooked] = useState(false);
   const [share, setShare] = useState(false);
   const [reservation, setReservation] = useState({});
-
+  const themeStorage = localStorage.getItem('theme');
   return (
     <>
       <SRoom>
         {validation && (
           <>
-            <Header logo={logo} />
+            <Header logo={themeStorage === 'light' ? logo : logoDark} />
             <Validation
               setAlreadyBooked={setAlreadyBooked}
               setValidation={setValidation}
@@ -29,7 +30,7 @@ export default function Room() {
         )}
         {alreadyBooked && (
           <>
-            <Header logo={logo} />
+            <Header logo={themeStorage === 'light' ? logo : logoDark} />
             <AlreadyBooked
               reservation={reservation}
               setAlreadyBooked={setAlreadyBooked}

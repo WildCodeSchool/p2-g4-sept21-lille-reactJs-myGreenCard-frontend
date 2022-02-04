@@ -2,22 +2,22 @@ import Header from 'components/Header';
 import nfcLight from 'assets/Img/phoneNfcLight.gif';
 import nfcDark from 'assets/Img/phoneNfcDark.gif';
 import logo from 'assets/Img/easyApp.png';
-import logoDark from 'assets/Img/easyAppDark.png';
+import darkLogo from 'assets/Img/easyAppDark.png';
 import card from 'assets/Img/easyCard.png';
-import PropTypes from 'prop-types';
 import SEazyCard from './style';
 
-export default function EazyCard({ theme }) {
-  const isDarkTheme = theme === 'dark';
+export default function EazyCard() {
+  const themeStorage = localStorage.getItem('theme');
+
   return (
     <>
-      <Header logo={isDarkTheme ? logoDark : logo} />
+      <Header logo={themeStorage === 'light' ? logo : darkLogo} />
       <SEazyCard>
         <img src={card} alt="Eazycard" />
         <div className="nfc">
           <img
             className="nfc"
-            src={isDarkTheme ? nfcDark : nfcLight}
+            src={themeStorage === 'light' ? nfcLight : nfcDark}
             alt="NFC"
           />
         </div>
@@ -26,11 +26,3 @@ export default function EazyCard({ theme }) {
     </>
   );
 }
-
-EazyCard.propTypes = {
-  theme: PropTypes.string,
-};
-
-EazyCard.defaultProps = {
-  theme: '',
-};

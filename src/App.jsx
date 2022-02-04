@@ -72,8 +72,11 @@ function App() {
         <Route path="meetingRooms/:id" element={<Room />} />
         <Route path="supplies" element={<Supplies />} />
         <Route path="lostCard" element={<LostCard />} />
-        <Route path="profile" element={<Profile />} />
-        <Route path="food/randomLunch" element={<RandomLunch />} />
+        <Route
+          path="profile"
+          element={<Profile setTheme={setTheme} theme={theme} />}
+        />
+        <Route path="/food/randomLunch" element={<RandomLunch />} />
         <Route path="chat" element={<Chat />} />
       </Routes>
       <ToastContainer />
