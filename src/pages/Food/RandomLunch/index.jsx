@@ -6,6 +6,7 @@ import axios from 'axios';
 import logo from 'assets/Img/easyApp.png';
 import randomTime from 'assets/Img/RandomLunchPictures/randomTime.png';
 import concentration from 'assets/Img/RandomLunchPictures/concentration.png';
+import darkLogo from 'assets/Img/easyAppDark.png';
 import SRandomLunch from './style';
 
 export default function RandomLunch() {
@@ -16,6 +17,7 @@ export default function RandomLunch() {
   const toggleTheme = () => {
     return setRandomLunch(!randomLunch);
   };
+  const themeStorage = localStorage.getItem('theme');
 
   useEffect(() => {
     axios
@@ -30,7 +32,7 @@ export default function RandomLunch() {
 
   return (
     <>
-      <Header logo={logo} />
+      <Header logo={themeStorage === 'light' ? logo : darkLogo} />
       <SRandomLunch>
         <div className="randomLunch">
           <h2>Voulez-vous activer le Random Lunch ?</h2>
@@ -54,7 +56,7 @@ export default function RandomLunch() {
             <div className="users">
               {dataPeople.map((oneUser) => {
                 return (
-                  <div className="guests">
+                  <div key={oneUser.id} className="guests">
                     <div className="circle" />
                     <img src={oneUser.picture} alt={oneUser.name} />
                     <p className="name">{oneUser.firstname}</p>

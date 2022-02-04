@@ -4,6 +4,7 @@ import { useState } from 'react';
 import MainButton from 'components/MainButton';
 import Header from 'components/Header';
 import logo from 'assets/reservationReunion.png';
+import logoDark from 'assets/reservationReunionNight.png';
 import SearchBar from './SearchBar';
 import SShare from './style';
 import SharePopup from './SharePopup';
@@ -12,13 +13,13 @@ export default function Share({ reservation, setValidation, setShare }) {
   const [sharePopup, setSharePopup] = useState(false);
   const [newParticipants, setNewParticipants] = useState([]);
   const [participants, setParticipants] = useState([]);
-
+  const themeStorage = localStorage.getItem('theme');
   const showSharePopup = () => {
     setSharePopup(true);
   };
   return (
     <SShare>
-      <Header logo={logo} />
+      <Header logo={themeStorage === 'light' ? logo : logoDark} />
       <p>
         Vous venez de reserver la salle de réunion n°
         {reservation.roomId}

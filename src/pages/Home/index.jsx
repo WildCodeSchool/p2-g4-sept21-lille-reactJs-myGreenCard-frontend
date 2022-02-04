@@ -7,7 +7,7 @@ import axios from 'axios';
 import google from './pictures/googleWallet.png';
 import ToggleButton from '../../components/ToggleButton';
 import logo from '../../assets/Img/easyApp.png';
-import darkLogo from '../../assets/Img/easyAppNight.png';
+import darkLogo from '../../assets/Img/easyAppDark.png';
 import food from './pictures/food.png';
 import darkFood from './pictures/darkFood.png';
 import office from './pictures/office.png';

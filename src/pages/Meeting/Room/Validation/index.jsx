@@ -73,7 +73,7 @@ export default function Validation({
         {days.map((day) => {
           return (
             <SwiperSlide key={day.display}>
-              <h3 className={day.dayDate.getDay() === 0 ? 'disabled' : null}>
+              <h3 className={day.dayDate.getDay() === 0 && 'disabled'}>
                 {day.display}
               </h3>
               <div className="slots">

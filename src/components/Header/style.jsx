@@ -10,7 +10,7 @@ const SHeader = styled.header`
   &::after {
     content: '';
     display: block;
-    border-bottom: 3px solid rgb(0, 0, 0);
+    border-bottom: 3px solid ${(props) => props.theme.text};
     width: 70%;
     bottom: -10px;
     position: absolute;
@@ -20,6 +20,10 @@ const SHeader = styled.header`
   }
   img {
     height: 60px;
+    width: auto;
+  }
+  img.home {
+    height: 100px;
     width: auto;
   }
   .logo {
