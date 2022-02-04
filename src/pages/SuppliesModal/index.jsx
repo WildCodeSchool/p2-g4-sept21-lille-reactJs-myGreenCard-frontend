@@ -15,7 +15,6 @@ export default function SuppliesModal({
     setModal(!modal);
   };
   const user = useSelector((state) => state.user);
-
   const sendData = () => {
     const myOrder = cart.map((item, index) => {
       return {
@@ -57,19 +56,20 @@ export default function SuppliesModal({
               );
             })}
           </div>
-          <MainButton
-            className="order"
-            content="Passer la commande"
-            clickCallback={() => {
-              sendData();
-            }}
-          />
-          <MainButton
-            content="Retour"
-            clickCallback={() => {
-              toggleModal();
-            }}
-          />
+          <div className="order">
+            <MainButton
+              content="Passer la commande"
+              clickCallback={() => {
+                sendData();
+              }}
+            />
+            <MainButton
+              content="Retour"
+              clickCallback={() => {
+                toggleModal();
+              }}
+            />
+          </div>
         </SSuppliesModal>
       )}
     </>

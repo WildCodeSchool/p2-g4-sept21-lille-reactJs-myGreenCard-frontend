@@ -25,7 +25,6 @@ export default function Supplies() {
   const toggleModal = () => {
     setModal(!modal);
   };
-
   useEffect(() => {
     axios.get(`${process.env.REACT_APP_API_URL}/supplies`).then(({ data }) => {
       setSupplies(data);
@@ -38,10 +37,10 @@ export default function Supplies() {
 
   return (
     <>
-      <SSupplies>
         <Header
           logo={themeStorage === 'light' ? fournitures : fournituresNight}
         />
+   <SSupplies>
         {!modal ? (
           <>
             <div className="container">
@@ -59,13 +58,14 @@ export default function Supplies() {
                 );
               })}
             </div>
-            <MainButton
-              className="watchCart"
-              content="Voir mon panier"
-              clickCallback={() => {
-                toggleModal();
-              }}
-            />
+            <div className="watchCart">
+              <MainButton
+                content="Voir mon panier"
+                clickCallback={() => {
+                  toggleModal();
+                }}
+              />
+            </div>
           </>
         ) : (
           <SuppliesModal

@@ -1,8 +1,12 @@
 import styled from 'styled-components';
 
 const SSuppliesModal = styled.main`
-  height: 100vh;
+  min-height: 87vh;
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   h2 {
     display: flex;
     justify-content: center;
@@ -11,8 +15,22 @@ const SSuppliesModal = styled.main`
   }
   .basketIcon {
     height: 8vh;
-    margin-left: 30vw;
-    padding-top: 20px;
+    margin-top: 3vh;
+  }
+
+  .supply {
+    width: 90vw;
+    .description {
+      min-width: 50vw;
+    }
+  }
+  .order {
+    display: flex;
+    height: 15vh;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 2vh;
+    margin-top: 2vh;
   }
 `;
 

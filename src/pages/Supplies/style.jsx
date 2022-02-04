@@ -2,9 +2,8 @@ import styled from 'styled-components';
 
 const SSupplies = styled.main`
   .container {
-    width: 80vw;
+    min-width: 90vw;
     display: block;
-    margin: auto;
   }
   h3 {
     font-weight: bold;
@@ -32,12 +31,18 @@ const SSupplies = styled.main`
       margin-top: 20px;
     }
     .description {
-      margin-left: auto;
-      margin-right: auto;
       p {
         padding-top: 10px;
+        margin-left: 20px;
       }
     }
+  }
+  .watchCart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
   }
 `;
 
