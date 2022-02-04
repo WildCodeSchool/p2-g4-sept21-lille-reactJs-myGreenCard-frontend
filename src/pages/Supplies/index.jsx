@@ -1,6 +1,7 @@
 import Counter from 'components/Counter';
 import Header from 'components/Header';
 import fournitures from 'assets/Img/fournitures.png';
+import fournituresNight from 'assets/Img/fournituresNight.png';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import MainButton from 'components/MainButton';
@@ -13,6 +14,7 @@ export default function Supplies() {
   const [supplies, setSupplies] = useState([]);
   const [cart, setCart] = useState([]);
   const [modal, setModal] = useState(false);
+  const themeStorage = localStorage.getItem('theme');
   const fillCart = () => {
     const newArray = [];
     for (let i = 0; i < supplies.length; i += 1) {
@@ -35,8 +37,10 @@ export default function Supplies() {
 
   return (
     <>
-      <Header logo={fournitures} />
-      <SSupplies>
+        <Header
+          logo={themeStorage === 'light' ? fournitures : fournituresNight}
+        />
+   <SSupplies>
         {!modal ? (
           <>
             <div className="container">

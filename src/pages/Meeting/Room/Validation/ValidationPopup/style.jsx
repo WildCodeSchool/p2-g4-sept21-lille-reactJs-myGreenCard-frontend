@@ -15,7 +15,6 @@ const SValidationPopup = styled.section`
     text-align: center;
     position: absolute;
     z-index: 2;
-    height: 25vh;
     width: 80vw;
     border-radius: 10px;
     p {
@@ -29,8 +28,8 @@ const SValidationPopup = styled.section`
         margin: 15px;
         padding: 5px;
         border-radius: 5px;
-        -webkit-box-shadow: 0px 7px 12px -3px #afafaf;
-        box-shadow: 0px 7px 12px -3px #afafaf;
+        -webkit-box-shadow: 0px 7px 12px -3px black;
+        box-shadow: 0px 7px 12px -3px black;
       }
     }
   }

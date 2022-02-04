@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 import { api } from 'conf';
 import UserAvatar from 'components/UserAvatar';
 import logo from 'assets/Img/easyApp.png';
@@ -7,7 +7,7 @@ import logoDark from 'assets/Img/easyAppDark.png';
 import applePay from 'assets/Img/Apple_Pay_logo.svg';
 import cb from 'assets/Img/logo-cb.svg';
 import larrondi from 'assets/Img/LARRONDI.svg';
-import home from 'assets/Img/home.svg';
+import home from 'assets/Img/home.png';
 import moment from 'moment';
 import 'moment/locale/fr';
 import { useSelector } from 'react-redux';
@@ -135,7 +135,7 @@ export default function Profile({ theme, setTheme }) {
           </section>
         </div>
       </article>
-      <article className="resume">
+      <article className="foodList">
         <h2>Votre repas</h2>
         <ul>
           {myMeal.map((meal) => {
@@ -155,10 +155,9 @@ export default function Profile({ theme, setTheme }) {
     </SProfile>
   );
 }
-
 Profile.propTypes = {
-  theme: PropTypes.string,
-  setTheme: PropTypes.func,
+  theme: propTypes.string,
+  setTheme: propTypes.func,
 };
 
 Profile.defaultProps = {

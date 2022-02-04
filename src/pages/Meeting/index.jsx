@@ -2,13 +2,14 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import logo from 'assets/reservationReunion.png';
+import logoDark from 'assets/reservationReunionNight.png';
 import Header from 'components/Header';
 import SMeeting from './style';
 import RoomCard from './RoomCard';
 
 export default function Meeting() {
   const [dataRooms, setDataRooms] = useState([]);
-
+  const themeStorage = localStorage.getItem('theme');
   useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_API_URL}/meetingRoom`)
@@ -22,7 +23,7 @@ export default function Meeting() {
 
   return (
     <>
-      <Header logo={logo} />
+      <Header logo={themeStorage === 'light' ? logo : logoDark} />
       <SMeeting>
         {dataRooms.map((dataRoom) => {
           const path = `${dataRoom.number}`;

@@ -28,32 +28,39 @@ export default function Pin({
         resSlot = true;
       }
     });
-    if (resSlot === true) {
-      axios
-        .delete(`${process.env.REACT_APP_API_URL}/office/officeReservation/`, {
-          data: { userId: user.id, beginning: pin.slot },
-        })
-        .catch((e) => {
-          console.log(e);
-        });
-      axios
-        .post(
-          `${process.env.REACT_APP_API_URL}/office/officeReservation/`,
-          reservation
-        )
-        .catch((e) => {
-          console.log(e);
-        });
-    } else {
-      axios
-        .post(
-          `${process.env.REACT_APP_API_URL}/office/officeReservation/`,
-          reservation
-        )
-        .catch((e) => {
-          console.log(e);
-        });
+
+    if (reservation.beginning !== null) {
+      if (resSlot === true) {
+        axios
+          .delete(
+            `${process.env.REACT_APP_API_URL}/office/officeReservation/`,
+            {
+              data: { userId: user.id, beginning: pin.slot },
+            }
+          )
+          .catch((e) => {
+            console.log(e);
+          });
+        axios
+          .post(
+            `${process.env.REACT_APP_API_URL}/office/officeReservation/`,
+            reservation
+          )
+          .catch((e) => {
+            console.log(e);
+          });
+      } else {
+        axios
+          .post(
+            `${process.env.REACT_APP_API_URL}/office/officeReservation/`,
+            reservation
+          )
+          .catch((e) => {
+            console.log(e);
+          });
+      }
     }
+
     newMyResOffice = newMyResOffice.map(() => {
       return false;
     });
@@ -99,14 +106,14 @@ Pin.propTypes = {
   pin: propTypes.shape({
     class: propTypes.string,
     number: propTypes.number,
-    slot: propTypes.instanceOf(Date),
+    slot: propTypes.string,
   }),
   dataSlot: propTypes.arrayOf(
     propTypes.shape({
-      number: propTypes.number,
+      number: propTypes.string,
       officeId: propTypes.number,
       userId: propTypes.number,
-      beginning: propTypes.instanceOf(Date),
+      beginning: propTypes.string,
     })
   ),
   resOffice: propTypes.arrayOf(propTypes.bool),

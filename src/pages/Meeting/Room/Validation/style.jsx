@@ -6,7 +6,7 @@ const SValidation = styled.div`
   justify-content: center;
   align-items: center;
   h3.disabled {
-    color: #000000a6;
+    color: ${(props) => props.theme.disabledText};
   }
   h2 {
     margin: 15px;
@@ -51,8 +51,8 @@ const SValidation = styled.div`
           margin: 15px;
           padding: 5px;
           border-radius: 5px;
-          -webkit-box-shadow: 0px 7px 12px -3px #afafaf;
-          box-shadow: 0px 7px 12px -3px #afafaf;
+          -webkit-box-shadow: 0px 7px 12px -3px black;
+          box-shadow: 0px 7px 12px -3px black;
           &.reserved {
             background: grey;
           }

@@ -23,6 +23,7 @@ const SChat = styled.main`
     }
   }
   .content {
+    color: black;
     padding: 5px;
   }
   .timeContain {
@@ -45,12 +46,13 @@ const SChat = styled.main`
     border-radius: 30px;
     height: 40px;
     width: 85vw;
+    color: black;
   }
   .inputButton {
     width: 30px;
     height: 40px;
     font-size: 30px;
-    background-color: white;
+    background-color: ${(props) => props.theme.background};
     border: none;
   }
   .notice {
@@ -75,7 +77,7 @@ const SChat = styled.main`
     justify-content: flex-end;
     font-size: 15px;
     font-weight: 400;
-    color: #252525;
+    color: ${(props) => props.theme.text};
   }
 `;
 export default SChat;
