@@ -57,15 +57,6 @@ const SOffice = styled.main`
       margin-left: 20px;
     }
   }
-  .circle1 {
-    width: 16px;
-    height: 16px;
-    border-radius: 20px;
-    background: #44df44;
-    position: absolute;
-    margin-left: 10px;
-    z-index: 1;
-  }
   .rowProfiles {
     margin-top: 20px;
     p {

@@ -79,13 +79,14 @@ export default function Office() {
 
         <div style={plan} className="plan" alt="office room" />
         <div className="rowProfiles">
-          <div className="circle1" />
           <AvatarGroup max={5}>
             {dataSlot.map((data) => (
               <Avatar alt="avatar" src={data.picture} />
             ))}
           </AvatarGroup>
-          <p>sont présents</p>
+          {dataSlot[0] && (
+            <> {dataSlot[1] ? <p>sont présents</p> : <p>est présent</p>}</>
+          )}
         </div>
         <h2>Bureau n°1</h2>
         <Swiper navigation slidesPerView={2} className="mySwiper">
