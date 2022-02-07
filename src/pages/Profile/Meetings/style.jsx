@@ -20,12 +20,14 @@ const SMeetings = styled.article`
     list-style-type: disc;
     width: 90%;
     margin-left: 10px;
+    line-height: 1.5rem;
     div.promoter {
       display: flex;
       align-items: center;
       p {
         margin: 15px 0px;
         width: auto;
+        line-height: 1.5rem;
       }
       .participant {
         margin-left: 10px;

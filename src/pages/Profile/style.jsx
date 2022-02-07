@@ -105,7 +105,6 @@ const SProfile = styled.section`
     flex-direction: column;
     align-items: center;
     height: 50vh;
-
     width: 95vw;
     margin-bottom: 3vh;
     border-radius: 0px 0px 10px 10px;
@@ -168,13 +167,15 @@ const SProfile = styled.section`
   }
   .mainContainer {
     display: flex;
-    background-color: #eeedede8;
   }
   .orderRecap {
     width: 95%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    p {
+      color:${(props) => props.text})
+    }
   }
   .quantity {
     width: 40px;
@@ -182,6 +183,9 @@ const SProfile = styled.section`
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    p {
+      color:${(props) => props.text})
+    }
   }
   .foodList {
     li {
@@ -207,6 +211,7 @@ const SProfile = styled.section`
       p {
         width: 180px;
         text-align: center;
+        color:black;
       }
     }
   }
