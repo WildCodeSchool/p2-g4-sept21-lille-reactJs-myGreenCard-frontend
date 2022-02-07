@@ -72,12 +72,12 @@ const SHome = styled.section`
   .menu {
     font-weight: bold;
     .meal {
-      height: 40px;
     }
     .mealList {
       font-weight: normal;
       display: flex;
       height: 100px;
+      margin-top: 20px;
     }
     .description {
       width: 55vw;
@@ -96,13 +96,12 @@ const SHome = styled.section`
     display: flex;
     flex-direction: row;
     font-weight: bold;
-    align-items: center;
     .reservation {
       width: 40vw;
       p {
         font-weight: normal;
         width: 30vw;
-        margin-top: 10px;
+        margin-top: 20px;
       }
     }
   }
@@ -110,7 +109,6 @@ const SHome = styled.section`
     display: flex;
     font-weight: bold;
     flex-direction: row;
-    align-items: center;
     .meetingReservation {
       display: flex;
       flex-direction: column;
@@ -120,7 +118,7 @@ const SHome = styled.section`
       p {
         font-weight: normal;
         width: 30vw;
-        margin-top: 10px;
+        margin-top: 20px;
       }
     }
     .meetingRoomPicture {
@@ -136,12 +134,11 @@ const SHome = styled.section`
     display: flex;
     flex-flow: row wrap;
     font-weight: bold;
-    align-items: center;
     .order {
       width: 40vw;
       p {
         font-weight: normal;
-        padding-top: 10px;
+        margin-top: 20px;
       }
     }
     .pictureFurniture {
@@ -154,18 +151,16 @@ const SHome = styled.section`
     display: flex;
     flex-direction: row;
     font-weight: bold;
-    align-items: center;
+
     .card {
       width: 40vw;
       p {
         font-weight: normal;
-        padding-top: 10px;
+        margin-top: 20px;
       }
     }
     .pictureCard {
       display: flex;
-      justify-content: center;
-      align-items: center;
       img {
         img {
           width: 35vw;
@@ -177,7 +172,6 @@ const SHome = styled.section`
   .chat {
     display: flex;
     flex-direction: row;
-    align-items: center;
     div {
       display: flex;
       flex-direction: column;
@@ -186,7 +180,7 @@ const SHome = styled.section`
         font-weight: bold;
       }
       p {
-        margin-top: 10px;
+        margin-top: 20px;
       }
     }
   }
