@@ -11,7 +11,7 @@ export default function Header({ logo }) {
         <img className="home" src={home} alt="homeIcon" />
       </Link>
       <img className="logo" src={logo} alt="logo" />
-      <Link to="/profile">
+      <Link className="profile" to="/profile">
         <UserAvatar size="45px" />
       </Link>
     </SHeader>

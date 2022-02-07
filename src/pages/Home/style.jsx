@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
 const SHome = styled.section`
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   button {
     margin-left: 72vw;
     &.dark {

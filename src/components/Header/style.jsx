@@ -4,7 +4,7 @@ const SHeader = styled.header`
   height: 75px;
   width: 100vw;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   position: relative;
   &::after {
@@ -29,6 +29,13 @@ const SHeader = styled.header`
   .logo {
     width: 40vw;
     height: auto;
+  }
+  .profile {
+    display: flex;
+    height: 100px;
+    width: 100px;
+    justify-content: center;
+    align-items: center;
   }
 `;
 
