@@ -30,7 +30,6 @@ const SHome = styled.section`
     background-color: ${(props) => props.theme.secondBackground};
   }
   .badge {
-    height: 190px;
     font-weight: bold;
   }
   .logo {
@@ -177,7 +176,7 @@ const SHome = styled.section`
   }
   .card {
     height: 40px;
-    width: 20vw;
+    width: 40vw;
   }
   .unactivCard {
     font-weight: normal;
@@ -185,13 +184,14 @@ const SHome = styled.section`
     width: 25vw;
   }
   .pictureCard {
-    position: absolute;
-    width: 35vw;
-    left: 50%;
-    bottom: 30%;
-  }
-  .pictureCard img {
-    width: 100%;
+    display: flex;
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 35vw;
+      height: 100px;
+    }
   }
 `;
 
