@@ -229,13 +229,15 @@ function FoodProfile() {
             </button>
           ))}
         </FoodProfileList>
+        <div className="validate">
+          <MainButton
+            content="Mettre à jour mes informations"
+            clickCallback={() => {
+              storeFoodProfile();
+            }}
+          />
+        </div>
       </FoodProfileList>
-      <MainButton
-        content="Mettre à jour mes informations"
-        clickCallback={() => {
-          storeFoodProfile();
-        }}
-      />
     </>
   );
 }
