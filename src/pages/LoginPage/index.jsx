@@ -56,7 +56,6 @@ export default function LoginPage({ theme, setTheme }) {
         api.defaults.headers.authorization = `Bearer ${token}`;
         dispatch({ type: 'LOGIN', user });
         navigate('../home', { replace: true });
-        toast.success(`Bienvenue sur EasyApp, ${user.firstname} !`);
       })
       .catch((err) => {
         toast.error(`Une erreur est survenue!${err}`);
