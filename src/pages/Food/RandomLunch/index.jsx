@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import axios from 'axios';
 import logo from 'assets/Img/easyApp.png';
 import randomTime from 'assets/Img/RandomLunchPictures/randomTime.png';
+import randomTimeDark from 'assets/Img/RandomLunchPictures/randomTimeDark.png';
 import concentration from 'assets/Img/RandomLunchPictures/concentration.png';
 import darkLogo from 'assets/Img/easyAppDark.png';
 import SRandomLunch from './style';
@@ -46,7 +47,10 @@ export default function RandomLunch() {
           <>
             <div className="randomTime">
               <div className="clock">
-                <img src={randomTime} alt="horloge" />
+                <img
+                  src={themeStorage === 'light' ? randomTime : randomTimeDark}
+                  alt="horloge"
+                />
               </div>
               <div className="waiting">
                 <h3>En attente de réponse...</h3>
