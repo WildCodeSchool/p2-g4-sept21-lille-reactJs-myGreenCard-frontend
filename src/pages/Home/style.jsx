@@ -193,6 +193,14 @@ const SHome = styled.section`
   .pictureCard img {
     width: 100%;
   }
+
+  @media screen and (max-width: 375px) and (max-height: 667px) {
+    .shop {
+      p {
+        width: 47vw;
+      }
+    }
+  }
 `;
 
 export default SHome;
