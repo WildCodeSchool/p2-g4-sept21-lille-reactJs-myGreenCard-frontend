@@ -85,16 +85,14 @@ export default function Home({ theme, setTheme }) {
                 <p>Rôti de Boeuf</p>
                 <p>Pizza aux légumes</p>
                 <p>Muffin</p>
+                <div className="dinnersReady">
+                  <p>A table !</p>
+                </div>
               </div>
-              <div className="foodIcon">
-                <img
-                  src={isDarkTheme ? darkFood : food}
-                  alt="Icone menu du jour"
-                />
-              </div>
-            </div>
-            <div className="dinnersReady">
-              <p>A table !</p>
+              <img
+                src={isDarkTheme ? darkFood : food}
+                alt="Icone menu du jour"
+              />
             </div>
           </article>
         </Link>
@@ -104,13 +102,16 @@ export default function Home({ theme, setTheme }) {
           >
             <div className="reservation">
               <h3>Réservation de bureau</h3>
+            </div>
+            <>
               <div className="chooseYourOffice">
                 <p>Choisissez votre bureau</p>
+
+                <div className="officePicture">
+                  <img src={isDarkTheme ? darkOffice : office} alt="Bureau" />
+                </div>
               </div>
-            </div>
-            <div className="officePicture">
-              <img src={isDarkTheme ? darkOffice : office} alt="Bureau" />
-            </div>
+            </>
           </article>
         </Link>
         <Link to="/meetingRooms">
@@ -119,9 +120,9 @@ export default function Home({ theme, setTheme }) {
           >
             <div className="meetingReservation ">
               <h3>Réservation de salle de réunion</h3>
-              <p>Réservez votre salle de réunion</p>
             </div>
             <div className="meetingRoomPicture">
+              <p>Réservez votre salle de réunion</p>
               <img
                 src={isDarkTheme ? darkMeeting : meetingRoom}
                 alt="Salle de réunion"
@@ -137,9 +138,9 @@ export default function Home({ theme, setTheme }) {
           >
             <div className="order">
               <h3>Commande de fournitures</h3>
-              <p>Ajoutez les articles dont vous avez besoin</p>
             </div>
             <div className="pictureFurniture">
+              <p>Ajoutez les articles dont vous avez besoin</p>
               <img
                 src={isDarkTheme ? darkSupplies : furnitures}
                 alt="Fournitures"
@@ -155,11 +156,9 @@ export default function Home({ theme, setTheme }) {
           >
             <div className="card">
               <h3>Carte perdue</h3>
-              <div className="unactivCard">
-                <p>Désactiver votre carte en cas de perte</p>
-              </div>
             </div>
             <div className="pictureCard">
+              <p>Désactiver votre carte en cas de perte</p>
               <img src={Card} alt="Eazypass" />
             </div>
           </article>
@@ -168,13 +167,13 @@ export default function Home({ theme, setTheme }) {
           <article
             className={isDarkTheme ? 'darkThemeBackground chat' : 'chat'}
           >
+            <h3>Chat</h3>
             <div>
-              <h3>Chat</h3>
               <p>
                 Discutez dans notre chat général avec les autres utilisateurs!
               </p>
+              <img src={isDarkTheme ? darkChat : chat} alt="" />
             </div>
-            <img src={isDarkTheme ? darkChat : chat} alt="" />
           </article>
         </Link>
         <button

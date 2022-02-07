@@ -23,7 +23,6 @@ const SHome = styled.section`
   margin: 1.75rem;
   article {
     width: 80vw;
-    min-height: 140px;
     margin: 20px 0 30px 0px;
     border-radius: 10px;
     -webkit-box-shadow: 0px 7px 12px -3px #000000;
@@ -33,9 +32,21 @@ const SHome = styled.section`
     flex-direction: column;
     justify-content: space-between;
     background-color: ${(props) => props.theme.secondBackground};
+    font-weight: bold;
+    img {
+      width: 120px;
+      object-fit: contain;
+      margin-left: 10px;
+    }
+    p {
+      font-weight: normal;
+      line-height: 17px;
+    }
+    h3 {
+      width: 80vw;
+    }
   }
   .badge {
-    font-weight: bold;
     .logo {
       display: flex;
       align-items: center;
@@ -45,139 +56,90 @@ const SHome = styled.section`
     .wallet {
       display: flex;
       flex-direction: column;
-      width: 40vw;
       justify-content: space-around;
-      height: 120px;
-      img {
-        height: 40px;
-        width: 40vw;
+      margin-top: 15px;
+
+      a {
+        margin-bottom: 10px;
+        img {
+          margin: 0;
+        }
       }
     }
     .eazyCard {
+      padding-bottom: 10px;
+    }
+  }
+  .menu {
+    .mealList {
       display: flex;
-      justify-content: center;
-      img {
-        width: 35vw;
-        height: 100px;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+    .description {
+      margin-top: 15px;
+      .dinnersReady {
+        margin-top: 15px;
+        text-decoration: underline ${(props) => props.theme.text};
       }
     }
   }
-  img {
-    width: 120px;
-    object-fit: contain;
-  }
-  p {
-    width: 40vw;
-  }
-  .menu {
-    font-weight: bold;
-    .meal {
-    }
-    .mealList {
-      font-weight: normal;
-      display: flex;
-      height: 100px;
-      margin-top: 20px;
-    }
-    .description {
-      width: 55vw;
-    }
-    .foodIcon {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .dinnersReady {
-      height: 30px;
-      text-decoration: underline ${(props) => props.theme.text};
-    }
-  }
   .office {
-    display: flex;
-    flex-direction: row;
-    font-weight: bold;
-    .reservation {
-      width: 40vw;
+    .chooseYourOffice {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 10px;
       p {
-        font-weight: normal;
-        width: 30vw;
-        margin-top: 20px;
+        margin-top: 15px;
       }
     }
   }
   .meeting {
-    display: flex;
-    font-weight: bold;
-    flex-direction: row;
-    .meetingReservation {
-      display: flex;
-      flex-direction: column;
-      h3 {
-        width: 40vw;
-      }
-      p {
-        font-weight: normal;
-        width: 30vw;
-        margin-top: 20px;
-      }
-    }
     .meetingRoomPicture {
       display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .meetingRoomPicture img {
-      rotate: 90deg;
+      flex-direction: row;
+      justify-content: space-between;
+      p {
+        margin-top: 25px;
+      }
+      img {
+        rotate: 90deg;
+      }
     }
   }
   .furnitures {
-    display: flex;
-    flex-flow: row wrap;
-    font-weight: bold;
-    .order {
-      width: 40vw;
-      p {
-        font-weight: normal;
-        margin-top: 20px;
-      }
-    }
     .pictureFurniture {
       display: flex;
-      justify-content: center;
-      align-items: center;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 10px;
+      p {
+        font-weight: normal;
+        margin-top: 15px;
+      }
     }
   }
   .lostCard {
-    display: flex;
-    flex-direction: row;
-    font-weight: bold;
-    .card {
-      width: 40vw;
-      p {
-        font-weight: normal;
-        margin-top: 20px;
-      }
-    }
     .pictureCard {
       display: flex;
-      img {
-        width: 35vw;
-        height: 100px;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 10px;
+      margin-bottom: 30px;
+      p {
+        margin-top: 15px;
       }
     }
   }
   .chat {
-    display: flex;
-    flex-direction: row;
     div {
       display: flex;
-      flex-direction: column;
-      width: 40vw;
-      h3 {
-        font-weight: bold;
-      }
+      flex-direction: row;
+      justify-content: space-between;
       p {
-        margin-top: 20px;
+        margin-top: 25px;
       }
     }
   }
