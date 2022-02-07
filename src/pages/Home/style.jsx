@@ -151,7 +151,6 @@ const SHome = styled.section`
     display: flex;
     flex-direction: row;
     font-weight: bold;
-
     .card {
       width: 40vw;
       p {
