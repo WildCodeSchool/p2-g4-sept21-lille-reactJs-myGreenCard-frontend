@@ -29,6 +29,7 @@ const SHeader = styled.header`
   .logo {
     width: 40vw;
     height: auto;
+    margin-left: -2vw;
   }
   .profile {
     display: flex;
