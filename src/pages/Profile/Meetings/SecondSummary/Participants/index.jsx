@@ -36,6 +36,7 @@ export default function Participants({ meetingId }) {
             }}
             badgeContent={
               <Avatar
+                key={participant.picture}
                 className={
                   participant.status === 'présentiel' ? 'mode' : 'mode dist'
                 }

@@ -5,6 +5,7 @@ const SSearchBar = styled.div`
   position: relative;
   input {
     width: 60vw;
+    color: black;
     height: 30px;
     padding: 8px;
     border-radius: 15px;
@@ -36,6 +37,8 @@ const SSearchBar = styled.div`
       }
       border-top: 1px solid #cecece;
       button {
+        display: flex;
+        align-items: center;
         height: 100%;
         width: 100%;
         text-align: left;
@@ -48,7 +51,7 @@ const SSearchBar = styled.div`
     }
   }
   p {
-    margin: 80px 0 0px 0;
+    margin: 50px 0 0px 0;
   }
   .avatars {
     margin: 15px 0;

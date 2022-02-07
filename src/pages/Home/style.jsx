@@ -5,10 +5,6 @@ const SHome = styled.section`
     margin-left: 72vw;
     &.dark {
       background: white;
-      span {
-        background: black;
-        left: 28px;
-      }
     }
   }
   button.init {
@@ -25,11 +21,13 @@ const SHome = styled.section`
     width: 80vw;
     margin: 20px 0 30px 0px;
     border-radius: 10px;
-    box-shadow: rgba(76, 100, 104, 0.767) 0px 20px 25px -18px;
+    -webkit-box-shadow: 0px 7px 12px -3px #000000;
+    box-shadow: 0px 7px 12px -3px #000000;
     padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: ${(props) => props.theme.secondBackground};
   }
   .badge {
     height: 190px;
@@ -90,10 +88,13 @@ const SHome = styled.section`
     position: absolute;
     right: 30%;
     bottom: 10%;
+    img {
+      margin-left: 35px;
+    }
   }
   .dinnersReady {
     height: 30px;
-    text-decoration: underline;
+    text-decoration: underline ${(props) => props.theme.text};
   }
   .office {
     display: flex;
@@ -143,6 +144,9 @@ const SHome = styled.section`
     flex-wrap: wrap;
     font-weight: bold;
     height: 150px;
+    p {
+      width: 40vw;
+    }
   }
   .order {
     height: 50px;
@@ -188,6 +192,14 @@ const SHome = styled.section`
   }
   .pictureCard img {
     width: 100%;
+  }
+
+  @media screen and (max-width: 375px) and (max-height: 667px) {
+    .shop {
+      p {
+        width: 47vw;
+      }
+    }
   }
 `;
 

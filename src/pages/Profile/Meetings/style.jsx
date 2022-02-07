@@ -6,7 +6,8 @@ const SMeetings = styled.article`
     background-size: 20px 20px;
     background-position: right 14px center;
     background-repeat: no-repeat;
-    background-color: white;
+    background-color: ${({ theme }) => theme.secondBackground};
+    margin: 10px 0px;
     h3 {
       text-align: left;
     }

@@ -1,6 +1,7 @@
 import Counter from 'components/Counter';
 import Header from 'components/Header';
 import fournitures from 'assets/Img/fournitures.png';
+import fournituresNight from 'assets/Img/fournituresNight.png';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import MainButton from 'components/MainButton';
@@ -13,6 +14,7 @@ export default function Supplies() {
   const [supplies, setSupplies] = useState([]);
   const [cart, setCart] = useState([]);
   const [modal, setModal] = useState(false);
+  const themeStorage = localStorage.getItem('theme');
   const fillCart = () => {
     const newArray = [];
     for (let i = 0; i < supplies.length; i += 1) {
@@ -23,7 +25,6 @@ export default function Supplies() {
   const toggleModal = () => {
     setModal(!modal);
   };
-
   useEffect(() => {
     axios.get(`${process.env.REACT_APP_API_URL}/supplies`).then(({ data }) => {
       setSupplies(data);
@@ -36,8 +37,10 @@ export default function Supplies() {
 
   return (
     <>
+      <Header
+        logo={themeStorage === 'light' ? fournitures : fournituresNight}
+      />
       <SSupplies>
-        <Header logo={fournitures} />
         {!modal ? (
           <>
             <div className="container">
@@ -55,13 +58,14 @@ export default function Supplies() {
                 );
               })}
             </div>
-            <MainButton
-              className="watchCart"
-              content="Voir mon panier"
-              clickCallback={() => {
-                toggleModal();
-              }}
-            />
+            <div className="watchCart">
+              <MainButton
+                content="Voir mon panier"
+                clickCallback={() => {
+                  toggleModal();
+                }}
+              />
+            </div>
           </>
         ) : (
           <SuppliesModal
