@@ -18,9 +18,7 @@ const SDisableModal = styled.div`
     background-color: ${(props) => props.theme.background};
     color: ${(props) => props.theme.text};
   }
-
-  textarea:focus,
-  input:focus {
+  textarea:focus {
     outline: none;
   }
 `;

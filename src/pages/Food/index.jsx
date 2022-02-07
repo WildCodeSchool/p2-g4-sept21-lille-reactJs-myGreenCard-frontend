@@ -34,14 +34,12 @@ export default function Food() {
   return (
     <>
       <BurgerMenu />
-
       <SFood>
         <div className="userAvatar">
-          <Link to="/profilPage">
+          <Link to="/profile">
             <UserAvatar />
           </Link>
         </div>
-
         <h1 className="menuOfDay"> Le menu du jour</h1>
         <section className="choiceMenu">
           <Tabs>
@@ -50,7 +48,6 @@ export default function Food() {
               <Tab>Desserts</Tab>
               <Tab>Boissons</Tab>
             </TabList>
-
             <TabPanel>
               <FoodSlider typeOfFood={dataLunch} />
             </TabPanel>

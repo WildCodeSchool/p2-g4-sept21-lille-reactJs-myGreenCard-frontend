@@ -101,7 +101,6 @@ export default function Office() {
                         key={slot.slotTime}
                         slot={slot}
                         pins={pins}
-                        dataSlot={dataSlot}
                         setDataSlot={setDataSlot}
                         setResOffice={setResOffice}
                         setMyResOffice={setMyResOffice}

@@ -170,6 +170,20 @@ const SHome = styled.section`
       }
     }
   }
+  .chat {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    div {
+      display: flex;
+      flex-direction: column;
+    }
+    h3 {
+      font-weight: bold;
+      margin: 10px;
+    }
+  }
 
   @media screen and (max-width: 375px) and (max-height: 667px) {
     .shop {

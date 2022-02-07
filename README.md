@@ -1,21 +1,13 @@
+Description ✍🏻
+
+![README-EAZY](https://user-images.githubusercontent.com/77687596/152807787-ca27758e-17ef-4b4f-9f9d-f7b7bca4b288.png)
+
+Welcome to EazyApp from EazyPass ! 
+EazyPass is a new vision of what big companies will be in the future. It was created in order to facilitate companies organization by booking meetings rooms, specific desks, meals and also furnitures if it needs to. All these fonctionnalities are in the EazyApp. 
+To look at the Application, please following the steps. 
+
 # Template for Frontend project
+1 - Fork the project and clone our backend : https://github.com/WildCodeSchool/p3-g4-sept21-lille-eazyapp-backend
+2 - in your terminal install packages -`npm install i`
+3 - run your local server -`npm start`
 
-## Why this project
-This repo aims to provide a comfortable Developer Experience (DX) to newbie React developpers.
-It comes with a lo of tools with a asic config:
-- Create React App (CRA)
-- ESLint
-- Prettier
-- StyleLint
-
-## First steps
-
-### Install these extensions for VSCode
-
-- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-- [StyleLint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
-
-### Install `husky`, which will check your code everytime you commit files
-
-- `npm run prepare`

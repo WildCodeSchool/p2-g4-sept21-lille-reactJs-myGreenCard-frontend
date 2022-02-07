@@ -45,18 +45,17 @@ const SRandomLunch = styled.section`
     img {
       height: 26vw;
       position: relative;
+      border-radius: 50%;
     }
-  }
-  .currUser {
-  }
-  .circle {
-    width: 25px;
-    height: 25px;
-    border-radius: 20px;
-    background: orange;
-    position: absolute;
-    margin-left: 10px;
-    z-index: 1;
+    .circle {
+      width: 25px;
+      height: 25px;
+      border-radius: 20px;
+      background: orange;
+      position: absolute;
+      margin-left: 10px;
+      z-index: 1;
+    }
   }
   .button {
     text-align: center;

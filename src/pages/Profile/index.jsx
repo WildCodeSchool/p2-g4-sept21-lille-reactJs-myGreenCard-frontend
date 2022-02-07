@@ -120,13 +120,13 @@ export default function Profile({ theme, setTheme }) {
         <div className="mainContainer">
           <div className="quantity">
             {quantityRecap.map((qtty) => {
-              return <p key={qtty.quantity}>x {qtty.quantity}</p>;
+              return <p key={quantityRecap.indexOf(qtty)}>x {qtty.quantity}</p>;
             })}
           </div>
           <section>
             {orderRecap.map((order) => {
               return (
-                <div key={order.name} className="orderRecap">
+                <div className="orderRecap" key={`${order.name}${order.id}`}>
                   <p>{order.name}</p>
                   <img src={order.picture} alt={`${order.name} photography`} />
                 </div>
