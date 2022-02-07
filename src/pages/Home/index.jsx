@@ -16,6 +16,8 @@ import meetingRoom from './pictures/meetingRoom.png';
 import darkMeeting from './pictures/darkMeeting.png';
 import furnitures from './pictures/furnitures.png';
 import darkSupplies from './pictures/darkSupplies.png';
+import chat from './pictures/chat.png';
+import darkChat from './pictures/darkChat.png';
 import Card from './pictures/easyCard.png';
 import SHome from './style';
 
@@ -157,7 +159,7 @@ export default function Home({ theme, setTheme }) {
               <h3>Carte perdue</h3>
             </div>
             <div className="unactivCard">
-              <p>Désactiver votre carte en cas de perte</p>
+              <p>Désactivez votre carte en cas de perte</p>
             </div>
             <div className="pictureCard">
               <img src={Card} alt="Eazypass" />
@@ -168,7 +170,13 @@ export default function Home({ theme, setTheme }) {
           <article
             className={isDarkTheme ? 'darkThemeBackground chat' : 'chat'}
           >
-            <h3>Chat</h3>
+            <div>
+              <h3>Chat</h3>
+              <p>
+                Discutez dans notre chat général avec les autres utilisateurs!
+              </p>
+            </div>
+            <img src={isDarkTheme ? darkChat : chat} alt="" />
           </article>
         </Link>
         <button

@@ -29,7 +29,7 @@ export default function RandomLunch() {
       .catch((e) => {
         console.log(e);
       });
-  }, []);
+  }, [randomLunch]);
 
   return (
     <>
@@ -43,7 +43,7 @@ export default function RandomLunch() {
             size={1}
           />
         </div>
-        {randomLunch ? (
+        {!randomLunch ? (
           <>
             <div className="randomTime">
               <div className="clock">

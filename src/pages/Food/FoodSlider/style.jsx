@@ -34,13 +34,13 @@ const SFoodSlider = styled.section`
   }
   .typeName {
     width: 80%;
-    margin-top: 60%;
+    margin-top: 67%;
     font-size: 20px;
     font-weight: 600;
     align-items: center;
   }
   .price {
-    margin-top: 10%;
+    margin: 10% 10%;
   }
 `;
 
