@@ -96,6 +96,7 @@ const SHome = styled.section`
     display: flex;
     flex-direction: row;
     font-weight: bold;
+    align-items: center;
     .reservation {
       width: 40vw;
       p {
@@ -109,6 +110,7 @@ const SHome = styled.section`
     display: flex;
     font-weight: bold;
     flex-direction: row;
+    align-items: center;
     .meetingReservation {
       display: flex;
       flex-direction: column;
@@ -134,6 +136,7 @@ const SHome = styled.section`
     display: flex;
     flex-flow: row wrap;
     font-weight: bold;
+    align-items: center;
     .order {
       width: 40vw;
       p {
@@ -151,6 +154,7 @@ const SHome = styled.section`
     display: flex;
     flex-direction: row;
     font-weight: bold;
+    align-items: center;
     .card {
       width: 40vw;
       p {
