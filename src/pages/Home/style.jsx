@@ -41,24 +41,24 @@ const SHome = styled.section`
     p {
       font-weight: normal;
       line-height: 17px;
+      margin-top: 15px;
     }
     h3 {
       width: 80vw;
     }
-  }
-  .badge {
-    .logo {
+    div {
       display: flex;
-      align-items: center;
+      flex-direction: row;
       justify-content: space-between;
       margin-top: 10px;
     }
+  }
+  .badge {
     .wallet {
       display: flex;
       flex-direction: column;
       justify-content: space-around;
       margin-top: 15px;
-
       a {
         margin-bottom: 10px;
         img {
@@ -66,81 +66,38 @@ const SHome = styled.section`
         }
       }
     }
-    .eazyCard {
-      padding-bottom: 10px;
-    }
   }
   .menu {
-    .mealList {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      margin-top: 10px;
-    }
     .description {
+      display: flex;
+      flex-direction: column;
       margin-top: 15px;
+      p {
+        margin: 0;
+      }
       .dinnersReady {
         margin-top: 15px;
+        margin-bottom: 15px;
         text-decoration: underline ${(props) => props.theme.text};
-      }
-    }
-  }
-  .office {
-    .chooseYourOffice {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      margin-top: 10px;
-      p {
-        margin-top: 15px;
       }
     }
   }
   .meeting {
     .meetingRoomPicture {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      p {
-        margin-top: 25px;
-      }
       img {
+        margin-top: -15px;
         rotate: 90deg;
-      }
-    }
-  }
-  .furnitures {
-    .pictureFurniture {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      margin-top: 10px;
-      p {
-        font-weight: normal;
-        margin-top: 15px;
       }
     }
   }
   .lostCard {
     .pictureCard {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      margin-top: 10px;
       margin-bottom: 30px;
-      p {
-        margin-top: 15px;
-      }
     }
   }
   .chat {
-    div {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      p {
-        margin-top: 25px;
-      }
+    img {
+      margin-top: -10px;
     }
   }
 
