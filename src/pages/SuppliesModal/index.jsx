@@ -58,12 +58,14 @@ export default function SuppliesModal({
           </div>
           <div className="order">
             <MainButton
+              className="orderSupplies"
               content="Passer la commande"
               clickCallback={() => {
                 sendData();
               }}
             />
             <MainButton
+              className="backButton"
               content="Retour"
               clickCallback={() => {
                 toggleModal();

@@ -32,6 +32,12 @@ const SSuppliesModal = styled.main`
     margin-bottom: 2vh;
     margin-top: 2vh;
   }
+
+  @media screen and (max-width: 375px) and (max-height: 667px) {
+    .order {
+      height: 20vh;
+    }
+  }
 `;
 
 export default SSuppliesModal;
