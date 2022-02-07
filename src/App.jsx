@@ -75,7 +75,6 @@ function App() {
         <Route
           path="profile"
           element={<Profile setTheme={setTheme} theme={theme} />}
-        />
         <Route path="/food/randomLunch" element={<RandomLunch />} />
         <Route path="chat" element={<Chat />} />
       </Routes>

@@ -155,6 +155,7 @@ export default function Profile({ theme, setTheme }) {
     </SProfile>
   );
 }
+
 Profile.propTypes = {
   theme: propTypes.string,
   setTheme: propTypes.func,
