@@ -161,10 +161,8 @@ const SHome = styled.section`
     .pictureCard {
       display: flex;
       img {
-        img {
-          width: 35vw;
-          height: 100px;
-        }
+        width: 35vw;
+        height: 100px;
       }
     }
   }
