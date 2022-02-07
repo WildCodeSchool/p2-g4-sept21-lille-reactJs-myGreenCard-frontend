@@ -5,11 +5,12 @@ const SSearchBar = styled.div`
   position: relative;
   input {
     width: 60vw;
-    color: black;
+    background-color: ${(props) => props.theme.background};
+    color: ${(props) => props.theme.text};
     height: 30px;
     padding: 8px;
-    border-radius: 15px;
-    border: 1px solid #cecece;
+    border: none;
+    border-bottom: 1px solid ${(props) => props.theme.inputBorder};
     :focus {
       outline: none;
     }
@@ -37,6 +38,7 @@ const SSearchBar = styled.div`
       }
       border-top: 1px solid #cecece;
       button {
+        margin: 0;
         display: flex;
         align-items: center;
         height: 100%;

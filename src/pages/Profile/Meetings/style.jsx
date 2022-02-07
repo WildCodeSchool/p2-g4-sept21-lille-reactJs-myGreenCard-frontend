@@ -22,8 +22,10 @@ const SMeetings = styled.article`
     margin-left: 10px;
     div.promoter {
       display: flex;
+      align-items: center;
       p {
         margin: 15px 0px;
+        width: auto;
       }
       .participant {
         margin-left: 10px;
@@ -41,16 +43,6 @@ const SMeetings = styled.article`
         height: 40px;
         object-fit: cover;
         z-index: 2;
-      }
-    }
-    .status {
-      position: absolute;
-      left: 330px;
-      width: 100%;
-      div.status.mode {
-        top: -130px;
-      }
-      img {
       }
     }
     .badge {

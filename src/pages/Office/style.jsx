@@ -18,8 +18,8 @@ const SOffice = styled.main`
   }
 
   .button1 {
-    margin-left: 16vw;
-    margin-top: 5.5vh;
+    margin-left: 16.2vw;
+    margin-top: 5.6vh;
   }
 
   .button2 {
@@ -28,8 +28,8 @@ const SOffice = styled.main`
   }
 
   .button3 {
-    margin-left: 58.26vw;
-    margin-top: 6.3vh;
+    margin-left: 58.5vw;
+    margin-top: 6.4vh;
   }
 
   .button4 {
@@ -37,12 +37,12 @@ const SOffice = styled.main`
     margin-top: 3.4vh;
   }
   .button5 {
-    margin-left: 89vw;
-    margin-top: 10.2vh;
+    margin-left: 89.4vw;
+    margin-top: 10.3vh;
   }
   .button6 {
-    margin-left: 42.5vw;
-    margin-top: 23.6vh;
+    margin-left: 42.6vw;
+    margin-top: 23.7vh;
   }
   .plan {
     background-size: 100%;
@@ -57,15 +57,6 @@ const SOffice = styled.main`
     p {
       margin-left: 20px;
     }
-  }
-  .circle1 {
-    width: 16px;
-    height: 16px;
-    border-radius: 20px;
-    background: #44df44;
-    position: absolute;
-    margin-left: 10px;
-    z-index: 1;
   }
   .rowProfiles {
     margin-top: 20px;
@@ -100,8 +91,8 @@ const SOffice = styled.main`
         flex-wrap: wrap;
         button {
           font-size: 1.3rem;
-          width: 110px;
-          background: #e7f6fdef;
+          width: 120px;
+          background: #ececec;
           margin: 15px;
           padding: 5px;
           border-radius: 5px;
@@ -129,7 +120,7 @@ const SOffice = styled.main`
     }
   }
 
-  @media screen and (max-width: 375px) and (max-height: 667px) {
+  @media screen and (max-width: 375px) {
     .button1 {
       margin-top: 6.8vh;
     }
@@ -147,13 +138,22 @@ const SOffice = styled.main`
     }
     .button6 {
       margin-top: 28.8vh;
+      margin-left: 23.65vh;
     }
-  }
-  .plan {
-    background-size: 100%;
-    background-repeat: no-repeat;
-    height: 40vh;
-    width: auto;
+
+    .plan {
+      height: 40vh;
+    }
+
+    .swiper-container {
+      .swiper-slide {
+        div.slots {
+          button {
+            width: 110px;
+          }
+        }
+      }
+    }
   }
 `;
 

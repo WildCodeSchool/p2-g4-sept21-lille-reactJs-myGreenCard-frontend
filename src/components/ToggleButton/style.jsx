@@ -24,6 +24,17 @@ const SToggleButton = styled.button`
       left: calc(38px * (${(props) => props.size}));
     }
   }
+  &.lunch {
+    span {
+      left: calc(38px * (${(props) => props.size}));
+    }
+  }
+  &.darkLunch {
+    background: grey;
+    span {
+      background: #white;
+    }
+  }
 `;
 
 export default SToggleButton;

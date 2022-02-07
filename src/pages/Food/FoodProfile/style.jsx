@@ -4,8 +4,6 @@ const FoodProfileList = styled.ul`
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  width: 95%;
-
   .yourProfile {
     margin-top: 70px;
     font-size: 20px;
@@ -24,6 +22,12 @@ const FoodProfileList = styled.ul`
   p {
     font-size: 13px;
   }
+  ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+  }
   li {
     width: 100px;
     height: 120px;
@@ -32,6 +36,12 @@ const FoodProfileList = styled.ul`
     opacity: 0.5;
     transform: translateY(-3px);
     transition: 0.4s ease-out;
+  }
+  .validate {
+    display: flex;
+    justify-content: center;
+
+    width: 100vw;
   }
 `;
 

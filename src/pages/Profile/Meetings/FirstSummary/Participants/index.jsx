@@ -21,7 +21,7 @@ export default function Participants({ meetingId }) {
       });
   }, []);
   return (
-    <AvatarGroup className="participants" max="4">
+    <AvatarGroup className="participants" max={4}>
       {participants.map((participant) => {
         return (
           <Badge

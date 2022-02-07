@@ -4,6 +4,7 @@ export const lightTheme = {
   disabledText: '#000000a6',
   background: 'white',
   secondBackground: 'white',
+  inputBorder: 'black',
 };
 export const darkTheme = {
   text: 'white',
@@ -11,4 +12,5 @@ export const darkTheme = {
   background: 'black',
   secondBackground: '#303134',
   secondText: 'black',
+  inputBorder: '#303134',
 };

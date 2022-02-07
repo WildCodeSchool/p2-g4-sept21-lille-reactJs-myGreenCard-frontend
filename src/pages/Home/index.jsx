@@ -16,8 +16,8 @@ import meetingRoom from './pictures/meetingRoom.png';
 import darkMeeting from './pictures/darkMeeting.png';
 import furnitures from './pictures/furnitures.png';
 import darkSupplies from './pictures/darkSupplies.png';
-import Card from './pictures/eazyCard.jpeg';
 import chat from './pictures/chat.png';
+import Card from './pictures/easyCard.png';
 import SHome from './style';
 
 export default function Home({ theme, setTheme }) {

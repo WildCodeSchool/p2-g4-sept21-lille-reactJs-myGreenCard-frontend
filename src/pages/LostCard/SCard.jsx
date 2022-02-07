@@ -43,6 +43,10 @@ const SCard = styled.article`
         margin-top: 15px;
         font-size: 12px;
       }
+      p,
+      h3 {
+        color: black;
+      }
     }
   }
   .cNumb {
