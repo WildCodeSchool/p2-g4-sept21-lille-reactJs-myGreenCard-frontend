@@ -23,6 +23,7 @@ const SHome = styled.section`
   margin: 1.75rem;
   article {
     width: 80vw;
+    min-height: 140px;
     margin: 20px 0 30px 0px;
     border-radius: 10px;
     -webkit-box-shadow: 0px 7px 12px -3px #000000;
@@ -35,29 +36,30 @@ const SHome = styled.section`
   }
   .badge {
     font-weight: bold;
-  }
-  .logo {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .wallet {
-    display: flex;
-    flex-direction: column;
-    width: 40vw;
-    justify-content: space-around;
-    height: 140px;
-    img {
-      height: 40px;
-      width: 40vw;
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 10px;
     }
-  }
-  .eazyCard {
-    display: flex;
-    justify-content: center;
-    img {
-      width: 35vw;
-      height: 100px;
+    .wallet {
+      display: flex;
+      flex-direction: column;
+      width: 40vw;
+      justify-content: space-around;
+      height: 140px;
+      img {
+        height: 40px;
+        width: 40vw;
+      }
+    }
+    .eazyCard {
+      display: flex;
+      justify-content: center;
+      img {
+        width: 35vw;
+        height: 100px;
+      }
     }
   }
   img {
@@ -65,136 +67,107 @@ const SHome = styled.section`
     object-fit: contain;
   }
   p {
-    width: 50vw;
+    width: 40vw;
   }
   .menu {
-    height: 180px;
     font-weight: bold;
-    position: relative;
-  }
-  .meal {
-    height: 40px;
-  }
-  .mealList {
-    font-weight: normal;
-    display: flex;
-    height: 100px;
-  }
-  .description {
-    width: 55vw;
-  }
-  .foodIcon {
-    display: flex;
-    justify-content: center;
-    width: 0px;
-    height: 150px;
-    position: absolute;
-    right: 30%;
-    bottom: 10%;
-    img {
-      margin-left: 35px;
+    .meal {
+      height: 40px;
     }
-  }
-  .dinnersReady {
-    height: 30px;
-    text-decoration: underline ${(props) => props.theme.text};
+    .mealList {
+      font-weight: normal;
+      display: flex;
+      height: 100px;
+    }
+    .description {
+      width: 55vw;
+    }
+    .foodIcon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .dinnersReady {
+      height: 30px;
+      text-decoration: underline ${(props) => props.theme.text};
+    }
   }
   .office {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     font-weight: bold;
-    height: 150px;
-  }
-  .reservation {
-    width: 40vw;
-  }
-  .chooseYourOffice {
-    font-weight: normal;
-    height: 100px;
-    width: 30vw;
+    .reservation {
+      width: 40vw;
+      p {
+        font-weight: normal;
+        width: 30vw;
+        margin-top: 10px;
+      }
+    }
   }
   .meeting {
-    position: relative;
     display: flex;
     font-weight: bold;
-    height: 150px;
-    width: 80vw;
-  }
-  .meetingReservation {
-    display: flex;
-    flex-direction: column;
-    height: 100px;
-  }
-  .meetingReservation h3 {
-    width: 50vw;
-  }
-  .meetingReservation p {
-    font-weight: normal;
-    height: 100px;
-    width: 30vw;
-    margin-top: 10px;
-  }
-  .meetingRoomPicture {
-    position: absolute;
-    left: 55%;
-    bottom: 10%;
-  }
-  .meetingRoomPicture img {
-    rotate: 90deg;
+    flex-direction: row;
+    .meetingReservation {
+      display: flex;
+      flex-direction: column;
+      h3 {
+        width: 40vw;
+      }
+      p {
+        font-weight: normal;
+        width: 30vw;
+        margin-top: 10px;
+      }
+    }
+    .meetingRoomPicture {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .meetingRoomPicture img {
+      rotate: 90deg;
+    }
   }
   .furnitures {
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     font-weight: bold;
-    height: 150px;
-    p {
+    .order {
       width: 40vw;
+      p {
+        font-weight: normal;
+        padding-top: 10px;
+      }
     }
-  }
-  .order {
-    height: 50px;
-    width: 40vw;
-  }
-  .shop {
-    font-weight: normal;
-    height: 100px;
-    width: 30vw;
-  }
-  .picturefurniture {
-    height: 140px;
-    width: 40vw;
-    img {
-      height: 140px;
-      width: 40vw;
+    .pictureFurniture {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
   .lostCard {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     font-weight: bold;
-    height: 150px;
-    position: relative;
-  }
-  .lostCard p {
-    width: 130px;
-  }
-  .card {
-    height: 40px;
-    width: 40vw;
-  }
-  .unactivCard {
-    font-weight: normal;
-    height: 100px;
-    width: 25vw;
-  }
-  .pictureCard {
-    display: flex;
-    height: 150px;
-    justify-content: center;
-    align-items: center;
-    img {
-      width: 35vw;
-      height: 100px;
+    .card {
+      width: 40vw;
+      p {
+        font-weight: normal;
+        padding-top: 10px;
+      }
+    }
+    .pictureCard {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        img {
+          width: 35vw;
+          height: 100px;
+        }
+      }
     }
   }
 

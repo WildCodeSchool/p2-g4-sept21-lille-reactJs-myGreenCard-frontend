@@ -45,7 +45,7 @@ export default function Home({ theme, setTheme }) {
           size={0.5}
         />
         <article className="badge">
-          <h2>Votre badge digital</h2>
+          <h3>Votre badge digital</h3>
           <div className="logo">
             <div className="wallet">
               <a
@@ -102,9 +102,9 @@ export default function Home({ theme, setTheme }) {
           >
             <div className="reservation">
               <h3>Réservation de bureau</h3>
-            </div>
-            <div className="chooseYourOffice">
-              <p>Choisissez votre bureau</p>
+              <div className="chooseYourOffice">
+                <p>Choisissez votre bureau</p>
+              </div>
             </div>
             <div className="officePicture">
               <img src={isDarkTheme ? darkOffice : office} alt="Bureau" />
@@ -135,8 +135,6 @@ export default function Home({ theme, setTheme }) {
           >
             <div className="order">
               <h3>Commande de fournitures</h3>
-            </div>
-            <div className="shop">
               <p>Ajoutez les articles dont vous avez besoin</p>
             </div>
             <div className="pictureFurniture">
@@ -155,9 +153,9 @@ export default function Home({ theme, setTheme }) {
           >
             <div className="card">
               <h3>Carte perdue</h3>
-            </div>
-            <div className="unactivCard">
-              <p>Désactiver votre carte en cas de perte</p>
+              <div className="unactivCard">
+                <p>Désactiver votre carte en cas de perte</p>
+              </div>
             </div>
             <div className="pictureCard">
               <img src={Card} alt="Eazypass" />
