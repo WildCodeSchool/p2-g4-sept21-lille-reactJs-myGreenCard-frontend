@@ -8,6 +8,14 @@ const SShare = styled.div`
   width: 80vw;
   text-align: center;
   header {
+    width: 100vw;
+    .profile {
+      pointer-events: none;
+    }
+    .logo {
+      margin-left: calc((100vw - 20vw - 100px) / 2);
+      margin-right: calc((100vw - 20vw - 100px - 100px) / 2);
+    }
     a {
       display: none;
     }
