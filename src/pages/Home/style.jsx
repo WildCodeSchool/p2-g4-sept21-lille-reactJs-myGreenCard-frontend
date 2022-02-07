@@ -47,7 +47,7 @@ const SHome = styled.section`
       flex-direction: column;
       width: 40vw;
       justify-content: space-around;
-      height: 140px;
+      height: 120px;
       img {
         height: 40px;
         width: 40vw;
