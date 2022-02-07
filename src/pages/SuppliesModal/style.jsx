@@ -17,7 +17,6 @@ const SSuppliesModal = styled.main`
     height: 8vh;
     margin-top: 3vh;
   }
-
   .order {
     display: flex;
     height: 15vh;
