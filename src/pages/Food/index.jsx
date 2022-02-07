@@ -37,7 +37,7 @@ export default function Food() {
 
       <SFood>
         <div className="userAvatar">
-          <Link to="/profilPage">
+          <Link to="/profile">
             <UserAvatar />
           </Link>
         </div>

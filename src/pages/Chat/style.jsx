@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const SChat = styled.main`
   overflow: scroll;
-  height: 95vh;
+  height: calc(100vh - 75px);
   display: flex;
   flex-direction: column-reverse;
   align-items: flex-end;
