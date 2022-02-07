@@ -37,10 +37,10 @@ export default function Supplies() {
 
   return (
     <>
-        <Header
-          logo={themeStorage === 'light' ? fournitures : fournituresNight}
-        />
-   <SSupplies>
+      <Header
+        logo={themeStorage === 'light' ? fournitures : fournituresNight}
+      />
+      <SSupplies>
         {!modal ? (
           <>
             <div className="container">
