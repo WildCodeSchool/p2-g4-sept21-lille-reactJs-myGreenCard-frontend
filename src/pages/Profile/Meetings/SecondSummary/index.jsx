@@ -33,12 +33,14 @@ export default function SecondSummary() {
         <ul>
           {meetings.map((meeting) => {
             return (
-              <li key={meeting.picture}>
+              <li key={meeting.id}>
                 {`Salle n°${meeting.meetingRoomId}, ${
                   meeting.location
                 }, le ${moment(meeting.beginning).format(
                   'dddd Do MMMM'
-                )} à ${moment(meeting.beginning).format('H')}h`}
+                )} à ${moment(meeting.beginning).format('H')}h en ${
+                  meeting.status
+                }`}
                 <div className="promoter">
                   <p>
                     Organisateur : {meeting.firstname} {meeting.lastname}
@@ -49,6 +51,7 @@ export default function SecondSummary() {
                     src={meeting.picture}
                   />
                 </div>
+                <p>Participants :</p>
                 <Participants meetingId={meeting.id} />
               </li>
             );

@@ -12,7 +12,6 @@ export default function SearchBar({ participants, setParticipants }) {
   const [autoResults, setAutoResults] = useState([]);
   const [suggestions, setSuggestions] = useState([]);
   const currentUser = useSelector((state) => state.user);
-
   const handleSearchChange = (e) => {
     setSearch(e.target.value);
   };
@@ -137,6 +136,7 @@ export default function SearchBar({ participants, setParticipants }) {
             {participants.map((participant) => {
               return (
                 <Avatar
+                  key={participant.id}
                   onClick={() => {
                     deleteParticipant(participant.id);
                   }}
@@ -176,25 +176,25 @@ SearchBar.propTypes = {
       password: propTypes.string,
       picture: propTypes.string,
       job: propTypes.string,
-      isLogged: propTypes.bool,
+      isLogged: propTypes.number,
       cardNumber: propTypes.number,
       amount: propTypes.number,
-      isInvited: propTypes.bool,
-      eggFree: propTypes.bool,
-      glutenFree: propTypes.bool,
-      gmoFree: propTypes.bool,
-      nutFree: propTypes.bool,
-      sugarFree: propTypes.bool,
-      cornFree: propTypes.bool,
-      dairyFree: propTypes.bool,
-      soyFree: propTypes.bool,
-      transFatsFree: propTypes.bool,
-      vegan: propTypes.bool,
-      shellfishFree: propTypes.bool,
-      porkFree: propTypes.bool,
-      vegetarian: propTypes.bool,
-      fridayFish: propTypes.bool,
-      onDiet: propTypes.bool,
+      isInvited: propTypes.number,
+      eggFree: propTypes.number,
+      glutenFree: propTypes.number,
+      gmoFree: propTypes.number,
+      nutFree: propTypes.number,
+      sugarFree: propTypes.number,
+      cornFree: propTypes.number,
+      dairyFree: propTypes.number,
+      soyFree: propTypes.number,
+      transFatsFree: propTypes.number,
+      vegan: propTypes.number,
+      shellfishFree: propTypes.number,
+      porkFree: propTypes.number,
+      vegetarian: propTypes.number,
+      fridayFish: propTypes.number,
+      onDiet: propTypes.number,
     })
   ),
   setParticipants: propTypes.func,

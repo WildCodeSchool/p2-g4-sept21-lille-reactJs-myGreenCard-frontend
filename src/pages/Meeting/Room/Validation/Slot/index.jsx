@@ -52,11 +52,12 @@ export default function Slot({
         console.log(e);
       });
   }, []);
+
   return (
     <SSlot
       type="button"
       disabled={!!isSunday}
-      className={isBooked || isSunday === true ? 'reserved' : null}
+      className={(isBooked || isSunday === true) && 'reserved'}
       onClick={() => {
         handleClick(isBooked);
       }}

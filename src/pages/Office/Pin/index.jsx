@@ -28,9 +28,19 @@ export default function Pin({
         resSlot = true;
       }
     });
-
     if (reservation.beginning !== null) {
-      if (resSlot === true) {
+      if (newMyResOffice[pin.number - 1] === true) {
+        axios
+          .delete(
+            `${process.env.REACT_APP_API_URL}/office/officeReservation/`,
+            {
+              data: { userId: user.id, beginning: pin.slot },
+            }
+          )
+          .catch((e) => {
+            console.log(e);
+          });
+      } else if (resSlot === true && newMyResOffice[pin.number - 1] === false) {
         axios
           .delete(
             `${process.env.REACT_APP_API_URL}/office/officeReservation/`,
@@ -60,11 +70,10 @@ export default function Pin({
           });
       }
     }
-
+    const pinRes = !newMyResOffice[pin.number - 1];
     newMyResOffice = newMyResOffice.map(() => {
       return false;
     });
-    const pinRes = !newMyResOffice[pin.number - 1];
     newMyResOffice[pin.number - 1] = pinRes;
     setMyResOffice(newMyResOffice);
     const newSlot = [{ picture: user.picture }];
@@ -85,9 +94,9 @@ export default function Pin({
       <SPin
         disabled={resOffice[pin.number - 1]}
         slot={
-          slot[0] && (myResOffice[pin.number - 1] || resOffice[pin.number - 1])
-            ? slot[0].picture
-            : false
+          slot[0] &&
+          (myResOffice[pin.number - 1] || resOffice[pin.number - 1]) &&
+          slot[0].picture
         }
         aria-label="pinButton"
         onClick={resTheme}

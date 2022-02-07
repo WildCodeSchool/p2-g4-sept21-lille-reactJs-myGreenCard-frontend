@@ -5,6 +5,7 @@ import moment from 'moment';
 
 export default function Slot({
   slot,
+  dataSlot,
   setDataSlot,
   setMyResOffice,
   setResOffice,
@@ -53,7 +54,14 @@ export default function Slot({
 
   return (
     <>
-      <button onClick={handleClick} type="button">
+      <button
+        onClick={handleClick}
+        type="button"
+        className={
+          moment(dataSlot[0].beginning).format('YYYY-MM-DD HH:mm:ss') ===
+            slotT && 'reserved'
+        }
+      >
         {slot.slotDisplay}
       </button>
     </>
@@ -73,13 +81,22 @@ Slot.propTypes = {
     propTypes.shape({
       class: propTypes.string,
       number: propTypes.number,
-      slot: propTypes.instanceOf(Date),
+      slot: propTypes.string,
+    })
+  ),
+  dataSlot: propTypes.arrayOf(
+    propTypes.shape({
+      number: propTypes.string,
+      officeId: propTypes.number,
+      userId: propTypes.number,
+      beginning: propTypes.string,
     })
   ),
 };
 
 Slot.defaultProps = {
   slot: null,
+  dataSlot: [],
   setDataSlot: () => {},
   setMyResOffice: () => {},
   setResOffice: () => {},
