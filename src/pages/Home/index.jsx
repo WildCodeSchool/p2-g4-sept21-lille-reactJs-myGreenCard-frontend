@@ -17,6 +17,7 @@ import darkMeeting from './pictures/darkMeeting.png';
 import furnitures from './pictures/furnitures.png';
 import darkSupplies from './pictures/darkSupplies.png';
 import chat from './pictures/chat.png';
+import darkChat from './pictures/darkChat.png';
 import Card from './pictures/easyCard.png';
 import SHome from './style';
 
@@ -175,7 +176,7 @@ export default function Home({ theme, setTheme }) {
                 Discutez dans notre chat général avec les autres utilisateurs!
               </p>
             </div>
-            <img src={chat} alt="" />
+            <img src={isDarkTheme ? darkChat : chat} alt="" />
           </article>
         </Link>
         <button
