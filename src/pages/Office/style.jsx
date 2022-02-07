@@ -16,6 +16,7 @@ const SOffice = styled.main`
     margin-left: 5vw;
     font-weight: bold;
   }
+
   .button1 {
     margin-left: 16vw;
     margin-top: 5.5vh;
@@ -89,8 +90,8 @@ const SOffice = styled.main`
         flex-direction: column;
         flex-wrap: wrap;
         button {
-          font-size: 1rem;
-          width: 80px;
+          font-size: 1.3rem;
+          width: 110px;
           background: #e7f6fdef;
           margin: 15px;
           padding: 5px;
@@ -117,6 +118,33 @@ const SOffice = styled.main`
       font-size: 20px;
       font-weight: bold;
     }
+  }
+
+  @media screen and (max-width: 375px) and (max-height: 667px) {
+    .button1 {
+      margin-top: 6.8vh;
+    }
+    .button2 {
+      margin-top: 6.8vh;
+    }
+    .button3 {
+      margin-top: 7.6vh;
+    }
+    .button4 {
+      margin-top: 4vh;
+    }
+    .button5 {
+      margin-top: 12.5vh;
+    }
+    .button6 {
+      margin-top: 28.8vh;
+    }
+  }
+  .plan {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 40vh;
+    width: auto;
   }
 `;
 
