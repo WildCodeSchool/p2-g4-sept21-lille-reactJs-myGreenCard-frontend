@@ -73,7 +73,7 @@ Slot.propTypes = {
     propTypes.shape({
       class: propTypes.string,
       number: propTypes.number,
-      slot: propTypes.instanceOf(Date),
+      slot: propTypes.string,
     })
   ),
 };

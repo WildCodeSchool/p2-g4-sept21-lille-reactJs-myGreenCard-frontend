@@ -81,7 +81,7 @@ export default function Office() {
         <div className="rowProfiles">
           <AvatarGroup max={5}>
             {dataSlot.map((data) => (
-              <Avatar alt="avatar" src={data.picture} />
+              <Avatar alt="avatar" src={data.picture} key={data.picture} />
             ))}
           </AvatarGroup>
           {dataSlot[0] && (

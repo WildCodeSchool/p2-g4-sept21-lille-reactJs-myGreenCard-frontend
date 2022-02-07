@@ -62,7 +62,7 @@ export default function AlreadyBooked({
         {moment(reservation.slot).format('  HH ')}h
         {moment(reservation.slot).format('  dddd Do MMMM')}
       </p>
-      <AvatarGroup className="participants" max="4">
+      <AvatarGroup className="participants" max={4}>
         {participants.map((participant) => {
           return (
             <Badge

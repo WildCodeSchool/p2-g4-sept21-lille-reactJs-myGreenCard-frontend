@@ -24,47 +24,37 @@ export default function Participants({ meetingId }) {
       });
   }, []);
   return (
-    <AvatarGroup className="participants" max="4">
+    <AvatarGroup className="participants" max={4}>
       {participants.map((participant) => {
-        return participant.UserId !== user.id ? (
-          <Badge
-            key={participant.picture}
-            className="badge"
-            anchorOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
-            }}
-            badgeContent={
-              <Avatar
-                key={participant.picture}
-                className={
-                  participant.status === 'présentiel' ? 'mode' : 'mode dist'
-                }
-                alt={participant.status}
-                src={
-                  participant.status === 'présentiel' ? iconPin : iconComputer
-                }
-              />
-            }
-          >
-            <Avatar
-              className="participant"
-              alt="Stock avatar"
-              src={participant.picture}
-            />
-          </Badge>
-        ) : (
-          <div className="badge status">
-            <Avatar
-              className={
-                participant.status === 'présentiel'
-                  ? 'mode status'
-                  : 'mode status dist'
+        return (
+          participant.UserId !== user.id && (
+            <Badge
+              key={participant.picture}
+              className="badge"
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              badgeContent={
+                <Avatar
+                  key={participant.picture}
+                  className={
+                    participant.status === 'présentiel' ? 'mode' : 'mode dist'
+                  }
+                  alt={participant.status}
+                  src={
+                    participant.status === 'présentiel' ? iconPin : iconComputer
+                  }
+                />
               }
-              alt={participant.status}
-              src={participant.status === 'présentiel' ? iconPin : iconComputer}
-            />
-          </div>
+            >
+              <Avatar
+                className="participant"
+                alt="Stock avatar"
+                src={participant.picture}
+              />
+            </Badge>
+          )
         );
       })}
     </AvatarGroup>
