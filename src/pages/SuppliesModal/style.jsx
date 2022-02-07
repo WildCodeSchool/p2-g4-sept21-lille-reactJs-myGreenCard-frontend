@@ -17,7 +17,6 @@ const SSuppliesModal = styled.main`
     height: 8vh;
     margin-top: 3vh;
   }
-
   .supply {
     width: 90vw;
     .description {
@@ -32,7 +31,6 @@ const SSuppliesModal = styled.main`
     margin-bottom: 2vh;
     margin-top: 2vh;
   }
-
   @media screen and (max-width: 375px) and (max-height: 667px) {
     .order {
       height: 20vh;
