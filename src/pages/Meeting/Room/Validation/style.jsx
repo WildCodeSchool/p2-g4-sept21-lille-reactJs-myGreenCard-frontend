@@ -34,6 +34,9 @@ const SValidation = styled.div`
       h3 {
         font-size: 1.2rem;
         margin: 15px;
+        :first-letter {
+          text-transform: uppercase;
+        }
       }
       div.slots {
         width: 70%;

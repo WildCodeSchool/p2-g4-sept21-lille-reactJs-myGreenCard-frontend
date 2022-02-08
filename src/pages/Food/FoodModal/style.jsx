@@ -5,7 +5,7 @@ const SFoodModal = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  height: auto;
   background-color: #eeeded;
   position: absolute;
   width: 100vw;
@@ -28,7 +28,6 @@ const SFoodModal = styled.section`
     margin: 50px 0 20px 0;
     background-color: ${(props) => props.theme.background};
   }
-
   img {
     height: 100%;
   }
@@ -66,6 +65,7 @@ const SFoodModal = styled.section`
     display: flex;
     justify-content: space-between;
     width: 60%;
+    margin-bottom: 20px;
   }
   .foodContent {
     display: flex;

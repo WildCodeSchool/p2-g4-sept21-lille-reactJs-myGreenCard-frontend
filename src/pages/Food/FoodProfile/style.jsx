@@ -40,8 +40,10 @@ const FoodProfileList = styled.ul`
   .validate {
     display: flex;
     justify-content: center;
-
     width: 100vw;
+    button {
+      margin-bottom: 20px;
+    }
   }
 `;
 
