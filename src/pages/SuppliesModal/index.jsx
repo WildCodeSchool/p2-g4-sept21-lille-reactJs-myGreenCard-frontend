@@ -3,6 +3,7 @@ import axios from 'axios';
 import PropTypes from 'prop-types';
 import MainButton from 'components/MainButton';
 import basket from 'assets/Img/SuppliesPictures/cart.png';
+import basketDark from 'assets/Img/SuppliesPictures/cartDark.png';
 import SSuppliesModal from './style';
 
 export default function SuppliesModal({
@@ -11,6 +12,7 @@ export default function SuppliesModal({
   modal,
   setModal,
 }) {
+  const themeStorage = localStorage.getItem('theme');
   const toggleModal = () => {
     setModal(!modal);
   };
@@ -36,7 +38,11 @@ export default function SuppliesModal({
       {modal && (
         <SSuppliesModal>
           <h2>Mon panier</h2>
-          <img className="basketIcon" src={basket} alt="basket icon" />
+          <img
+            className="basketIcon"
+            src={themeStorage === 'light' ? basket : basketDark}
+            alt="basket icon"
+          />
           <div className="container">
             {cart.map((item, index) => {
               return (

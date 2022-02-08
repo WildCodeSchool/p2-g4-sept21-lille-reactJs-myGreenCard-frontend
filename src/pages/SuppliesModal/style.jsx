@@ -17,19 +17,13 @@ const SSuppliesModal = styled.main`
     height: 8vh;
     margin-top: 3vh;
   }
-  .supply {
-    width: 90vw;
-    .description {
-      min-width: 50vw;
-    }
-  }
   .order {
     display: flex;
     height: 15vh;
     flex-direction: column;
     justify-content: space-between;
     margin-bottom: 2vh;
-    margin-top: 2vh;
+    margin-top: 5vh;
   }
   @media screen and (max-width: 375px) and (max-height: 667px) {
     .order {
