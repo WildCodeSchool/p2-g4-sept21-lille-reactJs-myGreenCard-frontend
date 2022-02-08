@@ -6,7 +6,6 @@ import moment from 'moment';
 import logo from '../../assets/Img/easyApp.png';
 import darkLogo from '../../assets/Img/easyAppDark.png';
 import SChat from './style';
-
 import 'moment/locale/fr';
 
 export default function Chat() {
