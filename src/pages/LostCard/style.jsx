@@ -23,6 +23,7 @@ const SLostCard = styled.section`
       align-items: center;
       width: 90vw;
       height: 7vh;
+      margin-bottom: 20px;
     }
     .disable {
       display: flex;
@@ -39,6 +40,9 @@ const SLostCard = styled.section`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    button {
+      margin-top: 2vh;
+    }
   }
 `;
 

@@ -58,7 +58,10 @@ export default function LoginPage({ theme, setTheme }) {
         navigate('../home', { replace: true });
       })
       .catch((err) => {
-        toast.error(`Une erreur est survenue!${err}`);
+        console.log(err);
+        toast.error(
+          `Une erreur est survenue lors de la tentative de connection! Veuillez vérifier votre identifiant et votre mot de passe.`
+        );
       });
   };
 

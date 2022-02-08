@@ -39,7 +39,7 @@ export default function LostCard() {
                 <p>{user.job} </p>
               </div>
             </div>
-            <div className="cNumb">n°{user.cardNumber}</div>
+            <p className="cNumb">n°{user.cardNumber}</p>
           </SCard>
           <div className="job">
             <h2>

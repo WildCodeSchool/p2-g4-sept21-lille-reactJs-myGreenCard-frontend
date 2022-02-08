@@ -5,7 +5,7 @@ const SSuppliesModal = styled.main`
   z-index: 10;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   h2 {
     display: flex;

@@ -4,7 +4,7 @@ const SMeeting = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px 0px;
+  margin-top: 20px;
   h1 {
     display: flex;
     justify-content: center;
