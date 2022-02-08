@@ -74,10 +74,10 @@ export default function Chat() {
                 }
                 return (
                   <>
-                    <p key={id} className="userName">
-                      {firstname} {lastname}
-                    </p>
                     <li className={className}>
+                      <p key={id} className="userName">
+                        {firstname} {lastname}
+                      </p>
                       <div className="userImg">
                         <img src={picture} alt="Profil photography" />
                       </div>
