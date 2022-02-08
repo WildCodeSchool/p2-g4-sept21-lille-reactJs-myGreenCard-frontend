@@ -120,7 +120,7 @@ const SOffice = styled.main`
     }
   }
 
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 375px) and (max-height: 667px) {
     .button1 {
       margin-top: 6.8vh;
     }

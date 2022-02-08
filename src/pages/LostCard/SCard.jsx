@@ -56,6 +56,7 @@ const SCard = styled.article`
     display: flex;
     flex-direction: row-reverse;
     margin-left: -5vw;
+    color: black;
   }
 `;
 export default SCard;

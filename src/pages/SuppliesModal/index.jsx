@@ -55,7 +55,7 @@ export default function SuppliesModal({
                     />
                     <div className="description">
                       <p>{supplyElement[index].name}</p>
-                      <p>{item}</p>
+                      <p>x {item}</p>
                     </div>
                   </div>
                 )
