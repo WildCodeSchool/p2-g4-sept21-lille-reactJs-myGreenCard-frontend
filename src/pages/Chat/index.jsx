@@ -1,6 +1,9 @@
 import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
+import Header from 'components/Header';
 import socketIOClient from 'socket.io-client';
+import logo from '../../assets/Img/easyApp.png';
+import darkLogo from '../../assets/Img/easyAppDark.png';
 import SChat from './style';
 
 export default function Chat() {
@@ -9,6 +12,8 @@ export default function Chat() {
   const user = useSelector((state) => state.user);
   const [formMessage, setMsg] = useState('');
   const [sendToggle, setSendToggle] = useState(false);
+
+  const themeStorage = localStorage.getItem('theme');
 
   useEffect(() => {
     setSocket(socket);
@@ -41,50 +46,53 @@ export default function Chat() {
   };
 
   return (
-    <SChat>
-      <form onSubmit={handleSubmit}>
-        <input
-          className="inputText"
-          type="text"
-          name="msg"
-          placeholder="Message"
-          value={formMessage}
-          onChange={(evt) => {
-            setMsg(evt.target.value);
-          }}
-        />
-        <input className="inputButton" type="submit" value="↑" />
-      </form>
-      {messages && (
-        <ul>
-          {messages.map(
-            ({ id, userId, content, time, picture, firstname, lastname }) => {
-              let className = 'alienMsg';
-              if (userId !== user.id) {
-                className = 'notice';
-              } else {
-                className = 'ownMsg';
-              }
-              return (
-                <>
-                  <p key={id} className="userName">
-                    {firstname} {lastname}
-                  </p>
-                  <li className={className}>
-                    <div className="userImg">
-                      <img src={picture} alt="Profil photography" />
+    <>
+      <Header logo={themeStorage === 'dark' ? darkLogo : logo} />
+      <SChat>
+        <form onSubmit={handleSubmit}>
+          <input
+            className="inputText"
+            type="text"
+            name="msg"
+            placeholder="Message"
+            value={formMessage}
+            onChange={(evt) => {
+              setMsg(evt.target.value);
+            }}
+          />
+          <input className="inputButton" type="submit" value="↑" />
+        </form>
+        {messages && (
+          <ul>
+            {messages.map(
+              ({ id, userId, content, time, picture, firstname, lastname }) => {
+                let className = 'alienMsg';
+                if (userId !== user.id) {
+                  className = 'notice';
+                } else {
+                  className = 'ownMsg';
+                }
+                return (
+                  <>
+                    <p key={id} className="userName">
+                      {firstname} {lastname}
+                    </p>
+                    <li className={className}>
+                      <div className="userImg">
+                        <img src={picture} alt="Profil photography" />
+                      </div>
+                      <p className="content">{content}</p>
+                    </li>
+                    <div className="timeContain">
+                      <p className="dateTime">{time}</p>
                     </div>
-                    <p className="content">{content}</p>
-                  </li>
-                  <div className="timeContain">
-                    <p className="dateTime">{time}</p>
-                  </div>
-                </>
-              );
-            }
-          )}
-        </ul>
-      )}
-    </SChat>
+                  </>
+                );
+              }
+            )}
+          </ul>
+        )}
+      </SChat>
+    </>
   );
 }
