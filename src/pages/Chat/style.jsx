@@ -78,6 +78,7 @@ const SChat = styled.main`
     }
   }
   .userImg {
+    border-radius: 50%;
     padding: 5px;
   }
   .userName {
@@ -94,7 +95,7 @@ const SChat = styled.main`
   ul {
     overflow: scroll;
     overflow-y: scroll;
-    height: 100vh - 90px - 90px;
+    height: 78vh;
   }
 `;
 export default SChat;
