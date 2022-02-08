@@ -80,6 +80,9 @@ const SOffice = styled.main`
       h3 {
         font-size: 1.2rem;
         margin: 15px;
+        :first-letter {
+          text-transform: uppercase;
+        }
       }
       div.slots {
         width: 70%;
@@ -114,6 +117,8 @@ const SOffice = styled.main`
   .swiper-button-next,
   .swiper-button-prev {
     color: ${(props) => props.theme.text};
+    top: 60%;
+    right: 7px;
     &::after {
       font-size: 20px;
       font-weight: bold;

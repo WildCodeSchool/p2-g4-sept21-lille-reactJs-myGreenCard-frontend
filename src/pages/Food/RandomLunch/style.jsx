@@ -72,6 +72,7 @@ const SRandomLunch = styled.section`
       border-radius: 10px;
       padding: 15px;
       cursor: pointer;
+      margin-bottom: 20px;
     }
   }
   .doNotDisturb {

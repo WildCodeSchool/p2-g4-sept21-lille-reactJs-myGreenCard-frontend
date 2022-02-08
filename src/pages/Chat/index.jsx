@@ -2,9 +2,12 @@ import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 import Header from 'components/Header';
 import socketIOClient from 'socket.io-client';
+import moment from 'moment';
 import logo from '../../assets/Img/easyApp.png';
 import darkLogo from '../../assets/Img/easyAppDark.png';
 import SChat from './style';
+
+import 'moment/locale/fr';
 
 export default function Chat() {
   const [socket, setSocket] = useState(socketIOClient('http://localhost:8080'));
@@ -84,7 +87,7 @@ export default function Chat() {
                       <p className="content">{content}</p>
                     </li>
                     <div className="timeContain">
-                      <p className="dateTime">{time}</p>
+                      <p className="dateTime">{moment(time).format('LLLL')}</p>
                     </div>
                   </>
                 );
