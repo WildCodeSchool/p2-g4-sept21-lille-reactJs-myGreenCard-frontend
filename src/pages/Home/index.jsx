@@ -47,8 +47,8 @@ export default function Home({ theme, setTheme }) {
           size={0.5}
         />
         <article className="badge">
-          <h2>Votre badge digital</h2>
-          <div className="logo">
+          <h3>Votre badge digital</h3>
+          <div>
             <div className="wallet">
               <a
                 target="_blank"
@@ -65,7 +65,7 @@ export default function Home({ theme, setTheme }) {
                 <img src={google} alt="google wallet" />
               </a>
             </div>
-            <div className="eazyCard">
+            <div>
               <Link to="/eazycard">
                 <img src={Card} alt="Eazycard" />
               </Link>
@@ -76,25 +76,19 @@ export default function Home({ theme, setTheme }) {
           <article
             className={isDarkTheme ? 'darkThemeBackground menu' : 'menu'}
           >
-            <div className="meal">
-              <h3>Le menu du jour</h3>
-            </div>
-            <div className="mealList">
+            <h3>Le menu du jour</h3>
+            <div>
               <div className="description">
                 <p>Salade</p>
                 <p>Rôti de Boeuf</p>
                 <p>Pizza aux légumes</p>
                 <p>Muffin</p>
+                <p className="dinnersReady">A table !</p>
               </div>
-              <div className="foodIcon">
-                <img
-                  src={isDarkTheme ? darkFood : food}
-                  alt="Icone menu du jour"
-                />
-              </div>
-            </div>
-            <div className="dinnersReady">
-              <p>A table !</p>
+              <img
+                src={isDarkTheme ? darkFood : food}
+                alt="Icone menu du jour"
+              />
             </div>
           </article>
         </Link>
@@ -102,13 +96,9 @@ export default function Home({ theme, setTheme }) {
           <article
             className={isDarkTheme ? 'darkThemeBackground office' : 'office'}
           >
-            <div className="reservation">
-              <h3>Réservation de bureau</h3>
-            </div>
-            <div className="chooseYourOffice">
+            <h3>Réservation de bureau</h3>
+            <div>
               <p>Choisissez votre bureau</p>
-            </div>
-            <div className="officePicture">
               <img src={isDarkTheme ? darkOffice : office} alt="Bureau" />
             </div>
           </article>
@@ -117,11 +107,9 @@ export default function Home({ theme, setTheme }) {
           <article
             className={isDarkTheme ? 'darkThemeBackground meeting' : 'meeting'}
           >
-            <div className="meetingReservation ">
-              <h3>Réservation de salle de réunion</h3>
-              <p>Réservez votre salle de réunion</p>
-            </div>
+            <h3>Réservation de salle de réunion</h3>
             <div className="meetingRoomPicture">
+              <p>Réservez votre salle de réunion</p>
               <img
                 src={isDarkTheme ? darkMeeting : meetingRoom}
                 alt="Salle de réunion"
@@ -135,13 +123,9 @@ export default function Home({ theme, setTheme }) {
               isDarkTheme ? 'darkThemeBackground furnitures' : 'furnitures'
             }
           >
-            <div className="order">
-              <h3>Commande de fournitures</h3>
-            </div>
-            <div className="shop">
+            <h3>Commande de fournitures</h3>
+            <div>
               <p>Ajoutez les articles dont vous avez besoin</p>
-            </div>
-            <div className="pictureFurniture">
               <img
                 src={isDarkTheme ? darkSupplies : furnitures}
                 alt="Fournitures"
@@ -155,13 +139,9 @@ export default function Home({ theme, setTheme }) {
               isDarkTheme ? 'darkThemeBackground lostCard' : 'lostCard'
             }
           >
-            <div className="card">
-              <h3>Carte perdue</h3>
-            </div>
-            <div className="unactivCard">
-              <p>Désactivez votre carte en cas de perte</p>
-            </div>
+            <h3>Carte perdue</h3>
             <div className="pictureCard">
+              <p>Désactiver votre carte en cas de perte</p>
               <img src={Card} alt="Eazypass" />
             </div>
           </article>
@@ -170,13 +150,13 @@ export default function Home({ theme, setTheme }) {
           <article
             className={isDarkTheme ? 'darkThemeBackground chat' : 'chat'}
           >
+            <h3>Chat</h3>
             <div>
-              <h3>Chat</h3>
               <p>
                 Discutez dans notre chat général avec les autres utilisateurs!
               </p>
+              <img src={isDarkTheme ? darkChat : chat} alt="" />
             </div>
-            <img src={isDarkTheme ? darkChat : chat} alt="" />
           </article>
         </Link>
         <button

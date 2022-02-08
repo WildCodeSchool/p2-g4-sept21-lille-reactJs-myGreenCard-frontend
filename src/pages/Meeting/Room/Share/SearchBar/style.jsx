@@ -11,9 +11,6 @@ const SSearchBar = styled.div`
     padding: 8px;
     border: none;
     border-bottom: 1px solid ${(props) => props.theme.inputBorder};
-    :focus {
-      outline: none;
-    }
   }
   ul {
     z-index: 3;

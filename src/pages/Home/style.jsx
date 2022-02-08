@@ -32,183 +32,72 @@ const SHome = styled.section`
     flex-direction: column;
     justify-content: space-between;
     background-color: ${(props) => props.theme.secondBackground};
+    font-weight: bold;
+    img {
+      width: 120px;
+      object-fit: contain;
+      margin-left: 10px;
+    }
+    p {
+      font-weight: normal;
+      line-height: 17px;
+      margin-top: 15px;
+    }
+    h3 {
+      width: 80vw;
+    }
+    div {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
   }
   .badge {
-    font-weight: bold;
-  }
-  .logo {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .wallet {
-    display: flex;
-    flex-direction: column;
-    width: 40vw;
-    justify-content: space-around;
-    height: 140px;
-    img {
-      height: 40px;
-      width: 40vw;
+    .wallet {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      margin-top: 15px;
+      a {
+        margin-bottom: 10px;
+        img {
+          margin: 0;
+        }
+      }
     }
-  }
-  .eazyCard {
-    display: flex;
-    justify-content: center;
-    img {
-      width: 35vw;
-      height: 100px;
-    }
-  }
-  img {
-    width: 120px;
-    object-fit: contain;
-  }
-  p {
-    width: 50vw;
   }
   .menu {
-    height: 180px;
-    font-weight: bold;
-    position: relative;
-  }
-  .meal {
-    height: 40px;
-  }
-  .mealList {
-    font-weight: normal;
-    display: flex;
-    height: 100px;
-  }
-  .description {
-    width: 55vw;
-  }
-  .foodIcon {
-    display: flex;
-    justify-content: center;
-    width: 0px;
-    height: 150px;
-    position: absolute;
-    right: 30%;
-    bottom: 10%;
-    img {
-      margin-left: 35px;
+    .description {
+      display: flex;
+      flex-direction: column;
+      margin-top: 15px;
+      p {
+        margin: 0;
+      }
+      .dinnersReady {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        text-decoration: underline ${(props) => props.theme.text};
+      }
     }
-  }
-  .dinnersReady {
-    height: 30px;
-    text-decoration: underline ${(props) => props.theme.text};
-  }
-  .office {
-    display: flex;
-    flex-wrap: wrap;
-    font-weight: bold;
-    height: 150px;
-  }
-  .reservation {
-    width: 40vw;
-  }
-  .chooseYourOffice {
-    font-weight: normal;
-    height: 100px;
-    width: 30vw;
   }
   .meeting {
-    position: relative;
-    display: flex;
-    font-weight: bold;
-    height: 150px;
-    width: 80vw;
-  }
-  .meetingReservation {
-    display: flex;
-    flex-direction: column;
-    height: 100px;
-  }
-  .meetingReservation h3 {
-    width: 50vw;
-  }
-  .meetingReservation p {
-    font-weight: normal;
-    height: 100px;
-    width: 30vw;
-    margin-top: 10px;
-  }
-  .meetingRoomPicture {
-    position: absolute;
-    left: 55%;
-    bottom: 10%;
-  }
-  .meetingRoomPicture img {
-    rotate: 90deg;
-  }
-  .furnitures {
-    display: flex;
-    flex-wrap: wrap;
-    font-weight: bold;
-    height: 150px;
-    p {
-      width: 40vw;
-    }
-  }
-  .order {
-    height: 50px;
-    width: 40vw;
-  }
-  .shop {
-    font-weight: normal;
-    height: 100px;
-    width: 30vw;
-  }
-  .picturefurniture {
-    height: 140px;
-    width: 40vw;
-    img {
-      height: 140px;
-      width: 40vw;
+    .meetingRoomPicture {
+      img {
+        margin-top: -15px;
+        rotate: 90deg;
+      }
     }
   }
   .lostCard {
-    display: flex;
-    flex-wrap: wrap;
-    font-weight: bold;
-    height: 150px;
-    position: relative;
-  }
-  .lostCard p {
-    width: 130px;
-  }
-  .card {
-    height: 40px;
-    width: 40vw;
-  }
-  .unactivCard {
-    font-weight: normal;
-    height: 100px;
-    width: 25vw;
-  }
-  .pictureCard {
-    display: flex;
-    height: 150px;
-    justify-content: center;
-    align-items: center;
-    img {
-      width: 35vw;
-      height: 100px;
+    .pictureCard {
+      margin-bottom: 30px;
     }
   }
   .chat {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    div {
-      display: flex;
-      flex-direction: column;
-    }
-    h3 {
-      font-weight: bold;
-      margin: 10px;
+    img {
+      margin-top: -10px;
     }
   }
 
