@@ -102,6 +102,7 @@ export default function SearchBar({ participants, setParticipants }) {
             {suggestions.map((suggestion) => {
               return (
                 <Avatar
+                  key={suggestions.indexOf(suggestion)}
                   onClick={() => {
                     addParticipant(suggestion);
                   }}
@@ -153,6 +154,7 @@ export default function SearchBar({ participants, setParticipants }) {
           {suggestions.map((suggestion) => {
             return (
               <Avatar
+                key={suggestions.indexOf(suggestion)}
                 onClick={() => {
                   addParticipant(suggestion);
                 }}

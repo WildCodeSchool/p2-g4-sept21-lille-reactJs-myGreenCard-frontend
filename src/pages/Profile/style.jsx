@@ -149,7 +149,7 @@ const SProfile = styled.section`
       align-items: flex-start;
     }
     p {
-      margin: 0 0 5px 10px;
+      margin: 0 0 15px 10px;
     }
   }
   .orders {
@@ -188,6 +188,7 @@ const SProfile = styled.section`
     }
   }
   .foodList {
+    height: auto;
     li {
       border-radius: 80px;
       background-color: #eeedede8;
@@ -203,11 +204,14 @@ const SProfile = styled.section`
         border: 1px solid grey;
         aspect-ratio: 1/1;
         width: 100px;
-        height: 100px;
+        height: 100px;   
+        img {
+        width: 100px;
+        height: 100px;   
+        object-fit: cover;
       }
-      img {
-        height: 100%;
       }
+   
       p {
         width: 180px;
         text-align: center;

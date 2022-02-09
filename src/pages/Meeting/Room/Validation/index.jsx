@@ -114,7 +114,7 @@ Validation.propTypes = {
   setValidation: propTypes.func,
   reservation: propTypes.shape({
     room: propTypes.number,
-    roomId: propTypes.string,
+    roomId: propTypes.number,
     slot: propTypes.string,
     userFirstname: propTypes.string,
     userLastname: propTypes.string,

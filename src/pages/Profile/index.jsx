@@ -104,11 +104,7 @@ export default function Profile({ theme, setTheme }) {
           {reservations.map((reservation) => {
             return (
               <li key={reservation.beginning}>
-                <p>
-                  {`Le ${moment(reservation.beginning).format(
-                    'Do MMMM  YYYY, h:mm a'
-                  )}`}
-                </p>
+                <p>{`Le ${moment(reservation.beginning).format('LLLL')}`}</p>
               </li>
             );
           })}
@@ -140,7 +136,7 @@ export default function Profile({ theme, setTheme }) {
         <ul>
           {myMeal.map((meal) => {
             return (
-              <li key={meal.name}>
+              <li key={myMeal.indexOf(meal)}>
                 <div>
                   <img src={meal.picture} alt="foodPicture" />
                 </div>

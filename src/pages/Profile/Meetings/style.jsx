@@ -10,6 +10,7 @@ const SMeetings = styled.article`
     margin: 10px 0px;
     h3 {
       text-align: left;
+      font-size: 1.2rem;
     }
   }
   ul {

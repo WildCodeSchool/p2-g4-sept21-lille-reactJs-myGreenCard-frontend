@@ -93,8 +93,9 @@ const SOffice = styled.main`
         flex-direction: column;
         flex-wrap: wrap;
         button {
-          font-size: 1.3rem;
-          width: 120px;
+          font-size: 1.1rem;
+          width: 110px;
+          height: 35px;
           background: #ececec;
           margin: 15px;
           padding: 5px;
@@ -145,11 +146,9 @@ const SOffice = styled.main`
       margin-top: 28.8vh;
       margin-left: 23.65vh;
     }
-
     .plan {
       height: 40vh;
     }
-
     .swiper-container {
       .swiper-slide {
         div.slots {

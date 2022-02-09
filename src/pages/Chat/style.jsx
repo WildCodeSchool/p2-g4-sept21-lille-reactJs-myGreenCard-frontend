@@ -10,6 +10,7 @@ const SChat = styled.main`
     position: relative;
     border-radius: 20px;
     width: 90vw;
+    height: auto;
     padding: 10px;
     display: flex;
     img {
@@ -21,9 +22,12 @@ const SChat = styled.main`
       justify-content: center;
     }
   }
-  .content {
-    color: black;
+  p.content {
+    display: block;
+    max-width: calc(100% - 50px - 25px);
+    word-wrap: break-word;
     padding: 5px;
+    line-height: 1.6rem;
   }
   .timeContain {
     width: 100vw;
@@ -78,7 +82,9 @@ const SChat = styled.main`
     }
   }
   .userImg {
-    border-radius: 50%;
+    img {
+      border-radius: 50%;
+    }
     padding: 5px;
   }
   .userName {
