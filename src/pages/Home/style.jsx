@@ -100,14 +100,6 @@ const SHome = styled.section`
       margin-top: -10px;
     }
   }
-
-  @media screen and (max-width: 375px) and (max-height: 667px) {
-    .shop {
-      p {
-        width: 47vw;
-      }
-    }
-  }
 `;
 
 export default SHome;

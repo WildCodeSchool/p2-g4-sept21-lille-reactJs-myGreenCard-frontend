@@ -27,7 +27,7 @@ export default function GiftModal({ toggleGiftModal }) {
         `Vous avez donné 10€, votre solde est de ${userAmount - 10}€ `
       );
     } else {
-      toast.error(`Don impossible crédit insufisant `);
+      toast.error(`Don impossible crédit insuffisant `);
     }
   };
   const giftFifty = () => {
@@ -48,7 +48,7 @@ export default function GiftModal({ toggleGiftModal }) {
         `Vous avez donné 50€, votre solde est de ${userAmount - 50}€ `
       );
     } else {
-      toast.error(`Don impossible, solde insufisant`);
+      toast.error(`Don impossible, solde insuffisant`);
     }
   };
   return (
